@@ -4,7 +4,7 @@ import 'settings_screen.dart'; // Import the new settings screen
 import 'package:provider/provider.dart';
 import 'package:OpenBreath/theme_provider.dart';
 import 'package:OpenBreath/data.dart'; // Import the data file
-import 'package:OpenBreath/search_screen.dart'; // Import the search screen
+
 import 'package:OpenBreath/settings_provider.dart'; // Import the new settings provider
 
 void main() {
