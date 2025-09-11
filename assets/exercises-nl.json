@@ -1,64 +1,374 @@
 [
-  {"title": "Box Ademhaling", "pattern": "4-4-4-4", "duration": "4 min", "intro": "Een eenvoudige techniek om je geest en lichaam te kalmeren."},
-  {"title": "4-7-8 Ademhaling", "pattern": "4-7-8", "duration": "3 min", "intro": "Helpt te ontspannen en sneller in slaap te vallen."},
-  {"title": "Coherente Ademhaling", "pattern": "5-5", "duration": "5 min", "intro": "Brengt het zenuwstelsel in balans en bevordert ontspanning."},
-  {"title": "Kalmte & Focus", "pattern": "6-2-4", "duration": "3 min", "intro": "Verbetert concentratie en mentale helderheid."},
-  {"title": "Stress Loslaten", "pattern": "4-0-6-0", "duration": "2 min", "intro": "Laat spanning los en bevordert ontspanning."},
-  {"title": "Diepe Ontspanning", "pattern": "4-6", "duration": "5 min", "intro": "Bevordert diepe ontspanning en vermindert spierspanning."},
-  {"title": "Energiserende Adem", "pattern": "2-0-2-0", "duration": "1 min", "intro": "Geeft snel energie en alertheid."},
-  {"title": "Mindful Adem", "pattern": "3-3-3-3", "duration": "3 min", "intro": "Versterkt aandacht voor het moment en vermindert afdwalen."},
-  {"title": "Slaapopwekker", "pattern": "4-7-8", "duration": "5 min", "intro": "Bereidt lichaam en geest voor op een rustgevende slaap."},
-  {"title": "Angstverzachter", "pattern": "4-0-6-0", "duration": "3 min", "intro": "Kalmeert het zenuwstelsel in angstige momenten."},
-  {"title": "Focus Versterker", "pattern": "5-0-5-0", "duration": "2 min", "intro": "Verbetert concentratie en mentale helderheid bij taken."},
-  {"title": "Pijnverlichting Adem", "pattern": "4-2-6-2", "duration": "4 min", "intro": "Helpt ongemak en pijn te beheersen met gecontroleerde ademhaling."},
-  {"title": "Emotionele Balans", "pattern": "5-5-5-5", "duration": "5 min", "intro": "Stabiliseert emoties en bevordert innerlijke rust."},
-  {"title": "Snel Kalm", "pattern": "3-0-3-0", "duration": "1 min", "intro": "Direct kalmerend in stressvolle situaties."},
-  {"title": "Ochtend Wakker", "pattern": "2-0-4-0", "duration": "2 min", "intro": "Wekt lichaam en geest zachtjes in de ochtend."},
-  {"title": "Voor Workout Adem", "pattern": "3-0-3-0", "duration": "2 min", "intro": "Bereidt longen en lichaam voor op inspanning."},
-  {"title": "Herstel na Workout", "pattern": "4-4-4-4", "duration": "5 min", "intro": "Ondersteunt spierherstel en ontspanning na beweging."},
-  {"title": "Creatieve Flow", "pattern": "6-0-6-0", "duration": "3 min", "intro": "Stimuleert creativiteit en probleemoplossen."},
-  {"title": "Digitale Detox Adem", "pattern": "4-4-4-4", "duration": "3 min", "intro": "Helpt los te komen van schermen en te herfocussen."},
-  {"title": "Dankbaarheid Adem", "pattern": "4-0-4-0", "duration": "2 min", "intro": "Koestert een gevoel van dankbaarheid en waardering."},
-  {"title": "Zelfvertrouwen Booster", "pattern": "3-0-5-0", "duration": "2 min", "intro": "Bouwt zelfvertrouwen op en vermindert zelftwijfel."},
-  {"title": "Spreekvoorbereiding", "pattern": "4-2-6-2", "duration": "3 min", "intro": "Kalmeert zenuwen en verbetert stemhelderheid voor je spreekt."},
-  {"title": "Studiefocus", "pattern": "5-0-5-0", "duration": "4 min", "intro": "Verbetert concentratie en behoud tijdens studiemomenten."},
-  {"title": "Reisrust", "pattern": "4-4-4-4", "duration": "5 min", "intro": "Vermindert reisangst en bevordert ontspanning onderweg."},
-  {"title": "Natuurverbinding", "pattern": "6-0-6-0", "duration": "5 min", "intro": "Versterkt verbinding met de natuur en aarding."},
-  {"title": "Innerlijke Vrede", "pattern": "7-0-7-0", "duration": "7 min", "intro": "Bevordert een diepe innerlijke kalmte."},
-  {"title": "Besluitvaardigheid", "pattern": "4-0-8-0", "duration": "3 min", "intro": "Helpt helder denken en zelfverzekerde keuzes te maken."},
-  {"title": "Compassie Adem", "pattern": "4-4-4-4", "duration": "4 min", "intro": "Cultiveert empathie en compassie voor jezelf en anderen."},
-  {"title": "Digitale Oogontspanning", "pattern": "2-0-2-0", "duration": "1 min", "intro": "Vermindert spanning in de ogen door langdurig schermgebruik."},
-  {"title": "Diepe Slaap", "pattern": "4-7-8", "duration": "10 min", "intro": "Begeleidt je naar een diepe, herstellende slaap."},
-  {"title": "Energieboost", "pattern": "2-0-2-0", "duration": "1 min", "intro": "Een snelle energie-impuls bij futloosheid."},
-  {"title": "Aardende Adem", "pattern": "4-4-4-4", "duration": "3 min", "intro": "Helpt je meer aanwezig en geaard te voelen."},
-  {"title": "Hartcoherentie", "pattern": "5-5", "duration": "5 min", "intro": "Synchroniseert hartslag en ademhaling voor emotionele balans."},
-  {"title": "Immuunondersteuning", "pattern": "4-0-6-0", "duration": "3 min", "intro": "Ondersteunt de natuurlijke immuunrespons van het lichaam."},
-  {"title": "Intuïtie Ontwaker", "pattern": "6-0-6-0", "duration": "4 min", "intro": "Opent de geest voor innerlijke wijsheid en intuïtie."},
-  {"title": "Geheugen Versterker", "pattern": "4-0-4-0", "duration": "2 min", "intro": "Verbetert geheugen en cognitieve functies."},
-  {"title": "Motivatie Booster", "pattern": "3-0-5-0", "duration": "2 min", "intro": "Wekt motivatie en daadkracht."},
-  {"title": "Zenuwstelsel Reset", "pattern": "4-4-4-4", "duration": "5 min", "intro": "Stelt een overactief zenuwstelsel opnieuw af en kalmeert."},
-  {"title": "Optimisme Cultiveren", "pattern": "4-0-6-0", "duration": "3 min", "intro": "Bevordert een positieve, hoopvolle mindset."},
-  {"title": "Prestatie Voorbereiding", "pattern": "3-0-3-0", "duration": "2 min", "intro": "Bereidt lichaam en geest voor op topprestaties."},
-  {"title": "Positieve Affirmatie Adem", "pattern": "4-4-4-4", "duration": "3 min", "intro": "Integreert positieve affirmaties met elke ademhaling."},
-  {"title": "Probleemoplossende Adem", "pattern": "5-0-5-0", "duration": "4 min", "intro": "Maakt het hoofd leeg voor effectief oplossen."},
-  {"title": "Snelle Oplading", "pattern": "2-0-2-0", "duration": "1 min", "intro": "Een snelle manier om te verfrissen en te herladen."},
-  {"title": "Zelfliefde Adem", "pattern": "4-4-4-4", "duration": "4 min", "intro": "Bevordert zelfacceptatie en zelfcompassie."},
-  {"title": "Stressverdrijver", "pattern": "4-0-6-0", "duration": "2 min", "intro": "Vermindert snel stress en spanning."},
-  {"title": "Studiepauze Adem", "pattern": "3-0-3-0", "duration": "1 min", "intro": "Een korte pauze om de geest te verfrissen tijdens het studeren."},
-  {"title": "Spanningsrelease", "pattern": "4-0-6-0", "duration": "3 min", "intro": "Laat fysieke en mentale spanning los."},
-  {"title": "Reisziekte Verlichting", "pattern": "4-4-4-4", "duration": "5 min", "intro": "Verlicht misselijkheid en ongemak tijdens reizen."},
-  {"title": "Vaguszenuw Stimulator", "pattern": "6-0-6-0", "duration": "5 min", "intro": "Activeert de nervus vagus voor ontspanning en welzijn."},
-  {"title": "Visualisatie Adem", "pattern": "4-4-4-4", "duration": "5 min", "intro": "Combineert ademhaling met positieve visualisatie."},
-  {"title": "Wilskracht Versterker", "pattern": "3-0-5-0", "duration": "2 min", "intro": "Bouwt mentale veerkracht en zelfbeheersing op."},
-  {"title": "Werkdag Opfrisser", "pattern": "2-0-2-0", "duration": "1 min", "intro": "Een snelle opfrisser tijdens een drukke werkdag."},
-  {"title": "Zen Adem", "pattern": "7-0-7-0", "duration": "7 min", "intro": "Bevordert diepe kalmte en mindfulness."},
-  {"title": "Buikademhaling", "pattern": "4-0-4-0", "duration": "3 min", "intro": "Bevordert middenrifademhaling voor ontspanning."},
-  {"title": "Afwisselend Neusgat Adem", "pattern": "4-0-4-0", "duration": "5 min", "intro": "Brengt linker- en rechterhersenhelft in balans."},
-  {"title": "Vuuradem", "pattern": "1-0-1-0", "duration": "1 min", "intro": "Snelle, krachtige ademhaling om energie te geven."},
-  {"title": "Hommeltje Adem", "pattern": "4-0-6-0", "duration": "3 min", "intro": "Kalmeert geest en zenuwstelsel met een zoemend geluid."},
-  {"title": "Oceaangolf Adem", "pattern": "5-0-5-0", "duration": "5 min", "intro": "Bootst het geluid van zee-golven na voor ontspanning."},
-  {"title": "Getuite Lippen Adem", "pattern": "2-0-4-0", "duration": "2 min", "intro": "Vertraagt de ademhaling en verbetert longfunctie."},
-  {"title": "Sitali Adem", "pattern": "4-0-4-0", "duration": "3 min", "intro": "Koelende adem die lichaamswarmte vermindert en de geest kalmeert."},
-  {"title": "Vierkante Adem", "pattern": "4-4-4-4", "duration": "4 min", "intro": "Een variatie op box breathing voor betere focus."},
-  {"title": "Drie-Delige Adem", "pattern": "4-0-4-0", "duration": "5 min", "intro": "Vult de longen in drie fasen voor volledige ademhaling."}
+  {
+      "title": "Box Ademhaling",
+      "pattern": "4-4-4-4",
+      "duration": "4 min",
+      "intro": "Een eenvoudige techniek om je geest en lichaam te kalmeren."
+  },
+  {
+      "title": "4-7-8 Ademhaling",
+      "pattern": "4-7-8",
+      "duration": "3 min",
+      "intro": "Helpt te ontspannen en sneller in slaap te vallen."
+  },
+  {
+      "title": "Coherente Ademhaling",
+      "pattern": "5-5",
+      "duration": "5 min",
+      "intro": "Brengt het zenuwstelsel in balans en bevordert ontspanning."
+  },
+  {
+      "title": "Kalmte & Focus",
+      "pattern": "6-2-4",
+      "duration": "3 min",
+      "intro": "Verbetert concentratie en mentale helderheid."
+  },
+  {
+      "title": "Stress Loslaten",
+      "pattern": "4-0-6-0",
+      "duration": "2 min",
+      "intro": "Laat spanning los en bevordert ontspanning."
+  },
+  {
+      "title": "Diepe Ontspanning",
+      "pattern": "4-6",
+      "duration": "5 min",
+      "intro": "Bevordert diepe ontspanning en vermindert spierspanning."
+  },
+  {
+      "title": "Energiserende Adem",
+      "pattern": "2-0-2-0",
+      "duration": "1 min",
+      "intro": "Geeft snel energie en alertheid."
+  },
+  {
+      "title": "Mindful Adem",
+      "pattern": "3-3-3-3",
+      "duration": "3 min",
+      "intro": "Versterkt aandacht voor het moment en vermindert afdwalen."
+  },
+  {
+      "title": "Slaapopwekker",
+      "pattern": "4-7-8",
+      "duration": "5 min",
+      "intro": "Bereidt lichaam en geest voor op een rustgevende slaap."
+  },
+  {
+      "title": "Angstverzachter",
+      "pattern": "4-0-6-0",
+      "duration": "3 min",
+      "intro": "Kalmeert het zenuwstelsel in angstige momenten."
+  },
+  {
+      "title": "Focus Versterker",
+      "pattern": "5-0-5-0",
+      "duration": "2 min",
+      "intro": "Verbetert concentratie en mentale helderheid bij taken."
+  },
+  {
+      "title": "Pijnverlichting Adem",
+      "pattern": "4-2-6-2",
+      "duration": "4 min",
+      "intro": "Helpt ongemak en pijn te beheersen met gecontroleerde ademhaling."
+  },
+  {
+      "title": "Emotionele Balans",
+      "pattern": "5-5-5-5",
+      "duration": "5 min",
+      "intro": "Stabiliseert emoties en bevordert innerlijke rust."
+  },
+  {
+      "title": "Snel Kalm",
+      "pattern": "3-0-3-0",
+      "duration": "1 min",
+      "intro": "Direct kalmerend in stressvolle situaties."
+  },
+  {
+      "title": "Ochtend Wakker",
+      "pattern": "2-0-4-0",
+      "duration": "2 min",
+      "intro": "Wekt lichaam en geest zachtjes in de ochtend."
+  },
+  {
+      "title": "Voor Workout Adem",
+      "pattern": "3-0-3-0",
+      "duration": "2 min",
+      "intro": "Bereidt longen en lichaam voor op inspanning."
+  },
+  {
+      "title": "Herstel na Workout",
+      "pattern": "4-4-4-4",
+      "duration": "5 min",
+      "intro": "Ondersteunt spierherstel en ontspanning na beweging."
+  },
+  {
+      "title": "Creatieve Flow",
+      "pattern": "6-0-6-0",
+      "duration": "3 min",
+      "intro": "Stimuleert creativiteit en probleemoplossen."
+  },
+  {
+      "title": "Digitale Detox Adem",
+      "pattern": "4-4-4-4",
+      "duration": "3 min",
+      "intro": "Helpt los te komen van schermen en te herfocussen."
+  },
+  {
+      "title": "Dankbaarheid Adem",
+      "pattern": "4-0-4-0",
+      "duration": "2 min",
+      "intro": "Koestert een gevoel van dankbaarheid en waardering."
+  },
+  {
+      "title": "Zelfvertrouwen Booster",
+      "pattern": "3-0-5-0",
+      "duration": "2 min",
+      "intro": "Bouwt zelfvertrouwen op en vermindert zelftwijfel."
+  },
+  {
+      "title": "Spreekvoorbereiding",
+      "pattern": "4-2-6-2",
+      "duration": "3 min",
+      "intro": "Kalmeert zenuwen en verbetert stemhelderheid voor je spreekt."
+  },
+  {
+      "title": "Studiefocus",
+      "pattern": "5-0-5-0",
+      "duration": "4 min",
+      "intro": "Verbetert concentratie en behoud tijdens studiemomenten."
+  },
+  {
+      "title": "Reisrust",
+      "pattern": "4-4-4-4",
+      "duration": "5 min",
+      "intro": "Vermindert reisangst en bevordert ontspanning onderweg."
+  },
+  {
+      "title": "Natuurverbinding",
+      "pattern": "6-0-6-0",
+      "duration": "5 min",
+      "intro": "Versterkt verbinding met de natuur en aarding."
+  },
+  {
+      "title": "Innerlijke Vrede",
+      "pattern": "7-0-7-0",
+      "duration": "7 min",
+      "intro": "Bevordert een diepe innerlijke kalmte."
+  },
+  {
+      "title": "Besluitvaardigheid",
+      "pattern": "4-0-8-0",
+      "duration": "3 min",
+      "intro": "Helpt helder denken en zelfverzekerde keuzes te maken."
+  },
+  {
+      "title": "Compassie Adem",
+      "pattern": "4-4-4-4",
+      "duration": "4 min",
+      "intro": "Cultiveert empathie en compassie voor jezelf en anderen."
+  },
+  {
+      "title": "Digitale Oogontspanning",
+      "pattern": "2-0-2-0",
+      "duration": "1 min",
+      "intro": "Vermindert spanning in de ogen door langdurig schermgebruik."
+  },
+  {
+      "title": "Diepe Slaap",
+      "pattern": "4-7-8",
+      "duration": "10 min",
+      "intro": "Begeleidt je naar een diepe, herstellende slaap."
+  },
+  {
+      "title": "Energieboost",
+      "pattern": "2-0-2-0",
+      "duration": "1 min",
+      "intro": "Een snelle energie-impuls bij futloosheid."
+  },
+  {
+      "title": "Aardende Adem",
+      "pattern": "4-4-4-4",
+      "duration": "3 min",
+      "intro": "Helpt je meer aanwezig en geaard te voelen."
+  },
+  {
+      "title": "Hartcoherentie",
+      "pattern": "5-5",
+      "duration": "5 min",
+      "intro": "Synchroniseert hartslag en ademhaling voor emotionele balans."
+  },
+  {
+      "title": "Immuunondersteuning",
+      "pattern": "4-0-6-0",
+      "duration": "3 min",
+      "intro": "Ondersteunt de natuurlijke immuunrespons van het lichaam."
+  },
+  {
+      "title": "Intu\u00eftie Ontwaker",
+      "pattern": "6-0-6-0",
+      "duration": "4 min",
+      "intro": "Opent de geest voor innerlijke wijsheid en intu\u00eftie."
+  },
+  {
+      "title": "Geheugen Versterker",
+      "pattern": "4-0-4-0",
+      "duration": "2 min",
+      "intro": "Verbetert geheugen en cognitieve functies."
+  },
+  {
+      "title": "Motivatie Booster",
+      "pattern": "3-0-5-0",
+      "duration": "2 min",
+      "intro": "Wekt motivatie en daadkracht."
+  },
+  {
+      "title": "Zenuwstelsel Reset",
+      "pattern": "4-4-4-4",
+      "duration": "5 min",
+      "intro": "Stelt een overactief zenuwstelsel opnieuw af en kalmeert."
+  },
+  {
+      "title": "Optimisme Cultiveren",
+      "pattern": "4-0-6-0",
+      "duration": "3 min",
+      "intro": "Bevordert een positieve, hoopvolle mindset."
+  },
+  {
+      "title": "Prestatie Voorbereiding",
+      "pattern": "3-0-3-0",
+      "duration": "2 min",
+      "intro": "Bereidt lichaam en geest voor op topprestaties."
+  },
+  {
+      "title": "Positieve Affirmatie Adem",
+      "pattern": "4-4-4-4",
+      "duration": "3 min",
+      "intro": "Integreert positieve affirmaties met elke ademhaling."
+  },
+  {
+      "title": "Probleemoplossende Adem",
+      "pattern": "5-0-5-0",
+      "duration": "4 min",
+      "intro": "Maakt het hoofd leeg voor effectief oplossen."
+  },
+  {
+      "title": "Snelle Oplading",
+      "pattern": "2-0-2-0",
+      "duration": "1 min",
+      "intro": "Een snelle manier om te verfrissen en te herladen."
+  },
+  {
+      "title": "Zelfliefde Adem",
+      "pattern": "4-4-4-4",
+      "duration": "4 min",
+      "intro": "Bevordert zelfacceptatie en zelfcompassie."
+  },
+  {
+      "title": "Stressverdrijver",
+      "pattern": "4-0-6-0",
+      "duration": "2 min",
+      "intro": "Vermindert snel stress en spanning."
+  },
+  {
+      "title": "Studiepauze Adem",
+      "pattern": "3-0-3-0",
+      "duration": "1 min",
+      "intro": "Een korte pauze om de geest te verfrissen tijdens het studeren."
+  },
+  {
+      "title": "Spanningsrelease",
+      "pattern": "4-0-6-0",
+      "duration": "3 min",
+      "intro": "Laat fysieke en mentale spanning los."
+  },
+  {
+      "title": "Reisziekte Verlichting",
+      "pattern": "4-4-4-4",
+      "duration": "5 min",
+      "intro": "Verlicht misselijkheid en ongemak tijdens reizen."
+  },
+  {
+      "title": "Vaguszenuw Stimulator",
+      "pattern": "6-0-6-0",
+      "duration": "5 min",
+      "intro": "Activeert de nervus vagus voor ontspanning en welzijn."
+  },
+  {
+      "title": "Visualisatie Adem",
+      "pattern": "4-4-4-4",
+      "duration": "5 min",
+      "intro": "Combineert ademhaling met positieve visualisatie."
+  },
+  {
+      "title": "Wilskracht Versterker",
+      "pattern": "3-0-5-0",
+      "duration": "2 min",
+      "intro": "Bouwt mentale veerkracht en zelfbeheersing op."
+  },
+  {
+      "title": "Werkdag Opfrisser",
+      "pattern": "2-0-2-0",
+      "duration": "1 min",
+      "intro": "Een snelle opfrisser tijdens een drukke werkdag."
+  },
+  {
+      "title": "Zen Adem",
+      "pattern": "7-0-7-0",
+      "duration": "7 min",
+      "intro": "Bevordert diepe kalmte en mindfulness."
+  },
+  {
+      "title": "Buikademhaling",
+      "pattern": "4-0-4-0",
+      "duration": "3 min",
+      "intro": "Bevordert middenrifademhaling voor ontspanning."
+  },
+  {
+      "title": "Afwisselend Neusgat Adem",
+      "pattern": "4-0-4-0",
+      "duration": "5 min",
+      "intro": "Brengt linker- en rechterhersenhelft in balans."
+  },
+  {
+      "title": "Vuuradem",
+      "pattern": "1-0-1-0",
+      "duration": "1 min",
+      "intro": "Snelle, krachtige ademhaling om energie te geven."
+  },
+  {
+      "title": "Hommeltje Adem",
+      "pattern": "4-0-6-0",
+      "duration": "3 min",
+      "intro": "Kalmeert geest en zenuwstelsel met een zoemend geluid."
+  },
+  {
+      "title": "Oceaangolf Adem",
+      "pattern": "5-0-5-0",
+      "duration": "5 min",
+      "intro": "Bootst het geluid van zee-golven na voor ontspanning."
+  },
+  {
+      "title": "Getuite Lippen Adem",
+      "pattern": "2-0-4-0",
+      "duration": "2 min",
+      "intro": "Vertraagt de ademhaling en verbetert longfunctie."
+  },
+  {
+      "title": "Sitali Adem",
+      "pattern": "4-0-4-0",
+      "duration": "3 min",
+      "intro": "Koelende adem die lichaamswarmte vermindert en de geest kalmeert."
+  },
+  {
+      "title": "Vierkante Adem",
+      "pattern": "4-4-4-4",
+      "duration": "4 min",
+      "intro": "Een variatie op box breathing voor betere focus."
+  },
+  {
+      "title": "Drie-Delige Adem",
+      "pattern": "4-0-4-0",
+      "duration": "5 min",
+      "intro": "Vult de longen in drie fasen voor volledige ademhaling."
+  }
 ]
