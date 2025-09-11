@@ -6,6 +6,7 @@ import 'package:OpenBreath/theme_provider.dart';
 import 'package:OpenBreath/data.dart'; // Import the data file
 
 import 'package:OpenBreath/settings_provider.dart'; // Import the new settings provider
+import 'package:OpenBreath/pinned_exercises_provider.dart'; // Import the new pinned exercises provider
 
 void main() {
   runApp(
@@ -13,6 +14,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
         ChangeNotifierProvider(create: (context) => SettingsProvider()),
+        ChangeNotifierProvider(create: (context) => PinnedExercisesProvider()),
       ],
       child: const OpenBreathApp(),
     ),
@@ -74,12 +76,16 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
   final TextEditingController _searchController = TextEditingController();
   final FocusNode _searchFocusNode = FocusNode();
   List<BreathingExercise> _filteredExercises = [];
+  List<BreathingExercise> _pinnedExercises = [];
 
   @override
   void initState() {
     super.initState();
-    _filteredExercises = breathingExercises; // Initially show all exercises
     _searchController.addListener(_performSearch);
+
+    // Listen to changes in PinnedExercisesProvider
+    Provider.of<PinnedExercisesProvider>(context, listen: false).addListener(_updatePinnedExercises);
+    _updatePinnedExercises(); // Initial load of pinned exercises
 
     // Auto-select search bar if setting is enabled
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -94,16 +100,31 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
   void dispose() {
     _searchController.dispose();
     _searchFocusNode.dispose();
+    Provider.of<PinnedExercisesProvider>(context, listen: false).removeListener(_updatePinnedExercises);
     super.dispose();
   }
 
+  void _updatePinnedExercises() {
+    final pinnedProvider = Provider.of<PinnedExercisesProvider>(context, listen: false);
+    setState(() {
+      _pinnedExercises = breathingExercises
+          .where((exercise) => pinnedProvider.isPinned(exercise.title))
+          .toList();
+      _performSearch(); // Re-filter exercises after pinned list changes
+    });
+  }
+
+
   void _performSearch() {
     final query = _searchController.text.toLowerCase();
+    final pinnedProvider = Provider.of<PinnedExercisesProvider>(context, listen: false);
+
     setState(() {
       _filteredExercises = breathingExercises.where((exercise) {
-        return exercise.title.toLowerCase().contains(query) ||
+        final isPinned = pinnedProvider.isPinned(exercise.title);
+        return !isPinned && (exercise.title.toLowerCase().contains(query) ||
             exercise.pattern.toLowerCase().contains(query) ||
-            exercise.intro.toLowerCase().contains(query);
+            exercise.intro.toLowerCase().contains(query));
       }).toList();
     });
   }
@@ -151,48 +172,124 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
           ),
         ),
       ),
-      body: _filteredExercises.isEmpty && _searchController.text.isNotEmpty
-          ? Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    ':-(',
-                    style: TextStyle(fontSize: 64),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'No exercises found.',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                ],
-              ),
-            )
-          : ListView.builder(
-              itemCount: _filteredExercises.length,
-              itemBuilder: (context, index) {
-                final exercise = _filteredExercises[index];
-                return Card(
-                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: ListTile(
-                    title: Text(exercise.title, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
-                    subtitle: Text(
-                      '${exercise.pattern} - ${exercise.duration}\n${exercise.intro}',
-                      style: TextStyle(color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round())),
+      body: Column(
+        children: [
+          if (_pinnedExercises.isNotEmpty)
+            SizedBox(
+              height: 150, // Height for the pinned exercises row
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _pinnedExercises.length,
+                itemBuilder: (context, index) {
+                  final exercise = _pinnedExercises[index];
+                  return GestureDetector(
+                    onLongPress: () {
+                      Provider.of<PinnedExercisesProvider>(context, listen: false).togglePin(exercise.title);
+                    },
+                    child: Card(
+                      margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                      color: Theme.of(context).cardColor,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width / (_pinnedExercises.length > 0 ? _pinnedExercises.length : 1) - 16, // Divide available width by number of pinned exercises
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                exercise.title,
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.onSurface,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                exercise.pattern,
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round()),
+                                  fontSize: 16,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const Spacer(), // Pushes content to top and button to bottom
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ExerciseScreen(pattern: exercise.pattern),
+                                    ),
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Theme.of(context).colorScheme.primary, // Button background color
+                                  foregroundColor: Theme.of(context).colorScheme.onPrimary, // Button text color
+                                ),
+                                child: const Text('Start'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
-                    isThreeLine: true,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ExerciseScreen(pattern: exercise.pattern),
+                  );
+                },
+              ),
+            ),
+          Expanded(
+            child: _filteredExercises.isEmpty && _searchController.text.isNotEmpty
+                ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          ':-',
+                          style: TextStyle(fontSize: 64),
+                        ),
+                        const SizedBox(height: 20),
+                        Text(
+                          'No exercises found.',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                      ],
+                    ),
+                  )
+                : ListView.builder(
+                    itemCount: _filteredExercises.length,
+                    itemBuilder: (context, index) {
+                      final exercise = _filteredExercises[index];
+                      return GestureDetector(
+                        onLongPress: () {
+                          Provider.of<PinnedExercisesProvider>(context, listen: false).togglePin(exercise.title);
+                        },
+                        child: Card(
+                          margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                          child: ListTile(
+                            title: Text(exercise.title, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
+                            subtitle: Text(
+                              '${exercise.pattern} - ${exercise.duration}\n${exercise.intro}',
+                              style: TextStyle(color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round())),
+                            ),
+                            isThreeLine: true,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ExerciseScreen(pattern: exercise.pattern),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       );
                     },
                   ),
-                );
-              },
-            ),
+          ),
+        ],
+      ),
     );
   }
 }
