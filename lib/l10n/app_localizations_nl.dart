@@ -64,4 +64,10 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get exerciseInvalid => 'Oefening niet gevonden of ongeldig patroon.';
+
+  @override
+  String get progressiveExercise => 'Progressieve Oefening';
+
+  @override
+  String get pattern => 'Patroon';
 }

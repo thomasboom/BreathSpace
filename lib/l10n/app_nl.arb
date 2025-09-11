@@ -17,5 +17,7 @@
   "exhale": "Uitademen",
   "hold": "Vasthouden",
   "close": "Sluiten",
-  "exerciseInvalid": "Oefening niet gevonden of ongeldig patroon."
+  "exerciseInvalid": "Oefening niet gevonden of ongeldig patroon.",
+  "progressiveExercise": "Progressieve Oefening",
+  "pattern": "Patroon"
 }

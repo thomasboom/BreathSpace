@@ -17,5 +17,7 @@
   "exhale": "Exhale",
   "hold": "Hold",
   "close": "Close",
-  "exerciseInvalid": "Exercise not found or invalid pattern."
+  "exerciseInvalid": "Exercise not found or invalid pattern.",
+  "progressiveExercise": "Progressive Exercise",
+  "pattern": "Pattern"
 }

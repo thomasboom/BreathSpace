@@ -20,7 +20,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   late Animation<double> _bubbleAnimation;
   String _instruction = '';
   int _currentCycle = 0;
-  final int _totalCycles = 4; // For a 4-minute exercise (4-4-4-4 breathing, 16s per cycle, 15 cycles = 4 minutes)
+  int _currentStageIndex = 0;
+  late List<BreathingStage> _stages;
+  late int _stageStartTime;
 
   List<int> _parsePattern(String pattern) {
     return pattern.split('-').map(int.parse).toList();
@@ -29,15 +31,52 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   @override
   void initState() {
     super.initState();
+    
+    // Initialize stages
+    if (widget.exercise.hasStages) {
+      _stages = widget.exercise.stages!;
+    } else {
+      // Create a single stage from the original exercise for backward compatibility
+      _stages = [
+        BreathingStage(
+          title: widget.exercise.title,
+          pattern: widget.exercise.pattern,
+          duration: _parseDurationString(widget.exercise.duration),
+        )
+      ];
+    }
+    
+    try {
+      // Initialize controllers
+      _controller = AnimationController(vsync: this, duration: Duration.zero);
+      _bubbleAnimationController = AnimationController(vsync: this, duration: Duration.zero);
+      
+      _initializeStage(0);
+    } catch (e) {
+      setState(() {
+        _patternInvalid = true;
+      });
+    }
+  }
+
+  void _initializeStage(int stageIndex) {
+    _currentStageIndex = stageIndex;
+    final stage = _stages[stageIndex];
+    
     List<int> patternValues;
     try {
-      patternValues = _parsePattern(widget.exercise.pattern);
+      patternValues = _parsePattern(stage.pattern);
       int inhale = patternValues[0];
       int hold1 = patternValues.length > 1 ? patternValues[1] : 0;
       int exhale = patternValues.length > 2 ? patternValues[2] : 0;
       int hold2 = patternValues.length > 3 ? patternValues[3] : 0;
 
       int totalDurationSeconds = inhale + hold1 + exhale + hold2;
+      _stageStartTime = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+
+      // Dispose of existing controllers if they exist
+      _controller.dispose();
+      _bubbleAnimationController.dispose();
 
       _controller = AnimationController(
         vsync: this,
@@ -46,29 +85,29 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
       _bubbleAnimationController = AnimationController(
         vsync: this,
-        duration: const Duration(seconds: 4), // Adjust duration for desired bubble speed
-      )..repeat(reverse: true); // Repeat with reverse to create a pulsating effect
+        duration: const Duration(seconds: 4),
+      )..repeat(reverse: true);
 
       _bubbleAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
           parent: _bubbleAnimationController,
-          curve: Curves.easeInOut, // Smooth transition
+          curve: Curves.easeInOut,
         ),
       );
 
       List<TweenSequenceItem<double>> items = [];
 
       if (inhale > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 0.5, end: 1.0).chain(CurveTween(curve: Curves.easeInOut)), weight: inhale.toDouble())); // Inhale
+        items.add(TweenSequenceItem(tween: Tween(begin: 0.5, end: 1.0).chain(CurveTween(curve: Curves.easeInOut)), weight: inhale.toDouble()));
       }
       if (hold1 > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.0).chain(CurveTween(curve: Curves.easeInOut)), weight: hold1.toDouble())); // Hold 1
+        items.add(TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.0).chain(CurveTween(curve: Curves.easeInOut)), weight: hold1.toDouble()));
       }
       if (exhale > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.5).chain(CurveTween(curve: Curves.easeInOut)), weight: exhale.toDouble())); // Exhale
+        items.add(TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.5).chain(CurveTween(curve: Curves.easeInOut)), weight: exhale.toDouble()));
       }
       if (hold2 > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 0.5, end: 0.5).chain(CurveTween(curve: Curves.easeInOut)), weight: hold2.toDouble())); // Hold 2
+        items.add(TweenSequenceItem(tween: Tween(begin: 0.5, end: 0.5).chain(CurveTween(curve: Curves.easeInOut)), weight: hold2.toDouble()));
       }
 
       _breatheAnimation = TweenSequence<double>(items).animate(_controller);
@@ -78,12 +117,12 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
       setState(() {
         _patternInvalid = true;
       });
-      // Optionally log the error: print('Error parsing pattern: $e');
     }
   }
 
   void _startAnimation() {
-    final patternValues = _parsePattern(widget.exercise.pattern);
+    final stage = _stages[_currentStageIndex];
+    final patternValues = _parsePattern(stage.pattern);
     int inhale = patternValues[0];
     int hold1 = patternValues.length > 1 ? patternValues[1] : 0;
     int exhale = patternValues.length > 2 ? patternValues[2] : 0;
@@ -105,18 +144,44 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
         } else if (hold2 > 0 && currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
           _instruction = l10n.hold;
         }
-        HapticFeedback.lightImpact(); // Apply haptic feedback once per state change
+        HapticFeedback.lightImpact();
       });
     });
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         _currentCycle++;
-        if (_currentCycle >= _totalCycles) {
-          Navigator.pop(context);
+        
+        // Check if we need to move to the next stage
+        final elapsedSeconds = (DateTime.now().millisecondsSinceEpoch ~/ 1000) - _stageStartTime;
+        final stage = _stages[_currentStageIndex];
+        
+        if (elapsedSeconds >= stage.duration) {
+          // Move to next stage or end exercise
+          if (_currentStageIndex < _stages.length - 1) {
+            _initializeStage(_currentStageIndex + 1);
+            _currentCycle = 0;
+          } else {
+            // Exercise completed
+            Navigator.pop(context);
+          }
         }
       }
     });
+  }
+
+  int _parseDurationString(String duration) {
+    // Parse duration string like "4 min" or "240 sec"
+    if (duration.contains('min')) {
+      final minutes = int.parse(duration.replaceAll(' min', ''));
+      return minutes * 60;
+    } else if (duration.contains('sec')) {
+      return int.parse(duration.replaceAll(' sec', ''));
+    } else {
+      // Default to minutes if no unit specified
+      final minutes = int.parse(duration.replaceAll(RegExp(r'[^0-9]'), ''));
+      return minutes * 60;
+    }
   }
 
   @override
@@ -152,34 +217,61 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      AnimatedBuilder(
-                        animation: Listenable.merge([_breatheAnimation, _bubbleAnimation]),
-                        builder: (context, child) {
-                          final currentRadius = 150 * _breatheAnimation.value;
-                          return CustomPaint(
-                            painter: BubblePainter(
-                              _bubbleAnimation.value,
-                              currentRadius,
-                              Theme.of(context).colorScheme.secondary, // Use a theme-aware color
-                            ),
-                            child: Container(
-                              width: currentRadius * 2,
-                              height: currentRadius * 2,
-                              child: Center(
-                                child: Text(
-                                  _instruction,
-                                  style: TextStyle(
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.bold,
-                                    color: Theme.of(context).colorScheme.onPrimary, // Use onPrimary for text on primary-colored background
+                      // Fixed size container for the bubble to prevent layout shifts
+                      Container(
+                        width: 300,
+                        height: 300,
+                        child: AnimatedBuilder(
+                          animation: Listenable.merge([_breatheAnimation, _bubbleAnimation]),
+                          builder: (context, child) {
+                            final currentRadius = 150 * _breatheAnimation.value;
+                            return CustomPaint(
+                              painter: BubblePainter(
+                                _bubbleAnimation.value,
+                                currentRadius,
+                                Theme.of(context).colorScheme.secondary,
+                              ),
+                              child: Container(
+                                width: currentRadius * 2,
+                                height: currentRadius * 2,
+                                child: Center(
+                                  child: Text(
+                                    _instruction,
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context).colorScheme.onPrimary,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
+                            );
+                          },
+                        ),
                       ),
-                      
+                      SizedBox(height: 20),
+                      // Display current stage information below the bubble
+                      if (widget.exercise.hasStages) ...[
+                        Text(
+                          '${_stages[_currentStageIndex].title} (${_currentStageIndex + 1}/${_stages.length})',
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          '${AppLocalizations.of(context).pattern}: ${_stages[_currentStageIndex].pattern}',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          textAlign: TextAlign.center,
+                        ),
+                      ] else ...[
+                        Text(
+                          '${AppLocalizations.of(context).pattern}: ${widget.exercise.pattern}',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                     ],
                   ),
                 ),

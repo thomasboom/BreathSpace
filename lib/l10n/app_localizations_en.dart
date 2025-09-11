@@ -64,4 +64,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get exerciseInvalid => 'Exercise not found or invalid pattern.';
+
+  @override
+  String get progressiveExercise => 'Progressive Exercise';
+
+  @override
+  String get pattern => 'Pattern';
 }

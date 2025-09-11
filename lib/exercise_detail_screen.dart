@@ -31,17 +31,41 @@ class ExerciseDetailScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16.0),
-            Text(
-              'Pattern: ${exercise.pattern}',
-              style: Theme.of(context).textTheme.bodyMedium,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 8.0),
-            Text(
-              'Duration: ${exercise.duration}',
-              style: Theme.of(context).textTheme.bodyMedium,
-              textAlign: TextAlign.center,
-            ),
+            if (exercise.hasStages) ...[
+              Text(
+                AppLocalizations.of(context).progressiveExercise,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8.0),
+              ...exercise.stages!.map((stage) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '${stage.title}: ${stage.pattern} (${_formatDuration(stage.duration)})',
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              )),
+            ] else ...[
+              Text(
+                'Pattern: ${exercise.pattern}',
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8.0),
+              Text(
+                'Duration: ${exercise.duration}',
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.center,
+              ),
+            ],
             const Spacer(),
             Center(
               child: ElevatedButton(
@@ -60,5 +84,14 @@ class ExerciseDetailScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _formatDuration(int seconds) {
+    if (seconds < 60) {
+      return '$seconds sec';
+    } else {
+      final minutes = seconds ~/ 60;
+      return '$minutes min';
+    }
   }
 }

@@ -211,6 +211,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Exercise not found or invalid pattern.'**
   String get exerciseInvalid;
+
+  /// No description provided for @progressiveExercise.
+  ///
+  /// In en, this message translates to:
+  /// **'Progressive Exercise'**
+  String get progressiveExercise;
+
+  /// No description provided for @pattern.
+  ///
+  /// In en, this message translates to:
+  /// **'Pattern'**
+  String get pattern;
 }
 
 class _AppLocalizationsDelegate
