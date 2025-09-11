@@ -116,7 +116,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 0.85);
+    _pageController = PageController();
   }
 
   @override
@@ -136,72 +136,78 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
             itemBuilder: (context, index) {
               final exercise = breathingExercises[index];
               return Center(
-                child: Card(
-                  color: Colors.grey[200], // Light grey card background
-                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(32.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          exercise.title,
-                          style: const TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                child: SizedBox(
+                  height: 500.0, // Fixed height for the card
+                  width: 500.0, // Fixed width for the card
+                  child: Card(
+                    color: Colors.grey[200], // Light grey card background
+                    margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(32.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distribute content vertically
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                exercise.title,
+                                style: const TextStyle(
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Text(
+                                exercise.pattern,
+                                style: const TextStyle(
+                                  fontSize: 24,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                exercise.duration,
+                                style: const TextStyle(
+                                  fontSize: 24,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                              const SizedBox(height: 40),
+                              Text(
+                                exercise.intro,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          exercise.pattern,
-                          style: const TextStyle(
-                            fontSize: 24,
-                            color: Colors.black87,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          exercise.duration,
-                          style: const TextStyle(
-                            fontSize: 24,
-                            color: Colors.black87,
-                          ),
-                        ),
-                        const SizedBox(height: 40),
-                        Text(
-                          exercise.intro,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            color: Colors.black87,
-                          ),
-                        ),
-                        const SizedBox(height: 60),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => ExerciseScreen(pattern: exercise.pattern)),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black,
-                            shape: const CircleBorder(),
-                            padding: const EdgeInsets.all(40),
-                          ),
-                          child: const Text(
-                            'START',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ExerciseScreen(pattern: exercise.pattern)),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                              padding: const EdgeInsets.all(40),
+                            ),
+                            child: const Text(
+                              'START',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
