@@ -214,7 +214,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
             },
           ),
           Positioned(
-            top: 40,
+            top: 20,
             right: 20, // Changed from left to right
             child: IconButton(
               icon: Icon(Icons.settings, size: 30, color: Theme.of(context).colorScheme.onBackground),

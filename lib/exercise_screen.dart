@@ -166,17 +166,25 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
             ),
           ),
           Positioned(
-            top: 40,
+            top: 20,
             right: 20,
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+            child: PopupMenuButton<String>(
               icon: Icon(
-                Icons.close,
+                Icons.more_vert,
                 size: 30,
-                color: Theme.of(context).colorScheme.onBackground, // Use a theme-aware color
+                color: Theme.of(context).colorScheme.onBackground,
               ),
+              onSelected: (String result) {
+                if (result == 'close') {
+                  Navigator.pop(context);
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                PopupMenuItem<String>(
+                  value: 'close',
+                  child: Text('Close'),
+                ),
+              ],
             ),
           ),
         ],
