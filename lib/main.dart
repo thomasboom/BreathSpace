@@ -151,31 +151,48 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: _filteredExercises.length,
-        itemBuilder: (context, index) {
-          final exercise = _filteredExercises[index];
-          return Card(
-            margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: ListTile(
-              title: Text(exercise.title, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
-              subtitle: Text(
-                '${exercise.pattern} - ${exercise.duration}\n${exercise.intro}',
-                style: TextStyle(color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round())),
+      body: _filteredExercises.isEmpty && _searchController.text.isNotEmpty
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    ':-(',
+                    style: TextStyle(fontSize: 64),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'No exercises found.',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ],
               ),
-              isThreeLine: true,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ExerciseScreen(pattern: exercise.pattern),
+            )
+          : ListView.builder(
+              itemCount: _filteredExercises.length,
+              itemBuilder: (context, index) {
+                final exercise = _filteredExercises[index];
+                return Card(
+                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  child: ListTile(
+                    title: Text(exercise.title, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
+                    subtitle: Text(
+                      '${exercise.pattern} - ${exercise.duration}\n${exercise.intro}',
+                      style: TextStyle(color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round())),
+                    ),
+                    isThreeLine: true,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ExerciseScreen(pattern: exercise.pattern),
+                        ),
+                      );
+                    },
                   ),
                 );
               },
             ),
-          );
-        },
-      ),
     );
   }
 }
