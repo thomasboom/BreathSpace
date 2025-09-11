@@ -8,7 +8,9 @@ import 'package:OpenBreath/data.dart'; // Import the data file
 import 'package:OpenBreath/settings_provider.dart'; // Import the new settings provider
 import 'package:OpenBreath/pinned_exercises_provider.dart'; // Import the new pinned exercises provider
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await loadBreathingExercises();
   runApp(
     MultiProvider(
       providers: [

@@ -1,0 +1,374 @@
+[
+  {
+    "title": "Box Breathing",
+    "pattern": "4-4-4-4",
+    "duration": "4 min",
+    "intro": "A simple technique to calm your mind and body."
+  },
+  {
+    "title": "4-7-8 Breathing",
+    "pattern": "4-7-8",
+    "duration": "3 min",
+    "intro": "Helps to relax and fall asleep faster."
+  },
+  {
+    "title": "Coherent Breathing",
+    "pattern": "5-5",
+    "duration": "5 min",
+    "intro": "Balances the nervous system and promotes relaxation."
+  },
+  {
+    "title": "Calm Focus",
+    "pattern": "6-2-4",
+    "duration": "3 min",
+    "intro": "Improve concentration and mental clarity."
+  },
+  {
+    "title": "Stress Release",
+    "pattern": "4-0-6-0",
+    "duration": "2 min",
+    "intro": "Release tension and promote relaxation."
+  },
+  {
+    "title": "Deep Relaxation",
+    "pattern": "4-6",
+    "duration": "5 min",
+    "intro": "Promotes deep relaxation and reduces muscle tension."
+  },
+  {
+    "title": "Energizing Breath",
+    "pattern": "2-0-2-0",
+    "duration": "1 min",
+    "intro": "Quickly boosts energy and alertness."
+  },
+  {
+    "title": "Mindful Breath",
+    "pattern": "3-3-3-3",
+    "duration": "3 min",
+    "intro": "Enhances present moment awareness and reduces mind wandering."
+  },
+  {
+    "title": "Sleep Inducer",
+    "pattern": "4-7-8",
+    "duration": "5 min",
+    "intro": "Prepares the body and mind for restful sleep."
+  },
+  {
+    "title": "Anxiety Soother",
+    "pattern": "4-0-6-0",
+    "duration": "3 min",
+    "intro": "Calms the nervous system during moments of anxiety."
+  },
+  {
+    "title": "Focus Enhancer",
+    "pattern": "5-0-5-0",
+    "duration": "2 min",
+    "intro": "Improves concentration and mental clarity for tasks."
+  },
+  {
+    "title": "Pain Relief Breath",
+    "pattern": "4-2-6-2",
+    "duration": "4 min",
+    "intro": "Helps manage discomfort and pain through controlled breathing."
+  },
+  {
+    "title": "Emotional Balance",
+    "pattern": "5-5-5-5",
+    "duration": "5 min",
+    "intro": "Stabilizes emotions and promotes inner peace."
+  },
+  {
+    "title": "Quick Calm",
+    "pattern": "3-0-3-0",
+    "duration": "1 min",
+    "intro": "Instant calming effect for stressful situations."
+  },
+  {
+    "title": "Morning Wake-up",
+    "pattern": "2-0-4-0",
+    "duration": "2 min",
+    "intro": "Gently awakens the body and mind in the morning."
+  },
+  {
+    "title": "Pre-workout Breath",
+    "pattern": "3-0-3-0",
+    "duration": "2 min",
+    "intro": "Prepares lungs and body for physical activity."
+  },
+  {
+    "title": "Post-workout Recovery",
+    "pattern": "4-4-4-4",
+    "duration": "5 min",
+    "intro": "Aids in muscle recovery and relaxation after exercise."
+  },
+  {
+    "title": "Creative Flow",
+    "pattern": "6-0-6-0",
+    "duration": "3 min",
+    "intro": "Stimulates creativity and problem-solving."
+  },
+  {
+    "title": "Digital Detox Breath",
+    "pattern": "4-4-4-4",
+    "duration": "3 min",
+    "intro": "Helps to disconnect from screens and recenter."
+  },
+  {
+    "title": "Gratitude Breath",
+    "pattern": "4-0-4-0",
+    "duration": "2 min",
+    "intro": "Cultivates a sense of gratitude and appreciation."
+  },
+  {
+    "title": "Confidence Booster",
+    "pattern": "3-0-5-0",
+    "duration": "2 min",
+    "intro": "Builds self-assurance and reduces self-doubt."
+  },
+  {
+    "title": "Public Speaking Prep",
+    "pattern": "4-2-6-2",
+    "duration": "3 min",
+    "intro": "Calms nerves and enhances vocal clarity before speaking."
+  },
+  {
+    "title": "Study Focus",
+    "pattern": "5-0-5-0",
+    "duration": "4 min",
+    "intro": "Improves concentration and retention during study sessions."
+  },
+  {
+    "title": "Travel Calm",
+    "pattern": "4-4-4-4",
+    "duration": "5 min",
+    "intro": "Alleviates travel anxiety and promotes relaxation on journeys."
+  },
+  {
+    "title": "Nature Connection",
+    "pattern": "6-0-6-0",
+    "duration": "5 min",
+    "intro": "Deepens connection with nature and promotes grounding."
+  },
+  {
+    "title": "Inner Peace",
+    "pattern": "7-0-7-0",
+    "duration": "7 min",
+    "intro": "Fosters a profound sense of inner tranquility."
+  },
+  {
+    "title": "Decision Clarity",
+    "pattern": "4-0-8-0",
+    "duration": "3 min",
+    "intro": "Aids in clear thinking and confident decision-making."
+  },
+  {
+    "title": "Compassion Breath",
+    "pattern": "4-4-4-4",
+    "duration": "4 min",
+    "intro": "Cultivates empathy and compassion towards self and others."
+  },
+  {
+    "title": "Digital Eye Strain Relief",
+    "pattern": "2-0-2-0",
+    "duration": "1 min",
+    "intro": "Relieves tension in the eyes from prolonged screen use."
+  },
+  {
+    "title": "Sound Sleep",
+    "pattern": "4-7-8",
+    "duration": "10 min",
+    "intro": "Guides you into a deep and restorative sleep."
+  },
+  {
+    "title": "Energy Boost",
+    "pattern": "2-0-2-0",
+    "duration": "1 min",
+    "intro": "A quick burst of energy when feeling sluggish."
+  },
+  {
+    "title": "Grounding Breath",
+    "pattern": "4-4-4-4",
+    "duration": "3 min",
+    "intro": "Helps to feel more present and connected to the earth."
+  },
+  {
+    "title": "Heart Coherence",
+    "pattern": "5-5",
+    "duration": "5 min",
+    "intro": "Synchronizes heart rate and breathing for emotional balance."
+  },
+  {
+    "title": "Immune Support",
+    "pattern": "4-0-6-0",
+    "duration": "3 min",
+    "intro": "Supports the body's natural immune response."
+  },
+  {
+    "title": "Intuition Awakener",
+    "pattern": "6-0-6-0",
+    "duration": "4 min",
+    "intro": "Opens the mind to inner wisdom and intuition."
+  },
+  {
+    "title": "Memory Enhancer",
+    "pattern": "4-0-4-0",
+    "duration": "2 min",
+    "intro": "Improves recall and cognitive function."
+  },
+  {
+    "title": "Motivation Booster",
+    "pattern": "3-0-5-0",
+    "duration": "2 min",
+    "intro": "Ignites motivation and drive for tasks."
+  },
+  {
+    "title": "Nervous System Reset",
+    "pattern": "4-4-4-4",
+    "duration": "5 min",
+    "intro": "Resets and calms an overactive nervous system."
+  },
+  {
+    "title": "Optimism Cultivator",
+    "pattern": "4-0-6-0",
+    "duration": "3 min",
+    "intro": "Fosters a positive outlook and hopeful mindset."
+  },
+  {
+    "title": "Performance Prep",
+    "pattern": "3-0-3-0",
+    "duration": "2 min",
+    "intro": "Prepares mind and body for optimal performance."
+  },
+  {
+    "title": "Positive Affirmation Breath",
+    "pattern": "4-4-4-4",
+    "duration": "3 min",
+    "intro": "Integrates positive affirmations with each breath."
+  },
+  {
+    "title": "Problem Solving Breath",
+    "pattern": "5-0-5-0",
+    "duration": "4 min",
+    "intro": "Clears the mind for effective problem-solving."
+  },
+  {
+    "title": "Quick Recharge",
+    "pattern": "2-0-2-0",
+    "duration": "1 min",
+    "intro": "A rapid way to refresh and re-energize."
+  },
+  {
+    "title": "Self-Love Breath",
+    "pattern": "4-4-4-4",
+    "duration": "4 min",
+    "intro": "Cultivates self-acceptance and self-compassion."
+  },
+  {
+    "title": "Stress Buster",
+    "pattern": "4-0-6-0",
+    "duration": "2 min",
+    "intro": "Quickly reduces stress and tension."
+  },
+  {
+    "title": "Study Break Breath",
+    "pattern": "3-0-3-0",
+    "duration": "1 min",
+    "intro": "A short break to refresh the mind during study."
+  },
+  {
+    "title": "Tension Release",
+    "pattern": "4-0-6-0",
+    "duration": "3 min",
+    "intro": "Releases physical and mental tension."
+  },
+  {
+    "title": "Travel Sickness Relief",
+    "pattern": "4-4-4-4",
+    "duration": "5 min",
+    "intro": "Alleviates nausea and discomfort during travel."
+  },
+  {
+    "title": "Vagus Nerve Stimulator",
+    "pattern": "6-0-6-0",
+    "duration": "5 min",
+    "intro": "Activates the vagus nerve for relaxation and well-being."
+  },
+  {
+    "title": "Visualization Breath",
+    "pattern": "4-4-4-4",
+    "duration": "5 min",
+    "intro": "Combines breathing with positive visualization."
+  },
+  {
+    "title": "Willpower Strengthener",
+    "pattern": "3-0-5-0",
+    "duration": "2 min",
+    "intro": "Builds mental fortitude and self-control."
+  },
+  {
+    "title": "Workday Refresh",
+    "pattern": "2-0-2-0",
+    "duration": "1 min",
+    "intro": "A quick refresh during a busy workday."
+  },
+  {
+    "title": "Zen Breath",
+    "pattern": "7-0-7-0",
+    "duration": "7 min",
+    "intro": "Cultivates a state of deep calm and mindfulness."
+  },
+  {
+    "title": "Abdominal Breathing",
+    "pattern": "4-0-4-0",
+    "duration": "3 min",
+    "intro": "Promotes diaphragmatic breathing for relaxation."
+  },
+  {
+    "title": "Alternate Nostril Breathing",
+    "pattern": "4-0-4-0",
+    "duration": "5 min",
+    "intro": "Balances the left and right hemispheres of the brain."
+  },
+  {
+    "title": "Breath of Fire",
+    "pattern": "1-0-1-0",
+    "duration": "1 min",
+    "intro": "Rapid, forceful breaths to energize the body."
+  },
+  {
+    "title": "Humming Bee Breath",
+    "pattern": "4-0-6-0",
+    "duration": "3 min",
+    "intro": "Calms the mind and nervous system with a humming sound."
+  },
+  {
+    "title": "Ocean Breath",
+    "pattern": "5-0-5-0",
+    "duration": "5 min",
+    "intro": "Mimics the sound of ocean waves for relaxation."
+  },
+  {
+    "title": "Pursed Lip Breathing",
+    "pattern": "2-0-4-0",
+    "duration": "2 min",
+    "intro": "Helps to slow down breathing and improve lung function."
+  },
+  {
+    "title": "Sitali Breath",
+    "pattern": "4-0-4-0",
+    "duration": "3 min",
+    "intro": "Cooling breath that reduces body heat and calms the mind."
+  },
+  {
+    "title": "Square Breathing",
+    "pattern": "4-4-4-4",
+    "duration": "4 min",
+    "intro": "A variation of box breathing for enhanced focus."
+  },
+  {
+    "title": "Three-Part Breath",
+    "pattern": "4-0-4-0",
+    "duration": "5 min",
+    "intro": "Fills the lungs in three stages for complete respiration."
+  }
+]

@@ -92,27 +92,18 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     _controller.addListener(() {
       double currentTime = _controller.value * totalDurationSeconds;
 
-      if (currentTime >= 0 && currentTime < inhale) {
-        setState(() {
+      setState(() {
+        if (currentTime >= 0 && currentTime < inhale) {
           _instruction = 'Inhale';
-          HapticFeedback.lightImpact();
-        });
-      } else if (currentTime >= inhale && currentTime < (inhale + hold1)) {
-        setState(() {
+        } else if (hold1 > 0 && currentTime >= inhale && currentTime < (inhale + hold1)) {
           _instruction = 'Hold';
-          HapticFeedback.lightImpact();
-        });
-      } else if (currentTime >= (inhale + hold1) && currentTime < (inhale + hold1 + exhale)) {
-        setState(() {
+        } else if (currentTime >= (inhale + hold1) && currentTime < (inhale + hold1 + exhale)) {
           _instruction = 'Exhale';
-          HapticFeedback.lightImpact();
-        });
-      } else if (currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
-        setState(() {
+        } else if (hold2 > 0 && currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
           _instruction = 'Hold';
-          HapticFeedback.lightImpact();
-        });
-      }
+        }
+        HapticFeedback.lightImpact(); // Apply haptic feedback once per state change
+      });
     });
 
     _controller.addStatusListener((status) {
