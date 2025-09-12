@@ -34,6 +34,34 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     return pattern.split('-').map(int.parse).toList();
   }
 
+  Map<String, int> _getPatternTimings(List<int> patternValues) {
+    int inhale = 0, hold1 = 0, exhale = 0, hold2 = 0;
+
+    switch (patternValues.length) {
+      case 1:
+        inhale = patternValues[0];
+        exhale = patternValues[0];
+        break;
+      case 2:
+        inhale = patternValues[0];
+        exhale = patternValues[1];
+        break;
+      case 3:
+        inhale = patternValues[0];
+        hold1 = patternValues[1];
+        exhale = patternValues[2];
+        break;
+      case 4:
+      default:
+        inhale = patternValues[0];
+        hold1 = patternValues[1];
+        exhale = patternValues[2];
+        hold2 = patternValues[3];
+        break;
+    }
+    return {'inhale': inhale, 'hold1': hold1, 'exhale': exhale, 'hold2': hold2};
+  }
+
   @override
   void initState() {
     super.initState();
@@ -72,10 +100,11 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     List<int> patternValues;
     try {
       patternValues = _parsePattern(stage.pattern);
-      int inhale = patternValues[0];
-      int hold1 = patternValues.length > 1 ? patternValues[1] : 0;
-      int exhale = patternValues.length > 2 ? patternValues[2] : 0;
-      int hold2 = patternValues.length > 3 ? patternValues[3] : 0;
+      final timings = _getPatternTimings(patternValues);
+      int inhale = timings['inhale']!;
+      int hold1 = timings['hold1']!;
+      int exhale = timings['exhale']!;
+      int hold2 = timings['hold2']!;
 
       int totalDurationSeconds = inhale + hold1 + exhale + hold2;
       _stageStartTime = DateTime.now().millisecondsSinceEpoch ~/ 1000;
@@ -130,10 +159,11 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     final settings = Provider.of<SettingsProvider>(context, listen: false);
     final stage = _stages[_currentStageIndex];
     final patternValues = _parsePattern(stage.pattern);
-    int inhale = patternValues[0];
-    int hold1 = patternValues.length > 1 ? patternValues[1] : 0;
-    int exhale = patternValues.length > 2 ? patternValues[2] : 0;
-    int hold2 = patternValues.length > 3 ? patternValues[3] : 0;
+    final timings = _getPatternTimings(patternValues);
+    int inhale = timings['inhale']!;
+    int hold1 = timings['hold1']!;
+    int exhale = timings['exhale']!;
+    int hold2 = timings['hold2']!;
     int totalDurationSeconds = inhale + hold1 + exhale + hold2;
 
     if (settings.musicMode != MusicMode.off) {
