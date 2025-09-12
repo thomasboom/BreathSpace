@@ -13,796 +13,543 @@
     }
   },
   {
-    "id": "4-7-8-breathing",
-    "pattern": "4-7-8",
-    "duration": "3 min",
+    "id": "relaxing-breath",
+    "pattern": "4-7-8-0",
+    "duration": "4 min",
     "title": {
-      "en": "4-7-8 Breathing",
-      "nl": "4-7-8 Ademhaling"
+      "en": "Relaxing Breath",
+      "nl": "Ontspannende Ademhaling"
     },
     "intro": {
-      "en": "Helps to relax and fall asleep faster.",
-      "nl": "Helpt te ontspannen en sneller in slaap te vallen."
+      "en": "Promotes sleep and reduces anxiety.",
+      "nl": "Bevordert slaap en vermindert angst."
+    }
+  },
+  {
+    "id": "box-breathing-navy-seals",
+    "pattern": "4-4-4-4",
+    "duration": "4 min",
+    "title": {
+      "en": "Box Breathing",
+      "nl": "Box Ademhaling"
+    },
+    "intro": {
+      "en": "Used by Navy SEALs for stress management.",
+      "nl": "Gebruikt door Navy SEALs voor stressbeheersing."
+    }
+  },
+  {
+    "id": "two-one-ratio",
+    "pattern": "3-0-6-0",
+    "duration": "4 min",
+    "title": {
+      "en": "2:1 Ratio Breathing",
+      "nl": "2:1 Verhouding Ademhaling"
+    },
+    "intro": {
+      "en": "Simple calming technique for beginners.",
+      "nl": "Eenvoudige kalmerende techniek voor beginners."
+    }
+  },
+  {
+    "id": "equal-breathing",
+    "pattern": "5-0-5-0",
+    "duration": "4 min",
+    "title": {
+      "en": "Equal Breathing",
+      "nl": "Gelijke Ademhaling"
+    },
+    "intro": {
+      "en": "Balances nervous system activation.",
+      "nl": "Balanceren van de activatie van het zenuwstelsel."
+    }
+  },
+  {
+    "id": "modified-4-7-8",
+    "pattern": "4-2-6-2",
+    "duration": "4 min",
+    "title": {
+      "en": "Modified 4-7-8",
+      "nl": "Aangepaste 4-7-8"
+    },
+    "intro": {
+      "en": "Gentler version for anxiety relief.",
+      "nl": "Mildere versie voor angstverlichting."
     }
   },
   {
     "id": "coherent-breathing",
-    "pattern": "5-5",
-    "duration": "5 min",
+    "pattern": "6-2-6-2",
+    "duration": "4 min",
     "title": {
       "en": "Coherent Breathing",
       "nl": "Coherente Ademhaling"
     },
     "intro": {
-      "en": "Balances the nervous system and promotes relaxation.",
-      "nl": "Brengt het zenuwstelsel in balans en bevordert ontspanning."
+      "en": "Optimizes heart rate variability.",
+      "nl": "Optimaliseert de variabiliteit van de hartslag."
     }
   },
   {
-    "id": "calm-focus",
-    "pattern": "6-2-4",
-    "duration": "3 min",
+    "id": "extended-exhale",
+    "pattern": "4-0-8-0",
+    "duration": "4 min",
     "title": {
-      "en": "Calm Focus",
-      "nl": "Kalmte & Focus"
+      "en": "Extended Exhale",
+      "nl": "Verlengde Uitademing"
     },
     "intro": {
-      "en": "Improve concentration and mental clarity.",
+      "en": "Activates parasympathetic response.",
+      "nl": "Activeert de parasympathische reactie."
+    }
+  },
+  {
+    "id": "mini-box",
+    "pattern": "3-3-3-3",
+    "duration": "3 min",
+    "title": {
+      "en": "Mini Box Breathing",
+      "nl": "Mini Box Ademhaling"
+    },
+    "intro": {
+      "en": "Quick stress relief for busy moments.",
+      "nl": "Snelle stressverlichting voor drukke momenten."
+    }
+  },
+  {
+    "id": "sama-vritti",
+    "pattern": "4-0-4-0",
+    "duration": "4 min",
+    "title": {
+      "en": "Sama Vritti",
+      "nl": "Sama Vritti"
+    },
+    "intro": {
+      "en": "Improves concentration and mental clarity.",
       "nl": "Verbetert concentratie en mentale helderheid."
     }
   },
   {
-    "id": "stress-release",
-    "pattern": "4-0-6-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Stress Release",
-      "nl": "Stress Loslaten"
-    },
-    "intro": {
-      "en": "Release tension and promote relaxation.",
-      "nl": "Laat spanning los en bevordert ontspanning."
-    }
-  },
-  {
-    "id": "deep-relaxation",
-    "pattern": "4-6",
-    "duration": "5 min",
-    "title": {
-      "en": "Deep Relaxation",
-      "nl": "Diepe Ontspanning"
-    },
-    "intro": {
-      "en": "Promotes deep relaxation and reduces muscle tension.",
-      "nl": "Bevordert diepe ontspanning en vermindert spierspanning."
-    }
-  },
-  {
-    "id": "energizing-breath",
-    "pattern": "2-0-2-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Energizing Breath",
-      "nl": "Energiserende Adem"
-    },
-    "intro": {
-      "en": "Quickly boosts energy and alertness.",
-      "nl": "Geeft snel energie en alertheid."
-    }
-  },
-  {
-    "id": "mindful-breath",
-    "pattern": "3-3-3-3",
-    "duration": "3 min",
-    "title": {
-      "en": "Mindful Breath",
-      "nl": "Mindful Adem"
-    },
-    "intro": {
-      "en": "Enhances present moment awareness and reduces mind wandering.",
-      "nl": "Versterkt aandacht voor het moment en vermindert afdwalen."
-    }
-  },
-  {
-    "id": "sleep-inducer",
-    "pattern": "4-7-8",
-    "duration": "5 min",
-    "title": {
-      "en": "Sleep Inducer",
-      "nl": "Slaapopwekker"
-    },
-    "intro": {
-      "en": "Prepares the body and mind for restful sleep.",
-      "nl": "Bereidt lichaam en geest voor op een rustgevende slaap."
-    }
-  },
-  {
-    "id": "anxiety-soother",
-    "pattern": "4-0-6-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Anxiety Soother",
-      "nl": "Angstverzachter"
-    },
-    "intro": {
-      "en": "Calms the nervous system during moments of anxiety.",
-      "nl": "Kalmeert het zenuwstelsel in angstige momenten."
-    }
-  },
-  {
-    "id": "focus-enhancer",
-    "pattern": "5-0-5-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Focus Enhancer",
-      "nl": "Focus Versterker"
-    },
-    "intro": {
-      "en": "Improves concentration and mental clarity for tasks.",
-      "nl": "Verbetert concentratie en mentale helderheid bij taken."
-    }
-  },
-  {
-    "id": "pain-relief-breath",
-    "pattern": "4-2-6-2",
-    "duration": "4 min",
-    "title": {
-      "en": "Pain Relief Breath",
-      "nl": "Pijnverlichting Adem"
-    },
-    "intro": {
-      "en": "Helps manage discomfort and pain through controlled breathing.",
-      "nl": "Helpt ongemak en pijn te beheersen met gecontroleerde ademhaling."
-    }
-  },
-  {
-    "id": "emotional-balance",
-    "pattern": "5-5-5-5",
-    "duration": "5 min",
-    "title": {
-      "en": "Emotional Balance",
-      "nl": "Emotionele Balans"
-    },
-    "intro": {
-      "en": "Stabilizes emotions and promotes inner peace.",
-      "nl": "Stabiliseert emoties en bevordert innerlijke rust."
-    }
-  },
-  {
-    "id": "quick-calm",
-    "pattern": "3-0-3-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Quick Calm",
-      "nl": "Snel Kalm"
-    },
-    "intro": {
-      "en": "Instant calming effect for stressful situations.",
-      "nl": "Direct kalmerend in stressvolle situaties."
-    }
-  },
-  {
-    "id": "morning-wake-up",
-    "pattern": "2-0-4-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Morning Wake-up",
-      "nl": "Ochtend Wakker"
-    },
-    "intro": {
-      "en": "Gently awakens the body and mind in the morning.",
-      "nl": "Wekt lichaam en geest zachtjes in de ochtend."
-    }
-  },
-  {
-    "id": "pre-workout-breath",
-    "pattern": "3-0-3-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Pre-workout Breath",
-      "nl": "Voor Workout Adem"
-    },
-    "intro": {
-      "en": "Prepares lungs and body for physical activity.",
-      "nl": "Bereidt longen en lichaam voor op inspanning."
-    }
-  },
-  {
-    "id": "post-workout-recovery",
-    "pattern": "4-4-4-4",
-    "duration": "5 min",
-    "title": {
-      "en": "Post-workout Recovery",
-      "nl": "Herstel na Workout"
-    },
-    "intro": {
-      "en": "Aids in muscle recovery and relaxation after exercise.",
-      "nl": "Ondersteunt spierherstel en ontspanning na beweging."
-    }
-  },
-  {
-    "id": "creative-flow",
-    "pattern": "6-0-6-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Creative Flow",
-      "nl": "Creatieve Flow"
-    },
-    "intro": {
-      "en": "Stimulates creativity and problem-solving.",
-      "nl": "Stimuleert creativiteit en probleemoplossen."
-    }
-  },
-  {
-    "id": "digital-detox-breath",
-    "pattern": "4-4-4-4",
-    "duration": "3 min",
-    "title": {
-      "en": "Digital Detox Breath",
-      "nl": "Digitale Detox Adem"
-    },
-    "intro": {
-      "en": "Helps to disconnect from screens and recenter.",
-      "nl": "Helpt los te komen van schermen en te herfocussen."
-    }
-  },
-  {
-    "id": "gratitude-breath",
-    "pattern": "4-0-4-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Gratitude Breath",
-      "nl": "Dankbaarheid Adem"
-    },
-    "intro": {
-      "en": "Cultivates a sense of gratitude and appreciation.",
-      "nl": "Koestert een gevoel van dankbaarheid en waardering."
-    }
-  },
-  {
-    "id": "confidence-booster",
-    "pattern": "3-0-5-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Confidence Booster",
-      "nl": "Zelfvertrouwen Booster"
-    },
-    "intro": {
-      "en": "Builds self-assurance and reduces self-doubt.",
-      "nl": "Bouwt zelfvertrouwen op en vermindert zelftwijfel."
-    }
-  },
-  {
-    "id": "public-speaking-prep",
-    "pattern": "4-2-6-2",
-    "duration": "3 min",
-    "title": {
-      "en": "Public Speaking Prep",
-      "nl": "Spreekvoorbereiding"
-    },
-    "intro": {
-      "en": "Calms nerves and enhances vocal clarity before speaking.",
-      "nl": "Kalmeert zenuwen en verbetert stemhelderheid voor je spreekt."
-    }
-  },
-  {
-    "id": "study-focus",
-    "pattern": "5-0-5-0",
-    "duration": "4 min",
-    "title": {
-      "en": "Study Focus",
-      "nl": "Studiefocus"
-    },
-    "intro": {
-      "en": "Improves concentration and retention during study sessions.",
-      "nl": "Verbetert concentratie en behoud tijdens studiemomenten."
-    }
-  },
-  {
-    "id": "travel-calm",
-    "pattern": "4-4-4-4",
-    "duration": "5 min",
-    "title": {
-      "en": "Travel Calm",
-      "nl": "Reisrust"
-    },
-    "intro": {
-      "en": "Alleviates travel anxiety and promotes relaxation on journeys.",
-      "nl": "Vermindert reisangst en bevordert ontspanning onderweg."
-    }
-  },
-  {
-    "id": "nature-connection",
-    "pattern": "6-0-6-0",
-    "duration": "5 min",
-    "title": {
-      "en": "Nature Connection",
-      "nl": "Natuurverbinding"
-    },
-    "intro": {
-      "en": "Deepens connection with nature and promotes grounding.",
-      "nl": "Versterkt verbinding met de natuur en aarding."
-    }
-  },
-  {
-    "id": "inner-peace",
-    "pattern": "7-0-7-0",
-    "duration": "7 min",
-    "title": {
-      "en": "Inner Peace",
-      "nl": "Innerlijke Vrede"
-    },
-    "intro": {
-      "en": "Fosters a profound sense of inner tranquility.",
-      "nl": "Bevordert een diepe innerlijke kalmte."
-    }
-  },
-  {
-    "id": "decision-clarity",
-    "pattern": "4-0-8-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Decision Clarity",
-      "nl": "Besluitvaardigheid"
-    },
-    "intro": {
-      "en": "Aids in clear thinking and confident decision-making.",
-      "nl": "Helpt helder denken en zelfverzekerde keuzes te maken."
-    }
-  },
-  {
-    "id": "compassion-breath",
-    "pattern": "4-4-4-4",
-    "duration": "4 min",
-    "title": {
-      "en": "Compassion Breath",
-      "nl": "Compassie Adem"
-    },
-    "intro": {
-      "en": "Cultivates empathy and compassion towards self and others.",
-      "nl": "Cultiveert empathie en compassie voor jezelf en anderen."
-    }
-  },
-  {
-    "id": "digital-eye-strain-relief",
-    "pattern": "2-0-2-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Digital Eye Strain Relief",
-      "nl": "Digitale Oogontspanning"
-    },
-    "intro": {
-      "en": "Relieves tension in the eyes from prolonged screen use.",
-      "nl": "Vermindert spanning in de ogen door langdurig schermgebruik."
-    }
-  },
-  {
-    "id": "sound-sleep",
-    "pattern": "4-7-8",
-    "duration": "10 min",
-    "title": {
-      "en": "Sound Sleep",
-      "nl": "Diepe Slaap"
-    },
-    "intro": {
-      "en": "Guides you into a deep and restorative sleep.",
-      "nl": "Begeleidt je naar een diepe, herstellende slaap."
-    }
-  },
-  {
-    "id": "energy-boost",
-    "pattern": "2-0-2-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Energy Boost",
-      "nl": "Energieboost"
-    },
-    "intro": {
-      "en": "A quick burst of energy when feeling sluggish.",
-      "nl": "Een snelle energie-impuls bij futloosheid."
-    }
-  },
-  {
-    "id": "grounding-breath",
-    "pattern": "4-4-4-4",
-    "duration": "3 min",
-    "title": {
-      "en": "Grounding Breath",
-      "nl": "Aardende Adem"
-    },
-    "intro": {
-      "en": "Helps to feel more present and connected to the earth.",
-      "nl": "Helpt je meer aanwezig en geaard te voelen."
-    }
-  },
-  {
-    "id": "heart-coherence",
-    "pattern": "5-5",
-    "duration": "5 min",
-    "title": {
-      "en": "Heart Coherence",
-      "nl": "Hartcoherentie"
-    },
-    "intro": {
-      "en": "Synchronizes heart rate and breathing for emotional balance.",
-      "nl": "Synchroniseert hartslag en ademhaling voor emotionele balans."
-    }
-  },
-  {
-    "id": "immune-support",
-    "pattern": "4-0-6-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Immune Support",
-      "nl": "Immuunondersteuning"
-    },
-    "intro": {
-      "en": "Supports the body's natural immune response.",
-      "nl": "Ondersteunt de natuurlijke immuunrespons van het lichaam."
-    }
-  },
-  {
-    "id": "intuition-awakener",
+    "id": "deep-equal",
     "pattern": "6-0-6-0",
     "duration": "4 min",
     "title": {
-      "en": "Intuition Awakener",
-      "nl": "Intuïtie Ontwaker"
+      "en": "Deep Equal Breathing",
+      "nl": "Diepe Gelijk Ademhaling"
     },
     "intro": {
-      "en": "Opens the mind to inner wisdom and intuition.",
-      "nl": "Opent de geest voor innerlijke wijsheid en intuïtie."
-    }
-  },
-  {
-    "id": "memory-enhancer",
-    "pattern": "4-0-4-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Memory Enhancer",
-      "nl": "Geheugen Versterker"
-    },
-    "intro": {
-      "en": "Improves recall and cognitive function.",
-      "nl": "Verbetert geheugen en cognitieve functies."
-    }
-  },
-  {
-    "id": "motivation-booster",
-    "pattern": "3-0-5-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Motivation Booster",
-      "nl": "Motivatie Booster"
-    },
-    "intro": {
-      "en": "Ignites motivation and drive for tasks.",
-      "nl": "Wekt motivatie en daadkracht."
-    }
-  },
-  {
-    "id": "nervous-system-reset",
-    "pattern": "4-4-4-4",
-    "duration": "5 min",
-    "title": {
-      "en": "Nervous System Reset",
-      "nl": "Zenuwstelsel Reset"
-    },
-    "intro": {
-      "en": "Resets and calms an overactive nervous system.",
-      "nl": "Stelt een overactief zenuwstelsel opnieuw af en kalmeert."
-    }
-  },
-  {
-    "id": "optimism-cultivator",
-    "pattern": "4-0-6-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Optimism Cultivator",
-      "nl": "Optimisme Cultiveren"
-    },
-    "intro": {
-      "en": "Fosters a positive outlook and hopeful mindset.",
-      "nl": "Bevordert een positieve, hoopvolle mindset."
-    }
-  },
-  {
-    "id": "performance-prep",
-    "pattern": "3-0-3-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Performance Prep",
-      "nl": "Prestatie Voorbereiding"
-    },
-    "intro": {
-      "en": "Prepares mind and body for optimal performance.",
-      "nl": "Bereidt lichaam en geest voor op topprestaties."
-    }
-  },
-  {
-    "id": "positive-affirmation-breath",
-    "pattern": "4-4-4-4",
-    "duration": "3 min",
-    "title": {
-      "en": "Positive Affirmation Breath",
-      "nl": "Positieve Affirmatie Adem"
-    },
-    "intro": {
-      "en": "Integrates positive affirmations with each breath.",
-      "nl": "Integreert positieve affirmaties met elke ademhaling."
-    }
-  },
-  {
-    "id": "problem-solving-breath",
-    "pattern": "5-0-5-0",
-    "duration": "4 min",
-    "title": {
-      "en": "Problem Solving Breath",
-      "nl": "Probleemoplossende Adem"
-    },
-    "intro": {
-      "en": "Clears the mind for effective problem-solving.",
-      "nl": "Maakt het hoofd leeg voor effectief oplossen."
-    }
-  },
-  {
-    "id": "quick-recharge",
-    "pattern": "2-0-2-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Quick Recharge",
-      "nl": "Snelle Oplading"
-    },
-    "intro": {
-      "en": "A rapid way to refresh and re-energize.",
-      "nl": "Een snelle manier om te verfrissen en te herladen."
-    }
-  },
-  {
-    "id": "self-love-breath",
-    "pattern": "4-4-4-4",
-    "duration": "4 min",
-    "title": {
-      "en": "Self-Love Breath",
-      "nl": "Zelfliefde Adem"
-    },
-    "intro": {
-      "en": "Cultivates self-acceptance and self-compassion.",
-      "nl": "Bevordert zelfacceptatie en zelfcompassie."
-    }
-  },
-  {
-    "id": "stress-buster",
-    "pattern": "4-0-6-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Stress Buster",
-      "nl": "Stressverdrijver"
-    },
-    "intro": {
-      "en": "Quickly reduces stress and tension.",
-      "nl": "Vermindert snel stress en spanning."
-    }
-  },
-  {
-    "id": "study-break-breath",
-    "pattern": "3-0-3-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Study Break Breath",
-      "nl": "Studiepauze Adem"
-    },
-    "intro": {
-      "en": "A short break to refresh the mind during study.",
-      "nl": "Een korte pauze om de geest te verfrissen tijdens het studeren."
-    }
-  },
-  {
-    "id": "tension-release",
-    "pattern": "4-0-6-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Tension Release",
-      "nl": "Spanningsrelease"
-    },
-    "intro": {
-      "en": "Releases physical and mental tension.",
-      "nl": "Laat fysieke en mentale spanning los."
-    }
-  },
-  {
-    "id": "travel-sickness-relief",
-    "pattern": "4-4-4-4",
-    "duration": "5 min",
-    "title": {
-      "en": "Travel Sickness Relief",
-      "nl": "Reisziekte Verlichting"
-    },
-    "intro": {
-      "en": "Alleviates nausea and discomfort during travel.",
-      "nl": "Verlicht misselijkheid en ongemak tijdens reizen."
-    }
-  },
-  {
-    "id": "vagus-nerve-stimulator",
-    "pattern": "6-0-6-0",
-    "duration": "5 min",
-    "title": {
-      "en": "Vagus Nerve Stimulator",
-      "nl": "Vaguszenuw Stimulator"
-    },
-    "intro": {
-      "en": "Activates the vagus nerve for relaxation and well-being.",
-      "nl": "Activeert de nervus vagus voor ontspanning en welzijn."
-    }
-  },
-  {
-    "id": "visualization-breath",
-    "pattern": "4-4-4-4",
-    "duration": "5 min",
-    "title": {
-      "en": "Visualization Breath",
-      "nl": "Visualisatie Adem"
-    },
-    "intro": {
-      "en": "Combines breathing with positive visualization.",
-      "nl": "Combineert ademhaling met positieve visualisatie."
-    }
-  },
-  {
-    "id": "willpower-strengthener",
-    "pattern": "3-0-5-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Willpower Strengthener",
-      "nl": "Wilskracht Versterker"
-    },
-    "intro": {
-      "en": "Builds mental fortitude and self-control.",
-      "nl": "Bouwt mentale veerkracht en zelfbeheersing op."
-    }
-  },
-  {
-    "id": "workday-refresh",
-    "pattern": "2-0-2-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Workday Refresh",
-      "nl": "Werkdag Opfrisser"
-    },
-    "intro": {
-      "en": "A quick refresh during a busy workday.",
-      "nl": "Een snelle opfrisser tijdens een drukke werkdag."
-    }
-  },
-  {
-    "id": "zen-breath",
-    "pattern": "7-0-7-0",
-    "duration": "7 min",
-    "title": {
-      "en": "Zen Breath",
-      "nl": "Zen Adem"
-    },
-    "intro": {
-      "en": "Cultivates a state of deep calm and mindfulness.",
-      "nl": "Bevordert diepe kalmte en mindfulness."
-    }
-  },
-  {
-    "id": "abdominal-breathing",
-    "pattern": "4-0-4-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Abdominal Breathing",
-      "nl": "Buikademhaling"
-    },
-    "intro": {
-      "en": "Promotes diaphragmatic breathing for relaxation.",
-      "nl": "Bevordert middenrifademhaling voor ontspanning."
-    }
-  },
-  {
-    "id": "alternate-nostril-breathing",
-    "pattern": "4-0-4-0",
-    "duration": "5 min",
-    "title": {
-      "en": "Alternate Nostril Breathing",
-      "nl": "Afwisselend Neusgat Adem"
-    },
-    "intro": {
-      "en": "Balances the left and right hemispheres of the brain.",
-      "nl": "Brengt linker- en rechterhersenhelft in balans."
-    }
-  },
-  {
-    "id": "breath-of-fire",
-    "pattern": "1-0-1-0",
-    "duration": "1 min",
-    "title": {
-      "en": "Breath of Fire",
-      "nl": "Vuuradem"
-    },
-    "intro": {
-      "en": "Rapid, forceful breaths to energize the body.",
-      "nl": "Snelle, krachtige ademhaling om energie te geven."
-    }
-  },
-  {
-    "id": "humming-bee-breath",
-    "pattern": "4-0-6-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Humming Bee Breath",
-      "nl": "Hommeltje Adem"
-    },
-    "intro": {
-      "en": "Calms the mind and nervous system with a humming sound.",
-      "nl": "Kalmeert geest en zenuwstelsel met een zoemend geluid."
-    }
-  },
-  {
-    "id": "ocean-breath",
-    "pattern": "5-0-5-0",
-    "duration": "5 min",
-    "title": {
-      "en": "Ocean Breath",
-      "nl": "Oceaangolf Adem"
-    },
-    "intro": {
-      "en": "Mimics the sound of ocean waves for relaxation.",
-      "nl": "Bootst het geluid van zee-golven na voor ontspanning."
-    }
-  },
-  {
-    "id": "pursed-lip-breathing",
-    "pattern": "2-0-4-0",
-    "duration": "2 min",
-    "title": {
-      "en": "Pursed Lip Breathing",
-      "nl": "Getuite Lippen Adem"
-    },
-    "intro": {
-      "en": "Helps to slow down breathing and improve lung function.",
-      "nl": "Vertraagt de ademhaling en verbetert longfunctie."
-    }
-  },
-  {
-    "id": "sitali-breath",
-    "pattern": "4-0-4-0",
-    "duration": "3 min",
-    "title": {
-      "en": "Sitali Breath",
-      "nl": "Sitali Adem"
-    },
-    "intro": {
-      "en": "Cooling breath that reduces body heat and calms the mind.",
-      "nl": "Koelende adem die lichaamswarmte vermindert en de geest kalmeert."
+      "en": "Enhances focus and cognitive performance.",
+      "nl": "Verbetert de focus en cognitieve prestaties."
     }
   },
   {
     "id": "square-breathing",
-    "pattern": "4-4-4-4",
+    "pattern": "5-5-5-5",
     "duration": "4 min",
     "title": {
       "en": "Square Breathing",
-      "nl": "Vierkante Adem"
+      "nl": "Vierkante Ademhaling"
     },
     "intro": {
-      "en": "A variation of box breathing for enhanced focus.",
-      "nl": "Een variatie op box breathing voor betere focus."
+      "en": "Builds mental resilience.",
+      "nl": "Bouwt mentale veerkracht op."
     }
   },
   {
-    "id": "three-part-breath",
-    "pattern": "4-0-4-0",
-    "duration": "5 min",
+    "id": "quick-focus",
+    "pattern": "2-2-4-2",
+    "duration": "2 min",
     "title": {
-      "en": "Three-Part Breath",
-      "nl": "Drie-Delige Adem"
+      "en": "Quick Focus",
+      "nl": "Snelle Focus"
     },
     "intro": {
-      "en": "Fills the lungs in three stages for complete respiration.",
-      "nl": "Vult de longen in drie fasen voor volledige ademhaling."
+      "en": "Rapid attention enhancement.",
+      "nl": "Snelle aandachtsversterking."
     }
+  },
+  {
+    "id": "ujjayi-modified",
+    "pattern": "4-4-6-2",
+    "duration": "4 min",
+    "title": {
+      "en": "Modified Ujjayi",
+      "nl": "Aangepaste Ujjayi"
+    },
+    "intro": {
+      "en": "Builds internal heat and focus.",
+      "nl": "Bouwt interne warmte en focus op."
+    }
+  },
+  {
+    "id": "extended-box",
+    "pattern": "6-6-6-6",
+    "duration": "6 min",
+    "title": {
+      "en": "Extended Box Breathing",
+      "nl": "Uitgebreide Box Ademhaling"
+    },
+    "intro": {
+      "en": "Advanced stress management.",
+      "nl": "Geavanceerde stressbeheersing."
+    }
+  },
+  {
+    "id": "triangle-plus",
+    "pattern": "3-6-6-3",
+    "duration": "4 min",
+    "title": {
+      "en": "Triangle Plus",
+      "nl": "Driehoek Plus"
+    },
+    "intro": {
+      "en": "Complex pattern for experienced practitioners.",
+      "nl": "Complex patroon voor ervaren beoefenaren."
+    }
+  },
+  {
+    "id": "one-two-extended",
+    "pattern": "5-0-10-0",
+    "duration": "5 min",
+    "title": {
+      "en": "1:2 Extended Breathing",
+      "nl": "1:2 Uitgebreide Ademhaling"
+    },
+    "intro": {
+      "en": "Deep relaxation and blood pressure reduction.",
+      "nl": "Diepe ontspanning en verlaging van de bloeddruk."
+    }
+  },
+  {
+    "id": "gentle-hold",
+    "pattern": "4-1-4-1",
+    "duration": "3 min",
+    "title": {
+      "en": "Gentle Hold",
+      "nl": "Zachte Vasthouding"
+    },
+    "intro": {
+      "en": "For those with lung capacity limitations.",
+      "nl": "Voor mensen met beperkingen in longcapaciteit."
+    }
+  },
+  {
+    "id": "long-breath",
+    "pattern": "8-0-8-0",
+    "duration": "6 min",
+    "title": {
+      "en": "Long Breath",
+      "nl": "Lange Ademhaling"
+    },
+    "intro": {
+      "en": "Increases lung capacity and endurance.",
+      "nl": "Verhoogt de longcapaciteit en uithoudingsvermogen."
+    }
+  },
+  {
+    "id": "classic-4-7-8-extended",
+    "pattern": "4-16-8-0",
+    "duration": "6 min",
+    "title": {
+      "en": "Classic 4-7-8 Extended",
+      "nl": "Klassieke 4-7-8 Uitgebreid"
+    },
+    "intro": {
+      "en": "Maximum relaxation response.",
+      "nl": "Maximale ontspanningsreactie."
+    }
+  },
+  {
+    "id": "golden-ratio",
+    "pattern": "6-3-9-3",
+    "duration": "4 min",
+    "title": {
+      "en": "Golden Ratio",
+      "nl": "Gouden Verhouding"
+    },
+    "intro": {
+      "en": "Based on mathematical harmony principles.",
+      "nl": "Gebaseerd op principes van wiskundige harmonie."
+    }
+  },
+  {
+    "id": "sleep-preparation-protocol",
+    "title": {
+      "en": "Sleep Preparation Protocol",
+      "nl": "Slaap Voorbereiding Protocol"
+    },
+    "intro": {
+      "en": "A progressive sequence to prepare your body and mind for restful sleep.",
+      "nl": "Een progressieve sequentie om je lichaam en geest voor te bereiden op rustgevende slaap."
+    },
+    "stages": [
+      {
+        "title": "Nervous System Balance",
+        "pattern": "4-4-4-4",
+        "duration": 180
+      },
+      {
+        "title": "Deep Relaxation",
+        "pattern": "4-7-8-0",
+        "duration": 120
+      },
+      {
+        "title": "Sleep Induction",
+        "pattern": "6-0-8-0",
+        "duration": 300
+      }
+    ]
+  },
+  {
+    "id": "anxiety-recovery-sequence",
+    "title": {
+      "en": "Anxiety Recovery Sequence",
+      "nl": "Angst Herstel Sequentie"
+    },
+    "intro": {
+      "en": "A progressive approach to calm anxiety and restore emotional balance.",
+      "nl": "Een progressieve aanpak om angst te kalmeren en emotionele balans te herstellen."
+    },
+    "stages": [
+      {
+        "title": "Stabilization",
+        "pattern": "3-0-3-0",
+        "duration": 120
+      },
+      {
+        "title": "Grounding",
+        "pattern": "4-4-4-4",
+        "duration": 240
+      },
+      {
+        "title": "Parasympathetic Activation",
+        "pattern": "4-0-8-0",
+        "duration": 240
+      }
+    ]
+  },
+  {
+    "id": "morning-energy-builder",
+    "title": {
+      "en": "Morning Energy Builder",
+      "nl": "Ochtend Energie Opbouwer"
+    },
+    "intro": {
+      "en": "A progressive sequence to awaken your body and mind for the day ahead.",
+      "nl": "Een progressieve sequentie om je lichaam en geest wakker te maken voor de dag die komt."
+    },
+    "stages": [
+      {
+        "title": "Awakening",
+        "pattern": "4-0-4-0",
+        "duration": 180
+      },
+      {
+        "title": "Energizing",
+        "pattern": "6-0-6-0",
+        "duration": 240
+      },
+      {
+        "title": "Focus Enhancement",
+        "pattern": "4-4-6-2",
+        "duration": 180
+      }
+    ]
+  },
+  {
+    "id": "panic-attack-management",
+    "title": {
+      "en": "Panic Attack Management",
+      "nl": "Paniek Aanval Beheersing"
+    },
+    "intro": {
+      "en": "A progressive sequence to quickly calm panic attacks and restore control.",
+      "nl": "Een progressieve sequentie om snel paniekaanvallen te kalmeren en controle te herstellen."
+    },
+    "stages": [
+      {
+        "title": "Immediate Calming",
+        "pattern": "2-0-4-0",
+        "duration": 120
+      },
+      {
+        "title": "Stabilization",
+        "pattern": "3-3-3-3",
+        "duration": 180
+      },
+      {
+        "title": "Full Recovery",
+        "pattern": "4-4-4-4",
+        "duration": 300
+      }
+    ]
+  },
+  {
+    "id": "concentration-training",
+    "title": {
+      "en": "Concentration Training",
+      "nl": "Concentratietraining"
+    },
+    "intro": {
+      "en": "A progressive sequence to develop and sustain mental focus over time.",
+      "nl": "Een progressieve sequentie om mentale focus te ontwikkelen en in stand te houden."
+    },
+    "stages": [
+      {
+        "title": "Foundation Building",
+        "pattern": "5-5-5-5",
+        "duration": 240
+      },
+      {
+        "title": "Complexity Increase",
+        "pattern": "6-6-6-6",
+        "duration": 180
+      },
+      {
+        "title": "Sustained Focus",
+        "pattern": "4-0-4-0",
+        "duration": 180
+      }
+    ]
+  },
+  {
+    "id": "blood-pressure-reduction",
+    "title": {
+      "en": "Blood Pressure Reduction",
+      "nl": "Bloeddrukverlaging"
+    },
+    "intro": {
+      "en": "A progressive sequence designed to lower blood pressure through therapeutic breathing.",
+      "nl": "Een progressieve sequentie ontworpen om de bloeddruk te verlagen via therapeutische ademhaling."
+    },
+    "stages": [
+      {
+        "title": "Baseline Establishment",
+        "pattern": "4-4-4-4",
+        "duration": 180
+      },
+      {
+        "title": "Therapeutic Ratio",
+        "pattern": "5-0-10-0",
+        "duration": 300
+      },
+      {
+        "title": "Maximum Benefit",
+        "pattern": "6-0-12-0",
+        "duration": 120
+      }
+    ]
+  },
+  {
+    "id": "pre-competition-protocol",
+    "title": {
+      "en": "Pre-Competition Protocol",
+      "nl": "Voorwedstrijd Protocol"
+    },
+    "intro": {
+      "en": "A progressive sequence to prepare mentally and physically for peak performance.",
+      "nl": "Een progressieve sequentie om mentaal en fysiek voor te bereiden op piekprestaties."
+    },
+    "stages": [
+      {
+        "title": "Coherence Building",
+        "pattern": "6-0-6-0",
+        "duration": 240
+      },
+      {
+        "title": "Mental Preparation",
+        "pattern": "4-4-4-4",
+        "duration": 180
+      },
+      {
+        "title": "Controlled Activation",
+        "pattern": "3-0-6-0",
+        "duration": 180
+      }
+    ]
+  },
+  {
+    "id": "post-workout-recovery",
+    "title": {
+      "en": "Post-Workout Recovery",
+      "nl": "Herstel Na Training"
+    },
+    "intro": {
+      "en": "A progressive sequence to normalize heart rate and accelerate recovery after exercise.",
+      "nl": "Een progressieve sequentie om de hartslag te normaliseren en herstel na training te versnellen."
+    },
+    "stages": [
+      {
+        "title": "Heart Rate Normalization",
+        "pattern": "8-0-8-0",
+        "duration": 180
+      },
+      {
+        "title": "Recovery Acceleration",
+        "pattern": "4-7-8-0",
+        "duration": 180
+      },
+      {
+        "title": "Homeostasis Restoration",
+        "pattern": "6-0-6-0",
+        "duration": 240
+      }
+    ]
+  },
+  {
+    "id": "meditation-preparation",
+    "title": {
+      "en": "Meditation Preparation",
+      "nl": "Meditatie Voorbereiding"
+    },
+    "intro": {
+      "en": "A progressive sequence to settle the mind and transition into deeper meditation.",
+      "nl": "Een progressieve sequentie om de geest te kalmeren en over te gaan tot diepere meditatie."
+    },
+    "stages": [
+      {
+        "title": "Mind Settling",
+        "pattern": "4-0-4-0",
+        "duration": 300
+      },
+      {
+        "title": "Deeper Awareness",
+        "pattern": "6-2-6-2",
+        "duration": 240
+      },
+      {
+        "title": "Transition to Meditation",
+        "pattern": "natural",
+        "duration": 60
+      }
+    ]
+  },
+  {
+    "id": "chronic-pain-management",
+    "title": {
+      "en": "Chronic Pain Management",
+      "nl": "Chronische Pijn Beheersing"
+    },
+    "intro": {
+      "en": "A progressive sequence to help manage chronic pain through controlled breathing techniques.",
+      "nl": "Een progressieve sequentie om chronische pijn te helpen beheren via gecontroleerde ademhalingstechnieken."
+    },
+    "stages": [
+      {
+        "title": "Gentle Introduction",
+        "pattern": "3-3-3-3",
+        "duration": 180
+      },
+      {
+        "title": "Pain Gate Control",
+        "pattern": "4-4-6-2",
+        "duration": 300
+      },
+      {
+        "title": "Endorphin Release",
+        "pattern": "4-0-8-0",
+        "duration": 420
+      }
+    ]
   }
 ]
