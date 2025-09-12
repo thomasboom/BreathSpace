@@ -29,5 +29,10 @@
   "replayIntro": "Повторно въведение",
   "welcomeTitle": "Добре дошли в OpenBreath",
   "welcomeSubtitle": "Безсмисленото приложение за дишане за спокойствие и сън.",
-  "getStarted": "Първи стъпки"
+  "getStarted": "Първи стъпки",
+  "promptCacheTitle": "Кеш на подкани от ИИ",
+  "promptCacheSubtitle": "Кеширани отговори за по-бързи препоръки",
+  "promptCacheEntries": "записи",
+  "promptCacheClear": "Изчисти кеша",
+  "promptCacheCleared": "Кешът с подкани е изчистен"
 }

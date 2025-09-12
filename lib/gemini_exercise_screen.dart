@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:OpenBreath/data.dart';
 import 'package:OpenBreath/gemini_service.dart';
 import 'package:OpenBreath/exercise_detail_screen.dart';
-import 'package:OpenBreath/l10n/app_localizations.dart';
-import 'package:OpenBreath/theme_provider.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
 class GeminiExerciseScreen extends StatefulWidget {
@@ -18,7 +15,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
   final TextEditingController _userInputController = TextEditingController();
   bool _isLoading = false;
   BreathingExercise? _recommendedExercise;
-  SpeechToText _speechToText = SpeechToText();
+  final SpeechToText _speechToText = SpeechToText();
   bool _isListening = false;
   String _lastWords = '';
 
@@ -91,7 +88,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
       _isLoading = false;
     });
 
-    if (recommendedId != null && recommendedId != 'none') {
+    if (recommendedId != 'none') {
       print('Gemini recommended ID: $recommendedId'); // Debugging line
 
       BreathingExercise? recommendedExercise;
@@ -147,7 +144,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
       appBar: AppBar(
         actions: [
           IconButton(
-            icon: Icon(Icons.settings_outlined, color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7)),
+            icon: Icon(Icons.settings_outlined, color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7)),
             onPressed: () {
               Navigator.pushNamed(context, '/settings');
             },
@@ -192,7 +189,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                                 icon: Icon(_isListening ? Icons.mic_off : Icons.mic,
                                     color: _isListening
                                         ? Theme.of(context).colorScheme.primary
-                                        : Theme.of(context).colorScheme.onSurface.withOpacity(0.7)),
+                                        : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7)),
                                 onPressed: _isListening ? _stopListening : _startListening,
                               ),
                         IconButton(

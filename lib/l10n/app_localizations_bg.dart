@@ -117,18 +117,17 @@ class AppLocalizationsBg extends AppLocalizations {
   String get getStarted => 'Първи стъпки';
 
   @override
-  String get promptCacheTitle => 'AI Prompt Cache';
+  String get promptCacheTitle => 'Кеш на подкани от ИИ';
 
   @override
-  String get promptCacheSubtitle =>
-      'Cached responses for faster recommendations';
+  String get promptCacheSubtitle => 'Кеширани отговори за по-бързи препоръки';
 
   @override
-  String get promptCacheEntries => 'entries';
+  String get promptCacheEntries => 'записи';
 
   @override
-  String get promptCacheClear => 'Clear Cache';
+  String get promptCacheClear => 'Изчисти кеша';
 
   @override
-  String get promptCacheCleared => 'Prompt cache cleared';
+  String get promptCacheCleared => 'Кешът с подкани е изчистен';
 }

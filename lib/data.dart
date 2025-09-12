@@ -2,30 +2,6 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/widgets.dart';
 
-class BreathingPattern {
-  final String pattern;
-  final int duration; // in seconds
-
-  const BreathingPattern({
-    required this.pattern,
-    required this.duration,
-  });
-
-  factory BreathingPattern.fromJson(Map<String, dynamic> json) {
-    return BreathingPattern(
-      pattern: json['pattern'] as String,
-      duration: json['duration'] as int,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'pattern': pattern,
-      'duration': duration,
-    };
-  }
-}
-
 class BreathingStage {
   final String title;
   final String pattern;
@@ -114,7 +90,7 @@ class BreathingExercise {
   bool get hasStages => stages != null && stages!.isNotEmpty;
 }
 
-late List<BreathingExercise> breathingExercises = [];
+List<BreathingExercise> breathingExercises = [];
 
 Future<void> loadBreathingExercisesForLanguageCode(String? languageCode) async {
   const assetPath = 'assets/exercises.json';

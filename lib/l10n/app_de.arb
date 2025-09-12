@@ -29,5 +29,10 @@
   "replayIntro": "Intro wiederholen",
   "welcomeTitle": "Willkommen bei OpenBreath",
   "welcomeSubtitle": "Die vernünftige Atem-App für Ruhe und Schlaf.",
-  "getStarted": "Loslegen"
+  "getStarted": "Loslegen",
+  "promptCacheTitle": "KI-Eingabeaufforderungs-Cache",
+  "promptCacheSubtitle": "Zwischengespeicherte Antworten für schnellere Empfehlungen",
+  "promptCacheEntries": "Einträge",
+  "promptCacheClear": "Cache leeren",
+  "promptCacheCleared": "Eingabeaufforderungs-Cache geleert"
 }

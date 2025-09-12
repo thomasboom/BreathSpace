@@ -29,5 +29,10 @@
   "replayIntro": "Repetir introducción",
   "welcomeTitle": "Bienvenido a OpenBreath",
   "welcomeSubtitle": "La aplicación de respiración sensata para la calma y el sueño.",
-  "getStarted": "Empezar"
+  "getStarted": "Empezar",
+  "promptCacheTitle": "Caché de indicaciones de IA",
+  "promptCacheSubtitle": "Respuestas almacenadas en caché para recomendaciones más rápidas",
+  "promptCacheEntries": "entradas",
+  "promptCacheClear": "Borrar caché",
+  "promptCacheCleared": "Caché de indicaciones borrada"
 }

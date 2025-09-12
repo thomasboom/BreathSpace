@@ -114,18 +114,17 @@ class AppLocalizationsZh extends AppLocalizations {
   String get getStarted => '开始';
 
   @override
-  String get promptCacheTitle => 'AI Prompt Cache';
+  String get promptCacheTitle => 'AI提示缓存';
 
   @override
-  String get promptCacheSubtitle =>
-      'Cached responses for faster recommendations';
+  String get promptCacheSubtitle => '缓存的响应以获得更快的推荐';
 
   @override
-  String get promptCacheEntries => 'entries';
+  String get promptCacheEntries => '条目';
 
   @override
-  String get promptCacheClear => 'Clear Cache';
+  String get promptCacheClear => '清除缓存';
 
   @override
-  String get promptCacheCleared => 'Prompt cache cleared';
+  String get promptCacheCleared => '提示缓存已清除';
 }

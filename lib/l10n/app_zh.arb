@@ -29,5 +29,10 @@
   "replayIntro": "重播介绍",
   "welcomeTitle": "欢迎来到 OpenBreath",
   "welcomeSubtitle": "一款用于平静和睡眠的简单呼吸应用程序。",
-  "getStarted": "开始"
+  "getStarted": "开始",
+  "promptCacheTitle": "AI提示缓存",
+  "promptCacheSubtitle": "缓存的响应以获得更快的推荐",
+  "promptCacheEntries": "条目",
+  "promptCacheClear": "清除缓存",
+  "promptCacheCleared": "提示缓存已清除"
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:OpenBreath/exercise_screen.dart';
 import 'package:OpenBreath/exercise_detail_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'settings_screen.dart'; // Import the new settings screen
@@ -14,8 +13,6 @@ import 'package:OpenBreath/pinned_exercises_provider.dart';
 
 import 'intro_screen.dart';
 import 'package:OpenBreath/gemini_exercise_screen.dart';
-import 'package:OpenBreath/gemini_service.dart';
-import 'package:OpenBreath/prompt_cache_service.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
@@ -152,8 +149,6 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
     super.dispose();
   }
 
-  
-
   void _updatePinnedExercises() {
     if (!mounted) return;
     setState(() {
@@ -259,7 +254,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
                       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                       color: Theme.of(context).cardColor,
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width / (_pinnedExercises.length > 0 ? _pinnedExercises.length : 1) - 32, // Divide available width by number of pinned exercises
+                        width: MediaQuery.of(context).size.width / (_pinnedExercises.isNotEmpty ? _pinnedExercises.length : 1) - 32, // Divide available width by number of pinned exercises
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(

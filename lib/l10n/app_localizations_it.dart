@@ -116,18 +116,18 @@ class AppLocalizationsIt extends AppLocalizations {
   String get getStarted => 'Inizia';
 
   @override
-  String get promptCacheTitle => 'AI Prompt Cache';
+  String get promptCacheTitle => 'Cache prompt AI';
 
   @override
   String get promptCacheSubtitle =>
-      'Cached responses for faster recommendations';
+      'Risposte memorizzate nella cache per raccomandazioni più veloci';
 
   @override
-  String get promptCacheEntries => 'entries';
+  String get promptCacheEntries => 'voci';
 
   @override
-  String get promptCacheClear => 'Clear Cache';
+  String get promptCacheClear => 'Svuota cache';
 
   @override
-  String get promptCacheCleared => 'Prompt cache cleared';
+  String get promptCacheCleared => 'Cache dei prompt cancellata';
 }
