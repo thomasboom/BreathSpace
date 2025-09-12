@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:OpenBreath/exercise_screen.dart';
 import 'package:OpenBreath/exercise_detail_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'settings_screen.dart'; // Import the new settings screen
 import 'package:provider/provider.dart';
 import 'package:OpenBreath/theme_provider.dart';
@@ -9,10 +10,15 @@ import 'package:OpenBreath/data.dart'; // Import the data file
 
 import 'package:OpenBreath/settings_provider.dart'; // Import the new settings provider
 import 'package:OpenBreath/l10n/app_localizations.dart';
-import 'package:OpenBreath/pinned_exercises_provider.dart'; // Import the new pinned exercises provider
+import 'package:OpenBreath/pinned_exercises_provider.dart';
+
+import 'intro_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  final bool seen = prefs.getBool('seen') ?? false;
+
   runApp(
     MultiProvider(
       providers: [
@@ -20,13 +26,14 @@ void main() async {
         ChangeNotifierProvider(create: (context) => SettingsProvider()),
         ChangeNotifierProvider(create: (context) => PinnedExercisesProvider()),
       ],
-      child: const OpenBreathApp(),
+      child: OpenBreathApp(seen: seen),
     ),
   );
 }
 
 class OpenBreathApp extends StatelessWidget {
-  const OpenBreathApp({super.key});
+  final bool seen;
+  const OpenBreathApp({super.key, required this.seen});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +80,7 @@ class OpenBreathApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const BreathingExerciseScreen(),
+      home: seen ? const BreathingExerciseScreen() : const IntroScreen(),
     );
   }
 }
@@ -91,30 +98,32 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
   List<BreathingExercise> _filteredExercises = [];
   List<BreathingExercise> _pinnedExercises = [];
   VoidCallback? _settingsListener;
+  late final PinnedExercisesProvider _pinnedExercisesProvider;
+  late final SettingsProvider _settingsProvider;
 
   @override
   void initState() {
     super.initState();
     _searchController.addListener(_performSearch);
 
-    // Listen to changes in PinnedExercisesProvider
-    Provider.of<PinnedExercisesProvider>(context, listen: false).addListener(_updatePinnedExercises);
+    _pinnedExercisesProvider = Provider.of<PinnedExercisesProvider>(context, listen: false);
+    _settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
+
+    _pinnedExercisesProvider.addListener(_updatePinnedExercises);
     _updatePinnedExercises(); // Initial load of pinned exercises
 
     // Initial load of exercises based on language
     _loadExercisesForCurrentLanguage();
 
     // Reload exercises when language changes
-    final settings = Provider.of<SettingsProvider>(context, listen: false);
     _settingsListener = () {
       _loadExercisesForCurrentLanguage();
     };
-    settings.addListener(_settingsListener!);
+    _settingsProvider.addListener(_settingsListener!);
 
     // Auto-select search bar if setting is enabled
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
-      if (settingsProvider.autoSelectSearchBar) {
+      if (mounted && _settingsProvider.autoSelectSearchBar) {
         FocusScope.of(context).requestFocus(_searchFocusNode);
       }
     });
@@ -124,26 +133,26 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
   void dispose() {
     _searchController.dispose();
     _searchFocusNode.dispose();
-    Provider.of<PinnedExercisesProvider>(context, listen: false).removeListener(_updatePinnedExercises);
+    _pinnedExercisesProvider.removeListener(_updatePinnedExercises);
     if (_settingsListener != null) {
-      Provider.of<SettingsProvider>(context, listen: false).removeListener(_settingsListener!);
+      _settingsProvider.removeListener(_settingsListener!);
     }
     super.dispose();
   }
 
   void _updatePinnedExercises() {
-    final pinnedProvider = Provider.of<PinnedExercisesProvider>(context, listen: false);
+    if (!mounted) return;
     setState(() {
       _pinnedExercises = breathingExercises
-          .where((exercise) => pinnedProvider.isPinned(exercise.title))
+          .where((exercise) => _pinnedExercisesProvider.isPinned(exercise.title))
           .toList();
       _performSearch(); // Re-filter exercises after pinned list changes
     });
   }
 
   Future<void> _loadExercisesForCurrentLanguage() async {
-    final settings = Provider.of<SettingsProvider>(context, listen: false);
-    switch (settings.languagePreference) {
+    if (!mounted) return;
+    switch (_settingsProvider.languagePreference) {
       case LanguagePreference.system:
         await loadBreathingExercisesUsingSystemLocale();
         break;
@@ -160,8 +169,8 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
 
 
   void _performSearch() {
+    if (!mounted) return;
     final query = _searchController.text.toLowerCase();
-    final pinnedProvider = Provider.of<PinnedExercisesProvider>(context, listen: false);
 
     setState(() {
       _filteredExercises = breathingExercises.where((exercise) {
@@ -230,7 +239,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
                   final exercise = _pinnedExercises[index];
                   return GestureDetector(
                     onLongPress: () {
-                      Provider.of<PinnedExercisesProvider>(context, listen: false).togglePin(exercise.title);
+                      _pinnedExercisesProvider.togglePin(exercise.title);
                     },
                     child: Card(
                       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -292,7 +301,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          ':-(',
+                          ':-',
                           style: TextStyle(fontSize: 64),
                         ),
                         const SizedBox(height: 20),
@@ -309,7 +318,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> {
                       final exercise = _filteredExercises[index];
                       return GestureDetector(
                         onLongPress: () {
-                          Provider.of<PinnedExercisesProvider>(context, listen: false).togglePin(exercise.title);
+                          _pinnedExercisesProvider.togglePin(exercise.title);
                         },
                         child: Card(
                           margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),

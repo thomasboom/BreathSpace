@@ -253,6 +253,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'LoFi'**
   String get musicLofi;
+
+  /// No description provided for @replayIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Replay Intro'**
+  String get replayIntro;
+
+  /// No description provided for @welcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to OpenBreath'**
+  String get welcomeTitle;
+
+  /// No description provided for @welcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The no-nonsense breathing app for calmth and sleep.'**
+  String get welcomeSubtitle;
+
+  /// No description provided for @getStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
 }
 
 class _AppLocalizationsDelegate

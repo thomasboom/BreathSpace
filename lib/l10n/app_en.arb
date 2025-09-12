@@ -24,5 +24,9 @@
   "music": "Music",
   "musicOff": "Off",
   "musicNature": "Nature",
-  "musicLofi": "LoFi"
+  "musicLofi": "LoFi",
+  "replayIntro": "Replay Intro",
+  "welcomeTitle": "Welcome to OpenBreath",
+  "welcomeSubtitle": "The no-nonsense breathing app for calmth and sleep.",
+  "getStarted": "Get Started"
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:OpenBreath/theme_provider.dart';
 import 'package:OpenBreath/settings_provider.dart';
 import 'package:OpenBreath/l10n/app_localizations.dart';
+import 'intro_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -106,6 +108,17 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          ListTile(
+            title: Text(AppLocalizations.of(context).replayIntro),
+            onTap: () async {
+              final prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('seen', false);
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const IntroScreen()),
+                (route) => false,
+              );
+            },
           ),
         ],
       ),

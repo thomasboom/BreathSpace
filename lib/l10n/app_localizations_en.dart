@@ -85,4 +85,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get musicLofi => 'LoFi';
+
+  @override
+  String get replayIntro => 'Replay Intro';
+
+  @override
+  String get welcomeTitle => 'Welcome to OpenBreath';
+
+  @override
+  String get welcomeSubtitle =>
+      'The no-nonsense breathing app for calmth and sleep.';
+
+  @override
+  String get getStarted => 'Get Started';
 }

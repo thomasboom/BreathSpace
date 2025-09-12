@@ -85,4 +85,17 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get musicLofi => 'LoFi';
+
+  @override
+  String get replayIntro => 'Intro opnieuw afspelen';
+
+  @override
+  String get welcomeTitle => 'Welkom bij OpenBreath';
+
+  @override
+  String get welcomeSubtitle =>
+      'De no-nonsense ademhalingsapp voor rust en slaap.';
+
+  @override
+  String get getStarted => 'Beginnen';
 }

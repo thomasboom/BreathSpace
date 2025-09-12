@@ -24,5 +24,9 @@
   "music": "Muziek",
   "musicOff": "Uit",
   "musicNature": "Natuur",
-  "musicLofi": "LoFi"
+  "musicLofi": "LoFi",
+  "replayIntro": "Intro opnieuw afspelen",
+  "welcomeTitle": "Welkom bij OpenBreath",
+  "welcomeSubtitle": "De no-nonsense ademhalingsapp voor rust en slaap.",
+  "getStarted": "Beginnen"
 }
