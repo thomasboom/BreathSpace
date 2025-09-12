@@ -30,6 +30,21 @@ class AppLocalizationsNl extends AppLocalizations {
   String get languageDutch => 'Nederlands';
 
   @override
+  String get languageSpanish => 'Spanish';
+
+  @override
+  String get languageItalian => 'Italian';
+
+  @override
+  String get languageGerman => 'German';
+
+  @override
+  String get languageChinese => 'Chinese';
+
+  @override
+  String get languageBulgarian => 'Bulgarian';
+
+  @override
   String get theme => 'Thema';
 
   @override

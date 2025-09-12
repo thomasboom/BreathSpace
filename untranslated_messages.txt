@@ -1,1 +1,44 @@
-{}
+{
+  "bg": [
+    "languageSpanish",
+    "languageItalian",
+    "languageGerman",
+    "languageChinese"
+  ],
+
+  "de": [
+    "languageSpanish",
+    "languageItalian",
+    "languageChinese",
+    "languageBulgarian"
+  ],
+
+  "es": [
+    "languageItalian",
+    "languageGerman",
+    "languageChinese",
+    "languageBulgarian"
+  ],
+
+  "it": [
+    "languageSpanish",
+    "languageGerman",
+    "languageChinese",
+    "languageBulgarian"
+  ],
+
+  "nl": [
+    "languageSpanish",
+    "languageItalian",
+    "languageGerman",
+    "languageChinese",
+    "languageBulgarian"
+  ],
+
+  "zh": [
+    "languageSpanish",
+    "languageItalian",
+    "languageGerman",
+    "languageBulgarian"
+  ]
+}

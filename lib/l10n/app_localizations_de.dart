@@ -1,0 +1,115 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for German (`de`).
+class AppLocalizationsDe extends AppLocalizations {
+  AppLocalizationsDe([String locale = 'de']) : super(locale);
+
+  @override
+  String get appTitle => 'OpenBreath';
+
+  @override
+  String get searchHint => 'Übungen suchen...';
+
+  @override
+  String get settings => 'Einstellungen';
+
+  @override
+  String get language => 'Sprache';
+
+  @override
+  String get languageSystem => 'Systemstandard';
+
+  @override
+  String get languageEnglish => 'Englisch';
+
+  @override
+  String get languageDutch => 'Niederländisch';
+
+  @override
+  String get languageSpanish => 'Spanish';
+
+  @override
+  String get languageItalian => 'Italian';
+
+  @override
+  String get languageGerman => 'Deutsch';
+
+  @override
+  String get languageChinese => 'Chinese';
+
+  @override
+  String get languageBulgarian => 'Bulgarian';
+
+  @override
+  String get theme => 'Thema';
+
+  @override
+  String get themeSystem => 'Systemstandard';
+
+  @override
+  String get themeLight => 'Hell';
+
+  @override
+  String get themeDark => 'Dunkel';
+
+  @override
+  String get autoSelectSearchBar => 'Suchleiste automatisch auswählen';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get noExercisesFound => 'Keine Übungen gefunden.';
+
+  @override
+  String get inhale => 'Einatmen';
+
+  @override
+  String get exhale => 'Ausatmen';
+
+  @override
+  String get hold => 'Halten';
+
+  @override
+  String get close => 'Schließen';
+
+  @override
+  String get exerciseInvalid => 'Übung nicht gefunden oder ungültiges Muster.';
+
+  @override
+  String get progressiveExercise => 'Progressive Übung';
+
+  @override
+  String get pattern => 'Muster';
+
+  @override
+  String get soundEffects => 'Soundeffekte';
+
+  @override
+  String get music => 'Musik';
+
+  @override
+  String get musicOff => 'Aus';
+
+  @override
+  String get musicNature => 'Natur';
+
+  @override
+  String get musicLofi => 'LoFi';
+
+  @override
+  String get replayIntro => 'Intro wiederholen';
+
+  @override
+  String get welcomeTitle => 'Willkommen bei OpenBreath';
+
+  @override
+  String get welcomeSubtitle => 'Die vernünftige Atem-App für Ruhe und Schlaf.';
+
+  @override
+  String get getStarted => 'Loslegen';
+}

@@ -1,0 +1,117 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Italian (`it`).
+class AppLocalizationsIt extends AppLocalizations {
+  AppLocalizationsIt([String locale = 'it']) : super(locale);
+
+  @override
+  String get appTitle => 'OpenBreath';
+
+  @override
+  String get searchHint => 'Cerca esercizi...';
+
+  @override
+  String get settings => 'Impostazioni';
+
+  @override
+  String get language => 'Lingua';
+
+  @override
+  String get languageSystem => 'Predefinito di sistema';
+
+  @override
+  String get languageEnglish => 'Inglese';
+
+  @override
+  String get languageDutch => 'Olandese';
+
+  @override
+  String get languageSpanish => 'Spanish';
+
+  @override
+  String get languageItalian => 'Italiano';
+
+  @override
+  String get languageGerman => 'German';
+
+  @override
+  String get languageChinese => 'Chinese';
+
+  @override
+  String get languageBulgarian => 'Bulgarian';
+
+  @override
+  String get theme => 'Tema';
+
+  @override
+  String get themeSystem => 'Predefinito di sistema';
+
+  @override
+  String get themeLight => 'Chiaro';
+
+  @override
+  String get themeDark => 'Scuro';
+
+  @override
+  String get autoSelectSearchBar =>
+      'Seleziona automaticamente la barra di ricerca';
+
+  @override
+  String get start => 'Inizia';
+
+  @override
+  String get noExercisesFound => 'Nessun esercizio trovato.';
+
+  @override
+  String get inhale => 'Inspira';
+
+  @override
+  String get exhale => 'Espira';
+
+  @override
+  String get hold => 'Trattieni';
+
+  @override
+  String get close => 'Chiudi';
+
+  @override
+  String get exerciseInvalid => 'Esercizio non trovato o schema non valido.';
+
+  @override
+  String get progressiveExercise => 'Esercizio progressivo';
+
+  @override
+  String get pattern => 'Schema';
+
+  @override
+  String get soundEffects => 'Effetti sonori';
+
+  @override
+  String get music => 'Musica';
+
+  @override
+  String get musicOff => 'Spento';
+
+  @override
+  String get musicNature => 'Natura';
+
+  @override
+  String get musicLofi => 'LoFi';
+
+  @override
+  String get replayIntro => 'Ripeti introduzione';
+
+  @override
+  String get welcomeTitle => 'Benvenuto in OpenBreath';
+
+  @override
+  String get welcomeSubtitle =>
+      'L\'app di respirazione sensata per la calma e il sonno.';
+
+  @override
+  String get getStarted => 'Inizia';
+}
