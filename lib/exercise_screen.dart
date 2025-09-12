@@ -3,6 +3,9 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:OpenBreath/l10n/app_localizations.dart';
 import 'package:OpenBreath/data.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:OpenBreath/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class ExerciseScreen extends StatefulWidget {
   final BreathingExercise exercise;
@@ -23,6 +26,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   int _currentStageIndex = 0;
   late List<BreathingStage> _stages;
   late int _stageStartTime;
+
+  final AudioPlayer _soundEffectPlayer = AudioPlayer();
+  final AudioPlayer _musicPlayer = AudioPlayer();
 
   List<int> _parsePattern(String pattern) {
     return pattern.split('-').map(int.parse).toList();
@@ -121,6 +127,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   }
 
   void _startAnimation() {
+    final settings = Provider.of<SettingsProvider>(context, listen: false);
     final stage = _stages[_currentStageIndex];
     final patternValues = _parsePattern(stage.pattern);
     int inhale = patternValues[0];
@@ -128,6 +135,17 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     int exhale = patternValues.length > 2 ? patternValues[2] : 0;
     int hold2 = patternValues.length > 3 ? patternValues[3] : 0;
     int totalDurationSeconds = inhale + hold1 + exhale + hold2;
+
+    if (settings.musicMode != MusicMode.off) {
+      String musicFile = '';
+      if (settings.musicMode == MusicMode.nature) {
+        musicFile = 'music/nature.mp3';
+      } else if (settings.musicMode == MusicMode.lofi) {
+        musicFile = 'music/lofi.mp3';
+      }
+      _musicPlayer.play(AssetSource(musicFile));
+      _musicPlayer.setReleaseMode(ReleaseMode.loop);
+    }
 
     _controller.repeat();
     _controller.addListener(() {
@@ -137,12 +155,22 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
         final l10n = AppLocalizations.of(context);
         if (currentTime >= 0 && currentTime < inhale) {
           _instruction = l10n.inhale;
+          if (settings.soundEffectsEnabled) {
+            _soundEffectPlayer.play(AssetSource('sounds/in.mp3'));
+            _soundEffectPlayer.setPlaybackRate(1 / inhale);
+          }
         } else if (hold1 > 0 && currentTime >= inhale && currentTime < (inhale + hold1)) {
           _instruction = l10n.hold;
+          _soundEffectPlayer.stop();
         } else if (currentTime >= (inhale + hold1) && currentTime < (inhale + hold1 + exhale)) {
           _instruction = l10n.exhale;
+          if (settings.soundEffectsEnabled) {
+            _soundEffectPlayer.play(AssetSource('sounds/out.mp3'));
+            _soundEffectPlayer.setPlaybackRate(1 / exhale);
+          }
         } else if (hold2 > 0 && currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
           _instruction = l10n.hold;
+          _soundEffectPlayer.stop();
         }
         HapticFeedback.lightImpact();
       });
@@ -188,6 +216,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   void dispose() {
     _controller.dispose();
     _bubbleAnimationController.dispose();
+    _soundEffectPlayer.dispose();
+    _musicPlayer.dispose();
     super.dispose();
   }
 

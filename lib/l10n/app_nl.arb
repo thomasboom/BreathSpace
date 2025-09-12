@@ -19,5 +19,10 @@
   "close": "Sluiten",
   "exerciseInvalid": "Oefening niet gevonden of ongeldig patroon.",
   "progressiveExercise": "Progressieve Oefening",
-  "pattern": "Patroon"
+  "pattern": "Patroon",
+  "soundEffects": "Geluidseffecten",
+  "music": "Muziek",
+  "musicOff": "Uit",
+  "musicNature": "Natuur",
+  "musicLofi": "LoFi"
 }

@@ -223,6 +223,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pattern'**
   String get pattern;
+
+  /// No description provided for @soundEffects.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound Effects'**
+  String get soundEffects;
+
+  /// No description provided for @music.
+  ///
+  /// In en, this message translates to:
+  /// **'Music'**
+  String get music;
+
+  /// No description provided for @musicOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get musicOff;
+
+  /// No description provided for @musicNature.
+  ///
+  /// In en, this message translates to:
+  /// **'Nature'**
+  String get musicNature;
+
+  /// No description provided for @musicLofi.
+  ///
+  /// In en, this message translates to:
+  /// **'LoFi'**
+  String get musicLofi;
 }
 
 class _AppLocalizationsDelegate

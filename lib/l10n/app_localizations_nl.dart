@@ -70,4 +70,19 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get pattern => 'Patroon';
+
+  @override
+  String get soundEffects => 'Geluidseffecten';
+
+  @override
+  String get music => 'Muziek';
+
+  @override
+  String get musicOff => 'Uit';
+
+  @override
+  String get musicNature => 'Natuur';
+
+  @override
+  String get musicLofi => 'LoFi';
 }

@@ -70,4 +70,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pattern => 'Pattern';
+
+  @override
+  String get soundEffects => 'Sound Effects';
+
+  @override
+  String get music => 'Music';
+
+  @override
+  String get musicOff => 'Off';
+
+  @override
+  String get musicNature => 'Nature';
+
+  @override
+  String get musicLofi => 'LoFi';
 }

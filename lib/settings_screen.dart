@@ -75,6 +75,38 @@ class SettingsScreen extends StatelessWidget {
               settingsProvider.setAutoSelectSearchBar(value);
             },
           ),
+          SwitchListTile(
+            title: Text(AppLocalizations.of(context).soundEffects),
+            value: settingsProvider.soundEffectsEnabled,
+            onChanged: (bool value) {
+              settingsProvider.setSoundEffectsEnabled(value);
+            },
+          ),
+          ListTile(
+            title: Text(AppLocalizations.of(context).music),
+            trailing: DropdownButton<MusicMode>(
+              value: settingsProvider.musicMode,
+              onChanged: (MusicMode? newValue) {
+                if (newValue != null) {
+                  settingsProvider.setMusicMode(newValue);
+                }
+              },
+              items: <DropdownMenuItem<MusicMode>>[
+                DropdownMenuItem<MusicMode>(
+                  value: MusicMode.off,
+                  child: Text(AppLocalizations.of(context).musicOff),
+                ),
+                DropdownMenuItem<MusicMode>(
+                  value: MusicMode.nature,
+                  child: Text(AppLocalizations.of(context).musicNature),
+                ),
+                DropdownMenuItem<MusicMode>(
+                  value: MusicMode.lofi,
+                  child: Text(AppLocalizations.of(context).musicLofi),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

@@ -19,5 +19,10 @@
   "close": "Close",
   "exerciseInvalid": "Exercise not found or invalid pattern.",
   "progressiveExercise": "Progressive Exercise",
-  "pattern": "Pattern"
+  "pattern": "Pattern",
+  "soundEffects": "Sound Effects",
+  "music": "Music",
+  "musicOff": "Off",
+  "musicNature": "Nature",
+  "musicLofi": "LoFi"
 }
