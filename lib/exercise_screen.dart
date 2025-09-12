@@ -295,12 +295,15 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
                                 width: currentRadius * 2,
                                 height: currentRadius * 2,
                                 child: Center(
-                                  child: Text(
-                                    _instruction,
-                                    style: TextStyle(
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.bold,
-                                      color: Theme.of(context).colorScheme.onPrimary,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      _instruction,
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).colorScheme.onPrimary,
+                                      ),
                                     ),
                                   ),
                                 ),
