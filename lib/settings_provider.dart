@@ -9,11 +9,13 @@ class SettingsProvider extends ChangeNotifier {
   LanguagePreference _languagePreference = LanguagePreference.system;
   bool _soundEffectsEnabled = true;
   MusicMode _musicMode = MusicMode.off;
+  bool _useListView = false; // New setting for list view toggle
 
   bool get autoSelectSearchBar => _autoSelectSearchBar;
   LanguagePreference get languagePreference => _languagePreference;
   bool get soundEffectsEnabled => _soundEffectsEnabled;
   MusicMode get musicMode => _musicMode;
+  bool get useListView => _useListView; // Getter for list view setting
 
   Locale? get locale {
     switch (_languagePreference) {
@@ -34,6 +36,7 @@ class SettingsProvider extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     _autoSelectSearchBar = prefs.getBool('autoSelectSearchBar') ?? false;
     _soundEffectsEnabled = prefs.getBool('soundEffectsEnabled') ?? true;
+    _useListView = prefs.getBool('useListView') ?? false; // Load list view setting
     final langString = prefs.getString('languagePreference');
     if (langString != null) {
       switch (langString) {
@@ -109,6 +112,13 @@ class SettingsProvider extends ChangeNotifier {
         await prefs.setString('musicMode', 'lofi');
         break;
     }
+  }
+
+  Future<void> setUseListView(bool value) async {
+    _useListView = value;
+    notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('useListView', value);
   }
 
 }

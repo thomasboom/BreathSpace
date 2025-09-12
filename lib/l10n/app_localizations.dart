@@ -210,6 +210,12 @@ abstract class AppLocalizations {
   /// **'Auto-select search bar'**
   String get autoSelectSearchBar;
 
+  /// No description provided for @useListView.
+  ///
+  /// In en, this message translates to:
+  /// **'Use List View'**
+  String get useListView;
+
   /// No description provided for @start.
   ///
   /// In en, this message translates to:

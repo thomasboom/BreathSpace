@@ -61,6 +61,9 @@ class AppLocalizationsBg extends AppLocalizations {
       'Автоматично избиране на лентата за търсene';
 
   @override
+  String get useListView => 'Използване на изгледа в списък';
+
+  @override
   String get start => 'Старт';
 
   @override

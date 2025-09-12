@@ -60,6 +60,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get autoSelectSearchBar => '自动选择搜索栏';
 
   @override
+  String get useListView => '使用列表视图';
+
+  @override
   String get start => '开始';
 
   @override

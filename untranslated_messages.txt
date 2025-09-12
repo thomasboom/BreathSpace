@@ -6,13 +6,6 @@
     "languageChinese"
   ],
 
-  "de": [
-    "languageSpanish",
-    "languageItalian",
-    "languageChinese",
-    "languageBulgarian"
-  ],
-
   "es": [
     "languageItalian",
     "languageGerman",

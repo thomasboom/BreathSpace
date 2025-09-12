@@ -60,6 +60,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get autoSelectSearchBar => 'Suchleiste automatisch auswählen';
 
   @override
+  String get useListView => 'Listenansicht verwenden';
+
+  @override
   String get start => 'Start';
 
   @override

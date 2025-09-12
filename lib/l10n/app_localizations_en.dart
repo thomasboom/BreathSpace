@@ -60,6 +60,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get autoSelectSearchBar => 'Auto-select search bar';
 
   @override
+  String get useListView => 'Use List View';
+
+  @override
   String get start => 'Start';
 
   @override

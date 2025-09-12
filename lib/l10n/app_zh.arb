@@ -12,6 +12,7 @@
   "themeLight": "浅色",
   "themeDark": "深色",
   "autoSelectSearchBar": "自动选择搜索栏",
+  "useListView": "使用列表视图",
   "start": "开始",
   "noExercisesFound": "找不到练习。",
   "inhale": "吸气",

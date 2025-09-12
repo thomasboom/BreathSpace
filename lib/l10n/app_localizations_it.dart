@@ -61,6 +61,9 @@ class AppLocalizationsIt extends AppLocalizations {
       'Seleziona automaticamente la barra di ricerca';
 
   @override
+  String get useListView => 'Usa vista elenco';
+
+  @override
   String get start => 'Inizia';
 
   @override

@@ -84,7 +84,9 @@ class OpenBreathApp extends StatelessWidget {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       home: seen
-          ? const GeminiExerciseScreen()
+          ? settingsProvider.useListView
+              ? const BreathingExerciseScreen()
+              : const GeminiExerciseScreen()
           : const IntroScreen(),
       routes: {
         '/settings': (context) => const SettingsScreen(),

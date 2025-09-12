@@ -85,6 +85,13 @@ class SettingsScreen extends StatelessWidget {
               settingsProvider.setSoundEffectsEnabled(value);
             },
           ),
+          SwitchListTile(
+            title: Text(AppLocalizations.of(context).useListView),
+            value: settingsProvider.useListView,
+            onChanged: (bool value) {
+              settingsProvider.setUseListView(value);
+            },
+          ),
           ListTile(
             title: Text(AppLocalizations.of(context).music),
             trailing: DropdownButton<MusicMode>(
@@ -122,7 +129,6 @@ class SettingsScreen extends StatelessWidget {
             },
           ),
           // Prompt Cache Management Section
-          const Divider(),
           FutureBuilder<int>(
             future: PromptCacheService.getCacheSize(),
             builder: (context, snapshot) {

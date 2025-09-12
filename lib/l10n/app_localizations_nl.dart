@@ -60,6 +60,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get autoSelectSearchBar => 'Zoekbalk automatisch selecteren';
 
   @override
+  String get useListView => 'Gebruik lijstweergave';
+
+  @override
   String get start => 'Start';
 
   @override

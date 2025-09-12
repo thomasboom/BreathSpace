@@ -16,6 +16,7 @@
   "themeLight": "Light",
   "themeDark": "Dark",
   "autoSelectSearchBar": "Auto-select search bar",
+  "useListView": "Use List View",
   "start": "Start",
   "noExercisesFound": "No exercises found.",
   "inhale": "Inhale",

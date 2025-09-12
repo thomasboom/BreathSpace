@@ -12,6 +12,7 @@
   "themeLight": "Claro",
   "themeDark": "Oscuro",
   "autoSelectSearchBar": "Seleccionar automáticamente la barra de búsqueda",
+  "useListView": "Usar vista de lista",
   "start": "Empezar",
   "noExercisesFound": "No se encontraron ejercicios.",
   "inhale": "Inhalar",
