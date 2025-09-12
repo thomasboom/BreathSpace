@@ -15,20 +15,20 @@ class GeminiService {
       return null;
     }
 
-    final exerciseList = exercises.map((e) => {
-      'id': e.id,
-      'title': e.title,
-      'intro': e.intro,
-      'pattern': e.pattern, // Include pattern for more context
-    }).toList();
+    final exerciseDescriptions = exercises.map((e) =>
+      "- ID: ${e.id}, Title: ${e.title}, Intro: ${e.intro}"
+    ).join('\n');
 
     final prompt = """
-The user is looking for a breathing exercise. They described their current state or goal as: "$userInput".
-Here is a list of available breathing exercises:
-${jsonEncode(exerciseList)}
+The user is looking for a breathing exercise. Their current state or goal is: \"$userInput\".
+Here is a list of available breathing exercises. Each exercise has an ID, Title, and a brief Intro:
+$exerciseDescriptions
 
-Please recommend the 'id' of the single most suitable breathing exercise from the list above based on the user's input.
-Respond only with the 'id' of the recommended exercise, nothing else. If no exercise is suitable, respond with "none".
+Based on the user's input, please recommend the ID of the single most relevant breathing exercise from the list above.
+Prioritize matching the user's goal/state with the exercise's Intro and Title.
+If the user's input is general (e.g., \"relax\", \"focus\"), recommend a suitable general exercise like 'box-breathing' or 'equal-breathing'.
+Respond ONLY with the 'id' of the recommended exercise. Do NOT include any other text, explanation, or punctuation.
+If the user's request is completely unrelated to breathing exercises, respond with \"none\".
 """;
 
     try {
@@ -48,6 +48,7 @@ Respond only with the 'id' of the recommended exercise, nothing else. If no exer
 
       if (response.statusCode == 200) {
         final jsonResponse = jsonDecode(response.body);
+        print('Gemini API Raw Response: ${response.body}'); // Debugging line
         final String? recommendedId = jsonResponse['candidates']?[0]['content']?['parts']?[0]?['text'];
         return recommendedId?.trim();
       } else {

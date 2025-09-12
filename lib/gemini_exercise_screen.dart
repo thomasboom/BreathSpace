@@ -43,10 +43,46 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
     });
 
     if (recommendedId != null && recommendedId != 'none') {
-      _recommendedExercise = breathingExercises.firstWhere(
-        (exercise) => exercise.id == recommendedId,
-        orElse: () => breathingExercises.first, // Fallback
-      );
+      print('Gemini recommended ID: $recommendedId'); // Debugging line
+
+      BreathingExercise? recommendedExercise;
+      try {
+        recommendedExercise = breathingExercises.firstWhere(
+          (exercise) => exercise.id == recommendedId,
+          orElse: () {
+            print('Fallback: Recommended ID "$recommendedId" not found. Using first exercise.'); // Debugging line
+            return breathingExercises.first; // Fallback to first exercise if not found
+          },
+        );
+      } catch (e) {
+        print('Error finding recommended exercise: $e'); // Debugging line
+        // Handle case where breathingExercises might be empty or firstWhere fails
+        if (breathingExercises.isNotEmpty) {
+          recommendedExercise = breathingExercises.first;
+        } else {
+          print('Error: breathingExercises list is empty!'); // Critical error
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('No exercises available to recommend.')),
+            );
+          }
+          return;
+        }
+      }
+
+      if (recommendedExercise != null && mounted) {
+        print('Navigating to ExerciseDetailScreen with exercise ID: ${recommendedExercise.id}'); // Debugging line
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ExerciseDetailScreen(exercise: recommendedExercise!), // Assert non-null
+          ),
+        );
+      } else if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not find a suitable exercise to navigate to.')),
+        );
+      }
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(

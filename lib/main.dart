@@ -20,6 +20,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env"); // Load .env file
+  await loadBreathingExercisesUsingSystemLocale(); // Load exercises before app starts
   final prefs = await SharedPreferences.getInstance();
   final bool seen = prefs.getBool('seen') ?? false;
 
