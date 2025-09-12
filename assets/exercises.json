@@ -284,17 +284,26 @@
     },
     "stages": [
       {
-        "title": "Nervous System Balance",
+        "title": {
+          "en": "Nervous System Balance",
+          "nl": "Zenuwstelsel Balans"
+        },
         "pattern": "4-4-4-4",
         "duration": 180
       },
       {
-        "title": "Deep Relaxation",
+        "title": {
+          "en": "Deep Relaxation",
+          "nl": "Diepe Ontspanning"
+        },
         "pattern": "4-7-8-0",
         "duration": 120
       },
       {
-        "title": "Sleep Induction",
+        "title": {
+          "en": "Sleep Induction",
+          "nl": "Slaap Inductie"
+        },
         "pattern": "6-0-8-0",
         "duration": 300
       }
@@ -312,17 +321,26 @@
     },
     "stages": [
       {
-        "title": "Stabilization",
+        "title": {
+          "en": "Stabilization",
+          "nl": "Stabilisatie"
+        },
         "pattern": "3-0-3-0",
         "duration": 120
       },
       {
-        "title": "Grounding",
+        "title": {
+          "en": "Grounding",
+          "nl": "Verankeren"
+        },
         "pattern": "4-4-4-4",
         "duration": 240
       },
       {
-        "title": "Parasympathetic Activation",
+        "title": {
+          "en": "Parasympathetic Activation",
+          "nl": "Parasympathische Activatie"
+        },
         "pattern": "4-0-8-0",
         "duration": 240
       }
@@ -340,17 +358,26 @@
     },
     "stages": [
       {
-        "title": "Awakening",
+        "title": {
+          "en": "Awakening",
+          "nl": "Ontwaken"
+        },
         "pattern": "4-0-4-0",
         "duration": 180
       },
       {
-        "title": "Energizing",
+        "title": {
+          "en": "Energizing",
+          "nl": "Energieverhoging"
+        },
         "pattern": "6-0-6-0",
         "duration": 240
       },
       {
-        "title": "Focus Enhancement",
+        "title": {
+          "en": "Focus Enhancement",
+          "nl": "Focusverbetering"
+        },
         "pattern": "4-4-6-2",
         "duration": 180
       }
@@ -368,17 +395,26 @@
     },
     "stages": [
       {
-        "title": "Immediate Calming",
+        "title": {
+          "en": "Immediate Calming",
+          "nl": "Onmiddellijke Kalmering"
+        },
         "pattern": "2-0-4-0",
         "duration": 120
       },
       {
-        "title": "Stabilization",
+        "title": {
+          "en": "Stabilization",
+          "nl": "Stabilisatie"
+        },
         "pattern": "3-3-3-3",
         "duration": 180
       },
       {
-        "title": "Full Recovery",
+        "title": {
+          "en": "Full Recovery",
+          "nl": "Volledig Herstel"
+        },
         "pattern": "4-4-4-4",
         "duration": 300
       }
@@ -396,17 +432,26 @@
     },
     "stages": [
       {
-        "title": "Foundation Building",
+        "title": {
+          "en": "Foundation Building",
+          "nl": "Basis Opbouw"
+        },
         "pattern": "5-5-5-5",
         "duration": 240
       },
       {
-        "title": "Complexity Increase",
+        "title": {
+          "en": "Complexity Increase",
+          "nl": "Complexiteit Toename"
+        },
         "pattern": "6-6-6-6",
         "duration": 180
       },
       {
-        "title": "Sustained Focus",
+        "title": {
+          "en": "Sustained Focus",
+          "nl": "Aanhoudende Focus"
+        },
         "pattern": "4-0-4-0",
         "duration": 180
       }
@@ -424,17 +469,26 @@
     },
     "stages": [
       {
-        "title": "Baseline Establishment",
+        "title": {
+          "en": "Baseline Establishment",
+          "nl": "Basislijn Vaststelling"
+        },
         "pattern": "4-4-4-4",
         "duration": 180
       },
       {
-        "title": "Therapeutic Ratio",
+        "title": {
+          "en": "Therapeutic Ratio",
+          "nl": "Therapeutische Verhouding"
+        },
         "pattern": "5-0-10-0",
         "duration": 300
       },
       {
-        "title": "Maximum Benefit",
+        "title": {
+          "en": "Maximum Benefit",
+          "nl": "Maximaal Voordeel"
+        },
         "pattern": "6-0-12-0",
         "duration": 120
       }
@@ -452,17 +506,26 @@
     },
     "stages": [
       {
-        "title": "Coherence Building",
+        "title": {
+          "en": "Coherence Building",
+          "nl": "Coherentie Opbouw"
+        },
         "pattern": "6-0-6-0",
         "duration": 240
       },
       {
-        "title": "Mental Preparation",
+        "title": {
+          "en": "Mental Preparation",
+          "nl": "Mentale Voorbereiding"
+        },
         "pattern": "4-4-4-4",
         "duration": 180
       },
       {
-        "title": "Controlled Activation",
+        "title": {
+          "en": "Controlled Activation",
+          "nl": "Gecontroleerde Activering"
+        },
         "pattern": "3-0-6-0",
         "duration": 180
       }
@@ -480,17 +543,26 @@
     },
     "stages": [
       {
-        "title": "Heart Rate Normalization",
+        "title": {
+          "en": "Heart Rate Normalization",
+          "nl": "Hartslag Normalisatie"
+        },
         "pattern": "8-0-8-0",
         "duration": 180
       },
       {
-        "title": "Recovery Acceleration",
+        "title": {
+          "en": "Recovery Acceleration",
+          "nl": "Herstelversnelling"
+        },
         "pattern": "4-7-8-0",
         "duration": 180
       },
       {
-        "title": "Homeostasis Restoration",
+        "title": {
+          "en": "Homeostasis Restoration",
+          "nl": "Homeostase Herstel"
+        },
         "pattern": "6-0-6-0",
         "duration": 240
       }
@@ -508,17 +580,26 @@
     },
     "stages": [
       {
-        "title": "Mind Settling",
+        "title": {
+          "en": "Mind Settling",
+          "nl": "Geest Stabilisatie"
+        },
         "pattern": "4-0-4-0",
         "duration": 300
       },
       {
-        "title": "Deeper Awareness",
+        "title": {
+          "en": "Deeper Awareness",
+          "nl": "Dieper Bewustzijn"
+        },
         "pattern": "6-2-6-2",
         "duration": 240
       },
       {
-        "title": "Transition to Meditation",
+        "title": {
+          "en": "Transition to Meditation",
+          "nl": "Overgang naar Meditatie"
+        },
         "pattern": "natural",
         "duration": 60
       }
@@ -536,17 +617,26 @@
     },
     "stages": [
       {
-        "title": "Gentle Introduction",
+        "title": {
+          "en": "Gentle Introduction",
+          "nl": "Zachte Introductie"
+        },
         "pattern": "3-3-3-3",
         "duration": 180
       },
       {
-        "title": "Pain Gate Control",
+        "title": {
+          "en": "Pain Gate Control",
+          "nl": "Pijnpoort Controle"
+        },
         "pattern": "4-4-6-2",
         "duration": 300
       },
       {
-        "title": "Endorphin Release",
+        "title": {
+          "en": "Endorphin Release",
+          "nl": "Endorfine Vrijzetting"
+        },
         "pattern": "4-0-8-0",
         "duration": 420
       }

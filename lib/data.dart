@@ -37,9 +37,26 @@ class BreathingStage {
     required this.duration,
   });
 
-  factory BreathingStage.fromJson(Map<String, dynamic> json) {
+  factory BreathingStage.fromJson(Map<String, dynamic> json, String? languageCode) {
+    String lang = languageCode ?? 'en';
+    String titleText;
+    
+    // Handle both old format (simple string) and new format (translation map)
+    if (json['title'] is String) {
+      titleText = json['title'] as String;
+    } else if (json['title'] is Map<String, dynamic>) {
+      final titleMap = json['title'] as Map<String, dynamic>;
+      if (titleMap[lang] != null) {
+        titleText = titleMap[lang] as String;
+      } else {
+        titleText = titleMap['en'] as String? ?? 'Untitled';
+      }
+    } else {
+      titleText = 'Untitled';
+    }
+
     return BreathingStage(
-      title: json['title'] as String,
+      title: titleText,
       pattern: json['pattern'] as String,
       duration: json['duration'] as int,
     );
@@ -75,7 +92,7 @@ class BreathingExercise {
     List<BreathingStage>? stages;
     if (json['stages'] != null) {
       stages = (json['stages'] as List)
-          .map((stage) => BreathingStage.fromJson(stage))
+          .map((stage) => BreathingStage.fromJson(stage, languageCode))
           .toList();
     }
 
