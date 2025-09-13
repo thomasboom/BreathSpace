@@ -51,11 +51,31 @@
     "duration": "4 min",
     "title": {
       "en": "Box Breathing",
-      "nl": "Box Ademhaling"
+      "nl": "Box Ademhaling",
+      "fr": "Respiration carrée",
+      "ja": "ボックス呼吸法",
+      "pt": "Respiração Quadrada",
+      "ru": "Квадратное дыхание",
+      "ar": "تمرين التنفس المربع",
+      "es": "Respiración Cuadrada",
+      "zh": "方盒呼吸法",
+      "bg": "Квадратно дишане",
+      "de": "Box-Atmung",
+      "it": "Respirazione a Scatola"
     },
     "intro": {
       "en": "Used by Navy SEALs for stress management.",
-      "nl": "Gebruikt door Navy SEALs voor stressbeheersing."
+      "nl": "Gebruikt door Navy SEALs voor stressbeheersing.",
+      "fr": "Utilisée par les Navy SEALs pour la gestion du stress.",
+      "ja": "海兵隊員がストレス管理に使用するテクニック。",
+      "pt": "Usada pelos Navy SEALs para controle de estresse.",
+      "ru": "Используется морскими котиками для управления стрессом.",
+      "ar": "تُستخدم من قبل القوات الخاصة البحرية لإدارة التوتر.",
+      "es": "Utilizada por los Navy SEALs para manejar el estrés.",
+      "zh": "海豹突击队用于压力管理的技巧。",
+      "bg": "Използва се от морските котици за справяне със стреса.",
+      "de": "Wird von Navy SEALs für Stressmanagement verwendet.",
+      "it": "Usata dai Navy SEAL per la gestione dello stress."
     }
   },
   {
@@ -64,11 +84,31 @@
     "duration": "4 min",
     "title": {
       "en": "2:1 Ratio Breathing",
-      "nl": "2:1 Verhouding Ademhaling"
+      "nl": "2:1 Verhouding Ademhaling",
+      "fr": "Respiration 2:1",
+      "ja": "2:1呼吸法",
+      "pt": "Respiração 2:1",
+      "ru": "Дыхание в соотношении 2:1",
+      "ar": "تنفس بنسبة 2:1",
+      "es": "Respiración 2:1",
+      "zh": "2:1比例呼吸法",
+      "bg": "Дишане в съотношение 2:1",
+      "de": "2:1 Atemverhältnis",
+      "it": "Respirazione 2:1"
     },
     "intro": {
       "en": "Simple calming technique for beginners.",
-      "nl": "Eenvoudige kalmerende techniek voor beginners."
+      "nl": "Eenvoudige kalmerende techniek voor beginners.",
+      "fr": "Technique de relaxation simple pour débutants.",
+      "ja": "初心者向けの簡単なリラクゼーションテクニック。",
+      "pt": "Técnica simples de relaxamento para iniciantes.",
+      "ru": "Простая техника расслабления для новичков.",
+      "ar": "تقنية تهدئة بسيطة للمبتدئين.",
+      "es": "Técnica de relajación simple para principiantes.",
+      "zh": "适合初学者的简单放松技巧。",
+      "bg": "Проста техника за релаксиране за начинаещи.",
+      "de": "Einfache beruhigende Technik für Anfänger.",
+      "it": "Tecnica semplice di rilassamento per principianti."
     }
   },
   {
@@ -77,11 +117,31 @@
     "duration": "4 min",
     "title": {
       "en": "Equal Breathing",
-      "nl": "Gelijke Ademhaling"
+      "nl": "Gelijke Ademhaling",
+      "fr": "Respiration Égale",
+      "ja": "均等呼吸法",
+      "pt": "Respiração Igual",
+      "ru": "Равное дыхание",
+      "ar": "تنفس متساوي",
+      "es": "Respiración Igual",
+      "zh": "相等呼吸法",
+      "bg": "Равно дишане",
+      "de": "Gleichmäßige Atmung",
+      "it": "Respirazione Uguali"
     },
     "intro": {
       "en": "Balances nervous system activation.",
-      "nl": "Balanceren van de activatie van het zenuwstelsel."
+      "nl": "Balanceren van de activatie van het zenuwstelsel.",
+      "fr": "Équilibre l'activation du système nerveux.",
+      "ja": "神経系の活性化をバランスします。",
+      "pt": "Equilibra a ativação do sistema nervoso.",
+      "ru": "Балансирует активацию нервной системы.",
+      "ar": "يوازن تنشيط الجهاز العصبي.",
+      "es": "Equilibra la activación del sistema nervioso.",
+      "zh": "平衡神经系统的激活。",
+      "bg": "Балансира активирането на нервната система.",
+      "de": "Balanciert die Aktivierung des Nervensystems.",
+      "it": "Bilancia l'attivazione del sistema nervoso."
     }
   },
   {
@@ -90,11 +150,31 @@
     "duration": "4 min",
     "title": {
       "en": "Modified 4-7-8",
-      "nl": "Aangepaste 4-7-8"
+      "nl": "Aangepaste 4-7-8",
+      "fr": "4-7-8 Modifié",
+      "ja": "修正版4-7-8呼吸法",
+      "pt": "4-7-8 Modificado",
+      "ru": "Модифицированное 4-7-8",
+      "ar": "4-7-8 معدل",
+      "es": "4-7-8 Modificado",
+      "zh": "改良版4-7-8呼吸法",
+      "bg": "Модифицирано 4-7-8",
+      "de": "Modifiziertes 4-7-8",
+      "it": "4-7-8 Modificato"
     },
     "intro": {
       "en": "Gentler version for anxiety relief.",
-      "nl": "Mildere versie voor angstverlichting."
+      "nl": "Mildere versie voor angstverlichting.",
+      "fr": "Version plus douce pour soulager l'anxiété.",
+      "ja": "不安解消のための穏やかなバージョン。",
+      "pt": "Versão mais suave para alívio da ansiedade.",
+      "ru": "Более мягкая версия для облегчения тревожности.",
+      "ar": "نسخة أكثر لطفاً لتخفيف القلق.",
+      "es": "Versión más suave para aliviar la ansiedad.",
+      "zh": "更温和的版本，用于缓解焦虑。",
+      "bg": "По-мека версия за облекчаване на тревожността.",
+      "de": "Sanftere Version zur Angstbewältigung.",
+      "it": "Versione più delicata per il sollievo dall'ansia."
     }
   },
   {
@@ -103,11 +183,31 @@
     "duration": "4 min",
     "title": {
       "en": "Coherent Breathing",
-      "nl": "Coherente Ademhaling"
+      "nl": "Coherente Ademhaling",
+      "fr": "Respiration Cohérente",
+      "ja": "コヒーレント呼吸法",
+      "pt": "Respiração Coerente",
+      "ru": "Согласованное дыхание",
+      "ar": "تنفس متماسك",
+      "es": "Respiración Coherente",
+      "zh": "连贯呼吸法",
+      "bg": "Кохерентно дишане",
+      "de": "Kohärente Atmung",
+      "it": "Respirazione Coerente"
     },
     "intro": {
       "en": "Optimizes heart rate variability.",
-      "nl": "Optimaliseert de variabiliteit van de hartslag."
+      "nl": "Optimaliseert de variabiliteit van de hartslag.",
+      "fr": "Optimise la variabilité de la fréquence cardiaque.",
+      "ja": "心拍変動を最適化します。",
+      "pt": "Otimiza a variabilidade da frequência cardíaca.",
+      "ru": "Оптимизирует вариабельность сердечного ритма.",
+      "ar": "يح tốiم تقلبات معدل ضربات القلب.",
+      "es": "Optimiza la variabilidad de la frecuencia cardíaca.",
+      "zh": "优化心率变异性。",
+      "bg": "Оптимизира вариабилността на сърдечния ритъм.",
+      "de": "Optimiert die Herzratenvariabilität.",
+      "it": "Ottimizza la variabilità della frequenza cardiaca."
     }
   },
   {
@@ -116,11 +216,31 @@
     "duration": "4 min",
     "title": {
       "en": "Extended Exhale",
-      "nl": "Verlengde Uitademing"
+      "nl": "Verlengde Uitademing",
+      "fr": "Expiration Prolongée",
+      "ja": "延長呼気法",
+      "pt": "Expiração Estendida",
+      "ru": "Продленный выдох",
+      "ar": "زفير ممتد",
+      "es": "Exhalación Extendida",
+      "zh": "延长呼气法",
+      "bg": "Удължен издишване",
+      "de": "Verlängerte Ausatmung",
+      "it": "Espirazione Estesa"
     },
     "intro": {
       "en": "Activates parasympathetic response.",
-      "nl": "Activeert de parasympathische reactie."
+      "nl": "Activeert de parasympathische reactie.",
+      "fr": "Active la réponse parasympathique.",
+      "ja": "副交感神経反応を活性化します。",
+      "pt": "Ativa a resposta parassimpática.",
+      "ru": "Активирует парасимпатический ответ.",
+      "ar": "يُنشط الاستجابة الباراسمباتيكية.",
+      "es": "Activa la respuesta parasimpática.",
+      "zh": "激活副交感神经反应。",
+      "bg": "Активира парасимпатиковата реакция.",
+      "de": "Aktiviert die parasympathische Reaktion.",
+      "it": "Attiva la risposta parasimpatica."
     }
   },
   {
@@ -129,11 +249,31 @@
     "duration": "3 min",
     "title": {
       "en": "Mini Box Breathing",
-      "nl": "Mini Box Ademhaling"
+      "nl": "Mini Box Ademhaling",
+      "fr": "Mini Respiration Carrée",
+      "ja": "ミニボックス呼吸法",
+      "pt": "Mini Respiração Quadrada",
+      "ru": "Мини квадратное дыхание",
+      "ar": "تمرين التنفس الصغير المربع",
+      "es": "Mini Respiración Cuadrada",
+      "zh": "迷你方盒呼吸法",
+      "bg": "Мини квадратно дишане",
+      "de": "Mini-Box-Atmung",
+      "it": "Mini Respirazione a Scatola"
     },
     "intro": {
       "en": "Quick stress relief for busy moments.",
-      "nl": "Snelle stressverlichting voor drukke momenten."
+      "nl": "Snelle stressverlichting voor drukke momenten.",
+      "fr": "Soulagement rapide du stress pour les moments chargés.",
+      "ja": "忙しい時間のためのクイックストレス解消法。",
+      "pt": "Alívio rápido do estresse para momentos ocupados.",
+      "ru": "Быстрое облегчение стресса для занятых моментов.",
+      "ar": "تخفيف سريع للتوتر للحظات المزدحمة.",
+      "es": "Alivio rápido del estrés para momentos ocupados.",
+      "zh": "为忙碌时刻提供的快速减压方法。",
+      "bg": "Бързо облекчаване на стреса за заети моменти.",
+      "de": "Schnelle Stressentlastung für geschäftige Momente.",
+      "it": "Rapido sollievo dallo stress per momenti occupati."
     }
   },
   {
@@ -142,11 +282,31 @@
     "duration": "4 min",
     "title": {
       "en": "Sama Vritti",
-      "nl": "Sama Vritti"
+      "nl": "Sama Vritti",
+      "fr": "Sama Vritti",
+      "ja": "サーマ・ヴリッティ",
+      "pt": "Sama Vritti",
+      "ru": "Сама Вритти",
+      "ar": "ساما فريتي",
+      "es": "Sama Vritti",
+      "zh": "等时呼吸法",
+      "bg": "Сама Врити",
+      "de": "Sama Vritti",
+      "it": "Sama Vritti"
     },
     "intro": {
       "en": "Improves concentration and mental clarity.",
-      "nl": "Verbetert concentratie en mentale helderheid."
+      "nl": "Verbetert concentratie en mentale helderheid.",
+      "fr": "Améliore la concentration et la clarté mentale.",
+      "ja": "集中力と精神的明晰さを向上させます。",
+      "pt": "Melhora a concentração e a clareza mental.",
+      "ru": "Улучшает концентрацию и умственную ясность.",
+      "ar": "يحسن التركيز والوضوح الذهني.",
+      "es": "Mejora la concentración y la claridad mental.",
+      "zh": "提高专注力和思维清晰度。",
+      "bg": "Подобрява концентрацията и умствената яснота.",
+      "de": "Verbessert Konzentration und geistige Klarheit.",
+      "it": "Migliora la concentrazione e la chiarezza mentale."
     }
   },
   {
@@ -155,11 +315,31 @@
     "duration": "4 min",
     "title": {
       "en": "Deep Equal Breathing",
-      "nl": "Diepe Gelijk Ademhaling"
+      "nl": "Diepe Gelijk Ademhaling",
+      "fr": "Respiration Égale Profonde",
+      "ja": "ディープ均等呼吸法",
+      "pt": "Respiração Igual Profunda",
+      "ru": "Глубокое равное дыхание",
+      "ar": "تنفس متساوي عميق",
+      "es": "Respiración Igual Profunda",
+      "zh": "深度相等呼吸法",
+      "bg": "Дълбоко равно дишане",
+      "de": "Tiefes gleichmäßiges Atmen",
+      "it": "Respirazione Uguali Profonda"
     },
     "intro": {
       "en": "Enhances focus and cognitive performance.",
-      "nl": "Verbetert de focus en cognitieve prestaties."
+      "nl": "Verbetert de focus en cognitieve prestaties.",
+      "fr": "Améliore la concentration et les performances cognitives.",
+      "ja": "集中力と認知機能を向上させます。",
+      "pt": "Melhora o foco e o desempenho cognitivo.",
+      "ru": "Улучшает фокусировку и когнитивные способности.",
+      "ar": "يعزز التركيز والأداء المعرفي.",
+      "es": "Mejora el enfoque y el rendimiento cognitivo.",
+      "zh": "增强专注力和认知表现。",
+      "bg": "Подобрява фокуса и когнитивното изпълнение.",
+      "de": "Verbessert Fokus und kognitive Leistung.",
+      "it": "Migliora la concentrazione e le prestazioni cognitive."
     }
   },
   {
@@ -168,11 +348,31 @@
     "duration": "4 min",
     "title": {
       "en": "Square Breathing",
-      "nl": "Vierkante Ademhaling"
+      "nl": "Vierkante Ademhaling",
+      "fr": "Respiration Carrée",
+      "ja": "スクエア呼吸法",
+      "pt": "Respiração Quadrada",
+      "ru": "Квадратное дыхание",
+      "ar": "تمرين التنفس المربع",
+      "es": "Respiración Cuadrada",
+      "zh": "方形呼吸法",
+      "bg": "Квадратно дишане",
+      "de": "Quadratische Atmung",
+      "it": "Respirazione Quadrata"
     },
     "intro": {
       "en": "Builds mental resilience.",
-      "nl": "Bouwt mentale veerkracht op."
+      "nl": "Bouwt mentale veerkracht op.",
+      "fr": "Développe la résilience mentale.",
+      "ja": "精神的な回復力を育みます。",
+      "pt": "Constrói resiliência mental.",
+      "ru": "Развивает психическую устойчивость.",
+      "ar": "يبني المرونة الذهنية.",
+      "es": "Construye resiliencia mental.",
+      "zh": "培养心理韧性。",
+      "bg": "Изгражда ментална устойчивост.",
+      "de": "Baut mentale Resilienz auf.",
+      "it": "Costruisce la resilienza mentale."
     }
   },
   {
@@ -181,11 +381,31 @@
     "duration": "2 min",
     "title": {
       "en": "Quick Focus",
-      "nl": "Snelle Focus"
+      "nl": "Snelle Focus",
+      "fr": "Concentration Rapide",
+      "ja": "クイックフォーカス",
+      "pt": "Foco Rápido",
+      "ru": "Быстрый фокус",
+      "ar": "تركيز سريع",
+      "es": "Enfoque Rápido",
+      "zh": "快速专注法",
+      "bg": "Бърз фокус",
+      "de": "Schneller Fokus",
+      "it": "Concentrazione Veloce"
     },
     "intro": {
       "en": "Rapid attention enhancement.",
-      "nl": "Snelle aandachtsversterking."
+      "nl": "Snelle aandachtsversterking.",
+      "fr": "Amélioration rapide de l'attention.",
+      "ja": "注意力を迅速に向上させます。",
+      "pt": "Melhoria rápida da atenção.",
+      "ru": "Быстрое улучшение внимания.",
+      "ar": "تعزيز سريع للانتباه.",
+      "es": "Mejora rápida de la atención.",
+      "zh": "快速提升注意力。",
+      "bg": "Бързо подобряване на вниманието.",
+      "de": "Schnelle Aufmerksamkeitssteigerung.",
+      "it": "Miglioramento rapido dell'attenzione."
     }
   },
   {
@@ -194,11 +414,31 @@
     "duration": "4 min",
     "title": {
       "en": "Modified Ujjayi",
-      "nl": "Aangepaste Ujjayi"
+      "nl": "Aangepaste Ujjayi",
+      "fr": "Ujjayi Modifié",
+      "ja": "修正版ウジャイ呼吸法",
+      "pt": "Ujjayi Modificado",
+      "ru": "Модифицированный Уджайи",
+      "ar": "أوجايي معدل",
+      "es": "Ujjayi Modificado",
+      "zh": "改良版乌加依呼吸法",
+      "bg": "Модифициран Уджайи",
+      "de": "Modifizierter Ujjayi",
+      "it": "Ujjayi Modificato"
     },
     "intro": {
       "en": "Builds internal heat and focus.",
-      "nl": "Bouwt interne warmte en focus op."
+      "nl": "Bouwt interne warmte en focus op.",
+      "fr": "Développe la chaleur interne et la concentration.",
+      "ja": "体内の熱と集中力を育みます。",
+      "pt": "Constrói calor interno e foco.",
+      "ru": "Создает внутреннее тепло и концентрацию.",
+      "ar": "يبني الحرارة الداخلية والتركيز.",
+      "es": "Construye calor interno y enfoque.",
+      "zh": "培养内热和专注力。",
+      "bg": "Изгражда вътрешна топлина и фокус.",
+      "de": "Baut innere Wärme und Fokus auf.",
+      "it": "Costruisce calore interno e concentrazione."
     }
   },
   {
@@ -207,11 +447,31 @@
     "duration": "6 min",
     "title": {
       "en": "Extended Box Breathing",
-      "nl": "Uitgebreide Box Ademhaling"
+      "nl": "Uitgebreide Box Ademhaling",
+      "fr": "Respiration Carrée Étendue",
+      "ja": "拡張ボックス呼吸法",
+      "pt": "Respiração Quadrada Estendida",
+      "ru": "Расширенное квадратное дыхание",
+      "ar": "تمرين التنفس المربع الموسع",
+      "es": "Respiración Cuadrada Extendida",
+      "zh": "扩展方盒呼吸法",
+      "bg": "Удължено квадратно дишане",
+      "de": "Erweiterte Box-Atmung",
+      "it": "Respirazione a Scatola Estesa"
     },
     "intro": {
       "en": "Advanced stress management.",
-      "nl": "Geavanceerde stressbeheersing."
+      "nl": "Geavanceerde stressbeheersing.",
+      "fr": "Gestion avancée du stress.",
+      "ja": "高度なストレス管理。",
+      "pt": "Gestão avançada do estresse.",
+      "ru": "Продвинутое управление стрессом.",
+      "ar": "إدارة متقدمة للتوتر.",
+      "es": "Gestión avanzada del estrés.",
+      "zh": "高级压力管理。",
+      "bg": "Напреднало управление на стреса.",
+      "de": "Fortgeschrittenes Stressmanagement.",
+      "it": "Gestione avanzata dello stress."
     }
   },
   {
@@ -220,11 +480,31 @@
     "duration": "4 min",
     "title": {
       "en": "Triangle Plus",
-      "nl": "Driehoek Plus"
+      "nl": "Driehoek Plus",
+      "fr": "Triangle Plus",
+      "ja": "トライアングルプラス",
+      "pt": "Triângulo Plus",
+      "ru": "Треугольник Плюс",
+      "ar": "مثلث زائد",
+      "es": "Triángulo Plus",
+      "zh": "三角加强版",
+      "bg": "Триъгълник Плюс",
+      "de": "Dreieck Plus",
+      "it": "Triangolo Plus"
     },
     "intro": {
       "en": "Complex pattern for experienced practitioners.",
-      "nl": "Complex patroon voor ervaren beoefenaren."
+      "nl": "Complex patroon voor ervaren beoefenaren.",
+      "fr": "Schéma complexe pour les praticiens expérimentés.",
+      "ja": "経験豊富な実践者向けの複雑なパターン。",
+      "pt": "Padrão complexo para praticantes experientes.",
+      "ru": "Сложный паттерн для опытных практикующих.",
+      "ar": "نمط معقد للممارسين ذوي الخبرة.",
+      "es": "Patrón complejo para practicantes experimentados.",
+      "zh": "为有经验的练习者设计的复杂模式。",
+      "bg": "Сложен модел за опитни практикуващи.",
+      "de": "Komplexes Muster für erfahrene Praktizierende.",
+      "it": "Schema complesso per praticanti esperti."
     }
   },
   {
@@ -233,11 +513,31 @@
     "duration": "5 min",
     "title": {
       "en": "1:2 Extended Breathing",
-      "nl": "1:2 Uitgebreide Ademhaling"
+      "nl": "1:2 Uitgebreide Ademhaling",
+      "fr": "Respiration Étendue 1:2",
+      "ja": "1:2延長呼吸法",
+      "pt": "Respiração Estendida 1:2",
+      "ru": "Расширенное дыхание 1:2",
+      "ar": "تنفس ممتد بنسبة 1:2",
+      "es": "Respiración Extendida 1:2",
+      "zh": "1:2延长呼吸法",
+      "bg": "Удължено дишане 1:2",
+      "de": "1:2 Erweiterte Atmung",
+      "it": "Respirazione Estesa 1:2"
     },
     "intro": {
       "en": "Deep relaxation and blood pressure reduction.",
-      "nl": "Diepe ontspanning en verlaging van de bloeddruk."
+      "nl": "Diepe ontspanning en verlaging van de bloeddruk.",
+      "fr": "Relaxation profonde et réduction de la pression artérielle.",
+      "ja": "深いリラックスと血圧低下。",
+      "pt": "Relaxamento profundo e redução da pressão arterial.",
+      "ru": "Глубокая релаксация и снижение артериального давления.",
+      "ar": "استرخاء عميق وخفض ضغط الدم.",
+      "es": "Relajación profunda y reducción de la presión arterial.",
+      "zh": "深度放松和降血压。",
+      "bg": "Дълбоко релаксиране и намаляване на кръвното налягане.",
+      "de": "Tiefe Entspannung und Blutdrucksenkung.",
+      "it": "Rilassamento profondo e riduzione della pressione arteriosa."
     }
   },
   {
@@ -246,11 +546,31 @@
     "duration": "3 min",
     "title": {
       "en": "Gentle Hold",
-      "nl": "Zachte Vasthouding"
+      "nl": "Zachte Vasthouding",
+      "fr": "Retenue Douce",
+      "ja": "ジェントルホールド",
+      "pt": "Suspensão Suave",
+      "ru": "Мягкое удержание",
+      "ar": "تعليق لطيف",
+      "es": "Retención Suave",
+      "zh": "温和屏息法",
+      "bg": "Меко задържане",
+      "de": "Sanftes Halten",
+      "it": "Sospensione Dolce"
     },
     "intro": {
       "en": "For those with lung capacity limitations.",
-      "nl": "Voor mensen met beperkingen in longcapaciteit."
+      "nl": "Voor mensen met beperkingen in longcapaciteit.",
+      "fr": "Pour ceux ayant des limitations de capacité pulmonaire.",
+      "ja": "肺活量に制限のある方のために。",
+      "pt": "Para aqueles com limitações de capacidade pulmonar.",
+      "ru": "Для тех, у кого ограничена емкость легких.",
+      "ar": "لأولئك الذين يعانون من قيود في سعة الرئة.",
+      "es": "Para aquellos con limitaciones de capacidad pulmonar.",
+      "zh": "适用于肺活量受限的人群。",
+      "bg": "За хора с ограничения в капацитета на белите дробове.",
+      "de": "Für Menschen mit Lungenkapazitätsbeschränkungen.",
+      "it": "Per coloro che hanno limitazioni di capacità polmonare."
     }
   },
   {
@@ -259,11 +579,31 @@
     "duration": "6 min",
     "title": {
       "en": "Long Breath",
-      "nl": "Lange Ademhaling"
+      "nl": "Lange Ademhaling",
+      "fr": "Respiration Longue",
+      "ja": "ロングブレス",
+      "pt": "Respiração Longa",
+      "ru": "Длинное дыхание",
+      "ar": "تنفس طويل",
+      "es": "Respiración Larga",
+      "zh": "长呼吸法",
+      "bg": "Дълго дишане",
+      "de": "Langes Atmen",
+      "it": "Respirazione Lunga"
     },
     "intro": {
       "en": "Increases lung capacity and endurance.",
-      "nl": "Verhoogt de longcapaciteit en uithoudingsvermogen."
+      "nl": "Verhoogt de longcapaciteit en uithoudingsvermogen.",
+      "fr": "Augmente la capacité pulmonaire et l'endurance.",
+      "ja": "肺活量と持久力を向上させます。",
+      "pt": "Aumenta a capacidade pulmonar e a resistência.",
+      "ru": "Увеличивает емкость легких и выносливость.",
+      "ar": "يزيد سعة الرئة والقدرة على التحمل.",
+      "es": "Aumenta la capacidad pulmonar y la resistencia.",
+      "zh": "增加肺活量和耐力。",
+      "bg": "Увеличава капацитета на белите дробове и издръжливостта.",
+      "de": "Erhöht die Lungenkapazität und Ausdauer.",
+      "it": "Aumenta la capacità polmonare e la resistenza."
     }
   },
   {
@@ -272,11 +612,31 @@
     "duration": "6 min",
     "title": {
       "en": "Classic 4-7-8 Extended",
-      "nl": "Klassieke 4-7-8 Uitgebreid"
+      "nl": "Klassieke 4-7-8 Uitgebreid",
+      "fr": "Classique 4-7-8 Étendu",
+      "ja": "クラシック4-7-8延長版",
+      "pt": "Clássico 4-7-8 Estendido",
+      "ru": "Классическое 4-7-8 расширенное",
+      "ar": "كلاسيكي 4-7-8 ممتد",
+      "es": "Clásico 4-7-8 Extendido",
+      "zh": "经典4-7-8延长版",
+      "bg": "Класическо 4-7-8 удължено",
+      "de": "Klassisches 4-7-8 Erweitert",
+      "it": "Classico 4-7-8 Esteso"
     },
     "intro": {
       "en": "Maximum relaxation response.",
-      "nl": "Maximale ontspanningsreactie."
+      "nl": "Maximale ontspanningsreactie.",
+      "fr": "Réponse de relaxation maximale.",
+      "ja": "最大限のリラックス反応。",
+      "pt": "Resposta máxima de relaxamento.",
+      "ru": "Максимальный релаксационный ответ.",
+      "ar": "استجابة الاسترخاء القصوى.",
+      "es": "Respuesta máxima de relajación.",
+      "zh": "最大程度的放松反应。",
+      "bg": "Максимален релаксационен отговор.",
+      "de": "Maximale Entspannungsreaktion.",
+      "it": "Massima risposta di rilassamento."
     }
   },
   {
@@ -285,11 +645,31 @@
     "duration": "4 min",
     "title": {
       "en": "Golden Ratio",
-      "nl": "Gouden Verhouding"
+      "nl": "Gouden Verhouding",
+      "fr": "Nombre d'Or",
+      "ja": "黄金比",
+      "pt": "Proporção Áurea",
+      "ru": "Золотое сечение",
+      "ar": "النسبة الذهبية",
+      "es": "Proporción Áurea",
+      "zh": "黄金比例",
+      "bg": "Златно сечение",
+      "de": "Goldener Schnitt",
+      "it": "Sezione Aurea"
     },
     "intro": {
       "en": "Based on mathematical harmony principles.",
-      "nl": "Gebaseerd op principes van wiskundige harmonie."
+      "nl": "Gebaseerd op principes van wiskundige harmonie.",
+      "fr": "Basé sur les principes d'harmonie mathématique.",
+      "ja": "数学的調和原理に基づいています。",
+      "pt": "Baseado em princípios de harmonia matemática.",
+      "ru": "Основано на принципах математической гармонии.",
+      "ar": "مبنية على مبادئ التناغم الرياضي.",
+      "es": "Basado en principios de armonía matemática.",
+      "zh": "基于数学和谐原理。",
+      "bg": "Базирано на принципите на математическата хармония.",
+      "de": "Basierend auf mathematischen Harmonieprinzipien.",
+      "it": "Basato sui principi dell'armonia matematica."
     }
   },
   {
@@ -301,7 +681,12 @@
       "ja": "睡眠準備プロトコル",
       "pt": "Protocolo de Preparação para o Sono",
       "ru": "Протокол подготовки ко сну",
-      "ar": "بروتوكول تحضير النوم"
+      "ar": "بروتوكول تحضير النوم",
+      "es": "Protocolo de Preparación para el Sueño",
+      "zh": "睡眠准备协议",
+      "bg": "Протокол за подготовка за сън",
+      "de": "Schlafvorbereitungsprotokoll",
+      "it": "Protocollo di Preparazione al Sonno"
     },
     "intro": {
       "en": "A progressive sequence to prepare your body and mind for restful sleep.",
@@ -310,7 +695,12 @@
       "ja": "心身を快眠のために準備するための段階的な順序。",
       "pt": "Uma sequência progressiva para preparar seu corpo e mente para um sono tranquilo.",
       "ru": "Прогрессирующая последовательность для подготовки тела и разума к крепкому сну.",
-      "ar": "تسلسل تدريجي لتحضير جسمك وعقلك للنوم المريح."
+      "ar": "تسلسل تدريجي لتحضير جسمك وعقلك للنوم المريح.",
+      "es": "Una secuencia progresiva para preparar tu cuerpo y mente para un sueño reparador.",
+      "zh": "一套循序渐进的序列，为你的身心做好安眠准备。",
+      "bg": "Прогресивна последователност за подготовката на тялото и ума ви за почивен сън.",
+      "de": "Eine progressive Sequenz, um Ihren Körper und Geist auf einen erholsamen Schlaf vorzubereiten.",
+      "it": "Una sequenza progressiva per preparare il tuo corpo e la tua mente per un sonno riposante."
     },
     "stages": [
       {
@@ -321,7 +711,12 @@
           "ja": "神経系のバランス",
           "pt": "Equilíbrio do Sistema Nervoso",
           "ru": "Баланс нервной системы",
-          "ar": "توازن الجهاز العصبي"
+          "ar": "توازن الجهاز العصبي",
+          "es": "Equilibrio del Sistema Nervioso",
+          "zh": "神经系统平衡",
+          "bg": "Баланс на нервната система",
+          "de": "Nervensystem-Balance",
+          "it": "Equilibrio del Sistema Nervoso"
         },
         "pattern": "4-4-4-4",
         "duration": 180
@@ -329,7 +724,17 @@
       {
         "title": {
           "en": "Deep Relaxation",
-          "nl": "Diepe Ontspanning"
+          "nl": "Diepe Ontspanning",
+          "fr": "Relaxation Profonde",
+          "ja": "深度リラクゼーション",
+          "pt": "Relaxamento Profundo",
+          "ru": "Глубокая релаксация",
+          "ar": "استرخاء عميق",
+          "es": "Relajación Profunda",
+          "zh": "深度放松",
+          "bg": "Дълбоко релаксиране",
+          "de": "Tiefe Entspannung",
+          "it": "Rilassamento Profondo"
         },
         "pattern": "4-7-8-0",
         "duration": 120
@@ -337,7 +742,17 @@
       {
         "title": {
           "en": "Sleep Induction",
-          "nl": "Slaap Inductie"
+          "nl": "Slaap Inductie",
+          "fr": "Induction du Sommeil",
+          "ja": "睡眠誘導",
+          "pt": "Indução do Sono",
+          "ru": "Индукция сна",
+          "ar": "حث النوم",
+          "es": "Inducción del Sueño",
+          "zh": "睡眠诱导",
+          "bg": "Индукция на съня",
+          "de": "Schlafinduktion",
+          "it": "Induzione del Sonno"
         },
         "pattern": "6-0-8-0",
         "duration": 300
@@ -348,17 +763,47 @@
     "id": "anxiety-recovery-sequence",
     "title": {
       "en": "Anxiety Recovery Sequence",
-      "nl": "Angst Herstel Sequentie"
+      "nl": "Angst Herstel Sequentie",
+      "fr": "Séquence de Récupération d'Anxiété",
+      "ja": "不安回復シーケンス",
+      "pt": "Sequência de Recuperação de Ansiedade",
+      "ru": "Последовательность восстановления от тревожности",
+      "ar": "تسلسل استرداد القلق",
+      "es": "Secuencia de Recuperación de Ansiedad",
+      "zh": "焦虑恢复序列",
+      "bg": "Последователност за възстановяване от тревожност",
+      "de": "Angstbewältigungssequenz",
+      "it": "Sequenza di Recupero dall'Ansia"
     },
     "intro": {
       "en": "A progressive approach to calm anxiety and restore emotional balance.",
-      "nl": "Een progressieve aanpak om angst te kalmeren en emotionele balans te herstellen."
+      "nl": "Een progressieve aanpak om angst te kalmeren en emotionele balans te herstellen.",
+      "fr": "Une approche progressive pour calmer l'anxiété et restaurer l'équilibre émotionnel.",
+      "ja": "不安を落ち着け、感情のバランスを回復するための段階的アプローチ。",
+      "pt": "Uma abordagem progressiva para acalmar a ansiedade e restaurar o equilíbrio emocional.",
+      "ru": "Прогрессивный подход к успокоению тревожности и восстановлению эмоционального баланса.",
+      "ar": "نهج تدريجي لتطمئن القلق واستعادة التوازن العاطفي.",
+      "es": "Un enfoque progresivo para calmar la ansiedad y restaurar el equilibrio emocional.",
+      "zh": "逐步缓解焦虑并恢复情绪平衡的方法。",
+      "bg": "Прогресивен подход за успокояване на тревожността и възстановяване на емоционалния баланс.",
+      "de": "Ein progressiver Ansatz zur Beruhigung von Angst und Wiederherstellung des emotionalen Gleichgewichts.",
+      "it": "Un approccio progressivo per calmare l'ansia e ripristinare l'equilibrio emotivo."
     },
     "stages": [
       {
         "title": {
           "en": "Stabilization",
-          "nl": "Stabilisatie"
+          "nl": "Stabilisatie",
+          "fr": "Stabilisation",
+          "ja": "安定化",
+          "pt": "Estabilização",
+          "ru": "Стабилизация",
+          "ar": "استقرار",
+          "es": "Estabilización",
+          "zh": "稳定化",
+          "bg": "Стабилизация",
+          "de": "Stabilisierung",
+          "it": "Stabilizzazione"
         },
         "pattern": "3-0-3-0",
         "duration": 120
@@ -366,7 +811,17 @@
       {
         "title": {
           "en": "Grounding",
-          "nl": "Verankeren"
+          "nl": "Verankeren",
+          "fr": "Ancrage",
+          "ja": "接地",
+          "pt": "Ancoragem",
+          "ru": "Заземление",
+          "ar": "تأشير",
+          "es": "Conexión",
+          "zh": "接地",
+          "bg": "Заземяване",
+          "de": "Verankern",
+          "it": "Ancoraggio"
         },
         "pattern": "4-4-4-4",
         "duration": 240
@@ -374,7 +829,17 @@
       {
         "title": {
           "en": "Parasympathetic Activation",
-          "nl": "Parasympathische Activatie"
+          "nl": "Parasympathische Activatie",
+          "fr": "Activation du Système Parasympathique",
+          "ja": "副交感神経活性化",
+          "pt": "Ativação do Sistema Parassimpático",
+          "ru": "Активация парасимпатической системы",
+          "ar": "تنشيط الجهاز الباراسمباتيكي",
+          "es": "Activación del Sistema Parasimpático",
+          "zh": "副交感神经激活",
+          "bg": "Активиране на парасимпатиковата система",
+          "de": "Parasympathische Aktivierung",
+          "it": "Attivazione del Sistema Parasimpatico"
         },
         "pattern": "4-0-8-0",
         "duration": 240
@@ -385,17 +850,47 @@
     "id": "morning-energy-builder",
     "title": {
       "en": "Morning Energy Builder",
-      "nl": "Ochtend Energie Opbouwer"
+      "nl": "Ochtend Energie Opbouwer",
+      "fr": "Constructeur d'Énergie du Matin",
+      "ja": "朝のエネルギービルダー",
+      "pt": "Construtor de Energia Matinal",
+      "ru": "Утренний строитель энергии",
+      "ar": "باني طاقة الصباح",
+      "es": "Constructor de Energía Matutina",
+      "zh": "晨间能量构建器",
+      "bg": "Създател на утринна енергия",
+      "de": "Morgendlicher Energieaufbau",
+      "it": "Costruttore di Energia Mattutina"
     },
     "intro": {
       "en": "A progressive sequence to awaken your body and mind for the day ahead.",
-      "nl": "Een progressieve sequentie om je lichaam en geest wakker te maken voor de dag die komt."
+      "nl": "Een progressieve sequentie om je lichaam en geest wakker te maken voor de dag die komt.",
+      "fr": "Une séquence progressive pour réveiller votre corps et votre esprit pour la journée à venir.",
+      "ja": "一日の始まりに向けて体と心を覚醒させるための段階的シーケンス。",
+      "pt": "Uma sequência progressiva para despertar seu corpo e mente para o dia que se aproxima.",
+      "ru": "Прогрессивная последовательность для пробуждения тела и разума на предстоящий день.",
+      "ar": "تسلسل تدريجي لإيقاظ جسمك وعقلك ليومك القادم.",
+      "es": "Una secuencia progresiva para despertar tu cuerpo y mente para el día que viene.",
+      "zh": "一套循序渐进的序列，为即将到来的一天唤醒你的身心。",
+      "bg": "Прогресивна последователност за събуждане на тялото и ума ви за предстоящия ден.",
+      "de": "Eine progressive Sequenz, um Ihren Körper und Geist für den kommenden Tag zu wecken.",
+      "it": "Una sequenza progressiva per risvegliare il tuo corpo e la tua mente per la giornata a venire."
     },
     "stages": [
       {
         "title": {
           "en": "Awakening",
-          "nl": "Ontwaken"
+          "nl": "Ontwaken",
+          "fr": "Éveil",
+          "ja": "覚醒",
+          "pt": "Despertar",
+          "ru": "Пробуждение",
+          "ar": "استيقاظ",
+          "es": "Despertar",
+          "zh": "觉醒",
+          "bg": "Събуждане",
+          "de": "Erwachen",
+          "it": "Risveglio"
         },
         "pattern": "4-0-4-0",
         "duration": 180
@@ -403,7 +898,17 @@
       {
         "title": {
           "en": "Energizing",
-          "nl": "Energieverhoging"
+          "nl": "Energieverhoging",
+          "fr": "Énergisant",
+          "ja": "エネルギー化",
+          "pt": "Energizante",
+          "ru": "Энергетизация",
+          "ar": "تنشيط",
+          "es": "Energizante",
+          "zh": "活力化",
+          "bg": "Енергетизиране",
+          "de": "Energietank",
+          "it": "Energizzante"
         },
         "pattern": "6-0-6-0",
         "duration": 240
@@ -411,7 +916,17 @@
       {
         "title": {
           "en": "Focus Enhancement",
-          "nl": "Focusverbetering"
+          "nl": "Focusverbetering",
+          "fr": "Amélioration de la Concentration",
+          "ja": "集中力向上",
+          "pt": "Melhoria do Foco",
+          "ru": "Улучшение фокусировки",
+          "ar": "تعزيز التركيز",
+          "es": "Mejora del Enfoque",
+          "zh": "专注力提升",
+          "bg": "Подобряване на фокуса",
+          "de": "Fokusverbesserung",
+          "it": "Miglioramento della Concentrazione"
         },
         "pattern": "4-4-6-2",
         "duration": 180
@@ -422,17 +937,47 @@
     "id": "panic-attack-management",
     "title": {
       "en": "Panic Attack Management",
-      "nl": "Paniek Aanval Beheersing"
+      "nl": "Paniek Aanval Beheersing",
+      "fr": "Gestion des Crises de Panique",
+      "ja": "パニック発作管理",
+      "pt": "Gestão de Ataques de Pânico",
+      "ru": "Управление паническими атаками",
+      "ar": "إدارة نوبات الذعر",
+      "es": "Gestión de Ataques de Pánico",
+      "zh": "恐慌发作管理",
+      "bg": "Управление на панически атаки",
+      "de": "Panikattacken-Bewältigung",
+      "it": "Gestione degli Attacchi di Panico"
     },
     "intro": {
       "en": "A progressive sequence to quickly calm panic attacks and restore control.",
-      "nl": "Een progressieve sequentie om snel paniekaanvallen te kalmeren en controle te herstellen."
+      "nl": "Een progressieve sequentie om snel paniekaanvallen te kalmeren en controle te herstellen.",
+      "fr": "Une séquence progressive pour calmer rapidement les crises de panique et restaurer le contrôle.",
+      "ja": "パニック発作を素早く落ち着け、コントロールを回復するための段階的シーケンス。",
+      "pt": "Uma sequência progressiva para acalmar rapidamente ataques de pânico e restaurar o controle.",
+      "ru": "Прогрессивная последовательность для быстрого успокоения панических атак и восстановления контроля.",
+      "ar": "تسلسل تدريجي لتهدئة نوبات الذعر بسرعة واستعادة السيطرة.",
+      "es": "Una secuencia progresiva para calmar rápidamente los ataques de pánico y restaurar el control.",
+      "zh": "一套循序渐进的序列，可快速缓解恐慌发作并恢复控制力。",
+      "bg": "Прогресивна последователност за бързо успокояване на панически атаки и възстановяване на контрола.",
+      "de": "Eine progressive Sequenz, um Panikattacken schnell zu beruhigen und die Kontrolle wiederherzustellen.",
+      "it": "Una sequenza progressiva per calmare rapidamente gli attacchi di panico e ripristinare il controllo."
     },
     "stages": [
       {
         "title": {
           "en": "Immediate Calming",
-          "nl": "Onmiddellijke Kalmering"
+          "nl": "Onmiddellijke Kalmering",
+          "fr": "Apaisement Immédiat",
+          "ja": "即時落ち着き",
+          "pt": "Calma Imediata",
+          "ru": "Немедленное успокоение",
+          "ar": "تهدئة فورية",
+          "es": "Calma Inmediata",
+          "zh": "即时平静",
+          "bg": "Незабавно успокояване",
+          "de": "Sofortige Beruhigung",
+          "it": "Calma Immediata"
         },
         "pattern": "2-0-4-0",
         "duration": 120
@@ -440,7 +985,17 @@
       {
         "title": {
           "en": "Stabilization",
-          "nl": "Stabilisatie"
+          "nl": "Stabilisatie",
+          "fr": "Stabilisation",
+          "ja": "安定化",
+          "pt": "Estabilização",
+          "ru": "Стабилизация",
+          "ar": "استقرار",
+          "es": "Estabilización",
+          "zh": "稳定化",
+          "bg": "Стабилизация",
+          "de": "Stabilisierung",
+          "it": "Stabilizzazione"
         },
         "pattern": "3-3-3-3",
         "duration": 180
@@ -448,7 +1003,17 @@
       {
         "title": {
           "en": "Full Recovery",
-          "nl": "Volledig Herstel"
+          "nl": "Volledig Herstel",
+          "fr": "Rétablissement Complet",
+          "ja": "完全回復",
+          "pt": "Recuperação Completa",
+          "ru": "Полное восстановление",
+          "ar": "تعافي كامل",
+          "es": "Recuperación Completa",
+          "zh": "全面恢复",
+          "bg": "Пълно възстановяване",
+          "de": "Vollständige Erholung",
+          "it": "Recupero Completo"
         },
         "pattern": "4-4-4-4",
         "duration": 300
@@ -459,17 +1024,47 @@
     "id": "concentration-training",
     "title": {
       "en": "Concentration Training",
-      "nl": "Concentratietraining"
+      "nl": "Concentratietraining",
+      "fr": "Entraînement de la Concentration",
+      "ja": "集中力トレーニング",
+      "pt": "Treinamento de Concentração",
+      "ru": "Тренировка концентрации",
+      "ar": "تدريب التركيز",
+      "es": "Entrenamiento de Concentración",
+      "zh": "专注力训练",
+      "bg": "Тренировка на концентрацията",
+      "de": "Konzentrationstraining",
+      "it": "Allenamento della Concentrazione"
     },
     "intro": {
       "en": "A progressive sequence to develop and sustain mental focus over time.",
-      "nl": "Een progressieve sequentie om mentale focus te ontwikkelen en in stand te houden."
+      "nl": "Een progressieve sequentie om mentale focus te ontwikkelen en in stand te houden.",
+      "fr": "Une séquence progressive pour développer et maintenir la concentration mentale dans le temps.",
+      "ja": "時間をかけて精神的な集中力を育て、維持するための段階的シーケンス。",
+      "pt": "Uma sequência progressiva para desenvolver e sustentar o foco mental ao longo do tempo.",
+      "ru": "Прогрессивная последовательность для развития и поддержания умственного фокуса с течением времени.",
+      "ar": "تسلسل تدريجي لتطوير والحفاظ على التركيز الذهني مع مرور الوقت.",
+      "es": "Una secuencia progresiva para desarrollar y mantener el enfoque mental con el tiempo.",
+      "zh": "一套循序渐进的序列，用于培养和维持长期的心理专注力。",
+      "bg": "Прогресивна последователност за развитие и поддържане на менталния фокус с течение на времето.",
+      "de": "Eine progressive Sequenz, um den geistigen Fokus im Laufe der Zeit zu entwickeln und aufrechtzuerhalten.",
+      "it": "Una sequenza progressiva per sviluppare e mantenere nel tempo il focus mentale."
     },
     "stages": [
       {
         "title": {
           "en": "Foundation Building",
-          "nl": "Basis Opbouw"
+          "nl": "Basis Opbouw",
+          "fr": "Construction des Fondations",
+          "ja": "基礎構築",
+          "pt": "Construção da Base",
+          "ru": "Создание фундамента",
+          "ar": "بناء الأساس",
+          "es": "Construcción de Fundamentos",
+          "zh": "基础构建",
+          "bg": "Изграждане на основа",
+          "de": "Grundlagenaufbau",
+          "it": "Costruzione delle Fondamenta"
         },
         "pattern": "5-5-5-5",
         "duration": 240
@@ -477,7 +1072,17 @@
       {
         "title": {
           "en": "Complexity Increase",
-          "nl": "Complexiteit Toename"
+          "nl": "Complexiteit Toename",
+          "fr": "Augmentation de la Complexité",
+          "ja": "複雑さの増加",
+          "pt": "Aumento da Complexidade",
+          "ru": "Увеличение сложности",
+          "ar": "زيادة التعقيد",
+          "es": "Aumento de Complejidad",
+          "zh": "复杂度提升",
+          "bg": "Увеличаване на сложността",
+          "de": "Komplexitätssteigerung",
+          "it": "Aumento della Complessità"
         },
         "pattern": "6-6-6-6",
         "duration": 180
@@ -485,7 +1090,17 @@
       {
         "title": {
           "en": "Sustained Focus",
-          "nl": "Aanhoudende Focus"
+          "nl": "Aanhoudende Focus",
+          "fr": "Concentration Soutenue",
+          "ja": "持続的集中",
+          "pt": "Foco Sustentado",
+          "ru": "Устойчивый фокус",
+          "ar": "تركيز مستدام",
+          "es": "Enfoque Sostenido",
+          "zh": "持续专注",
+          "bg": "Устойчив фокус",
+          "de": "Anhaltender Fokus",
+          "it": "Concentrazione Prolungata"
         },
         "pattern": "4-0-4-0",
         "duration": 180
@@ -496,17 +1111,47 @@
     "id": "blood-pressure-reduction",
     "title": {
       "en": "Blood Pressure Reduction",
-      "nl": "Bloeddrukverlaging"
+      "nl": "Bloeddrukverlaging",
+      "fr": "Réduction de la Pression Artérielle",
+      "ja": "血圧低下",
+      "pt": "Redução da Pressão Arterial",
+      "ru": "Снижение артериального давления",
+      "ar": "خفض ضغط الدم",
+      "es": "Reducción de la Presión Arterial",
+      "zh": "血压降低",
+      "bg": "Намаляване на кръвното налягане",
+      "de": "Blutdrucksenkung",
+      "it": "Riduzione della Pressione Arteriosa"
     },
     "intro": {
       "en": "A progressive sequence designed to lower blood pressure through therapeutic breathing.",
-      "nl": "Een progressieve sequentie ontworpen om de bloeddruk te verlagen via therapeutische ademhaling."
+      "nl": "Een progressieve sequentie ontworpen om de bloeddruk te verlagen via therapeutische ademhaling.",
+      "fr": "Une séquence progressive conçue pour faire baisser la pression artérielle par la respiration thérapeutique.",
+      "ja": "治療的呼吸法によって血圧を下げるために設計された段階的シーケンス。",
+      "pt": "Uma sequência progressiva projetada para reduzir a pressão arterial através da respiração terapêutica.",
+      "ru": "Прогрессивная последовательность, разработанная для снижения артериального давления с помощью терапевтического дыхания.",
+      "ar": "تسلسل تدريجي مصمم لخفض ضغط الدم من خلال التنفس العلاجي.",
+      "es": "Una secuencia progresiva diseñada para reducir la presión arterial mediante la respiración terapéutica.",
+      "zh": "一套循序渐进的序列，旨在通过治疗性呼吸来降低血压。",
+      "bg": "Прогресивна последователност, предназначена за намаляване на кръвното налягане чрез терапевтично дишане.",
+      "de": "Eine progressive Sequenz, die entwickelt wurde, um den Blutdruck durch therapeutisches Atmen zu senken.",
+      "it": "Una sequenza progressiva progettata per ridurre la pressione arteriosa attraverso la respirazione terapeutica."
     },
     "stages": [
       {
         "title": {
           "en": "Baseline Establishment",
-          "nl": "Basislijn Vaststelling"
+          "nl": "Basislijn Vaststelling",
+          "fr": "Établissement de la Ligne de Base",
+          "ja": "ベースライン確立",
+          "pt": "Estabelecimento da Linha de Base",
+          "ru": "Установление базового уровня",
+          "ar": "تأسيس الخط الأساسي",
+          "es": "Establecimiento de la Línea Base",
+          "zh": "基线确立",
+          "bg": "Установяване на базова линия",
+          "de": "Baseline-Etablierung",
+          "it": "Stabilimento della Linea di Base"
         },
         "pattern": "4-4-4-4",
         "duration": 180
@@ -514,7 +1159,17 @@
       {
         "title": {
           "en": "Therapeutic Ratio",
-          "nl": "Therapeutische Verhouding"
+          "nl": "Therapeutische Verhouding",
+          "fr": "Ratio Thérapeutique",
+          "ja": "治療比率",
+          "pt": "Razão Terapêutica",
+          "ru": "Терапевтическое соотношение",
+          "ar": "نسبة علاجية",
+          "es": "Proporción Terapéutica",
+          "zh": "治疗比例",
+          "bg": "Терапевтично съотношение",
+          "de": "Therapeutisches Verhältnis",
+          "it": "Rapporto Terapeutico"
         },
         "pattern": "5-0-10-0",
         "duration": 300
@@ -522,7 +1177,17 @@
       {
         "title": {
           "en": "Maximum Benefit",
-          "nl": "Maximaal Voordeel"
+          "nl": "Maximaal Voordeel",
+          "fr": "Bénéfice Maximum",
+          "ja": "最大利益",
+          "pt": "Benefício Máximo",
+          "ru": "Максимальная польза",
+          "ar": "أقصى فائدة",
+          "es": "Máximo Beneficio",
+          "zh": "最大效益",
+          "bg": "Максимална полза",
+          "de": "Maximaler Nutzen",
+          "it": "Massimo Beneficio"
         },
         "pattern": "6-0-12-0",
         "duration": 120
@@ -533,17 +1198,47 @@
     "id": "pre-competition-protocol",
     "title": {
       "en": "Pre-Competition Protocol",
-      "nl": "Voorwedstrijd Protocol"
+      "nl": "Voorwedstrijd Protocol",
+      "fr": "Protocole Pré-Compétition",
+      "ja": "競技前プロトコル",
+      "pt": "Protocolo Pré-Competição",
+      "ru": "Протокол перед соревнованием",
+      "ar": "بروتوكول ما قبل المنافسة",
+      "es": "Protocolo Precompetitivo",
+      "zh": "赛前准备协议",
+      "bg": "Протокол преди състезание",
+      "de": "Vorbereitungsprotokoll",
+      "it": "Protocollo Pre-Competizione"
     },
     "intro": {
       "en": "A progressive sequence to prepare mentally and physically for peak performance.",
-      "nl": "Een progressieve sequentie om mentaal en fysiek voor te bereiden op piekprestaties."
+      "nl": "Een progressieve sequentie om mentaal en fysiek voor te bereiden op piekprestaties.",
+      "fr": "Une séquence progressive pour se préparer mentalement et physiquement aux performances de pointe.",
+      "ja": "ピークパフォーマンスに向けて精神的・身体的に準備するための段階的シーケンス。",
+      "pt": "Uma sequência progressiva para preparar mental e fisicamente para o desempenho de pico.",
+      "ru": "Прогрессивная последовательность для психической и физической подготовки к пиковому выступлению.",
+      "ar": "تسلسل تدريجي لإعدادك نفسيًا وجسديًا للأداء على أعلى مستوى.",
+      "es": "Una secuencia progresiva para prepararte mental y físicamente para un rendimiento óptimo.",
+      "zh": "一套循序渐进的序列，为巅峰表现做好心理和身体准备。",
+      "bg": "Прогресивна последователност за ментална и физическа подготовка за високи резултати.",
+      "de": "Eine progressive Sequenz, um sich mental und physisch auf Höchstleistungen vorzubereiten.",
+      "it": "Una sequenza progressiva per prepararsi mentalmente e fisicamente per le prestazioni di picco."
     },
     "stages": [
       {
         "title": {
           "en": "Coherence Building",
-          "nl": "Coherentie Opbouw"
+          "nl": "Coherentie Opbouw",
+          "fr": "Construction de la Cohérence",
+          "ja": "コヒーレンス構築",
+          "pt": "Construção de Coerência",
+          "ru": "Создание согласованности",
+          "ar": "بناء التماسك",
+          "es": "Construcción de Coherencia",
+          "zh": "连贯性构建",
+          "bg": "Изграждане на кохерентност",
+          "de": "Kohärenzaufbau",
+          "it": "Costruzione della Coerenza"
         },
         "pattern": "6-0-6-0",
         "duration": 240
@@ -551,7 +1246,17 @@
       {
         "title": {
           "en": "Mental Preparation",
-          "nl": "Mentale Voorbereiding"
+          "nl": "Mentale Voorbereiding",
+          "fr": "Préparation Mentale",
+          "ja": "精神的準備",
+          "pt": "Preparação Mental",
+          "ru": "Ментальная подготовка",
+          "ar": "التحضير الذهني",
+          "es": "Preparación Mental",
+          "zh": "心理准备",
+          "bg": "Ментална подготовка",
+          "de": "Mentale Vorbereitung",
+          "it": "Preparazione Mentale"
         },
         "pattern": "4-4-4-4",
         "duration": 180
@@ -559,7 +1264,17 @@
       {
         "title": {
           "en": "Controlled Activation",
-          "nl": "Gecontroleerde Activering"
+          "nl": "Gecontroleerde Activering",
+          "fr": "Activation Contrôlée",
+          "ja": "制御された活性化",
+          "pt": "Ativação Controlada",
+          "ru": "Контролируемая активация",
+          "ar": "تنشيط محكوم",
+          "es": "Activación Controlada",
+          "zh": "受控激活",
+          "bg": "Контролирана активация",
+          "de": "Kontrollierte Aktivierung",
+          "it": "Attivazione Controllata"
         },
         "pattern": "3-0-6-0",
         "duration": 180
@@ -570,17 +1285,47 @@
     "id": "post-workout-recovery",
     "title": {
       "en": "Post-Workout Recovery",
-      "nl": "Herstel Na Training"
+      "nl": "Herstel Na Training",
+      "fr": "Récupération Post-Entraînement",
+      "ja": "トレーニング後回復",
+      "pt": "Recuperação Pós-Treino",
+      "ru": "Восстановление после тренировки",
+      "ar": "تعافي ما بعد التمرين",
+      "es": "Recuperación Post-Entrenamiento",
+      "zh": "运动后恢复",
+      "bg": "Възстановяване след тренировка",
+      "de": "Erholung nach dem Training",
+      "it": "Recupero Post-Allenamento"
     },
     "intro": {
       "en": "A progressive sequence to normalize heart rate and accelerate recovery after exercise.",
-      "nl": "Een progressieve sequentie om de hartslag te normaliseren en herstel na training te versnellen."
+      "nl": "Een progressieve sequentie om de hartslag te normaliseren en herstel na training te versnellen.",
+      "fr": "Une séquence progressive pour normaliser le rythme cardiaque et accélérer la récupération après l'exercice.",
+      "ja": "運動後の心拍数を正常化し、回復を促進するための段階的シーケンス。",
+      "pt": "Uma sequência progressiva para normalizar a frequência cardíaca e acelerar a recuperação após o exercício.",
+      "ru": "Прогрессивная последовательность для нормализации сердечного ритма и ускорения восстановления после упражнений.",
+      "ar": "تسلسل تدريجي لتطبيع معدل ضربات القلب وتسريع التعافي بعد التمرين.",
+      "es": "Una secuencia progresiva para normalizar la frecuencia cardíaca y acelerar la recuperación después del ejercicio.",
+      "zh": "一套循序渐进的序列，用于正常化心率并加速运动后的恢复。",
+      "bg": "Прогресивна последователност за нормализиране на сърдечния ритъм и ускоряване на възстановяването след упражнения.",
+      "de": "Eine progressive Sequenz, um die Herzfrequenz zu normalisieren und die Erholung nach dem Training zu beschleunigen.",
+      "it": "Una sequenza progressiva per normalizzare la frequenza cardiaca e accelerare il recupero dopo l'esercizio."
     },
     "stages": [
       {
         "title": {
           "en": "Heart Rate Normalization",
-          "nl": "Hartslag Normalisatie"
+          "nl": "Hartslag Normalisatie",
+          "fr": "Normalisation du Rythme Cardiaque",
+          "ja": "心拍数正常化",
+          "pt": "Normalização da Frequência Cardíaca",
+          "ru": "Нормализация сердечного ритма",
+          "ar": "تطبيع معدل ضربات القلب",
+          "es": "Normalización de la Frecuencia Cardíaca",
+          "zh": "心率正常化",
+          "bg": "Нормализиране на сърдечния ритъм",
+          "de": "Herzfrequenz-Normalisierung",
+          "it": "Normalizzazione della Frequenza Cardiaca"
         },
         "pattern": "8-0-8-0",
         "duration": 180
@@ -588,7 +1333,17 @@
       {
         "title": {
           "en": "Recovery Acceleration",
-          "nl": "Herstelversnelling"
+          "nl": "Herstelversnelling",
+          "fr": "Accélération de la Récupération",
+          "ja": "回復促進",
+          "pt": "Aceleração da Recuperação",
+          "ru": "Ускорение восстановления",
+          "ar": "تسريع التعافي",
+          "es": "Aceleración de la Recuperación",
+          "zh": "恢复加速",
+          "bg": "Ускоряване на възстановяването",
+          "de": "Erholungsbeschleunigung",
+          "it": "Accelerazione del Recupero"
         },
         "pattern": "4-7-8-0",
         "duration": 180
@@ -596,7 +1351,17 @@
       {
         "title": {
           "en": "Homeostasis Restoration",
-          "nl": "Homeostase Herstel"
+          "nl": "Homeostase Herstel",
+          "fr": "Restauration de l'Homéostasie",
+          "ja": "恒常性回復",
+          "pt": "Restauração da Homeostasia",
+          "ru": "Восстановление гомеостаза",
+          "ar": "استعادة التوازن الداخلي",
+          "es": "Restauración de la Homeostasis",
+          "zh": "稳态恢复",
+          "bg": "Възстановяване на хомеостазата",
+          "de": "Wiederherstellung der Homöostase",
+          "it": "Ripristino dell'Omeostasi"
         },
         "pattern": "6-0-6-0",
         "duration": 240
@@ -607,17 +1372,47 @@
     "id": "meditation-preparation",
     "title": {
       "en": "Meditation Preparation",
-      "nl": "Meditatie Voorbereiding"
+      "nl": "Meditatie Voorbereiding",
+      "fr": "Préparation à la Méditation",
+      "ja": "瞑想準備",
+      "pt": "Preparação para Meditação",
+      "ru": "Подготовка к медитации",
+      "ar": "تحضير التأمل",
+      "es": "Preparación para la Meditación",
+      "zh": "冥想准备",
+      "bg": "Подготовка за медитация",
+      "de": "Meditationsvorbereitung",
+      "it": "Preparazione alla Meditazione"
     },
     "intro": {
       "en": "A progressive sequence to settle the mind and transition into deeper meditation.",
-      "nl": "Een progressieve sequentie om de geest te kalmeren en over te gaan tot diepere meditatie."
+      "nl": "Een progressieve sequentie om de geest te kalmeren en over te gaan tot diepere meditatie.",
+      "fr": "Une séquence progressive pour apaiser l'esprit et passer à une méditation plus profonde.",
+      "ja": "心を落ち着け、より深い瞑想に移行するための段階的シーケンス。",
+      "pt": "Uma sequência progressiva para acalmar a mente e transitar para uma meditação mais profunda.",
+      "ru": "Прогрессивная последовательность для успокоения ума и перехода к более глубокой медитации.",
+      "ar": "تسلسل تدريجي لتطمئن العقل والانتقال إلى تأمل أعمق.",
+      "es": "Una secuencia progresiva para calmar la mente y transitar a una meditación más profunda.",
+      "zh": "一套循序渐进的序列，用于安定心神并过渡到更深层次的冥想。",
+      "bg": "Прогресивна последователност за успокояване на ума и преминаване към по-дълбока медитация.",
+      "de": "Eine progressive Sequenz, um den Geist zu beruhigen und in eine tiefere Meditation überzugehen.",
+      "it": "Una sequenza progressiva per placare la mente e passare a una meditazione più profonda."
     },
     "stages": [
       {
         "title": {
           "en": "Mind Settling",
-          "nl": "Geest Stabilisatie"
+          "nl": "Geest Stabilisatie",
+          "fr": "Apaisement de l'Esprit",
+          "ja": "心の安定",
+          "pt": "Acalmamento da Mente",
+          "ru": "Успокоение ума",
+          "ar": "تطمئن العقل",
+          "es": "Calma Mental",
+          "zh": "心神安定",
+          "bg": "Успокояване на ума",
+          "de": "Geistesberuhigung",
+          "it": "Placamento della Mente"
         },
         "pattern": "4-0-4-0",
         "duration": 300
@@ -625,7 +1420,17 @@
       {
         "title": {
           "en": "Deeper Awareness",
-          "nl": "Dieper Bewustzijn"
+          "nl": "Dieper Bewustzijn",
+          "fr": "Conscience Plus Profonde",
+          "ja": "より深い意識",
+          "pt": "Consciência Mais Profunda",
+          "ru": "Более глубокая осознанность",
+          "ar": "وعي أعمق",
+          "es": "Conciencia Más Profunda",
+          "zh": "更深层的觉知",
+          "bg": "По-дълбока осъзнатост",
+          "de": "Tiefere Achtsamkeit",
+          "it": "Consapevolezza Più Profonda"
         },
         "pattern": "6-2-6-2",
         "duration": 240
@@ -633,7 +1438,17 @@
       {
         "title": {
           "en": "Transition to Meditation",
-          "nl": "Overgang naar Meditatie"
+          "nl": "Overgang naar Meditatie",
+          "fr": "Transition vers la Méditation",
+          "ja": "瞑想への移行",
+          "pt": "Transição para Meditação",
+          "ru": "Переход к медитации",
+          "ar": "الانتقال إلى التأمل",
+          "es": "Transición a la Meditación",
+          "zh": "过渡到冥想",
+          "bg": "Преход към медитация",
+          "de": "Übergang zur Meditation",
+          "it": "Transizione alla Meditazione"
         },
         "pattern": "natural",
         "duration": 60
@@ -644,17 +1459,47 @@
     "id": "chronic-pain-management",
     "title": {
       "en": "Chronic Pain Management",
-      "nl": "Chronische Pijn Beheersing"
+      "nl": "Chronische Pijn Beheersing",
+      "fr": "Gestion de la Douleur Chronique",
+      "ja": "慢性疼痛管理",
+      "pt": "Gestão da Dor Crônica",
+      "ru": "Управление хронической болью",
+      "ar": "إدارة الألم المزمن",
+      "es": "Gestión del Dolor Crónico",
+      "zh": "慢性疼痛管理",
+      "bg": "Управление на хроничната болка",
+      "de": "Chronische Schmerzbewältigung",
+      "it": "Gestione del Dolore Cronico"
     },
     "intro": {
       "en": "A progressive sequence to help manage chronic pain through controlled breathing techniques.",
-      "nl": "Een progressieve sequentie om chronische pijn te helpen beheren via gecontroleerde ademhalingstechnieken."
+      "nl": "Een progressieve sequentie om chronische pijn te helpen beheren via gecontroleerde ademhalingstechnieken.",
+      "fr": "Une séquence progressive pour aider à gérer la douleur chronique par des techniques de respiration contrôlée.",
+      "ja": "制御された呼吸法によって慢性疼痛の管理を支援するための段階的シーケンス。",
+      "pt": "Uma sequência progressiva para ajudar a gerir a dor crônica através de técnicas de respiração controlada.",
+      "ru": "Прогрессивная последовательность, помогающая управлять хронической болью с помощью контролируемых дыхательных техник.",
+      "ar": "تسلسل تدريجي للمساعدة في إدارة الألم المزمن من خلال تقنيات التنفس المسيطر عليها.",
+      "es": "Una secuencia progresiva para ayudar a manejar el dolor crónico mediante técnicas de respiración controlada.",
+      "zh": "一套循序渐进的序列，通过受控呼吸技巧帮助管理慢性疼痛。",
+      "bg": "Прогресивна последователност за помощ в управлението на хроничната болка чрез контролирани дихателни техники.",
+      "de": "Eine progressive Sequenz, um bei der Bewältigung chronischer Schmerzen durch kontrollierte Atemtechniken zu helfen.",
+      "it": "Una sequenza progressiva per aiutare a gestire il dolore cronico attraverso tecniche di respirazione controllata."
     },
     "stages": [
       {
         "title": {
           "en": "Gentle Introduction",
-          "nl": "Zachte Introductie"
+          "nl": "Zachte Introductie",
+          "fr": "Introduction Douce",
+          "ja": "穏やかな導入",
+          "pt": "Introdução Suave",
+          "ru": "Мягкое введение",
+          "ar": "مقدمة لطيفة",
+          "es": "Introducción Suave",
+          "zh": "温和入门",
+          "bg": "Меко въведение",
+          "de": "Sanfte Einführung",
+          "it": "Introduzione Dolce"
         },
         "pattern": "3-3-3-3",
         "duration": 180
@@ -662,7 +1507,17 @@
       {
         "title": {
           "en": "Pain Gate Control",
-          "nl": "Pijnpoort Controle"
+          "nl": "Pijnpoort Controle",
+          "fr": "Contrôle de la Porte de la Douleur",
+          "ja": "疼痛ゲート制御",
+          "pt": "Controle do Portão da Dor",
+          "ru": "Контроль болевых ворот",
+          "ar": "التحكم في بوابة الألم",
+          "es": "Control de la Puerta del Dolor",
+          "zh": "疼痛闸门控制",
+          "bg": "Контрол на болковите врати",
+          "de": "Schmerztor-Kontrolle",
+          "it": "Controllo del Cancello del Dolore"
         },
         "pattern": "4-4-6-2",
         "duration": 300
@@ -670,7 +1525,17 @@
       {
         "title": {
           "en": "Endorphin Release",
-          "nl": "Endorfine Vrijzetting"
+          "nl": "Endorfine Vrijzetting",
+          "fr": "Libération d'Endorphines",
+          "ja": "エンドルフィン放出",
+          "pt": "Liberação de Endorfinas",
+          "ru": "Высвобождение эндорфинов",
+          "ar": "إطلاق الإندورفين",
+          "es": "Liberación de Endorfinas",
+          "zh": "内啡肽释放",
+          "bg": "Освобождаване на ендорфини",
+          "de": "Endorphin-Freisetzung",
+          "it": "Rilascio di Endorfine"
         },
         "pattern": "4-0-8-0",
         "duration": 420
