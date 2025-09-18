@@ -36,7 +36,7 @@ OpenBreath aims to become the most comprehensive and user-friendly breathing exe
 ### Long Term
 
 - [ ] Add biometric integration (heart rate monitoring)
-- [ ] Implement AI-powered personalized breathing programs
+- [x] Implement AI-powered personalized breathing programs
 - [ ] Add meditation and mindfulness exercises
 - [ ] Create companion wearable app
 - [ ] Develop research partnerships for effectiveness studies

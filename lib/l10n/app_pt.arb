@@ -27,6 +27,8 @@
   "inhale": "Inalar",
   "exhale": "Exalar",
   "hold": "Segurar",
+  "throughNose": "pelo nariz",
+  "throughMouth": "pela boca",
   "close": "Fechar",
   "exerciseInvalid": "Exercício não encontrado ou padrão inválido.",
   "progressiveExercise": "Exercício Progressivo",

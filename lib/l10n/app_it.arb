@@ -18,6 +18,8 @@
   "inhale": "Inspira",
   "exhale": "Espira",
   "hold": "Trattieni",
+  "throughNose": "attraverso il naso",
+  "throughMouth": "attraverso la bocca",
   "close": "Chiudi",
   "exerciseInvalid": "Esercizio non trovato o schema non valido.",
   "progressiveExercise": "Esercizio progressivo",

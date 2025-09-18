@@ -93,6 +93,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get hold => 'Vasthouden';
 
   @override
+  String get throughNose => 'door neus';
+
+  @override
+  String get throughMouth => 'door mond';
+
+  @override
   String get close => 'Sluiten';
 
   @override

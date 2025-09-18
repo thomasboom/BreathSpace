@@ -94,6 +94,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get hold => 'Segurar';
 
   @override
+  String get throughNose => 'pelo nariz';
+
+  @override
+  String get throughMouth => 'pela boca';
+
+  @override
   String get close => 'Fechar';
 
   @override

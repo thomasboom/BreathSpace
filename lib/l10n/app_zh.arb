@@ -18,6 +18,8 @@
   "inhale": "吸气",
   "exhale": "呼气",
   "hold": "屏住",
+  "throughNose": "用鼻子",
+  "throughMouth": "用嘴",
   "close": "关闭",
   "exerciseInvalid": "找不到练习或无效的模式。",
   "progressiveExercise": "渐进式练习",

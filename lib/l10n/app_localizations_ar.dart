@@ -93,6 +93,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get hold => 'احتجاز';
 
   @override
+  String get throughNose => 'من الأنف';
+
+  @override
+  String get throughMouth => 'من الفم';
+
+  @override
   String get close => 'إغلاق';
 
   @override

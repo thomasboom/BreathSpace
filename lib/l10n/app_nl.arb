@@ -17,6 +17,8 @@
   "inhale": "Inademen",
   "exhale": "Uitademen",
   "hold": "Vasthouden",
+  "throughNose": "door neus",
+  "throughMouth": "door mond",
   "close": "Sluiten",
   "exerciseInvalid": "Oefening niet gevonden of ongeldig patroon.",
   "progressiveExercise": "Progressieve Oefening",

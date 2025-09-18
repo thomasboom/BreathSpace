@@ -27,6 +27,8 @@
   "inhale": "استنشاق",
   "exhale": "زفير",
   "hold": "احتجاز",
+  "throughNose": "من الأنف",
+  "throughMouth": "من الفم",
   "close": "إغلاق",
   "exerciseInvalid": "التمرين غير موجود أو النمط غير صالح.",
   "progressiveExercise": "تمرين تدريجي",

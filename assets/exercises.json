@@ -20,7 +20,9 @@
       "pt": "Uma técnica simples para acalmar sua mente e corpo.",
       "ru": "Простая техника для успокоения ума и тела.",
       "ar": "تقنية بسيطة لتطمئن عقلك وجسمك."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "relaxing-breath",
@@ -43,7 +45,9 @@
       "pt": "Promove o sono e reduz a ansiedade.",
       "ru": "Способствует сну и снижает тревожность.",
       "ar": "يُسهل النوم ويقلل القلق."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "box-breathing-navy-seals",
@@ -76,7 +80,9 @@
       "bg": "Използва се от морските котици за справяне със стреса.",
       "de": "Wird von Navy SEALs für Stressmanagement verwendet.",
       "it": "Usata dai Navy SEAL per la gestione dello stress."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "two-one-ratio",
@@ -109,7 +115,9 @@
       "bg": "Проста техника за релаксиране за начинаещи.",
       "de": "Einfache beruhigende Technik für Anfänger.",
       "it": "Tecnica semplice di rilassamento per principianti."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "equal-breathing",
@@ -142,7 +150,9 @@
       "bg": "Балансира активирането на нервната система.",
       "de": "Balanciert die Aktivierung des Nervensystems.",
       "it": "Bilancia l'attivazione del sistema nervoso."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "nose"
   },
   {
     "id": "test-5-0-5-0",
@@ -175,7 +185,9 @@
       "bg": "Тестово упражнение с модел 5-0-5-0 за 10 секунди.",
       "de": "Testübung mit 5-0-5-0-Muster für 10 Sekunden.",
       "it": "Esercizio di test con schema 5-0-5-0 per 10 secondi."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "modified-4-7-8",
@@ -208,7 +220,9 @@
       "bg": "По-мека версия за облекчаване на тревожността.",
       "de": "Sanftere Version zur Angstbewältigung.",
       "it": "Versione più delicata per il sollievo dall'ansia."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "coherent-breathing",
@@ -241,7 +255,9 @@
       "bg": "Оптимизира вариабилността на сърдечния ритъм.",
       "de": "Optimiert die Herzratenvariabilität.",
       "it": "Ottimizza la variabilità della frequenza cardiaca."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "nose"
   },
   {
     "id": "extended-exhale",
@@ -274,7 +290,9 @@
       "bg": "Активира парасимпатиковата реакция.",
       "de": "Aktiviert die parasympathische Reaktion.",
       "it": "Attiva la risposta parasimpatica."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "mini-box",
@@ -307,7 +325,9 @@
       "bg": "Бързо облекчаване на стреса за заети моменти.",
       "de": "Schnelle Stressentlastung für geschäftige Momente.",
       "it": "Rapido sollievo dallo stress per momenti occupati."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "sama-vritti",
@@ -340,7 +360,9 @@
       "bg": "Подобрява концентрацията и умствената яснота.",
       "de": "Verbessert Konzentration und geistige Klarheit.",
       "it": "Migliora la concentrazione e la chiarezza mentale."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "nose"
   },
   {
     "id": "deep-equal",
@@ -373,7 +395,9 @@
       "bg": "Подобрява фокуса и когнитивното изпълнение.",
       "de": "Verbessert Fokus und kognitive Leistung.",
       "it": "Migliora la concentrazione e le prestazioni cognitive."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "nose"
   },
   {
     "id": "square-breathing",
@@ -406,7 +430,9 @@
       "bg": "Изгражда ментална устойчивост.",
       "de": "Baut mentale Resilienz auf.",
       "it": "Costruisce la resilienza mentale."
-    }
+    },
+    "inhale_method": "nose",
+    "exhale_method": "mouth"
   },
   {
     "id": "quick-focus",

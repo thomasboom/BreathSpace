@@ -94,6 +94,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get hold => 'Trattieni';
 
   @override
+  String get throughNose => 'attraverso il naso';
+
+  @override
+  String get throughMouth => 'attraverso la bocca';
+
+  @override
   String get close => 'Chiudi';
 
   @override

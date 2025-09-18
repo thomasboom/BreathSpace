@@ -286,6 +286,18 @@ abstract class AppLocalizations {
   /// **'Hold'**
   String get hold;
 
+  /// No description provided for @throughNose.
+  ///
+  /// In en, this message translates to:
+  /// **'through nose'**
+  String get throughNose;
+
+  /// No description provided for @throughMouth.
+  ///
+  /// In en, this message translates to:
+  /// **'through mouth'**
+  String get throughMouth;
+
   /// No description provided for @close.
   ///
   /// In en, this message translates to:

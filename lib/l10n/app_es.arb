@@ -18,6 +18,8 @@
   "inhale": "Inhalar",
   "exhale": "Exhalar",
   "hold": "Sostener",
+  "throughNose": "por la nariz",
+  "throughMouth": "por la boca",
   "close": "Cerrar",
   "exerciseInvalid": "Ejercicio no encontrado o patrón no válido.",
   "progressiveExercise": "Ejercicio progresivo",

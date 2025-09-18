@@ -54,6 +54,8 @@ class BreathingExercise {
   final String duration; // For backward compatibility
   final String intro;
   final List<BreathingStage>? stages; // For progressive stages
+  final String? inhaleMethod; // New field for inhale method (nose/mouth)
+  final String? exhaleMethod; // New field for exhale method (nose/mouth)
 
   const BreathingExercise({
     required this.id,
@@ -62,6 +64,8 @@ class BreathingExercise {
     required this.duration,
     required this.intro,
     this.stages,
+    this.inhaleMethod,
+    this.exhaleMethod,
   });
 
   factory BreathingExercise.fromJson(Map<String, dynamic> json, String? languageCode) {
@@ -84,6 +88,8 @@ class BreathingExercise {
       duration: json['duration'] as String? ?? '',
       intro: json['intro'][lang] as String,
       stages: stages,
+      inhaleMethod: json['inhale_method'] as String?, // Parse inhale method
+      exhaleMethod: json['exhale_method'] as String?, // Parse exhale method
     );
   }
 

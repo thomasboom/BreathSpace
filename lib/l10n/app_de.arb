@@ -22,6 +22,8 @@
   "inhale": "Einatmen",
   "exhale": "Ausatmen",
   "hold": "Halten",
+  "throughNose": "durch die Nase",
+  "throughMouth": "durch den Mund",
   "close": "Schließen",
   "exerciseInvalid": "Übung nicht gefunden oder ungültiges Muster.",
   "progressiveExercise": "Progressive Übung",

@@ -93,6 +93,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get hold => '止める';
 
   @override
+  String get throughNose => '鼻で';
+
+  @override
+  String get throughMouth => '口で';
+
+  @override
   String get close => '閉じる';
 
   @override

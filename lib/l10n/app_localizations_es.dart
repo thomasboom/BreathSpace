@@ -94,6 +94,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get hold => 'Sostener';
 
   @override
+  String get throughNose => 'por la nariz';
+
+  @override
+  String get throughMouth => 'por la boca';
+
+  @override
   String get close => 'Cerrar';
 
   @override

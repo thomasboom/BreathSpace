@@ -27,6 +27,8 @@
   "inhale": "Inspirez",
   "exhale": "Expirez",
   "hold": "Retenez",
+  "throughNose": "par le nez",
+  "throughMouth": "par la bouche",
   "close": "Fermer",
   "exerciseInvalid": "Exercice non trouvé ou motif invalide.",
   "progressiveExercise": "Exercice progressif",

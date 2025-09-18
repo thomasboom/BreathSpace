@@ -18,6 +18,8 @@
   "inhale": "Вдишайте",
   "exhale": "Издишайте",
   "hold": "Задръжте",
+  "throughNose": "през носа",
+  "throughMouth": "през устата",
   "close": "Затвори",
   "exerciseInvalid": "Упражнението не е намерено или невалиден модел.",
   "progressiveExercise": "Прогресивно упражнение",

@@ -8,6 +8,9 @@ import 'package:OpenBreath/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
+// Enum to track the current breathing phase
+enum BreathingPhase { inhale, hold1, exhale, hold2 }
+
 class ExerciseScreen extends StatefulWidget {
   final BreathingExercise exercise;
   const ExerciseScreen({super.key, required this.exercise});
@@ -34,6 +37,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   bool _exhaleSoundPlayed = false;
   bool _holdSoundPlayed = false;
   String _lastInstruction = ''; // Track the previous instruction
+
+  // Track the current phase for breathing method instructions
+  BreathingPhase _currentPhase = BreathingPhase.inhale;
 
   final AudioPlayer _soundEffectPlayer = AudioPlayer();
   final AudioPlayer _musicPlayer = AudioPlayer();
@@ -225,6 +231,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
         final l10n = AppLocalizations.of(context);
         if (currentTime >= 0 && currentTime < inhale) {
           _instruction = l10n.inhale;
+          _currentPhase = BreathingPhase.inhale;
           // Play sound effect only once when entering inhale phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/in.wav'));
@@ -233,6 +240,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           }
         } else if (hold1 > 0 && currentTime >= inhale && currentTime < (inhale + hold1)) {
           _instruction = l10n.hold;
+          _currentPhase = BreathingPhase.hold1;
           // Play sound effect only once when entering first hold phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
@@ -241,6 +249,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           }
         } else if (currentTime >= (inhale + hold1) && currentTime < (inhale + hold1 + exhale)) {
           _instruction = l10n.exhale;
+          _currentPhase = BreathingPhase.exhale;
           // Play sound effect only once when entering exhale phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/out.wav'));
@@ -249,6 +258,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           }
         } else if (hold2 > 0 && currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
           _instruction = l10n.hold;
+          _currentPhase = BreathingPhase.hold2;
           // Play sound effect only once when entering second hold phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
@@ -330,6 +340,47 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     await _musicPlayer.setVolume(1.0);
   }
 
+  // Method to build breathing method instruction text
+  Widget _buildBreathingMethodInstruction(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    String? instructionText;
+
+    // Show breathing method based on the current phase
+    if (_currentPhase == BreathingPhase.inhale) {
+      // Inhale phase - show inhale method
+      if (widget.exercise.inhaleMethod != null) {
+        if (widget.exercise.inhaleMethod == 'nose') {
+          instructionText = '${l10n.inhale} ${l10n.throughNose}';
+        } else if (widget.exercise.inhaleMethod == 'mouth') {
+          instructionText = '${l10n.inhale} ${l10n.throughMouth}';
+        }
+      }
+    } else if (_currentPhase == BreathingPhase.exhale) {
+      // Exhale phase - show exhale method
+      if (widget.exercise.exhaleMethod != null) {
+        if (widget.exercise.exhaleMethod == 'nose') {
+          instructionText = '${l10n.exhale} ${l10n.throughNose}';
+        } else if (widget.exercise.exhaleMethod == 'mouth') {
+          instructionText = '${l10n.exhale} ${l10n.throughMouth}';
+        }
+      }
+    }
+
+    // Only show the instruction if we have text to display
+    if (instructionText != null) {
+      return Text(
+        instructionText,
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+          fontWeight: FontWeight.bold,
+        ),
+        textAlign: TextAlign.center,
+      );
+    }
+
+    // Return empty container if no instruction to show
+    return Container();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -392,6 +443,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
                         ),
                       ),
                       SizedBox(height: 20),
+                      // Display breathing method instructions below the bubble
+                      _buildBreathingMethodInstruction(context),
+                      SizedBox(height: 10),
                       // Display current stage information below the bubble
                       if (widget.exercise.hasStages) ...[
                         Text(

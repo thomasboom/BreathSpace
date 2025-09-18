@@ -27,6 +27,8 @@
   "inhale": "吸う",
   "exhale": "吐く",
   "hold": "止める",
+  "throughNose": "鼻で",
+  "throughMouth": "口で",
   "close": "閉じる",
   "exerciseInvalid": "エクササイズが見つからないか、無効なパターンです。",
   "progressiveExercise": "プログレッシブエクササイズ",
