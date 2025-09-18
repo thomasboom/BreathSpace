@@ -2,7 +2,10 @@
   "ar": [
     "voiceGuide",
     "voiceGuideOff",
-    "voiceGuideThomas"
+    "voiceGuideThomas",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "bg": [
@@ -17,7 +20,10 @@
     "languageArabic",
     "voiceGuide",
     "voiceGuideOff",
-    "voiceGuideThomas"
+    "voiceGuideThomas",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "de": [
@@ -25,7 +31,10 @@
     "languageJapanese",
     "languagePortuguese",
     "languageRussian",
-    "languageArabic"
+    "languageArabic",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "es": [
@@ -37,7 +46,16 @@
     "languageJapanese",
     "languagePortuguese",
     "languageRussian",
-    "languageArabic"
+    "languageArabic",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
+  ],
+
+  "fr": [
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "it": [
@@ -49,13 +67,19 @@
     "languageJapanese",
     "languagePortuguese",
     "languageRussian",
-    "languageArabic"
+    "languageArabic",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "ja": [
     "voiceGuide",
     "voiceGuideOff",
-    "voiceGuideThomas"
+    "voiceGuideThomas",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "nl": [
@@ -68,19 +92,28 @@
     "languageJapanese",
     "languagePortuguese",
     "languageRussian",
-    "languageArabic"
+    "languageArabic",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "pt": [
     "voiceGuide",
     "voiceGuideOff",
-    "voiceGuideThomas"
+    "voiceGuideThomas",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "ru": [
     "voiceGuide",
     "voiceGuideOff",
-    "voiceGuideThomas"
+    "voiceGuideThomas",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ],
 
   "zh": [
@@ -92,6 +125,9 @@
     "languageJapanese",
     "languagePortuguese",
     "languageRussian",
-    "languageArabic"
+    "languageArabic",
+    "exerciseFinishedTitle",
+    "exerciseFinishedSubtitle",
+    "backToHome"
   ]
 }

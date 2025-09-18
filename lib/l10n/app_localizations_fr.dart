@@ -166,4 +166,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get promptCacheCleared => 'Cache des invites vidé';
+
+  @override
+  String get exerciseFinishedTitle => 'Exercise finished';
+
+  @override
+  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+
+  @override
+  String get backToHome => 'Back to Home';
 }

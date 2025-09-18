@@ -429,6 +429,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Prompt cache cleared'**
   String get promptCacheCleared;
+
+  /// No description provided for @exerciseFinishedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Exercise finished'**
+  String get exerciseFinishedTitle;
+
+  /// No description provided for @exerciseFinishedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'I hope you feel better.'**
+  String get exerciseFinishedSubtitle;
+
+  /// No description provided for @backToHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Home'**
+  String get backToHome;
 }
 
 class _AppLocalizationsDelegate

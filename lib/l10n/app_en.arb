@@ -50,5 +50,8 @@
   "promptCacheSubtitle": "Cached responses for faster recommendations",
   "promptCacheEntries": "entries",
   "promptCacheClear": "Clear Cache",
-  "promptCacheCleared": "Prompt cache cleared"
+  "promptCacheCleared": "Prompt cache cleared",
+  "exerciseFinishedTitle": "Exercise finished",
+  "exerciseFinishedSubtitle": "I hope you feel better.",
+  "backToHome": "Back to Home"
 }

@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:OpenBreath/l10n/app_localizations.dart';
 import 'package:OpenBreath/data.dart';
+import 'package:OpenBreath/exercise_finished_screen.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:OpenBreath/settings_provider.dart';
 import 'package:provider/provider.dart';
@@ -291,7 +292,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     
     // Navigate back after fade out is complete
     if (context.mounted) {
-      Navigator.pop(context);
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const ExerciseFinishedScreen()));
     }
   }
 

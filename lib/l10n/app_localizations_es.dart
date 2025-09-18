@@ -166,4 +166,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get promptCacheCleared => 'Caché de indicaciones borrada';
+
+  @override
+  String get exerciseFinishedTitle => 'Exercise finished';
+
+  @override
+  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+
+  @override
+  String get backToHome => 'Back to Home';
 }
