@@ -28,6 +28,12 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   int _currentStageIndex = 0;
   late List<BreathingStage> _stages;
   late int _stageStartTime;
+  
+  // Track when sound effects have been played to prevent repetition
+  bool _inhaleSoundPlayed = false;
+  bool _exhaleSoundPlayed = false;
+  bool _holdSoundPlayed = false;
+  String _lastInstruction = ''; // Track the previous instruction
 
   final AudioPlayer _soundEffectPlayer = AudioPlayer();
   final AudioPlayer _musicPlayer = AudioPlayer();
@@ -102,6 +108,12 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     _currentStageIndex = stageIndex;
     final stage = _stages[stageIndex];
     
+    // Reset sound tracking variables for new stage
+    _inhaleSoundPlayed = false;
+    _exhaleSoundPlayed = false;
+    _holdSoundPlayed = false;
+    _lastInstruction = '';
+    
     List<int> patternValues;
     try {
       patternValues = _parsePattern(stage.pattern);
@@ -171,6 +183,12 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     int hold2 = timings['hold2']!;
     int totalDurationSeconds = inhale + hold1 + exhale + hold2;
 
+    // Reset sound tracking variables for new animation cycle
+    _inhaleSoundPlayed = false;
+    _exhaleSoundPlayed = false;
+    _holdSoundPlayed = false;
+    _lastInstruction = '';
+
     if (settings.musicMode != MusicMode.off) {
       String musicFile = '';
       if (settings.musicMode == MusicMode.nature) {
@@ -207,23 +225,41 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
         final l10n = AppLocalizations.of(context);
         if (currentTime >= 0 && currentTime < inhale) {
           _instruction = l10n.inhale;
-          if (settings.soundEffectsEnabled) {
-            _soundEffectPlayer.play(AssetSource('sounds/in.mp3'));
-            _soundEffectPlayer.setPlaybackRate(1 / inhale);
+          // Play sound effect only once when entering inhale phase
+          if (settings.soundEffectsEnabled && _lastInstruction != _instruction) {
+            _soundEffectPlayer.play(AssetSource('sounds/in.wav'));
+            _inhaleSoundPlayed = true;
+            _holdSoundPlayed = false; // Reset hold sound tracking
           }
         } else if (hold1 > 0 && currentTime >= inhale && currentTime < (inhale + hold1)) {
           _instruction = l10n.hold;
-          _soundEffectPlayer.stop();
+          // Play sound effect only once when entering first hold phase
+          if (settings.soundEffectsEnabled && _lastInstruction != _instruction) {
+            _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
+            _holdSoundPlayed = true;
+            _inhaleSoundPlayed = false; // Reset inhale sound tracking
+          }
         } else if (currentTime >= (inhale + hold1) && currentTime < (inhale + hold1 + exhale)) {
           _instruction = l10n.exhale;
-          if (settings.soundEffectsEnabled) {
-            _soundEffectPlayer.play(AssetSource('sounds/out.mp3'));
-            _soundEffectPlayer.setPlaybackRate(1 / exhale);
+          // Play sound effect only once when entering exhale phase
+          if (settings.soundEffectsEnabled && _lastInstruction != _instruction) {
+            _soundEffectPlayer.play(AssetSource('sounds/out.wav'));
+            _exhaleSoundPlayed = true;
+            _holdSoundPlayed = false; // Reset hold sound tracking
           }
         } else if (hold2 > 0 && currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
           _instruction = l10n.hold;
-          _soundEffectPlayer.stop();
+          // Play sound effect only once when entering second hold phase
+          if (settings.soundEffectsEnabled && _lastInstruction != _instruction) {
+            _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
+            _holdSoundPlayed = true;
+            _exhaleSoundPlayed = false; // Reset exhale sound tracking
+          }
         }
+        
+        // Update last instruction
+        _lastInstruction = _instruction;
+        
         HapticFeedback.lightImpact();
       });
     });
@@ -267,6 +303,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   void dispose() {
     _controller.dispose();
     _bubbleAnimationController.dispose();
+    _soundEffectPlayer.stop();
     _soundEffectPlayer.dispose();
     _musicPlayer.dispose();
     // Disable wakelock when exercise is finished
