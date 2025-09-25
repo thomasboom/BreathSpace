@@ -84,6 +84,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     // Keep the screen awake during the exercise
     WakelockPlus.enable();
     
+    // Hide the status bar during the exercise
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    
     // Initialize stages
     if (widget.exercise.hasStages) {
       _stages = widget.exercise.stages!;
@@ -319,6 +322,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     _musicPlayer.dispose();
     // Disable wakelock when exercise is finished
     WakelockPlus.disable();
+    // Restore the status bar when exercise is finished
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     super.dispose();
   }
 
