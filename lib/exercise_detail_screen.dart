@@ -150,7 +150,11 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: isSelected ? Theme.of(context).primaryColor : null,
-        foregroundColor: isSelected ? Colors.white : null,
+        foregroundColor: isSelected
+            ? Theme.of(context).brightness == Brightness.dark
+                ? Colors.black
+                : Colors.white
+            : null,
       ),
       child: Text(label),
     );
