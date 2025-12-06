@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:BreathSpace/data.dart';
 import 'package:BreathSpace/exercise_screen.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
+import 'package:clipboard/clipboard.dart';
 
 class ExerciseDetailScreen extends StatefulWidget {
   final BreathingExercise exercise;
@@ -161,4 +162,18 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
     }
   }
 
+  void _copyExerciseLink(BuildContext context) {
+    final String shareUrl = 'https://openbreath.vercel.app/exercise/${widget.exercise.id}';
+
+    FlutterClipboard.copy(shareUrl).then((_) {
+      if (mounted) {
+        ScaffoldMessenger.of(this.context).showSnackBar(
+          SnackBar(
+            content: Text(AppLocalizations.of(this.context).linkCopied),
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      }
+    });
+  }
 }

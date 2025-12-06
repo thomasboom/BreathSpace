@@ -5,9 +5,14 @@ import 'package:BreathSpace/l10n/app_localizations.dart';
 
 import 'main.dart';
 
-class IntroScreen extends StatelessWidget {
+class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
 
+  @override
+  State<IntroScreen> createState() => _IntroScreenState();
+}
+
+class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,11 +32,14 @@ class IntroScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
+                final context = this.context;
                 final prefs = await SharedPreferences.getInstance();
                 await prefs.setBool('seen', true);
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const BreathingExerciseScreen()),
-                );
+                if (context.mounted) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => const BreathingExerciseScreen()),
+                  );
+                }
               },
               child: Text(AppLocalizations.of(context).getStarted),
             ),

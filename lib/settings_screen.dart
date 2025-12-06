@@ -225,12 +225,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ListTile(
               title: Text(AppLocalizations.of(context).replayIntro),
               onTap: () async {
+                final context = this.context;
                 final prefs = await SharedPreferences.getInstance();
                 await prefs.setBool('seen', false);
-                Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => const IntroScreen()),
-                  (route) => false,
-                );
+                if (context.mounted) {
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (_) => const IntroScreen()),
+                    (route) => false,
+                  );
+                }
               },
             ),
             // Prompt Cache Management Section

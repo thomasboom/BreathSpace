@@ -14,7 +14,7 @@ class GeminiExerciseScreen extends StatefulWidget {
 class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
   final TextEditingController _userInputController = TextEditingController();
   bool _isLoading = false;
-  BreathingExercise? _recommendedExercise;
+  // BreathingExercise? _recommendedExercise; // Unused field
   final SpeechToText _speechToText = SpeechToText();
   bool _isListening = false;
   String _lastWords = '';
@@ -37,9 +37,11 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
           _isListening = false;
           _lastWords = 'Error: ${error.errorMsg}';
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Speech recognition error: ${error.errorMsg}')),
-        );
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Speech recognition error: ${error.errorMsg}')),
+          );
+        }
       },
     );
 
@@ -57,9 +59,11 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
       setState(() {
         _isListening = false;
       });
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Speech recognition not available')),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Speech recognition not available')),
+        );
+      }
     }
   }
 
@@ -75,7 +79,6 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
 
     setState(() {
       _isLoading = true;
-      _recommendedExercise = null;
     });
 
     final geminiService = GeminiService();
@@ -89,24 +92,17 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
     });
 
     if (recommendedId != 'none') {
-      print('Gemini recommended ID: $recommendedId'); // Debugging line
-
       BreathingExercise? recommendedExercise;
       try {
         recommendedExercise = breathingExercises.firstWhere(
           (exercise) => exercise.id == recommendedId,
-          orElse: () {
-            print('Fallback: Recommended ID "$recommendedId" not found. Using first exercise.'); // Debugging line
-            return breathingExercises.first; // Fallback to first exercise if not found
-          },
+          orElse: () => breathingExercises.first, // Fallback to first exercise if not found
         );
       } catch (e) {
-        print('Error finding recommended exercise: $e'); // Debugging line
         // Handle case where breathingExercises might be empty or firstWhere fails
         if (breathingExercises.isNotEmpty) {
           recommendedExercise = breathingExercises.first;
         } else {
-          print('Error: breathingExercises list is empty!'); // Critical error
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('No exercises available to recommend.')),
@@ -117,16 +113,11 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
       }
 
       if (mounted) {
-        print('Navigating to ExerciseDetailScreen with exercise ID: ${recommendedExercise.id}'); // Debugging line
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => ExerciseDetailScreen(exercise: recommendedExercise!), // Assert non-null
           ),
-        );
-      } else if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not find a suitable exercise to navigate to.')),
         );
       }
     } else {

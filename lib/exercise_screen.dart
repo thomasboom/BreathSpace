@@ -31,16 +31,16 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   late AnimationController _bubbleAnimationController;
   late Animation<double> _bubbleAnimation;
   String _instruction = '';
-  int _currentCycle = 0;
+  // int _currentCycle = 0; // Unused field
   int _currentStageIndex = 0;
   late List<BreathingStage> _stages;
   late int _stageStartTime;
   bool _waitingForCycleCompletion = false; // Track if we're waiting for current cycle to complete before stage transition
   
   // Track when sound effects have been played to prevent repetition
-  bool _inhaleSoundPlayed = false;
-  bool _exhaleSoundPlayed = false;
-  bool _holdSoundPlayed = false;
+  // bool _inhaleSoundPlayed = false; // Unused field
+  // bool _exhaleSoundPlayed = false; // Unused field
+  // bool _holdSoundPlayed = false; // Unused field
   String _lastInstruction = ''; // Track the previous instruction
 
   // Track the current phase for breathing method instructions
@@ -142,9 +142,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     final stage = _stages[stageIndex];
 
     // Reset sound tracking variables for new stage
-    _inhaleSoundPlayed = false;
-    _exhaleSoundPlayed = false;
-    _holdSoundPlayed = false;
     _lastInstruction = '';
     _waitingForCycleCompletion = false; // Reset cycle completion flag for new stage
 
@@ -222,9 +219,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     int totalDurationSeconds = inhale + hold1 + exhale + hold2;
 
     // Reset sound tracking variables for new animation cycle
-    _inhaleSoundPlayed = false;
-    _exhaleSoundPlayed = false;
-    _holdSoundPlayed = false;
     _lastInstruction = '';
     _waitingForCycleCompletion = false; // Reset cycle completion flag for new animation cycle
     _previousPhase = BreathingPhase.inhale; // Reset phase tracking for new animation cycle
@@ -257,7 +251,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
             // Cycle is complete - transition immediately
             if (_currentStageIndex < _stages.length - 1) {
               _initializeStage(_currentStageIndex + 1);
-              _currentCycle = 0;
               return; // Exit early to avoid processing instruction for the old stage
             } else {
               // Exercise completed - fade out music before navigating away
@@ -275,7 +268,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
             _waitingForCycleCompletion = false;
             if (_currentStageIndex < _stages.length - 1) {
               _initializeStage(_currentStageIndex + 1);
-              _currentCycle = 0;
               return; // Exit early to avoid processing instruction for the old stage
             } else {
               // Exercise completed - fade out music before navigating away
@@ -297,8 +289,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           // Play sound effect only once when entering inhale phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/in.wav'));
-            _inhaleSoundPlayed = true;
-            _holdSoundPlayed = false; // Reset hold sound tracking
           }
         } else if (hold1 > 0 && currentTime >= inhale && currentTime < (inhale + hold1)) {
           _instruction = 'Hold';
@@ -306,8 +296,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           // Play sound effect only once when entering first hold phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
-            _holdSoundPlayed = true;
-            _inhaleSoundPlayed = false; // Reset inhale sound tracking
           }
         } else if (currentTime >= (inhale + hold1) && currentTime < (inhale + hold1 + exhale)) {
           _instruction = l10n.exhale;
@@ -315,8 +303,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           // Play sound effect only once when entering exhale phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/out.wav'));
-            _exhaleSoundPlayed = true;
-            _holdSoundPlayed = false; // Reset hold sound tracking
           }
         } else if (hold2 > 0 && currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
           _instruction = 'Hold';
@@ -324,8 +310,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           // Play sound effect only once when entering second hold phase
           if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
-            _holdSoundPlayed = true;
-            _exhaleSoundPlayed = false; // Reset exhale sound tracking
           }
         }
 
@@ -362,7 +346,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     }
     
     // Navigate back after fade out is complete
-    if (context.mounted) {
+    if (mounted) {
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const ExerciseFinishedScreen()));
     }
   }
@@ -483,88 +467,167 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
                 ],
               ),
             )
-           : Stack(
-               children: [
-                 // Center the breathing bubble with fixed positioning
-                 Center(
-                   child: SizedBox(
-                     width: 300,
-                     height: 300,
-                     child: AnimatedBuilder(
-                       animation: Listenable.merge([_breatheAnimation, _bubbleAnimation]),
-                       builder: (context, child) {
-                         final currentRadius = 150 * _breatheAnimation.value;
-                         return CustomPaint(
-                           painter: BubblePainter(
-                             _bubbleAnimation.value,
-                             currentRadius,
-                             Theme.of(context).colorScheme.secondary,
-                           ),
-                           child: SizedBox(
-                             width: currentRadius * 2,
-                             height: currentRadius * 2,
-                             child: Center(
-                               child: FittedBox(
-                                 fit: BoxFit.scaleDown,
-                                 child: Text(
-                                   _instruction,
-                                   style: TextStyle(
-                                     fontSize: 32,
-                                     fontWeight: FontWeight.bold,
-                                     color: Theme.of(context).colorScheme.onPrimary,
-                                   ),
-                                 ),
-                               ),
-                             ),
-                           ),
-                         );
-                       },
-                     ),
-                   ),
-                 ),
-                 // Position instruction text closer to the bubble
-                 Positioned(
-                   bottom: 150, // Position closer to the bubble (higher value = closer to center)
-                   left: 0,
-                   right: 0,
-                   child: Center(
-                     child: _buildBreathingMethodInstruction(context),
-                   ),
-                 ),
-                 // Add swipe detection area for settings
-                 Positioned(
-                   top: 0,
-                   left: 0,
-                   right: 0,
-                   bottom: 0,
-                   child: GestureDetector(
-                     onPanUpdate: (details) {
-                       // Detect right-to-left swipe
-                       if (details.delta.dx < 0) { // Swiping left
-                         // Only navigate if the swipe is significant enough
-                         if (details.delta.dx < -5) {
-                           Navigator.push(
-                             context,
-                             MaterialPageRoute(
-                               builder: (context) => SettingsScreen(
-                                 fromExercise: true,
-                               ),
-                             ),
-                           ).then((value) {
-                             // If settings return with instruction to stop exercise, handle it
-                             if (value == 'stop_exercise') {
-                               _onExerciseComplete();
-                             }
-                           });
-                         }
-                       }
-                     },
-                     child: Container(
-                       // Transparent container to capture gestures
-                       color: Colors.transparent,
-                     ),
-                   ),
-                 ),
+          : Stack(
+              children: [
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Fixed size container for the bubble to prevent layout shifts
+                      SizedBox(
+                        width: 300,
+                        height: 300,
+                        child: AnimatedBuilder(
+                          animation: Listenable.merge([_breatheAnimation, _bubbleAnimation]),
+                          builder: (context, child) {
+                            final currentRadius = 150 * _breatheAnimation.value;
+                            return CustomPaint(
+                              painter: BubblePainter(
+                                _bubbleAnimation.value,
+                                currentRadius,
+                                Theme.of(context).colorScheme.secondary,
+                              ),
+                              child: SizedBox(
+                                width: currentRadius * 2,
+                                height: currentRadius * 2,
+                                child: Center(
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      _instruction,
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).colorScheme.onPrimary,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      // Display breathing method instructions below the bubble
+                      _buildBreathingMethodInstruction(context),
+                      SizedBox(height: 10),
+                      // Display current stage information below the bubble
+                      if (widget.exercise.hasStages || widget.exercise.getStagesForVersion(widget.selectedVersion ?? ExerciseVersion.normal) != null) ...[
+                        Text(
+                          '${_stages[_currentStageIndex].title} (${_currentStageIndex + 1}/${_stages.length})',
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          '${AppLocalizations.of(context).pattern}: ${_stages[_currentStageIndex].pattern}',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          textAlign: TextAlign.center,
+                        ),
+                      ] else ...[
+                        Text(
+                          '${AppLocalizations.of(context).pattern}: ${widget.exercise.getPatternForVersion(widget.selectedVersion ?? ExerciseVersion.normal)}',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                // Add swipe detection area for settings
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: GestureDetector(
+                    onPanUpdate: (details) {
+                      // Detect right-to-left swipe
+                      if (details.delta.dx < 0) { // Swiping left
+                        // Only navigate if the swipe is significant enough
+                        if (details.delta.dx < -5) {
+                          Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder: (context, animation, secondaryAnimation) => SettingsScreen(
+                                fromExercise: true,
+                              ),
+                              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                return Stack(
+                                  children: [
+                                    // Slide out current screen to the left
+                                    SlideTransition(
+                                      position: Tween<Offset>(
+                                        begin: Offset.zero,
+                                        end: const Offset(-1.0, 0.0),
+                                      ).animate(CurvedAnimation(
+                                        parent: animation,
+                                        curve: Curves.easeInOut,
+                                      )),
+                                      child: const SizedBox.expand(),
+                                    ),
+                                    // Settings screen stays mostly stationary with slight slide in
+                                    SlideTransition(
+                                      position: Tween<Offset>(
+                                        begin: const Offset(1.0, 0.0),
+                                        end: Offset.zero,
+                                      ).animate(CurvedAnimation(
+                                        parent: animation,
+                                        curve: Curves.easeInOut,
+                                      )),
+                                      child: child,
+                                    ),
+                                  ],
+                                );
+                              },
+                              transitionDuration: const Duration(milliseconds: 300),
+                            ),
+                          ).then((value) {
+                            // If settings return with instruction to stop exercise, handle it
+                            if (value == 'stop_exercise') {
+                              _onExerciseComplete();
+                            }
+                          });
+                        }
+                      }
+                    },
+                    child: Container(
+                      // Transparent container to capture gestures
+                      color: Colors.transparent,
+                    ),
+                  ),
+                ),
+                // Positioned(
+                //   top: 20,
+                //   right: 20,
+                //   child: PopupMenuButton<String>(
+                //     icon: Icon(
+                //       Icons.more_vert,
+                //       size: 30,
+                //       color: Theme.of(context).colorScheme.onSurface,
+                //     ),
+                //     onSelected: (String result) {
+                //       if (result == 'close') {
+                //         _onExerciseComplete(); // Use the same completion method for consistent fade out
+                //       } else if (result == 'settings') {
+                //         Navigator.pushNamed(context, '/settings');
+                //       }
+                //     },
+                //     itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                //       PopupMenuItem<String>(
+                //         value: 'settings',
+                //         child: Text(AppLocalizations.of(context).settings),
+                //       ),
+                //       PopupMenuItem<String>(
+                //         value: 'close',
+                //         child: Text(AppLocalizations.of(context).close),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
     );

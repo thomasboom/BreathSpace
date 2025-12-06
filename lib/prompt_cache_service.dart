@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:OpenBreath/logger.dart';
 
 /// A service for caching AI prompts and their responses on-device
 class PromptCacheService {
@@ -34,7 +35,7 @@ class PromptCacheService {
     } catch (e) {
       // If there's any error reading the cache, return null
       // This prevents cache errors from breaking the app
-      print('Error reading from prompt cache: $e');
+      AppLogger.error('Error reading from prompt cache', e);
     }
     
     return null;
@@ -74,7 +75,7 @@ class PromptCacheService {
     } catch (e) {
       // If there's any error writing to the cache, return false
       // This prevents cache errors from breaking the app
-      print('Error writing to prompt cache: $e');
+      AppLogger.error('Error writing to prompt cache', e);
       return false;
     }
   }
@@ -85,7 +86,7 @@ class PromptCacheService {
       final prefs = await SharedPreferences.getInstance();
       return await prefs.remove(_cacheKey);
     } catch (e) {
-      print('Error clearing prompt cache: $e');
+      AppLogger.error('Error clearing prompt cache', e);
       return false;
     }
   }
@@ -101,7 +102,7 @@ class PromptCacheService {
         return cache.length;
       }
     } catch (e) {
-      print('Error getting cache size: $e');
+      AppLogger.error('Error getting cache size', e);
     }
     
     return 0;
