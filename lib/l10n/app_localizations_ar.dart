@@ -147,7 +147,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcomeTitle => 'مرحبًا بك في BreathSpace';
 
   @override
-  String get welcomeSubtitle => 'تطبيق التنفس بدون تعقيدات للهدوء والنوم.';
+  String get welcomeSubtitle => 'Your space. Slow down, anytime.';
 
   @override
   String get getStarted => 'البدء';

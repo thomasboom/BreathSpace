@@ -147,7 +147,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get welcomeTitle => 'BreathSpaceへようこそ';
 
   @override
-  String get welcomeSubtitle => '冷静と睡眠のための面倒くさくない呼吸アプリ。';
+  String get welcomeSubtitle => 'Your space. Slow down, anytime.';
 
   @override
   String get getStarted => '始めましょう';

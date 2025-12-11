@@ -147,7 +147,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcomeTitle => '欢迎来到 BreathSpace';
 
   @override
-  String get welcomeSubtitle => '一款用于平静和睡眠的简单呼吸应用程序。';
+  String get welcomeSubtitle => 'Your space. Slow down, anytime.';
 
   @override
   String get getStarted => '开始';

@@ -148,8 +148,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get welcomeTitle => 'Добро пожаловать в BreathSpace';
 
   @override
-  String get welcomeSubtitle =>
-      'Простое приложение для дыхательных упражнений для спокойствия и сна.';
+  String get welcomeSubtitle => 'Your space. Slow down, anytime.';
 
   @override
   String get getStarted => 'Начать';

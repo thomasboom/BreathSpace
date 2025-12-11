@@ -397,7 +397,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'The no-nonsense breathing app for calmth and sleep.'**
+  /// **'Your space. Slow down, anytime.'**
   String get welcomeSubtitle;
 
   /// No description provided for @getStarted.

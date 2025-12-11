@@ -147,7 +147,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get welcomeTitle => 'Willkommen bei BreathSpace';
 
   @override
-  String get welcomeSubtitle => 'Die vernünftige Atem-App für Ruhe und Schlaf.';
+  String get welcomeSubtitle => 'Your space. Slow down, anytime.';
 
   @override
   String get getStarted => 'Loslegen';
