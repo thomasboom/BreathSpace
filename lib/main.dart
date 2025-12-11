@@ -488,9 +488,48 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                     itemCount: _pinnedExercises.length,
                     itemBuilder: (context, index) {
                       final exercise = _pinnedExercises[index];
-                      return GestureDetector(
-                        onLongPress: () {
+                      return Dismissible(
+                        key: Key('pinned_${exercise.title}'),
+                        direction: DismissDirection.horizontal,
+                        background: Container(
+                          width: itemWidth,
+                          margin: EdgeInsets.only(
+                            left: index == 0 ? 0 : 4.0,
+                            right: index == _pinnedExercises.length - 1 ? 0 : 4.0,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          alignment: Alignment.centerLeft,
+                          padding: const EdgeInsets.only(left: 16.0),
+                          child: Icon(
+                            Icons.push_pin_outlined,
+                            color: Theme.of(context).colorScheme.primary,
+                            size: 20,
+                          ),
+                        ),
+                        secondaryBackground: Container(
+                          width: itemWidth,
+                          margin: EdgeInsets.only(
+                            left: index == 0 ? 0 : 4.0,
+                            right: index == _pinnedExercises.length - 1 ? 0 : 4.0,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          alignment: Alignment.centerRight,
+                          padding: const EdgeInsets.only(right: 16.0),
+                          child: Icon(
+                            Icons.push_pin_outlined,
+                            color: Theme.of(context).colorScheme.primary,
+                            size: 20,
+                          ),
+                        ),
+                        confirmDismiss: (direction) async {
                           _pinnedExercisesProvider.togglePin(exercise.title);
+                          return false; // Don't actually dismiss the item
                         },
                         child: Container(
                           width: itemWidth, // Divide space equally among all pinned exercises
@@ -657,9 +696,38 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     itemBuilder: (context, index) {
                       final exercise = _filteredExercises[index];
-                      return GestureDetector(
-                        onLongPress: () {
+                      return Dismissible(
+                        key: Key(exercise.title),
+                        direction: DismissDirection.horizontal,
+                        background: Container(
+                          margin: const EdgeInsets.only(bottom: 12.0),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          alignment: Alignment.centerLeft,
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: Icon(
+                            _pinnedExercisesProvider.isPinned(exercise.title) ? Icons.push_pin : Icons.push_pin_outlined,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
+                        secondaryBackground: Container(
+                          margin: const EdgeInsets.only(bottom: 12.0),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          alignment: Alignment.centerRight,
+                          padding: const EdgeInsets.only(right: 20.0),
+                          child: Icon(
+                            _pinnedExercisesProvider.isPinned(exercise.title) ? Icons.push_pin : Icons.push_pin_outlined,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
+                        confirmDismiss: (direction) async {
                           _pinnedExercisesProvider.togglePin(exercise.title);
+                          return false; // Don't actually dismiss the item
                         },
                         child: Container(
                           margin: const EdgeInsets.only(bottom: 12.0),
