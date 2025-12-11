@@ -471,6 +471,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Link copied to clipboard'**
   String get linkCopied;
+
+  /// No description provided for @termsAgreementPrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you agree to our '**
+  String get termsAgreementPrefix;
+
+  /// No description provided for @termsOfService.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get termsOfService;
+
+  /// No description provided for @termsAgreementSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'.'**
+  String get termsAgreementSuffix;
+
+  /// No description provided for @termsDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get termsDialogTitle;
+
+  /// No description provided for @termsDialogContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service\n\n1. Acceptance of Terms\nBy using BreathSpace, you agree to these terms.\n\n2. Use of the App\nBreathSpace is designed for breathing exercises and meditation. Use responsibly.\n\n3. Privacy\nWe collect minimal data to provide our services. See our Privacy Policy for details.\n\n4. AI Features\nThe app uses AI to generate personalized exercises. Generated content is for informational purposes only.\n\n5. Limitation of Liability\nThe app is not medical advice. Consult professionals for health concerns.\n\n6. Changes to Terms\nWe may update these terms. Continued use constitutes acceptance.\n\nLast updated: December 2024'**
+  String get termsDialogContent;
 }
 
 class _AppLocalizationsDelegate

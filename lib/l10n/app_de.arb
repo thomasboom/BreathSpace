@@ -46,5 +46,21 @@
   "promptCacheSubtitle": "Zwischengespeicherte Antworten für schnellere Empfehlungen",
   "promptCacheEntries": "Einträge",
   "promptCacheClear": "Cache leeren",
-  "promptCacheCleared": "Eingabeaufforderungs-Cache geleert"
+  "promptCacheCleared": "Eingabeaufforderungs-Cache geleert",
+  "languageFrench": "Französisch",
+  "languageJapanese": "Japanisch",
+  "languagePortuguese": "Portugiesisch",
+  "languageRussian": "Russisch",
+  "languageArabic": "Arabisch",
+  "exerciseFinishedTitle": "Übung beendet",
+  "exerciseFinishedSubtitle": "Ich hoffe, du fühlst dich besser.",
+  "backToHome": "Zurück zur Startseite",
+  "copyLink": "Link kopieren",
+  "copyExerciseLink": "Übungslink kopieren",
+  "linkCopied": "Link in die Zwischenablage kopiert",
+  "termsAgreementPrefix": "Durch die Fortsetzung stimmst du unseren ",
+  "termsOfService": "Nutzungsbedingungen",
+  "termsAgreementSuffix": " zu.",
+  "termsDialogTitle": "Nutzungsbedingungen",
+  "termsDialogContent": "Nutzungsbedingungen\n\n1. Annahme der Bedingungen\nDurch die Nutzung von BreathSpace stimmst du diesen Bedingungen zu.\n\n2. Nutzung der App\nBreathSpace ist für Atemübungen und Meditation konzipiert. Verwende es verantwortungsvoll.\n\n3. Datenschutz\nWir sammeln minimale Daten, um unsere Dienste bereitzustellen. Siehe unsere Datenschutzrichtlinie für Details.\n\n4. KI-Funktionen\nDie App verwendet KI, um personalisierte Übungen zu generieren. Generierter Inhalt ist nur für Informationszwecke.\n\n5. Haftungsbeschränkung\nDie App ist kein medizinischer Rat. Konsultiere Fachleute bei Gesundheitsbedenken.\n\n6. Änderungen der Bedingungen\nWir können diese Bedingungen aktualisieren. Fortgesetzte Nutzung bedeutet Annahme.\n\nZuletzt aktualisiert: Dezember 2024"
 }

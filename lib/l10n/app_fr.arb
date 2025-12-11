@@ -51,5 +51,16 @@
   "promptCacheSubtitle": "Réponses mises en cache pour des recommandations plus rapides",
   "promptCacheEntries": "entrées",
   "promptCacheClear": "Vider le cache",
-  "promptCacheCleared": "Cache des invites vidé"
+  "promptCacheCleared": "Cache des invites vidé",
+  "exerciseFinishedTitle": "Exercice terminé",
+  "exerciseFinishedSubtitle": "J'espère que vous vous sentez mieux.",
+  "backToHome": "Retour à l'accueil",
+  "copyLink": "Copier le lien",
+  "copyExerciseLink": "Copier le lien de l'exercice",
+  "linkCopied": "Lien copié dans le presse-papiers",
+  "termsAgreementPrefix": "En continuant, vous acceptez nos ",
+  "termsOfService": "Conditions d'utilisation",
+  "termsAgreementSuffix": ".",
+  "termsDialogTitle": "Conditions d'utilisation",
+  "termsDialogContent": "Conditions d'utilisation\n\n1. Acceptation des termes\nEn utilisant BreathSpace, vous acceptez ces termes.\n\n2. Utilisation de l'app\nBreathSpace est conçu pour les exercices de respiration et la méditation. Utilisez-le de manière responsable.\n\n3. Confidentialité\nNous collectons des données minimales pour fournir nos services. Voir notre Politique de confidentialité pour plus de détails.\n\n4. Fonctionnalités IA\nL'app utilise l'IA pour générer des exercices personnalisés. Le contenu généré est uniquement à des fins informatives.\n\n5. Limitation de responsabilité\nL'app n'est pas un conseil médical. Consultez des professionnels pour les préoccupations de santé.\n\n6. Modifications des termes\nNous pouvons mettre à jour ces termes. L'utilisation continue constitue une acceptation.\n\nDernière mise à jour : Décembre 2024"
 }

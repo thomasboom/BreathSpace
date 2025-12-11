@@ -33,34 +33,34 @@ class AppLocalizationsBg extends AppLocalizations {
   String get languageDutch => 'Холандски';
 
   @override
-  String get languageSpanish => 'Spanish';
+  String get languageSpanish => 'Испански';
 
   @override
-  String get languageItalian => 'Italian';
+  String get languageItalian => 'Италиански';
 
   @override
-  String get languageGerman => 'German';
+  String get languageGerman => 'Немски';
 
   @override
-  String get languageChinese => 'Chinese';
+  String get languageChinese => 'Китайски';
 
   @override
   String get languageBulgarian => 'Български';
 
   @override
-  String get languageFrench => 'French';
+  String get languageFrench => 'Френски';
 
   @override
-  String get languageJapanese => 'Japanese';
+  String get languageJapanese => 'Японски';
 
   @override
-  String get languagePortuguese => 'Portuguese';
+  String get languagePortuguese => 'Португалски';
 
   @override
-  String get languageRussian => 'Russian';
+  String get languageRussian => 'Руски';
 
   @override
-  String get languageArabic => 'Arabic';
+  String get languageArabic => 'Арабски';
 
   @override
   String get theme => 'Тема';
@@ -122,13 +122,13 @@ class AppLocalizationsBg extends AppLocalizations {
   String get soundEffects => 'Звукови ефекти';
 
   @override
-  String get voiceGuide => 'Voice Guide';
+  String get voiceGuide => 'Гласов гид';
 
   @override
-  String get voiceGuideOff => 'Off';
+  String get voiceGuideOff => 'Изключено';
 
   @override
-  String get voiceGuideThomas => 'Thomas';
+  String get voiceGuideThomas => 'Томас';
 
   @override
   String get music => 'Музика';
@@ -171,20 +171,37 @@ class AppLocalizationsBg extends AppLocalizations {
   String get promptCacheCleared => 'Кешът с подкани е изчистен';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'Упражнението завърши';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => 'Надявам се да се чувствате по-добре.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'Обратно към началото';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => 'Копирай връзка';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => 'Копирай връзка към упражнение';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => 'Връзката е копирана в клипборда';
+
+  @override
+  String get termsAgreementPrefix =>
+      'С продължаването се съгласявате с нашите ';
+
+  @override
+  String get termsOfService => 'Условия за ползване';
+
+  @override
+  String get termsAgreementSuffix => '.';
+
+  @override
+  String get termsDialogTitle => 'Условия за ползване';
+
+  @override
+  String get termsDialogContent =>
+      'Условия за ползване\n\n1. Приемане на условията\nС използването на BreathSpace се съгласявате с тези условия.\n\n2. Използване на приложението\nBreathSpace е проектиран за дихателни упражнения и медитация. Използвайте го отговорно.\n\n3. Поверителност\nСъбираме минимални данни, за да предоставим услугите си. Вижте нашата Политика за поверителност за подробности.\n\n4. AI функции\nПриложението използва AI за генериране на персонализирани упражнения. Генерираното съдържание е само за информационни цели.\n\n5. Ограничение на отговорността\nПриложението не е медицински съвет. Консултирайте се с професионалисти за здравни проблеми.\n\n6. Промени в условията\nМожем да актуализираме тези условия. Продълженото използване означава приемане.\n\nПоследна актуализация: Декември 2024';
 }

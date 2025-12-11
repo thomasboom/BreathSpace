@@ -36,31 +36,31 @@ class AppLocalizationsEs extends AppLocalizations {
   String get languageSpanish => 'Español';
 
   @override
-  String get languageItalian => 'Italian';
+  String get languageItalian => 'Italiano';
 
   @override
-  String get languageGerman => 'German';
+  String get languageGerman => 'Alemán';
 
   @override
-  String get languageChinese => 'Chinese';
+  String get languageChinese => 'Chino';
 
   @override
-  String get languageBulgarian => 'Bulgarian';
+  String get languageBulgarian => 'Búlgaro';
 
   @override
-  String get languageFrench => 'French';
+  String get languageFrench => 'Francés';
 
   @override
-  String get languageJapanese => 'Japanese';
+  String get languageJapanese => 'Japonés';
 
   @override
-  String get languagePortuguese => 'Portuguese';
+  String get languagePortuguese => 'Portugués';
 
   @override
-  String get languageRussian => 'Russian';
+  String get languageRussian => 'Ruso';
 
   @override
-  String get languageArabic => 'Arabic';
+  String get languageArabic => 'Árabe';
 
   @override
   String get theme => 'Tema';
@@ -171,20 +171,36 @@ class AppLocalizationsEs extends AppLocalizations {
   String get promptCacheCleared => 'Caché de indicaciones borrada';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'Ejercicio terminado';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => 'Espero que te sientas mejor.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'Volver al inicio';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => 'Copiar enlace';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => 'Copiar enlace del ejercicio';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => 'Enlace copiado al portapapeles';
+
+  @override
+  String get termsAgreementPrefix => 'Al continuar, aceptas nuestros ';
+
+  @override
+  String get termsOfService => 'Términos de Servicio';
+
+  @override
+  String get termsAgreementSuffix => '.';
+
+  @override
+  String get termsDialogTitle => 'Términos de Servicio';
+
+  @override
+  String get termsDialogContent =>
+      'Términos de Servicio\n\n1. Aceptación de los Términos\nAl usar BreathSpace, aceptas estos términos.\n\n2. Uso de la App\nBreathSpace está diseñado para ejercicios de respiración y meditación. Úsalo responsablemente.\n\n3. Privacidad\nRecopilamos datos mínimos para proporcionar nuestros servicios. Consulta nuestra Política de Privacidad para más detalles.\n\n4. Funciones de IA\nLa app usa IA para generar ejercicios personalizados. El contenido generado es solo para fines informativos.\n\n5. Limitación de Responsabilidad\nLa app no es consejo médico. Consulta a profesionales para preocupaciones de salud.\n\n6. Cambios en los Términos\nPodemos actualizar estos términos. El uso continuado constituye aceptación.\n\nÚltima actualización: Diciembre 2024';
 }

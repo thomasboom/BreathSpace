@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
 
@@ -126,6 +127,50 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                             letterSpacing: 0.2,
                           ),
                           textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 24),
+                        RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                              height: 1.4,
+                            ),
+                            children: [
+                              TextSpan(text: AppLocalizations.of(context).termsAgreementPrefix),
+                              TextSpan(
+                                text: AppLocalizations.of(context).termsOfService,
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  fontWeight: FontWeight.w500,
+                                  decoration: TextDecoration.underline,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: Text(AppLocalizations.of(context).termsDialogTitle),
+                                          content: SingleChildScrollView(
+                                            child: Text(AppLocalizations.of(context).termsDialogContent),
+                                          ),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.of(context).pop(),
+                                              child: Text(AppLocalizations.of(context).close),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                              ),
+                              TextSpan(text: AppLocalizations.of(context).termsAgreementSuffix),
+                            ],
+                          ),
                         ),
                       ],
                     ),

@@ -48,19 +48,19 @@ class AppLocalizationsDe extends AppLocalizations {
   String get languageBulgarian => 'Bulgarian';
 
   @override
-  String get languageFrench => 'French';
+  String get languageFrench => 'Französisch';
 
   @override
-  String get languageJapanese => 'Japanese';
+  String get languageJapanese => 'Japanisch';
 
   @override
-  String get languagePortuguese => 'Portuguese';
+  String get languagePortuguese => 'Portugiesisch';
 
   @override
-  String get languageRussian => 'Russian';
+  String get languageRussian => 'Russisch';
 
   @override
-  String get languageArabic => 'Arabic';
+  String get languageArabic => 'Arabisch';
 
   @override
   String get theme => 'Thema';
@@ -169,20 +169,37 @@ class AppLocalizationsDe extends AppLocalizations {
   String get promptCacheCleared => 'Eingabeaufforderungs-Cache geleert';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'Übung beendet';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => 'Ich hoffe, du fühlst dich besser.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'Zurück zur Startseite';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => 'Link kopieren';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => 'Übungslink kopieren';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => 'Link in die Zwischenablage kopiert';
+
+  @override
+  String get termsAgreementPrefix =>
+      'Durch die Fortsetzung stimmst du unseren ';
+
+  @override
+  String get termsOfService => 'Nutzungsbedingungen';
+
+  @override
+  String get termsAgreementSuffix => ' zu.';
+
+  @override
+  String get termsDialogTitle => 'Nutzungsbedingungen';
+
+  @override
+  String get termsDialogContent =>
+      'Nutzungsbedingungen\n\n1. Annahme der Bedingungen\nDurch die Nutzung von BreathSpace stimmst du diesen Bedingungen zu.\n\n2. Nutzung der App\nBreathSpace ist für Atemübungen und Meditation konzipiert. Verwende es verantwortungsvoll.\n\n3. Datenschutz\nWir sammeln minimale Daten, um unsere Dienste bereitzustellen. Siehe unsere Datenschutzrichtlinie für Details.\n\n4. KI-Funktionen\nDie App verwendet KI, um personalisierte Übungen zu generieren. Generierter Inhalt ist nur für Informationszwecke.\n\n5. Haftungsbeschränkung\nDie App ist kein medizinischer Rat. Konsultiere Fachleute bei Gesundheitsbedenken.\n\n6. Änderungen der Bedingungen\nWir können diese Bedingungen aktualisieren. Fortgesetzte Nutzung bedeutet Annahme.\n\nZuletzt aktualisiert: Dezember 2024';
 }

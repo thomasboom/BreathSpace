@@ -33,34 +33,34 @@ class AppLocalizationsZh extends AppLocalizations {
   String get languageDutch => '荷兰语';
 
   @override
-  String get languageSpanish => 'Spanish';
+  String get languageSpanish => '西班牙语';
 
   @override
-  String get languageItalian => 'Italian';
+  String get languageItalian => '意大利语';
 
   @override
-  String get languageGerman => 'German';
+  String get languageGerman => '德语';
 
   @override
   String get languageChinese => '中文';
 
   @override
-  String get languageBulgarian => 'Bulgarian';
+  String get languageBulgarian => '保加利亚语';
 
   @override
-  String get languageFrench => 'French';
+  String get languageFrench => '法语';
 
   @override
-  String get languageJapanese => 'Japanese';
+  String get languageJapanese => '日语';
 
   @override
-  String get languagePortuguese => 'Portuguese';
+  String get languagePortuguese => '葡萄牙语';
 
   @override
-  String get languageRussian => 'Russian';
+  String get languageRussian => '俄语';
 
   @override
-  String get languageArabic => 'Arabic';
+  String get languageArabic => '阿拉伯语';
 
   @override
   String get theme => '主题';
@@ -168,20 +168,36 @@ class AppLocalizationsZh extends AppLocalizations {
   String get promptCacheCleared => '提示缓存已清除';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => '练习完成';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => '希望你感觉好些。';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => '返回首页';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => '复制链接';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => '复制练习链接';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => '链接已复制到剪贴板';
+
+  @override
+  String get termsAgreementPrefix => '继续即表示您同意我们的';
+
+  @override
+  String get termsOfService => '服务条款';
+
+  @override
+  String get termsAgreementSuffix => '。';
+
+  @override
+  String get termsDialogTitle => '服务条款';
+
+  @override
+  String get termsDialogContent =>
+      '服务条款\n\n1. 条款接受\n使用 BreathSpace 即表示您同意这些条款。\n\n2. 应用使用\nBreathSpace 专为呼吸练习和冥想而设计。请负责任地使用。\n\n3. 隐私\n我们收集最少的数据来提供我们的服务。有关详细信息，请参阅我们的隐私政策。\n\n4. AI 功能\n应用使用 AI 生成个性化练习。生成的内容仅供参考。\n\n5. 责任限制\n该应用不是医疗建议。如有健康问题，请咨询专业人士。\n\n6. 条款变更\n我们可能会更新这些条款。继续使用即表示接受。\n\n最后更新：2024年12月';
 }

@@ -121,10 +121,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get soundEffects => 'Efeitos sonoros';
 
   @override
-  String get voiceGuide => 'Voice Guide';
+  String get voiceGuide => 'Guia de voz';
 
   @override
-  String get voiceGuideOff => 'Off';
+  String get voiceGuideOff => 'Desligado';
 
   @override
   String get voiceGuideThomas => 'Thomas';
@@ -171,20 +171,36 @@ class AppLocalizationsPt extends AppLocalizations {
   String get promptCacheCleared => 'Cache de prompt limpo';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'Exercício terminado';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => 'Espero que se sinta melhor.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'Voltar ao início';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => 'Copiar link';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => 'Copiar link do exercício';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => 'Link copiado para a área de transferência';
+
+  @override
+  String get termsAgreementPrefix => 'Ao continuar, você concorda com nossos ';
+
+  @override
+  String get termsOfService => 'Termos de Serviço';
+
+  @override
+  String get termsAgreementSuffix => '.';
+
+  @override
+  String get termsDialogTitle => 'Termos de Serviço';
+
+  @override
+  String get termsDialogContent =>
+      'Termos de Serviço\n\n1. Aceitação dos Termos\nAo usar o BreathSpace, você concorda com estes termos.\n\n2. Uso do App\nO BreathSpace é projetado para exercícios de respiração e meditação. Use com responsabilidade.\n\n3. Privacidade\nColetamos dados mínimos para fornecer nossos serviços. Veja nossa Política de Privacidade para detalhes.\n\n4. Recursos de IA\nO app usa IA para gerar exercícios personalizados. O conteúdo gerado é apenas para fins informativos.\n\n5. Limitação de Responsabilidade\nO app não é conselho médico. Consulte profissionais para preocupações de saúde.\n\n6. Mudanças nos Termos\nPodemos atualizar estes termos. O uso continuado constitui aceitação.\n\nÚltima atualização: Dezembro 2024';
 }

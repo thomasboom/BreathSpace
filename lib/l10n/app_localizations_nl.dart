@@ -33,34 +33,34 @@ class AppLocalizationsNl extends AppLocalizations {
   String get languageDutch => 'Nederlands';
 
   @override
-  String get languageSpanish => 'Spanish';
+  String get languageSpanish => 'Spaans';
 
   @override
-  String get languageItalian => 'Italian';
+  String get languageItalian => 'Italiaans';
 
   @override
-  String get languageGerman => 'German';
+  String get languageGerman => 'Duits';
 
   @override
-  String get languageChinese => 'Chinese';
+  String get languageChinese => 'Chinees';
 
   @override
-  String get languageBulgarian => 'Bulgarian';
+  String get languageBulgarian => 'Bulgaars';
 
   @override
-  String get languageFrench => 'French';
+  String get languageFrench => 'Frans';
 
   @override
-  String get languageJapanese => 'Japanese';
+  String get languageJapanese => 'Japans';
 
   @override
-  String get languagePortuguese => 'Portuguese';
+  String get languagePortuguese => 'Portugees';
 
   @override
-  String get languageRussian => 'Russian';
+  String get languageRussian => 'Russisch';
 
   @override
-  String get languageArabic => 'Arabic';
+  String get languageArabic => 'Arabisch';
 
   @override
   String get theme => 'Thema';
@@ -170,13 +170,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get promptCacheCleared => 'Prompt cache gewist';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'Oefening voltooid';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => 'Ik hoop dat je je beter voelt.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'Terug naar start';
 
   @override
   String get copyLink => 'Link kopiëren';
@@ -186,4 +186,21 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get linkCopied => 'Link gekopieerd naar klembord';
+
+  @override
+  String get termsAgreementPrefix =>
+      'Door verder te gaan, ga je akkoord met onze ';
+
+  @override
+  String get termsOfService => 'Servicevoorwaarden';
+
+  @override
+  String get termsAgreementSuffix => '.';
+
+  @override
+  String get termsDialogTitle => 'Servicevoorwaarden';
+
+  @override
+  String get termsDialogContent =>
+      'Servicevoorwaarden\n\n1. Acceptatie van Voorwaarden\nDoor BreathSpace te gebruiken, ga je akkoord met deze voorwaarden.\n\n2. Gebruik van de App\nBreathSpace is ontworpen voor ademhalingsoefeningen en meditatie. Gebruik het verantwoordelijk.\n\n3. Privacy\nWe verzamelen minimale gegevens om onze diensten te leveren. Zie ons Privacybeleid voor details.\n\n4. AI Functies\nDe app gebruikt AI om gepersonaliseerde oefeningen te genereren. Gegenereerde inhoud is alleen voor informatieve doeleinden.\n\n5. Beperking van Aansprakelijkheid\nDe app is geen medisch advies. Raadpleeg professionals voor gezondheidszorgen.\n\n6. Wijzigingen in Voorwaarden\nWe kunnen deze voorwaarden bijwerken. Voortgezet gebruik betekent acceptatie.\n\nLaatst bijgewerkt: December 2024';
 }

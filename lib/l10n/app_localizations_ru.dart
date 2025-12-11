@@ -121,13 +121,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get soundEffects => 'Звуковые эффекты';
 
   @override
-  String get voiceGuide => 'Voice Guide';
+  String get voiceGuide => 'Голосовой гид';
 
   @override
-  String get voiceGuideOff => 'Off';
+  String get voiceGuideOff => 'Выключено';
 
   @override
-  String get voiceGuideThomas => 'Thomas';
+  String get voiceGuideThomas => 'Томас';
 
   @override
   String get music => 'Музыка';
@@ -171,20 +171,36 @@ class AppLocalizationsRu extends AppLocalizations {
   String get promptCacheCleared => 'Кэш запросов очищен';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'Упражнение завершено';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => 'Надеюсь, вам стало лучше.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'Вернуться домой';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => 'Копировать ссылку';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => 'Копировать ссылку на упражнение';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => 'Ссылка скопирована в буфер обмена';
+
+  @override
+  String get termsAgreementPrefix => 'Продолжая, вы соглашаетесь с нашими ';
+
+  @override
+  String get termsOfService => 'Условиями использования';
+
+  @override
+  String get termsAgreementSuffix => '.';
+
+  @override
+  String get termsDialogTitle => 'Условия использования';
+
+  @override
+  String get termsDialogContent =>
+      'Условия использования\n\n1. Принятие условий\nИспользуя BreathSpace, вы соглашаетесь с этими условиями.\n\n2. Использование приложения\nBreathSpace предназначен для дыхательных упражнений и медитации. Используйте ответственно.\n\n3. Конфиденциальность\nМы собираем минимальные данные для предоставления наших услуг. См. нашу Политику конфиденциальности для деталей.\n\n4. Функции ИИ\nПриложение использует ИИ для генерации персонализированных упражнений. Сгенерированный контент предназначен только для информационных целей.\n\n5. Ограничение ответственности\nПриложение не является медицинским советом. Консультируйтесь с профессионалами по вопросам здоровья.\n\n6. Изменения условий\nМы можем обновлять эти условия. Продолжение использования означает принятие.\n\nПоследнее обновление: Декабрь 2024';
 }

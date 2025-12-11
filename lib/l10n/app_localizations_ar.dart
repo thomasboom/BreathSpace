@@ -120,13 +120,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get soundEffects => 'التأثيرات الصوتية';
 
   @override
-  String get voiceGuide => 'Voice Guide';
+  String get voiceGuide => 'الدليل الصوتي';
 
   @override
-  String get voiceGuideOff => 'Off';
+  String get voiceGuideOff => 'مطفأ';
 
   @override
-  String get voiceGuideThomas => 'Thomas';
+  String get voiceGuideThomas => 'توماس';
 
   @override
   String get music => 'الموسيقى';
@@ -170,20 +170,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get promptCacheCleared => 'تم مسح ذاكرة التخزين المؤقت للمحفزات';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'انتهى التمرين';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle => 'أتمنى أن تشعر بتحسن.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'العودة إلى الصفحة الرئيسية';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => 'نسخ الرابط';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => 'نسخ رابط التمرين';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => 'تم نسخ الرابط إلى الحافظة';
+
+  @override
+  String get termsAgreementPrefix => 'بالمتابعة، أنت توافق على ';
+
+  @override
+  String get termsOfService => 'شروط الخدمة';
+
+  @override
+  String get termsAgreementSuffix => ' الخاصة بنا.';
+
+  @override
+  String get termsDialogTitle => 'شروط الخدمة';
+
+  @override
+  String get termsDialogContent =>
+      'شروط الخدمة\n\n1. قبول الشروط\nباستخدام BreathSpace، أنت توافق على هذه الشروط.\n\n2. استخدام التطبيق\nBreathSpace مصمم لتمارين التنفس والتأمل. استخدمه بمسؤولية.\n\n3. الخصوصية\nنحن نجمع بيانات قليلة لتقديم خدماتنا. راجع سياسة الخصوصية للتفاصيل.\n\n4. ميزات الذكاء الاصطناعي\nيستخدم التطبيق الذكاء الاصطناعي لإنشاء تمارين مخصصة. المحتوى المولد لأغراض معلوماتية فقط.\n\n5. تحديد المسؤولية\nالتطبيق ليس نصيحة طبية. استشر المتخصصين بشأن مخاوف الصحة.\n\n6. تغييرات الشروط\nقد نحدث هذه الشروط. الاستخدام المستمر يعني القبول.\n\nآخر تحديث: ديسمبر 2024';
 }

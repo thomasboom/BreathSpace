@@ -171,20 +171,37 @@ class AppLocalizationsFr extends AppLocalizations {
   String get promptCacheCleared => 'Cache des invites vidé';
 
   @override
-  String get exerciseFinishedTitle => 'Exercise finished';
+  String get exerciseFinishedTitle => 'Exercice terminé';
 
   @override
-  String get exerciseFinishedSubtitle => 'I hope you feel better.';
+  String get exerciseFinishedSubtitle =>
+      'J\'espère que vous vous sentez mieux.';
 
   @override
-  String get backToHome => 'Back to Home';
+  String get backToHome => 'Retour à l\'accueil';
 
   @override
-  String get copyLink => 'Copy Link';
+  String get copyLink => 'Copier le lien';
 
   @override
-  String get copyExerciseLink => 'Copy Exercise Link';
+  String get copyExerciseLink => 'Copier le lien de l\'exercice';
 
   @override
-  String get linkCopied => 'Link copied to clipboard';
+  String get linkCopied => 'Lien copié dans le presse-papiers';
+
+  @override
+  String get termsAgreementPrefix => 'En continuant, vous acceptez nos ';
+
+  @override
+  String get termsOfService => 'Conditions d\'utilisation';
+
+  @override
+  String get termsAgreementSuffix => '.';
+
+  @override
+  String get termsDialogTitle => 'Conditions d\'utilisation';
+
+  @override
+  String get termsDialogContent =>
+      'Conditions d\'utilisation\n\n1. Acceptation des termes\nEn utilisant BreathSpace, vous acceptez ces termes.\n\n2. Utilisation de l\'app\nBreathSpace est conçu pour les exercices de respiration et la méditation. Utilisez-le de manière responsable.\n\n3. Confidentialité\nNous collectons des données minimales pour fournir nos services. Voir notre Politique de confidentialité pour plus de détails.\n\n4. Fonctionnalités IA\nL\'app utilise l\'IA pour générer des exercices personnalisés. Le contenu généré est uniquement à des fins informatives.\n\n5. Limitation de responsabilité\nL\'app n\'est pas un conseil médical. Consultez des professionnels pour les préoccupations de santé.\n\n6. Modifications des termes\nNous pouvons mettre à jour ces termes. L\'utilisation continue constitue une acceptation.\n\nDernière mise à jour : Décembre 2024';
 }
