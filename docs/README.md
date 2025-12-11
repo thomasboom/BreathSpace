@@ -33,7 +33,12 @@ BreathSpace is a Flutter application designed to help users practice various bre
 1. Clone the repository
 2. Run `flutter pub get` to install dependencies
 3. Run `flutter gen-l10n` to generate localization files
-4. Use `flutter run` to start the application
+4. (Optional) Copy `.env.example` to `.env` and add your Gemini API key for AI-powered exercise recommendations:
+   ```bash
+   cp .env.example .env
+   # Edit .env and replace YOUR_GEMINI_API_KEY with your actual API key from Google AI Studio
+   ```
+5. Use `flutter run` to start the application
 
 ## Localization
 
