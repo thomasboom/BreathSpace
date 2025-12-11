@@ -37,7 +37,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             end: Alignment.bottomCenter,
             colors: [
               Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.98),
+              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.98),
             ],
           ),
         ),
@@ -61,13 +61,13 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [
-                              Theme.of(context).colorScheme.primary.withOpacity(0.15),
-                              Theme.of(context).colorScheme.primary.withOpacity(0.08),
+                              Theme.of(context).colorScheme.primary.withValues(alpha: 0.15),
+                              Theme.of(context).colorScheme.primary.withValues(alpha: 0.08),
                             ],
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                              color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
                               blurRadius: 20,
                               offset: const Offset(0, 8),
                             ),
@@ -97,7 +97,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
-                          color: Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+                          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.8),
                           height: 1.5,
                           letterSpacing: 0.1,
                         ),
@@ -139,7 +139,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.06),
+                              color: Colors.black.withValues(alpha: 0.06),
                               blurRadius: 16,
                               offset: const Offset(0, 4),
                             ),
@@ -167,7 +167,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                           margin: const EdgeInsets.only(bottom: 12),
                                           padding: const EdgeInsets.all(12),
                                           decoration: BoxDecoration(
-                                            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.5),
+                                            color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.5),
                                             borderRadius: BorderRadius.circular(12),
                                           ),
                                           child: Row(
@@ -186,7 +186,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                                 '${stage.pattern} • ${_formatDuration(stage.duration)}',
                                                 style: TextStyle(
                                                   fontSize: 14,
-                                                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                                                 ),
                                               ),
                                             ],
@@ -198,7 +198,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                       margin: const EdgeInsets.only(bottom: 12),
                                       padding: const EdgeInsets.all(12),
                                       decoration: BoxDecoration(
-                                        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.5),
+                                        color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.5),
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Row(
@@ -217,7 +217,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                             '${stage.pattern} • ${_formatDuration(stage.duration)}',
                                             style: TextStyle(
                                               fontSize: 14,
-                                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                                             ),
                                           ),
                                         ],
@@ -281,13 +281,13 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                   color: Theme.of(context).scaffoldBackgroundColor,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 8,
                       offset: const Offset(0, -2),
                     ),
                   ],
                 ),
-                child: Container(
+                child: SizedBox(
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(
@@ -348,13 +348,13 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             border: Border.all(
               color: isSelected
                   ? Theme.of(context).colorScheme.primary
-                  : Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
+                  : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
               width: 1,
             ),
             boxShadow: isSelected
                 ? [
                     BoxShadow(
-                      color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                      color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
                       blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),

@@ -138,7 +138,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
         }
       }
 
-      if (mounted && recommendedExercise != null) {
+      if (mounted) {
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -172,7 +172,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
           IconButton(
             icon: Icon(
               Icons.settings_outlined,
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
               size: 24,
             ),
             onPressed: () {
@@ -188,7 +188,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
             end: Alignment.bottomCenter,
             colors: [
               Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
             ],
           ),
         ),
@@ -215,13 +215,13 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                                 colors: [
-                                  Theme.of(context).colorScheme.primary.withOpacity(0.15),
-                                  Theme.of(context).colorScheme.primary.withOpacity(0.08),
+                                  Theme.of(context).colorScheme.primary.withValues(alpha: 0.15),
+                                  Theme.of(context).colorScheme.primary.withValues(alpha: 0.08),
                                 ],
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
                                   blurRadius: 20,
                                   offset: const Offset(0, 8),
                                 ),
@@ -250,7 +250,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                             'Tell me about your mood or what you need',
                             style: TextStyle(
                               fontSize: 16,
-                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                               height: 1.4,
                             ),
                             textAlign: TextAlign.center,
@@ -263,7 +263,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.08),
+                                  color: Colors.black.withValues(alpha: 0.08),
                                   blurRadius: 16,
                                   offset: const Offset(0, 4),
                                 ),
@@ -276,7 +276,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                                 border: InputBorder.none,
                                 contentPadding: const EdgeInsets.all(24),
                                 hintStyle: TextStyle(
-                                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -303,7 +303,7 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                                             _isListening ? Icons.mic_off : Icons.mic,
                                             color: _isListening
                                                 ? Theme.of(context).colorScheme.primary
-                                                : Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                                                : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                                             size: 24,
                                           ),
                                           onPressed: _isListening ? _stopListening : _startListening,

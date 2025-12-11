@@ -424,7 +424,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -438,7 +438,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                 hintStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                 ),
@@ -446,7 +446,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                   icon: Icon(
                     Icons.settings_outlined,
                     size: 24,
-                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -503,7 +503,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.08),
+                                color: Colors.black.withValues(alpha: 0.08),
                                 blurRadius: 12,
                                 offset: const Offset(0, 4),
                               ),
@@ -523,8 +523,8 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                                       begin: Alignment.topLeft,
                                       end: Alignment.bottomRight,
                                       colors: [
-                                        Theme.of(context).colorScheme.primary.withOpacity(0.1),
-                                        Theme.of(context).colorScheme.primary.withOpacity(0.05),
+                                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
                                       ],
                                     ),
                                   ),
@@ -553,7 +553,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                                 Text(
                                   exercise.hasStages ? _getTotalDuration(exercise) : exercise.duration,
                                   style: TextStyle(
-                                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -619,15 +619,15 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [
-                                Theme.of(context).colorScheme.primary.withOpacity(0.1),
-                                Theme.of(context).colorScheme.primary.withOpacity(0.05),
+                                Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                                Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
                               ],
                             ),
                           ),
                           child: Icon(
                             Icons.search_off_outlined,
                             size: 32,
-                            color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
+                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.6),
                           ),
                         ),
                         const SizedBox(height: 24),
@@ -636,7 +636,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
-                            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+                            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.8),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -645,7 +645,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                           'Try adjusting your search terms',
                           style: TextStyle(
                             fontSize: 14,
-                            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -668,7 +668,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.04),
+                                color: Colors.black.withValues(alpha: 0.04),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
                               ),
@@ -703,7 +703,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                                 Text(
                                   exercise.intro,
                                   style: TextStyle(
-                                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                                     fontSize: 14,
                                     height: 1.4,
                                   ),
@@ -714,7 +714,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                             trailing: Icon(
                               Icons.arrow_forward_ios,
                               size: 16,
-                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
+                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.3),
                             ),
                             onTap: () {
                               Navigator.push(

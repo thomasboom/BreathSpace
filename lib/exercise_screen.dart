@@ -45,7 +45,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
   // Track the current phase for breathing method instructions
   BreathingPhase _currentPhase = BreathingPhase.inhale;
-  BreathingPhase _previousPhase = BreathingPhase.inhale; // Track previous phase for transition detection
 
   // Track complete breathing cycles for instruction display
   int _breathingCycleCount = 0;
@@ -147,7 +146,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
     // Reset breathing cycle count for new stage
     _breathingCycleCount = 0;
-    _previousPhase = BreathingPhase.inhale; // Reset phase tracking for new stage
     
     List<int> patternValues;
     try {
@@ -221,7 +219,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     // Reset sound tracking variables for new animation cycle
     _lastInstruction = '';
     _waitingForCycleCompletion = false; // Reset cycle completion flag for new animation cycle
-    _previousPhase = BreathingPhase.inhale; // Reset phase tracking for new animation cycle
     _breathingCycleCount = 0; // Reset breathing cycle count for new animation cycle
 
     if (settings.musicMode != MusicMode.off) {
@@ -319,7 +316,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
           if (newPhase == BreathingPhase.inhale && _currentPhase != BreathingPhase.inhale) {
             _breathingCycleCount++;
           }
-          _previousPhase = _currentPhase;
           _currentPhase = newPhase;
         }
 
@@ -457,7 +453,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
             end: Alignment.bottomCenter,
             colors: [
               Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
             ],
           ),
         ),
@@ -475,8 +471,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Theme.of(context).colorScheme.error.withOpacity(0.1),
-                            Theme.of(context).colorScheme.error.withOpacity(0.05),
+                            Theme.of(context).colorScheme.error.withValues(alpha: 0.1),
+                            Theme.of(context).colorScheme.error.withValues(alpha: 0.05),
                           ],
                         ),
                       ),
@@ -492,7 +488,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
-                        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.8),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -516,8 +512,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                                 colors: [
-                                  Theme.of(context).scaffoldBackgroundColor.withOpacity(0.1),
-                                  Theme.of(context).scaffoldBackgroundColor.withOpacity(0.05),
+                                  Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.1),
+                                  Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.05),
                                 ],
                               ),
                             ),
