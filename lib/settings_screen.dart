@@ -322,6 +322,50 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             ),
                           ),
                         ),
+                        DropdownMenuItem<LanguagePreference>(
+                          value: LanguagePreference.hi,
+                          child: Text(
+                            AppLocalizations.of(context).languageHindi,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
+                        DropdownMenuItem<LanguagePreference>(
+                          value: LanguagePreference.ko,
+                          child: Text(
+                            AppLocalizations.of(context).languageKorean,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
+                        DropdownMenuItem<LanguagePreference>(
+                          value: LanguagePreference.pl,
+                          child: Text(
+                            AppLocalizations.of(context).languagePolish,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
+                        DropdownMenuItem<LanguagePreference>(
+                          value: LanguagePreference.tr,
+                          child: Text(
+                            AppLocalizations.of(context).languageTurkish,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
