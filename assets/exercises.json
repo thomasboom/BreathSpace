@@ -8,9 +8,18 @@
       "nl": "Ontspannende Ademhaling",
       "fr": "Respiration Relaxante",
       "ja": "リラックス呼吸法",
-      "pt": "Respiração Relaxante",
+      "pt": "Respiração Relaxante",Updated translations
       "ru": "Расслабляющее дыхание",
-      "ar": "تمرين التنفس المُسترخي"
+      "ar": "تمرين التنفس المُسترخي",
+      "he": " נשימה מרגיעה",
+      "hi": "शांतिदायक सांस",
+      "ko": "이완 호흡",
+      "pl": "Oddech rozluźniający",
+      "sw": "Pumzi ya Kurefusha",
+      "th": "การหายใจผ่อนคลาย",
+      "tr": "Rahatlatıcı Nefes",
+      "uk": "Розслабляюче дихання",
+      "vi": "Hơi thở thư giãn"
     },
     "intro": {
       "en": "Promotes sleep and reduces anxiety.",
@@ -19,7 +28,16 @@
       "ja": "睡眠を促進し、不安を軽減します。",
       "pt": "Promove o sono e reduz a ansiedade.",
       "ru": "Способствует сну и снижает тревожность.",
-      "ar": "يُسهل النوم ويقلل القلق."
+      "ar": "يُسهل النوم ويقلل القلق.",
+      "he": "מעודד שינה ומכבה חרדה.",
+      "hi": "नींद को बढ़ाता है और चिंता को कम करता है।",
+      "ko": "수면을 유도하고 불안을 줄입니다.",
+      "pl": "Sprzyja snu i zmniejsza lęk.",
+      "sw": "Husaidia kusisimka na kupunguza wasiwasi.",
+      "th": "ส่งเสริมการนอนหลับและลดความวิตกกังวล",
+      "tr": "Uykuyu teşvik eder ve anksiyeteyi azaltır.",
+      "uk": "Сприяє сну та зменшує тривожність.",
+      "vi": "Thúc đẩy giấc ngủ và giảm lo âu."
     },
     "inhale_method": "nose",
     "exhale_method": "mouth",
@@ -51,7 +69,16 @@
       "zh": "方盒呼吸法",
       "bg": "Квадратно дишане",
       "de": "Box-Atmung",
-      "it": "Respirazione a Scatola"
+      "it": "Respirazione a Scatola",
+      "he": "נשימת תיבה",
+      "hi": "बॉक्स सांस लेना",
+      "ko": "박스 호흡",
+      "pl": "Oddychanie kwadratowe",
+      "sw": "Pumzi ya Sanduku",
+      "th": "การหายใจแบบสี่เหลี่ยม",
+      "tr": "Kutu Nefesi",
+      "uk": "Квадратне дихання",
+      "vi": "Hơi thở hình hộp"
     },
     "intro": {
       "en": "Used by Navy SEALs for stress management.",
@@ -65,7 +92,16 @@
       "zh": "海豹突击队用于压力管理的技巧。",
       "bg": "Използва се от морските котици за справяне със стреса.",
       "de": "Wird von Navy SEALs für Stressmanagement verwendet.",
-      "it": "Usata dai Navy SEAL per la gestione dello stress."
+      "it": "Usata dai Navy SEAL per la gestione dello stress.",
+      "he": "בשימוש חיל הים של ארצות הברית לניהול מתח.",
+      "hi": "तनाव प्रबंधन के लिए नौसेना सील्स द्वारा उपयोग किया जाता है।",
+      "ko": "해군 특수부대가 스트레스 관리를 위해 사용하는 기법입니다.",
+      "pl": "Stosowane przez amerykańską marynarkę wojenną do zarządzania stresem.",
+      "sw": "Inatumika na vifungo vya Bahari ya Kusimamia shinikizo.",
+      "th": "ใช้โดยหน่วยนาวิกโยธินเพื่อบริหารความเครียด",
+      "tr": "Stres yönetimi için Navy SEAL'lar tarafından kullanılır.",
+      "uk": "Використовується морськими котиками для управління стресом.",
+      "vi": "Được sử dụng bởi Hải quân Mỹ để quản lý căng thẳng."
     },
     "inhale_method": "nose",
     "exhale_method": "mouth",
@@ -97,7 +133,16 @@
       "zh": "2:1比例呼吸法",
       "bg": "Дишане в съотношение 2:1",
       "de": "2:1 Atemverhältnis",
-      "it": "Respirazione 2:1"
+      "it": "Respirazione 2:1",
+      "he": "נשימת יחס 2:1",
+      "hi": "2:1 अनुपात सांस",
+      "ko": "2:1 비율 호흡",
+      "pl": "Oddychanie w stosunku 2:1",
+      "sw": "Pumzi ya Uwiano 2:1",
+      "th": "การหายใจแบบอัตราส่วน 2:1",
+      "tr": "2:1 Oranlı Nefes",
+      "uk": "Дихання у співвідношенні 2:1",
+      "vi": "Hơi thở tỷ lệ 2:1"
     },
     "intro": {
       "en": "Simple calming technique for beginners.",
@@ -111,7 +156,16 @@
       "zh": "适合初学者的简单放松技巧。",
       "bg": "Проста техника за релаксиране за начинаещи.",
       "de": "Einfache beruhigende Technik für Anfänger.",
-      "it": "Tecnica semplice di rilassamento per principianti."
+      "it": "Tecnica semplice di rilassamento per principianti.",
+      "he": "טכניקה פשוטה להרגעת רגשות עבור מתחילים.",
+      "hi": "शुरुआत करने वालों के लिए सरल शामक तकनीक।",
+      "ko": "초보자를 위한 간단한 진정 기술입니다.",
+      "pl": "Prosta technika uspokajająca dla początkujących.",
+      "sw": "Mbinu rahisi ya kutuliza kwa wakaaji.",
+      "th": "เทคนิคทำให้จิตใจสงบอย่างง่ายสำหรับผู้เริ่มต้น",
+      "tr": "Acemiler için basit sakinleştirme tekniği.",
+      "uk": "Проста техніка заспокоєння для початківців.",
+      "vi": "Kỹ thuật làm dịu đơn giản cho người mới bắt đầu."
     },
     "inhale_method": "nose",
     "exhale_method": "mouth",
