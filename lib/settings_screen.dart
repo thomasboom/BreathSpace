@@ -6,6 +6,7 @@ import 'package:BreathSpace/settings_provider.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
 import 'package:BreathSpace/prompt_cache_service.dart'; // Import prompt cache service
 import 'intro_screen.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingsScreen extends StatefulWidget {
   final bool fromExercise; // Flag to indicate if the settings were opened from the exercise screen
@@ -652,6 +653,47 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   },
                 ),
                 const SizedBox(height: 32),
+
+                // Version and Copyright Info at the bottom
+                Column(
+                  children: [
+                    FutureBuilder<PackageInfo>(
+                      future: PackageInfo.fromPlatform(),
+                      builder: (context, snapshot) {
+                        String versionText = "Version ";
+                        if (snapshot.hasData) {
+                          final packageInfo = snapshot.data!;
+                          versionText += packageInfo.version;
+                        } else {
+                          versionText += "Unknown";
+                        }
+
+                        return Container(
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Text(
+                            versionText,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: Text(
+                        "© 2025 ThomasNow Productions",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
           ],
             ),
           ),
