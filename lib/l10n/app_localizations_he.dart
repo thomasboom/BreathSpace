@@ -153,6 +153,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'פסנתר';
+
+  @override
   String get replayIntro => 'נגן מחדש את ההקדמה';
 
   @override

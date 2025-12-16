@@ -153,6 +153,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'Đàn piano';
+
+  @override
   String get replayIntro => 'Phát lại phần giới thiệu';
 
   @override

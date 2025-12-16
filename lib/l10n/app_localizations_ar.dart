@@ -153,6 +153,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'بيانو';
+
+  @override
   String get replayIntro => 'إعادة تشغيل المقدمة';
 
   @override

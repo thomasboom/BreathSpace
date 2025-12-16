@@ -154,6 +154,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'Piano';
+
+  @override
   String get replayIntro => 'Repetir introducción';
 
   @override

@@ -153,6 +153,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => '피아노';
+
+  @override
   String get replayIntro => '인트로 다시 보기';
 
   @override

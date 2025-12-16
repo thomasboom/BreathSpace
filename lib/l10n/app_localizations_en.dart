@@ -153,6 +153,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'Piano';
+
+  @override
   String get replayIntro => 'Replay Intro';
 
   @override

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 enum LanguagePreference { system, ar, bg, de, en, es, fr, hi, it, ja, ko, nl, pl, pt, ru, tr, zh }
-enum MusicMode { off, nature, lofi }
+enum MusicMode { off, nature, lofi, piano }
 enum VoiceGuideMode { off, thomas }
 enum ViewMode { list, ai }
 
@@ -137,6 +137,9 @@ class SettingsProvider extends ChangeNotifier {
         case 'lofi':
           _musicMode = MusicMode.lofi;
           break;
+        case 'piano':
+          _musicMode = MusicMode.piano;
+          break;
         default:
           _musicMode = MusicMode.off;
       }
@@ -230,6 +233,9 @@ class SettingsProvider extends ChangeNotifier {
         break;
       case MusicMode.lofi:
         await prefs.setString('musicMode', 'lofi');
+        break;
+      case MusicMode.piano:
+        await prefs.setString('musicMode', 'piano');
         break;
     }
   }

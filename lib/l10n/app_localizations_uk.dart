@@ -153,6 +153,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get musicLofi => 'Лоуфі';
 
   @override
+  String get musicPiano => 'Фортепіано';
+
+  @override
   String get replayIntro => 'Повторити вступ';
 
   @override

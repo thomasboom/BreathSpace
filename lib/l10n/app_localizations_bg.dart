@@ -155,6 +155,9 @@ class AppLocalizationsBg extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'Пиано';
+
+  @override
   String get replayIntro => 'Повторно въведение';
 
   @override

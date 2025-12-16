@@ -424,6 +424,12 @@ abstract class AppLocalizations {
   /// **'LoFi'**
   String get musicLofi;
 
+  /// No description provided for @musicPiano.
+  ///
+  /// In en, this message translates to:
+  /// **'Piano'**
+  String get musicPiano;
+
   /// No description provided for @replayIntro.
   ///
   /// In en, this message translates to:

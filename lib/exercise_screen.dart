@@ -162,6 +162,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
         musicFile = 'music/nature.mp3';
       } else if (newMusicMode == MusicMode.lofi) {
         musicFile = 'music/lofi.mp3';
+      } else if (newMusicMode == MusicMode.piano) {
+        musicFile = 'music/piano.mp3';
       }
       _musicPlayer.play(AssetSource(musicFile));
       _musicPlayer.setReleaseMode(ReleaseMode.loop);
@@ -259,6 +261,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
         musicFile = 'music/nature.mp3';
       } else if (settings.musicMode == MusicMode.lofi) {
         musicFile = 'music/lofi.mp3';
+      } else if (settings.musicMode == MusicMode.piano) {
+        musicFile = 'music/piano.mp3';
       }
       _musicPlayer.play(AssetSource(musicFile));
       _musicPlayer.setReleaseMode(ReleaseMode.loop);

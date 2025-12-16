@@ -153,6 +153,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => '钢琴';
+
+  @override
   String get replayIntro => '重播介绍';
 
   @override

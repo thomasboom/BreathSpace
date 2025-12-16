@@ -154,6 +154,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'Фортепиано';
+
+  @override
   String get replayIntro => 'Повторить вступление';
 
   @override

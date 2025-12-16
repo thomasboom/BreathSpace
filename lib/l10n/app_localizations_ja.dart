@@ -153,6 +153,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'ピアノ';
+
+  @override
   String get replayIntro => 'イントロを再再生';
 
   @override

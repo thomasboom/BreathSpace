@@ -153,6 +153,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get musicLofi => 'LoFi';
 
   @override
+  String get musicPiano => 'Piano';
+
+  @override
   String get replayIntro => 'Cheza tena Utangulizi';
 
   @override

@@ -537,6 +537,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             ),
                           ),
                         ),
+                        DropdownMenuItem<MusicMode>(
+                          value: MusicMode.piano,
+                          child: Text(
+                            AppLocalizations.of(context).musicPiano,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
