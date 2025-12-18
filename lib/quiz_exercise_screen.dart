@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:BreathSpace/data.dart';
 import 'package:BreathSpace/exercise_detail_screen.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
+import 'package:BreathSpace/gemini_service.dart';
 
 class QuizExerciseScreen extends StatefulWidget {
   const QuizExerciseScreen({super.key});
@@ -378,147 +379,113 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
   }
 
   void _navigateToRecommendedExercise() {
-    // Find the most suitable exercise based on selections
-    BreathingExercise? recommendedExercise = _findRecommendedExercise();
-    
-    if (recommendedExercise != null) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => ExerciseDetailScreen(exercise: recommendedExercise),
+    // Create a description from the quiz selections to send to Gemini API
+    String moodDescription = _selectedMood != null ? _getIconLabelFromValue(_selectedMood!) : '';
+    String feelingDescription = _selectedFeeling != null ? _getIconLabelFromValue(_selectedFeeling!) : '';
+    String needDescription = _selectedNeed != null ? _getIconLabelFromValue(_selectedNeed!) : '';
+
+    // Create a descriptive prompt for the Gemini API
+    String prompt = "Based on my current state: mood is ${moodDescription.isEmpty ? 'not specified' : moodDescription}, "
+        "feeling is ${feelingDescription.isEmpty ? 'not specified' : feelingDescription}, "
+        "and I need ${needDescription.isEmpty ? 'not specified' : needDescription}. "
+        "Please recommend the most appropriate breathing exercise for me.";
+
+    // Navigate to ExerciseDetailScreen with AI callback to get personalized recommendation
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (detailContext) => ExerciseDetailScreen(
+          aiRecommendationCallback: () async {
+            try {
+              final geminiService = GeminiService();
+              final recommendedId = await geminiService.recommendExercise(
+                prompt,
+                breathingExercises,
+              );
+
+              if (recommendedId == null) {
+                // API call failed
+                if (detailContext.mounted) {
+                  ScaffoldMessenger.of(detailContext).showSnackBar(
+                    const SnackBar(
+                      content: Text('Unable to connect to AI service. Please check your internet connection and try again.'),
+                      duration: Duration(seconds: 4),
+                    ),
+                  );
+                }
+                return null;
+              }
+
+              if (recommendedId == 'none') {
+                // No suitable recommendation
+                if (detailContext.mounted) {
+                  ScaffoldMessenger.of(detailContext).showSnackBar(
+                    const SnackBar(
+                      content: Text('No suitable exercise found for your selections. Try different selections.'),
+                      duration: Duration(seconds: 4),
+                    ),
+                  );
+                }
+                return null;
+              }
+
+              // Find the recommended exercise
+              BreathingExercise? recommendedExercise;
+              try {
+                recommendedExercise = breathingExercises.firstWhere(
+                  (exercise) => exercise.id == recommendedId,
+                );
+              } catch (e) {
+                // Exercise not found, fallback to first exercise
+                if (breathingExercises.isNotEmpty) {
+                  recommendedExercise = breathingExercises.first;
+                } else {
+                  if (detailContext.mounted) {
+                    ScaffoldMessenger.of(detailContext).showSnackBar(
+                      const SnackBar(content: Text('No exercises available.')),
+                    );
+                  }
+                  return null;
+                }
+              }
+
+              return recommendedExercise;
+            } catch (e) {
+              if (detailContext.mounted) {
+                ScaffoldMessenger.of(detailContext).showSnackBar(
+                  SnackBar(
+                    content: Text('An error occurred: ${e.toString()}'),
+                    duration: const Duration(seconds: 4),
+                  ),
+                );
+              }
+              return null;
+            }
+          },
         ),
-      );
-    } else {
-      // If no exercise is found, navigate to the first available exercise
-      if (breathingExercises.isNotEmpty) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ExerciseDetailScreen(exercise: breathingExercises.first),
-          ),
-        );
-      } else {
-        // Show error if no exercises available
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(AppLocalizations.of(context).noExercisesFound),
-            ),
-          );
-        }
+      ),
+    );
+  }
+
+  // Helper method to get the label from icon value string
+  String _getIconLabelFromValue(String iconValue) {
+    // Search through all options to find the matching icon and return its label
+    for (var option in _moodOptions) {
+      if ((option['icon'] as IconData).toString() == iconValue) {
+        return option['label'] as String;
       }
     }
+    for (var option in _feelingOptions) {
+      if ((option['icon'] as IconData).toString() == iconValue) {
+        return option['label'] as String;
+      }
+    }
+    for (var option in _needOptions) {
+      if ((option['icon'] as IconData).toString() == iconValue) {
+        return option['label'] as String;
+      }
+    }
+    return '';
   }
 
-  BreathingExercise? _findRecommendedExercise() {
-    // Simple logic to find the most appropriate exercise based on selections
-    // This could be enhanced with more sophisticated logic in the future
-
-    // Create a list of all exercises
-    List<BreathingExercise> exercises = [...breathingExercises];
-
-    // Define icon string constants for easy reference
-    final stressedIcon = Icons.sentiment_very_dissatisfied.toString();
-    final anxiousIcon = Icons.psychology_alt_outlined.toString();
-    final tiredIcon = Icons.bedtime.toString();
-    final energyIcon = Icons.flash_on.toString();
-    final focusIcon = Icons.psychology_alt_outlined.toString();
-    final relaxIcon = Icons.self_improvement.toString();
-    final calmIcon = Icons.sentiment_satisfied.toString();
-
-    // If the user selected stress or anxiety related moods/feelings
-    if (_selectedMood == stressedIcon || _selectedMood == anxiousIcon ||
-        _selectedFeeling == anxiousIcon || _selectedFeeling == stressedIcon) {
-      // Prioritize calming exercises
-      exercises.sort((a, b) {
-        // Score based on keywords in intro that suggest calming effect
-        int scoreA = _calculateCalmScore(a);
-        int scoreB = _calculateCalmScore(b);
-        return scoreB.compareTo(scoreA); // Higher scores first
-      });
-    }
-    // If the user selected tired or sleepy
-    else if (_selectedMood == tiredIcon || _selectedFeeling == Icons.hourglass_empty.toString() ||
-             _selectedNeed == tiredIcon) {
-      // Prioritize energizing exercises
-      exercises.sort((a, b) {
-        int scoreA = _calculateEnergyScore(a);
-        int scoreB = _calculateEnergyScore(b);
-        return scoreB.compareTo(scoreA); // Higher scores first
-      });
-    }
-    // If the user selected focus need
-    else if (_selectedNeed == focusIcon) {
-      // Prioritize focus exercises
-      exercises.sort((a, b) {
-        int scoreA = _calculateFocusScore(a);
-        int scoreB = _calculateFocusScore(b);
-        return scoreB.compareTo(scoreA); // Higher scores first
-      });
-    }
-    // If the user selected relaxation need
-    else if (_selectedNeed == relaxIcon || _selectedNeed == calmIcon) {
-      // Prioritize relaxation exercises
-      exercises.sort((a, b) {
-        int scoreA = _calculateRelaxScore(a);
-        int scoreB = _calculateRelaxScore(b);
-        return scoreB.compareTo(scoreA); // Higher scores first
-      });
-    }
-
-    // Return the top recommended exercise
-    return exercises.isNotEmpty ? exercises.first : null;
-  }
-
-  int _calculateCalmScore(BreathingExercise exercise) {
-    int score = 0;
-    String intro = exercise.intro.toLowerCase();
-    if (intro.contains('calm') || intro.contains('peace') || intro.contains('relax') || 
-        intro.contains('soothe') || intro.contains('ease') || intro.contains('tension')) {
-      score += 2;
-    }
-    if (exercise.title.toLowerCase().contains('calm') || exercise.title.toLowerCase().contains('peace')) {
-      score += 1;
-    }
-    return score;
-  }
-
-  int _calculateEnergyScore(BreathingExercise exercise) {
-    int score = 0;
-    String intro = exercise.intro.toLowerCase();
-    if (intro.contains('energy') || intro.contains('energize') || intro.contains('alert') || 
-        intro.contains('awake') || intro.contains('vitality')) {
-      score += 2;
-    }
-    if (exercise.title.toLowerCase().contains('energy') || exercise.title.toLowerCase().contains('awake')) {
-      score += 1;
-    }
-    return score;
-  }
-
-  int _calculateFocusScore(BreathingExercise exercise) {
-    int score = 0;
-    String intro = exercise.intro.toLowerCase();
-    if (intro.contains('focus') || intro.contains('concentration') || intro.contains('mindful') || 
-        intro.contains('awareness') || intro.contains('present')) {
-      score += 2;
-    }
-    if (exercise.title.toLowerCase().contains('focus') || exercise.title.toLowerCase().contains('mindful')) {
-      score += 1;
-    }
-    return score;
-  }
-
-  int _calculateRelaxScore(BreathingExercise exercise) {
-    int score = 0;
-    String intro = exercise.intro.toLowerCase();
-    if (intro.contains('relax') || intro.contains('tension') || intro.contains('stress') || 
-        intro.contains('relief') || intro.contains('ease') || intro.contains('soothe')) {
-      score += 2;
-    }
-    if (exercise.title.toLowerCase().contains('relax') || exercise.title.toLowerCase().contains('soothe')) {
-      score += 1;
-    }
-    return score;
-  }
 }
