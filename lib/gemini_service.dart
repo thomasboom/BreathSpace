@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:BreathSpace/data.dart'; // Assuming data.dart contains BreathingExercise
 import 'package:BreathSpace/prompt_cache_service.dart'; // Import the prompt cache service
+import 'package:BreathSpace/rate_limiter.dart'; // Import the rate limiter
 
 class GeminiService {
   // API key is loaded from environment variables (.env file)
@@ -12,6 +13,12 @@ class GeminiService {
 
   Future<String?> recommendExercise(String userInput, List<BreathingExercise> exercises) async {
     if (_apiKey == 'YOUR_GEMINI_API_KEY' || _apiKey.isEmpty) {
+      return null;
+    }
+
+    // Check if rate limited
+    final isLimited = await RateLimiter.isRateLimited();
+    if (isLimited) {
       return null;
     }
 
@@ -56,17 +63,24 @@ If the user's request is completely unrelated to breathing exercises, respond wi
         final jsonResponse = jsonDecode(response.body);
         final String? recommendedId = jsonResponse['candidates']?[0]['content']?['parts']?[0]?['text'];
         final result = recommendedId?.trim();
-        
+
         // Cache the response for future use
         if (result != null) {
           await PromptCacheService.cacheResponse(prompt, result);
+
+          // Increment request count after successful API call
+          await RateLimiter.incrementRequestCount();
         }
-        
+
         return result;
       } else {
+        // Still increment the count for failed requests to prevent abuse
+        await RateLimiter.incrementRequestCount();
         return null;
       }
     } catch (e) {
+      // Increment the count even for exceptions to prevent abuse
+      await RateLimiter.incrementRequestCount();
       return null;
     }
   }

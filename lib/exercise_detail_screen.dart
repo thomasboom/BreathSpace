@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';  // For kDebugMode
 import 'package:flutter/material.dart';
 import 'package:BreathSpace/data.dart';
 import 'package:BreathSpace/exercise_screen.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
+import 'package:BreathSpace/rate_limiter.dart';  // Import the rate limiter
 
 class ExerciseDetailScreen extends StatefulWidget {
   final BreathingExercise? exercise;
@@ -47,6 +49,30 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
           _isLoading = false;
         });
       } else {
+        // Check if the failure might be due to rate limiting
+        final isLimited = await RateLimiter.isRateLimited();
+
+        if (isLimited && !kDebugMode) {
+          final stats = await RateLimiter.getRequestStats();
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Daily limit reached. You have used ${stats['current']} of ${stats['max']} daily requests. Try again tomorrow.'),
+                duration: const Duration(seconds: 5),
+              ),
+            );
+          }
+        } else {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Unable to connect to AI service. Please check your internet connection and try again.'),
+                duration: Duration(seconds: 4),
+              ),
+            );
+          }
+        }
+
         // Handle case where AI couldn't recommend an exercise
         setState(() {
           _isLoading = false;
@@ -72,7 +98,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: _isLoading
+        title: _isLoading || _currentExercise == null
             ? Container(
                 width: 150,
                 height: 20,
@@ -82,7 +108,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                 ),
               )
             : Text(
-                _currentExercise!.title,
+                _currentExercise?.title ?? 'Loading...',
                 style: const TextStyle(
                   fontWeight: FontWeight.w500,
                   letterSpacing: -0.2,
@@ -149,7 +175,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                               ),
                       ),
                       const SizedBox(height: 32),
-                      _isLoading
+                      _isLoading || _currentExercise == null
                           ? Container(
                               width: 200,
                               height: 30,
@@ -159,7 +185,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                               ),
                             )
                           : Text(
-                              _currentExercise!.title,
+                              _currentExercise?.title ?? 'Loading...',
                               style: TextStyle(
                                 fontSize: 32,
                                 fontWeight: FontWeight.w300,
@@ -170,7 +196,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                               textAlign: TextAlign.center,
                             ),
                       const SizedBox(height: 16),
-                      _isLoading
+                      _isLoading || _currentExercise == null
                           ? Container(
                               width: 250,
                               height: 20,
@@ -180,7 +206,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                               ),
                             )
                           : Text(
-                              _currentExercise!.intro,
+                              _currentExercise?.intro ?? 'Loading introduction...',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
@@ -193,7 +219,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                       const SizedBox(height: 40),
 
                       // Version selection buttons
-                      if (!_isLoading && _currentExercise!.hasVersions) ...[
+                      if (!_isLoading && _currentExercise?.hasVersions == true) ...[
                         Text(
                           'Choose Duration',
                           style: TextStyle(
@@ -312,8 +338,8 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
-                            ] else if (_currentExercise!.hasStages ||
-                                _currentExercise!.getStagesForVersion(_selectedVersion) != null) ...[
+                            ] else if (_currentExercise?.hasStages == true ||
+                                _currentExercise?.getStagesForVersion(_selectedVersion) != null) ...[
                               Text(
                                 'Progressive Exercise',
                                 style: TextStyle(
@@ -358,7 +384,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                           ),
                                         ),
                                       ) ??
-                                  _currentExercise!.stages?.map(
+                                  _currentExercise?.stages?.map(
                                     (stage) => Container(
                                       margin: const EdgeInsets.only(bottom: 12),
                                       padding: const EdgeInsets.all(12),
@@ -400,7 +426,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                   ),
                                   const SizedBox(width: 8),
                                   Text(
-                                    _currentExercise!.getPatternForVersion(_selectedVersion),
+                                    _currentExercise?.getPatternForVersion(_selectedVersion) ?? 'Pattern not available',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500,
@@ -420,7 +446,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                   ),
                                   const SizedBox(width: 8),
                                   Text(
-                                    _currentExercise!.getDurationForVersion(_selectedVersion),
+                                    _currentExercise?.getDurationForVersion(_selectedVersion) ?? 'Duration not available',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500,
@@ -506,7 +532,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
   }
 
   Widget _buildVersionButton(ExerciseVersion version, String label) {
-    if (_isLoading || _currentExercise == null || !_currentExercise!.hasVersions) {
+    if (_isLoading || _currentExercise == null || _currentExercise?.hasVersions != true) {
       // Return a disabled skeleton button when loading or if versions are not available
       return Expanded(
         child: Container(
