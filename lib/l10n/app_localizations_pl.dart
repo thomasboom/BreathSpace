@@ -102,6 +102,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get aiMode => 'Tryb AI';
 
   @override
+  String get quizMode => 'Tryb quizu';
+
+  @override
   String get start => 'Rozpocznij';
 
   @override

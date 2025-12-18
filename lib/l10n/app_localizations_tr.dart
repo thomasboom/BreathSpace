@@ -102,6 +102,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get aiMode => 'AI Modu';
 
   @override
+  String get quizMode => 'Test Modu';
+
+  @override
   String get start => 'Başla';
 
   @override

@@ -102,6 +102,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get aiMode => 'AI 모드';
 
   @override
+  String get quizMode => '퀴즈 모드';
+
+  @override
   String get start => '시작';
 
   @override

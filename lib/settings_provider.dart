@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 enum LanguagePreference { system, ar, bg, de, en, es, fr, hi, it, ja, ko, nl, pl, pt, ru, tr, zh }
 enum MusicMode { off, nature, lofi, piano }
 enum VoiceGuideMode { off, thomas }
-enum ViewMode { list, ai }
+enum ViewMode { list, ai, quiz }
 
 class SettingsProvider extends ChangeNotifier {
   bool _autoSelectSearchBar = false;
@@ -69,7 +69,11 @@ class SettingsProvider extends ChangeNotifier {
     _autoSelectSearchBar = prefs.getBool('autoSelectSearchBar') ?? false;
     _soundEffectsEnabled = prefs.getBool('soundEffectsEnabled') ?? true;
     final viewModeString = prefs.getString('viewMode') ?? 'list';
-    _viewMode = viewModeString == 'ai' ? ViewMode.ai : ViewMode.list;
+    _viewMode = viewModeString == 'ai'
+        ? ViewMode.ai
+        : viewModeString == 'quiz'
+            ? ViewMode.quiz
+            : ViewMode.list;
     _voiceGuideMode = prefs.getString('voiceGuideMode') == 'thomas' 
         ? VoiceGuideMode.thomas 
         : VoiceGuideMode.off;
@@ -244,7 +248,10 @@ class SettingsProvider extends ChangeNotifier {
     _viewMode = mode;
     notifyListeners();
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('viewMode', mode == ViewMode.ai ? 'ai' : 'list');
+    await prefs.setString('viewMode',
+      mode == ViewMode.ai ? 'ai' :
+      mode == ViewMode.quiz ? 'quiz' : 'list'
+    );
   }
 
   Future<void> setVoiceGuideMode(VoiceGuideMode mode) async {

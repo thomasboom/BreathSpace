@@ -102,6 +102,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get aiMode => 'AIモード';
 
   @override
+  String get quizMode => 'クイズモード';
+
+  @override
   String get start => '開始';
 
   @override

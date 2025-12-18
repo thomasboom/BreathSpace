@@ -102,6 +102,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aiMode => 'وضع الذكاء الاصطناعي';
 
   @override
+  String get quizMode => 'وضع الاختبار';
+
+  @override
   String get start => 'بدء';
 
   @override

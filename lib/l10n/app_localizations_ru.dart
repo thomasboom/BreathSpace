@@ -102,6 +102,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get aiMode => 'Режим ИИ';
 
   @override
+  String get quizMode => 'Режим викторины';
+
+  @override
   String get start => 'Начать';
 
   @override

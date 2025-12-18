@@ -102,6 +102,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get aiMode => 'מצב בינה מלאכותית';
 
   @override
+  String get quizMode => 'Quiz Mode';
+
+  @override
   String get start => 'התחל';
 
   @override

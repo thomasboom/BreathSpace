@@ -102,6 +102,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get aiMode => 'โหมด AI';
 
   @override
+  String get quizMode => 'Quiz Mode';
+
+  @override
   String get start => 'เริ่มต้น';
 
   @override

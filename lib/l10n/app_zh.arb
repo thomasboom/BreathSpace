@@ -17,6 +17,7 @@
   "viewMode": "视图模式",
   "listView": "列表视图",
   "aiMode": "AI模式",
+  "quizMode": "测验模式",
   "start": "开始",
   "noExercisesFound": "找不到练习。",
   "inhale": "吸气",

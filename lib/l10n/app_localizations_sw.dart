@@ -102,6 +102,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get aiMode => 'Hali ya AI';
 
   @override
+  String get quizMode => 'Quiz Mode';
+
+  @override
   String get start => 'Anza';
 
   @override

@@ -102,6 +102,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get aiMode => 'AI-modus';
 
   @override
+  String get quizMode => 'Quizmodus';
+
+  @override
   String get start => 'Start';
 
   @override

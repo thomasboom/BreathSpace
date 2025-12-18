@@ -30,6 +30,7 @@
   "viewMode": "Tryb widoku",
   "listView": "Widok listy",
   "aiMode": "Tryb AI",
+  "quizMode": "Tryb quizu",
   "start": "Rozpocznij",
   "noExercisesFound": "Nie znaleziono ćwiczeń.",
   "inhale": "Wdech",

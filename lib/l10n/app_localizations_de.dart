@@ -102,6 +102,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get aiMode => 'KI-Modus';
 
   @override
+  String get quizMode => 'Quiz-Modus';
+
+  @override
   String get start => 'Start';
 
   @override

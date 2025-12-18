@@ -276,7 +276,9 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                             child: Text(
                               mode == ViewMode.list
                                 ? AppLocalizations.of(context).listView
-                                : AppLocalizations.of(context).aiMode,
+                                : mode == ViewMode.ai
+                                    ? AppLocalizations.of(context).aiMode
+                                    : AppLocalizations.of(context).quizMode,
                             ),
                           );
                         }).toList(),

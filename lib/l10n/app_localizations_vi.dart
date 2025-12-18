@@ -102,6 +102,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get aiMode => 'Chế độ AI';
 
   @override
+  String get quizMode => 'Quiz Mode';
+
+  @override
   String get start => 'Bắt đầu';
 
   @override

@@ -30,6 +30,7 @@
   "viewMode": "表示モード",
   "listView": "リスト表示",
   "aiMode": "AIモード",
+  "quizMode": "クイズモード",
   "start": "開始",
   "noExercisesFound": "エクササイズが見つかりません。",
   "inhale": "吸う",

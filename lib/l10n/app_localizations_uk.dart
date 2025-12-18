@@ -102,6 +102,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get aiMode => 'Режим ШІ';
 
   @override
+  String get quizMode => 'Quiz Mode';
+
+  @override
   String get start => 'Почати';
 
   @override

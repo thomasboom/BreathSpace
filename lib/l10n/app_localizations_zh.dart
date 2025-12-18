@@ -102,6 +102,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiMode => 'AI模式';
 
   @override
+  String get quizMode => '测验模式';
+
+  @override
   String get start => '开始';
 
   @override

@@ -103,6 +103,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get aiMode => 'Modo IA';
 
   @override
+  String get quizMode => 'Modo de Questionário';
+
+  @override
   String get start => 'Começar';
 
   @override

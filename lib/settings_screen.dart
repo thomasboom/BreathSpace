@@ -436,7 +436,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 const SizedBox(height: 12),
                 _buildSettingsCard(
-                  title: "View Mode",
+                  title: AppLocalizations.of(context).viewMode,
                   trailing: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                     decoration: BoxDecoration(
@@ -471,6 +471,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           value: ViewMode.ai,
                           child: Text(
                             "AI Mode",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
+                        DropdownMenuItem<ViewMode>(
+                          value: ViewMode.quiz,
+                          child: Text(
+                            AppLocalizations.of(context).quizMode,
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w500,

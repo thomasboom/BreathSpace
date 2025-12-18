@@ -17,6 +17,7 @@
   "viewMode": "Modalità vista",
   "listView": "Vista elenco",
   "aiMode": "Modalità IA",
+  "quizMode": "Modalità quiz",
   "start": "Inizia",
   "noExercisesFound": "Nessun esercizio trovato.",
   "inhale": "Inspira",

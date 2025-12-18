@@ -30,6 +30,7 @@
   "viewMode": "View Mode",
   "listView": "List View",
   "aiMode": "AI Mode",
+  "quizMode": "Quiz Mode",
   "start": "Start",
   "noExercisesFound": "No exercises found.",
   "inhale": "Inhale",

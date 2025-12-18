@@ -322,6 +322,12 @@ abstract class AppLocalizations {
   /// **'AI Mode'**
   String get aiMode;
 
+  /// No description provided for @quizMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Mode'**
+  String get quizMode;
+
   /// No description provided for @start.
   ///
   /// In en, this message translates to:

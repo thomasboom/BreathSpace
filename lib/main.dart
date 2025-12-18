@@ -13,6 +13,7 @@ import 'package:BreathSpace/pinned_exercises_provider.dart';
 
 import 'intro_screen.dart';
 import 'package:BreathSpace/gemini_exercise_screen.dart';
+import 'package:BreathSpace/quiz_exercise_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
@@ -182,7 +183,9 @@ class BreathSpaceApp extends StatelessWidget {
       home: seen
           ? settingsProvider.viewMode == ViewMode.list
               ? const BreathingExerciseScreen()
-              : const GeminiExerciseScreen()
+              : settingsProvider.viewMode == ViewMode.ai
+                  ? const GeminiExerciseScreen()
+                  : const QuizExerciseScreen()
           : const IntroScreen(),
       routes: {
         '/settings': (context) => const SettingsScreen(),

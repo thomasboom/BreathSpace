@@ -21,6 +21,7 @@
   "viewMode": "Ansichtsmodus",
   "listView": "Listenansicht",
   "aiMode": "KI-Modus",
+  "quizMode": "Quiz-Modus",
   "start": "Start",
   "noExercisesFound": "Keine Übungen gefunden.",
   "inhale": "Einatmen",

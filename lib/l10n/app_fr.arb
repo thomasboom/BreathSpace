@@ -30,6 +30,7 @@
   "viewMode": "Mode d'affichage",
   "listView": "Vue en liste",
   "aiMode": "Mode IA",
+  "quizMode": "Mode Quiz",
   "start": "Commencer",
   "noExercisesFound": "Aucun exercice trouvé.",
   "inhale": "Inspirez",

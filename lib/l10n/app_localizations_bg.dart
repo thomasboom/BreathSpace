@@ -103,6 +103,9 @@ class AppLocalizationsBg extends AppLocalizations {
   String get aiMode => 'Режим на изкуствен интелект';
 
   @override
+  String get quizMode => 'Режим на викторина';
+
+  @override
   String get start => 'Старт';
 
   @override
