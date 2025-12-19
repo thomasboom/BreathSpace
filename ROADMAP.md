@@ -3,7 +3,6 @@
 - [ ] Enable exporting of statistics for personal record keeping
 - [ ] Implement high contrast mode for users with visual limitations
 - [ ] Add keyboard navigation support for users who rely on assistive technologies
-- [ ] Expand AI-powered recommendation engine to suggest exercises based on user mood, stress levels, and goals
 - [ ] Implement machine learning to analyze user preferences and adapt recommendations over time
 - [ ] Add pre-sleep, pre-workout, and stress-relief specific exercise categorization
 - [ ] Introduce sharing capabilities for achievements and progress
