@@ -99,8 +99,18 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
             builder: (detailContext) => ExerciseDetailScreen(
               aiRecommendationCallback: () async {
                 try {
+                  // Enhance the user input with structured context for better recommendations
+                  String enhancedPrompt = "I need a personalized breathing exercise recommendation based on my input: '${_userInputController.text}'. "
+                      "Please recommend the most appropriate breathing exercise from the following list of exercises, considering: "
+                      "1) My emotional state described in my input "
+                      "2) My desired outcome based on my input "
+                      "3) The exercise duration and complexity level that matches my current situation. "
+                      "Provide only the ID of the most suitable breathing exercise from the available options. "
+                      "Available exercise categories include: stress relief, sleep preparation, anxiety management, "
+                      "energy boosting, focus enhancement, meditation preparation, physical recovery, and general relaxation.";
+
                   final recommendedId = await geminiService.recommendExercise(
-                    _userInputController.text,
+                    enhancedPrompt,
                     breathingExercises,
                   );
 
