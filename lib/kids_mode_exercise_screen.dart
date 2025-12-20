@@ -236,92 +236,86 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
 
               // Main content
               Expanded(
-                child: Stack(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Center content - bubble and continue button
-                    Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // Breathing bubble with face and speech
-                          AnimatedBuilder(
-                            animation: _breathingController,
-                            builder: (context, child) {
-                              return KidsBubbleWidget(
-                                speechText: _instruction,
-                                size: 200,
-                                bubbleColor: widget.emotion.color,
-                                isAnimating: false, // We control animation externally
-                                showFace: true,
-                                breathingScale: _getCurrentBreathingScale(),
-                              );
-                            },
-                          ),
-
-                          // Continue button after completion
-                          if (_isCompleted) ...[
-                            const SizedBox(height: 60),
-                            AnimatedBuilder(
-                              animation: _completionAnimation,
-                              builder: (context, child) {
-                                return Transform.scale(
-                                  scale: _completionAnimation.value,
-                                  child: KidsStartButton(
-                                    onPressed: _onContinuePressed,
-                                    text: "CONTINUE",
-                                    backgroundColor: widget.emotion.color,
-                                    size: 100,
-                                  ),
-                                );
-                              },
-                            ),
-                          ],
-                        ],
+                    // Breathing bubble with face and speech
+                    Expanded(
+                      child: Center(
+                        child: AnimatedBuilder(
+                          animation: _breathingController,
+                          builder: (context, child) {
+                            return KidsBubbleWidget(
+                              speechText: _instruction,
+                              size: 200,
+                              bubbleColor: widget.emotion.color,
+                              isAnimating: false, // We control animation externally
+                              showFace: true,
+                              breathingScale: _getCurrentBreathingScale(),
+                            );
+                          },
+                        ),
                       ),
                     ),
 
                     // Progress indicator at bottom
                     if (!_isCompleted)
-                      Positioned(
-                        bottom: 40,
-                        left: 0,
-                        right: 0,
-                        child: Center(
-                          child: Container(
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.8),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "Breaths: ",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: widget.emotion.color,
-                                  ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 40),
+                        child: Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.8),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "Breaths: ",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: widget.emotion.color,
                                 ),
-                                ...List.generate(_totalCycles, (index) {
-                                  return Container(
-                                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                                    width: 20,
-                                    height: 20,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: index < _breathingCycleCount 
-                                          ? widget.emotion.color 
-                                          : Colors.grey.shade300,
-                                    ),
-                                  );
-                                }),
-                              ],
-                            ),
+                              ),
+                              ...List.generate(_totalCycles, (index) {
+                                return Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 4),
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: index < _breathingCycleCount 
+                                        ? widget.emotion.color 
+                                        : Colors.grey.shade300,
+                                  ),
+                                );
+                              }),
+                            ],
                           ),
                         ),
                       ),
+
+                    // Continue button after completion
+                    if (_isCompleted) ...[
+                      const SizedBox(height: 20),
+                      AnimatedBuilder(
+                        animation: _completionAnimation,
+                        builder: (context, child) {
+                          return Transform.scale(
+                            scale: _completionAnimation.value,
+                            child: KidsStartButton(
+                              onPressed: _onContinuePressed,
+                              text: "CONTINUE",
+                              backgroundColor: widget.emotion.color,
+                              size: 100,
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 40),
+                    ],
                   ],
                 ),
               ),
