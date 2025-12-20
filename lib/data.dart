@@ -80,8 +80,17 @@ class BreathingStage {
   }
 
   factory BreathingStage._fromJson(Map<String, dynamic> json) {
+    String titleText;
+    if (json['title'] is String) {
+      titleText = json['title'] as String;
+    } else if (json['title'] is Map<String, dynamic>) {
+      titleText = (json['title'] as Map<String, dynamic>)['en'] as String? ?? 'Untitled';
+    } else {
+      titleText = 'Untitled';
+    }
+
     return BreathingStage(
-      title: json['title'] is String ? json['title'] as String : (json['title'] as Map<String, dynamic>)['en'] as String? ?? 'Untitled',
+      title: titleText,
       pattern: json['pattern'] as String,
       duration: json['duration'] as int,
       inhaleMethod: json['inhale_method'] as String?,
@@ -165,16 +174,16 @@ class BreathingExercise {
     }
 
     String lang = languageCode ?? 'en';
-    if (json['title'][lang] == null) {
+    if (json['title'] is Map && json['title'][lang] == null) {
       lang = 'en';
     }
 
     return BreathingExercise(
       id: json['id'] as String,
-      title: json['title'][lang] as String,
+      title: (json['title'] is Map) ? json['title'][lang] as String : json['title'] as String,
       pattern: json['pattern'] as String? ?? '',
       duration: json['duration'] as String? ?? '',
-      intro: json['intro'][lang] as String,
+      intro: (json['intro'] is Map) ? json['intro'][lang] as String : json['intro'] as String,
       stages: stages,
       inhaleMethod: json['inhale_method'] as String?, // Parse inhale method
       exhaleMethod: json['exhale_method'] as String?, // Parse exhale method

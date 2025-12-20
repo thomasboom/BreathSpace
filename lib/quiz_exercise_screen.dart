@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:BreathSpace/data.dart';
 import 'package:BreathSpace/exercise_detail_screen.dart';
-import 'package:BreathSpace/l10n/app_localizations.dart';
 import 'package:BreathSpace/gemini_service.dart';
 
 class QuizExerciseScreen extends StatefulWidget {

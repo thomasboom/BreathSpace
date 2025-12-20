@@ -165,7 +165,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
       } else if (newMusicMode == MusicMode.piano) {
         musicFile = 'music/piano.mp3';
       }
-      _musicPlayer.play(AssetSource(musicFile));
+      await _musicPlayer.play(AssetSource(musicFile));
       _musicPlayer.setReleaseMode(ReleaseMode.loop);
     }
   }
@@ -239,14 +239,14 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     }
   }
 
-  void _startAnimation() {
+  void _startAnimation() async {
     final settings = Provider.of<SettingsProvider>(context, listen: false);
     final stage = _stages[_currentStageIndex];
     final patternValues = _parsePattern(stage.pattern);
     final timings = _getPatternTimings(patternValues);
     int inhale = timings['inhale']!;
     int hold1 = timings['hold1']!;
-    int exhale = timings['exhale']!; // Fixed: was timings['hold2']!
+    int exhale = timings['exhale']!;
     int hold2 = timings['hold2']!;
     int totalDurationSeconds = inhale + hold1 + exhale + hold2;
 
@@ -264,7 +264,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
       } else if (settings.musicMode == MusicMode.piano) {
         musicFile = 'music/piano.mp3';
       }
-      _musicPlayer.play(AssetSource(musicFile));
+      await _musicPlayer.play(AssetSource(musicFile));
       _musicPlayer.setReleaseMode(ReleaseMode.loop);
     }
 
@@ -433,16 +433,18 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   Future<void> _fadeOutMusic() async {
     const steps = 50; // More steps for smoother fade over longer duration
     final stepDuration = const Duration(milliseconds: 5000) ~/ steps; // 5 seconds fade out
-    
+
     double currentVolume = 1.0;
     final stepDecrement = 1.0 / steps;
-    
+
     for (int i = 0; i < steps; i++) {
       currentVolume -= stepDecrement;
       await _musicPlayer.setVolume(math.max(0.0, currentVolume));
-      await Future.delayed(stepDuration);
+      if (i < steps - 1) { // Don't delay after the last step
+        await Future.delayed(stepDuration);
+      }
     }
-    
+
     // Ensure music is completely stopped and volume is reset
     await _musicPlayer.stop();
     await _musicPlayer.setVolume(1.0);
