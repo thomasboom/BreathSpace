@@ -3,6 +3,8 @@ import 'package:BreathSpace/widgets/kids_bubble_widget.dart';
 import 'package:BreathSpace/widgets/emotion_selector_widget.dart';
 import 'package:BreathSpace/widgets/kids_start_button.dart';
 import 'package:BreathSpace/kids_mode_exercise_screen.dart';
+import 'package:BreathSpace/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 
 class KidsModeSelectionScreen extends StatefulWidget {
@@ -48,6 +50,14 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
     }
   }
 
+  void _onExitKidsMode() async {
+    final settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
+    await settingsProvider.setKidsMode(false);
+    
+    // Navigate back to main screen by replacing the current route
+    Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+  }
+
   String _getWelcomeText() {
     if (_selectedEmotion == null) {
       return "Hi! I'm Breathe Buddy! How are you feeling today?";
@@ -78,7 +88,32 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Header - no back button in kids mode
+                // Header with exit kids mode button
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      onTap: _onExitKidsMode,
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.7),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.purple.shade300,
+                            width: 2,
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.close,
+                          color: Colors.purple.shade700,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 const SizedBox(height: 20),
                 
                 const SizedBox(height: 40),
