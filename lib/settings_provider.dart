@@ -12,12 +12,14 @@ class SettingsProvider extends ChangeNotifier {
   MusicMode _musicMode = MusicMode.off;
   VoiceGuideMode _voiceGuideMode = VoiceGuideMode.off;
   ViewMode _viewMode = ViewMode.list;
+  bool _kidsMode = false;
 
   LanguagePreference get languagePreference => _languagePreference;
   bool get soundEffectsEnabled => _soundEffectsEnabled;
   MusicMode get musicMode => _musicMode;
   VoiceGuideMode get voiceGuideMode => _voiceGuideMode;
   ViewMode get viewMode => _viewMode;
+  bool get kidsMode => _kidsMode;
 
   Locale? get locale {
     switch (_languagePreference) {
@@ -65,6 +67,7 @@ class SettingsProvider extends ChangeNotifier {
   Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
     _soundEffectsEnabled = prefs.getBool('soundEffectsEnabled') ?? true;
+    _kidsMode = prefs.getBool('kidsMode') ?? false;
     final viewModeString = prefs.getString('viewMode') ?? 'list';
     _viewMode = viewModeString == 'ai'
         ? ViewMode.ai
@@ -257,6 +260,13 @@ class SettingsProvider extends ChangeNotifier {
         await prefs.setString('voiceGuideMode', 'thomas');
         break;
     }
+  }
+
+  Future<void> setKidsMode(bool value) async {
+    _kidsMode = value;
+    notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('kidsMode', value);
   }
 
 }

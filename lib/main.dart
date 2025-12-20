@@ -16,6 +16,7 @@ import 'intro_screen.dart';
 import 'package:BreathSpace/gemini_exercise_screen.dart';
 import 'package:BreathSpace/quiz_exercise_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:BreathSpace/kids_mode_selection_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -182,11 +183,13 @@ class BreathSpaceApp extends StatelessWidget {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       home: seen
-          ? settingsProvider.viewMode == ViewMode.list
-              ? const BreathingExerciseScreen()
-              : settingsProvider.viewMode == ViewMode.ai
-                  ? const GeminiExerciseScreen()
-                  : const QuizExerciseScreen()
+          ? settingsProvider.kidsMode
+              ? const KidsModeSelectionScreen()
+              : settingsProvider.viewMode == ViewMode.list
+                  ? const BreathingExerciseScreen()
+                  : settingsProvider.viewMode == ViewMode.ai
+                      ? const GeminiExerciseScreen()
+                      : const QuizExerciseScreen()
           : const IntroScreen(),
       routes: {
         '/settings': (context) => const SettingsScreen(),

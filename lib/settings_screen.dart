@@ -641,6 +641,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 12),
+                _buildSettingsCard(
+                  title: "Kids Mode",
+                  trailing: Switch(
+                    value: settingsProvider.kidsMode,
+                    onChanged: (bool value) {
+                      settingsProvider.setKidsMode(value);
+                    },
+                    activeThumbColor: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
                 const SizedBox(height: 24),
 
                 // Actions Section
