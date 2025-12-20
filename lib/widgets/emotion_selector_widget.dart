@@ -39,14 +39,14 @@ class _EmotionSelectorWidgetState extends State<EmotionSelectorWidget>
     super.initState();
     _bounceController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 150),
     );
     _bounceAnimation = Tween<double>(
       begin: 1.0,
-      end: 1.2,
+      end: 0.95,
     ).animate(CurvedAnimation(
       parent: _bounceController,
-      curve: Curves.elasticOut,
+      curve: Curves.easeInOut,
     ));
   }
 
@@ -60,14 +60,14 @@ class _EmotionSelectorWidgetState extends State<EmotionSelectorWidget>
     setState(() {
       _selectedEmotion = emotion;
     });
+    
+    // Small scale animation instead of bounce
     _bounceController.forward().then((_) {
       _bounceController.reverse();
     });
     
-    // Give a small delay to show the selection before callback
-    Future.delayed(const Duration(milliseconds: 300), () {
-      widget.onEmotionSelected(emotion);
-    });
+    // Immediate callback for more responsive feel
+    widget.onEmotionSelected(emotion);
   }
 
   @override
