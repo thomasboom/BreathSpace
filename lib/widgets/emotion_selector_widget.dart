@@ -16,10 +16,12 @@ enum Emotion {
 
 class EmotionSelectorWidget extends StatefulWidget {
   final Function(Emotion) onEmotionSelected;
+  final bool constrainWidth;
 
   const EmotionSelectorWidget({
     super.key,
     required this.onEmotionSelected,
+    this.constrainWidth = true,
   });
 
   @override
@@ -95,20 +97,22 @@ class _EmotionSelectorWidgetState extends State<EmotionSelectorWidget>
                   crossAxisCount = 2; // Small screens - 2x3
                 } else if (constraints.maxWidth < 600) {
                   crossAxisCount = 3; // Medium screens - 3x2
+                } else if (constraints.maxWidth < 900) {
+                  crossAxisCount = 4; // Large tablets - 4x2
                 } else {
-                  crossAxisCount = 4; // Large screens - 4x2 (or 2x3)
+                  crossAxisCount = 6; // Desktop - all in one row
                 }
 
-                return GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: crossAxisCount,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 1.0,
-                  ),
-                  itemCount: Emotion.values.length,
+                final gridView = GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: crossAxisCount,
+                        crossAxisSpacing: constraints.maxWidth > 1200 ? 20 : 8,
+                        mainAxisSpacing: constraints.maxWidth > 1200 ? 20 : 8,
+                        childAspectRatio: 1.0,
+                      ),
+                      itemCount: Emotion.values.length,
                   itemBuilder: (context, index) {
                     final emotion = Emotion.values[index];
                     final isSelected = _selectedEmotion == emotion;
@@ -179,6 +183,20 @@ class _EmotionSelectorWidgetState extends State<EmotionSelectorWidget>
                     );
                   },
                 );
+
+                // Apply constraint only if requested (for desktop layouts)
+                if (widget.constrainWidth) {
+                  return Center(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: constraints.maxWidth > 800 ? 600.0 : double.infinity,
+                      ),
+                      child: gridView,
+                    ),
+                  );
+                } else {
+                  return gridView;
+                }
               },
             ),
           ),

@@ -60,6 +60,8 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -74,6 +76,7 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 // Header - no back button in kids mode
                 const SizedBox(height: 20),
@@ -100,6 +103,7 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                         Expanded(
                           child: EmotionSelectorWidget(
                             onEmotionSelected: _onEmotionSelected,
+                            constrainWidth: false,
                           ),
                         )
                       else
