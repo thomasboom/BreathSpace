@@ -6,17 +6,20 @@ import 'package:BreathSpace/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
 
+enum ExerciseLength { short, normal, long }
 
 class KidsModeSelectionScreen extends StatefulWidget {
   const KidsModeSelectionScreen({super.key});
 
   @override
-  State<KidsModeSelectionScreen> createState() => _KidsModeSelectionScreenState();
+  State<KidsModeSelectionScreen> createState() =>
+      _KidsModeSelectionScreenState();
 }
 
 class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
   Emotion? _selectedEmotion;
   bool _showStartButton = false;
+  ExerciseLength _selectedLength = ExerciseLength.normal;
 
   void _onEmotionSelected(Emotion emotion) {
     setState(() {
@@ -27,20 +30,28 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
 
   void _onStartPressed() {
     if (_selectedEmotion != null) {
+      final totalCycles = switch (_selectedLength) {
+        ExerciseLength.short => 10,
+        ExerciseLength.normal => 15,
+        ExerciseLength.long => 25,
+      };
+
       Navigator.of(context).push(
         PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => KidsModeExerciseScreen(
-            emotion: _selectedEmotion!,
-          ),
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              KidsModeExerciseScreen(
+                emotion: _selectedEmotion!,
+                totalCycles: totalCycles,
+              ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
-              position: Tween<Offset>(
-                begin: const Offset(1.0, 0.0),
-                end: Offset.zero,
-              ).animate(CurvedAnimation(
-                parent: animation,
-                curve: Curves.easeInOut,
-              )),
+              position:
+                  Tween<Offset>(
+                    begin: const Offset(1.0, 0.0),
+                    end: Offset.zero,
+                  ).animate(
+                    CurvedAnimation(parent: animation, curve: Curves.easeInOut),
+                  ),
               child: child,
             );
           },
@@ -51,18 +62,24 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
   }
 
   void _onExitKidsMode() async {
-    final settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
+    final settingsProvider = Provider.of<SettingsProvider>(
+      context,
+      listen: false,
+    );
     await settingsProvider.setKidsMode(false);
-    
+
     if (!mounted) return;
-    
+
     // Navigate back to main screen by replacing the current route
     Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
   }
 
   void _showLanguageSelector() {
-    final settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
-    
+    final settingsProvider = Provider.of<SettingsProvider>(
+      context,
+      listen: false,
+    );
+
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -93,22 +110,102 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        _buildLanguageOption('🇺🇸', 'English', LanguagePreference.en, settingsProvider),
-                        _buildLanguageOption('🇳🇱', 'Nederlands', LanguagePreference.nl, settingsProvider),
-                        _buildLanguageOption('🇩🇪', 'Deutsch', LanguagePreference.de, settingsProvider),
-                        _buildLanguageOption('🇪🇸', 'Español', LanguagePreference.es, settingsProvider),
-                        _buildLanguageOption('🇫🇷', 'Français', LanguagePreference.fr, settingsProvider),
-                        _buildLanguageOption('🇮🇹', 'Italiano', LanguagePreference.it, settingsProvider),
-                        _buildLanguageOption('🇵🇹', 'Português', LanguagePreference.pt, settingsProvider),
-                        _buildLanguageOption('🇸🇦', 'العربية', LanguagePreference.ar, settingsProvider),
-                        _buildLanguageOption('🇧🇬', 'Български', LanguagePreference.bg, settingsProvider),
-                        _buildLanguageOption('🇯🇵', '日本語', LanguagePreference.ja, settingsProvider),
-                        _buildLanguageOption('🇷🇺', 'Русский', LanguagePreference.ru, settingsProvider),
-                        _buildLanguageOption('🇨🇳', '中文', LanguagePreference.zh, settingsProvider),
-                        _buildLanguageOption('🇮🇳', 'हिंदी', LanguagePreference.hi, settingsProvider),
-                        _buildLanguageOption('🇰🇷', '한국어', LanguagePreference.ko, settingsProvider),
-                        _buildLanguageOption('🇵🇱', 'Polski', LanguagePreference.pl, settingsProvider),
-                        _buildLanguageOption('🇹🇷', 'Türkçe', LanguagePreference.tr, settingsProvider),
+                        _buildLanguageOption(
+                          '🇺🇸',
+                          'English',
+                          LanguagePreference.en,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇳🇱',
+                          'Nederlands',
+                          LanguagePreference.nl,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇩🇪',
+                          'Deutsch',
+                          LanguagePreference.de,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇪🇸',
+                          'Español',
+                          LanguagePreference.es,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇫🇷',
+                          'Français',
+                          LanguagePreference.fr,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇮🇹',
+                          'Italiano',
+                          LanguagePreference.it,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇵🇹',
+                          'Português',
+                          LanguagePreference.pt,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇸🇦',
+                          'العربية',
+                          LanguagePreference.ar,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇧🇬',
+                          'Български',
+                          LanguagePreference.bg,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇯🇵',
+                          '日本語',
+                          LanguagePreference.ja,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇷🇺',
+                          'Русский',
+                          LanguagePreference.ru,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇨🇳',
+                          '中文',
+                          LanguagePreference.zh,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇮🇳',
+                          'हिंदी',
+                          LanguagePreference.hi,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇰🇷',
+                          '한국어',
+                          LanguagePreference.ko,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇵🇱',
+                          'Polski',
+                          LanguagePreference.pl,
+                          settingsProvider,
+                        ),
+                        _buildLanguageOption(
+                          '🇹🇷',
+                          'Türkçe',
+                          LanguagePreference.tr,
+                          settingsProvider,
+                        ),
                       ],
                     ),
                   ),
@@ -117,7 +214,10 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                 GestureDetector(
                   onTap: () => Navigator.of(context).pop(),
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 10,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.purple.shade200,
                       borderRadius: BorderRadius.circular(15),
@@ -140,9 +240,14 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
     );
   }
 
-  Widget _buildLanguageOption(String flag, String name, LanguagePreference preference, SettingsProvider settingsProvider) {
+  Widget _buildLanguageOption(
+    String flag,
+    String name,
+    LanguagePreference preference,
+    SettingsProvider settingsProvider,
+  ) {
     final isSelected = settingsProvider.languagePreference == preference;
-    
+
     return GestureDetector(
       onTap: () async {
         await settingsProvider.setLanguagePreference(preference);
@@ -164,17 +269,16 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
         ),
         child: Row(
           children: [
-            Text(
-              flag,
-              style: const TextStyle(fontSize: 24),
-            ),
+            Text(flag, style: const TextStyle(fontSize: 24)),
             const SizedBox(width: 12),
             Text(
               name,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: isSelected ? Colors.purple.shade700 : Colors.grey.shade700,
+                color: isSelected
+                    ? Colors.purple.shade700
+                    : Colors.grey.shade700,
               ),
             ),
           ],
@@ -192,6 +296,46 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
     }
   }
 
+  Widget _buildLengthOption(ExerciseLength length) {
+    final l10n = AppLocalizations.of(context);
+    final isSelected = _selectedLength == length;
+
+    final label = switch (length) {
+      ExerciseLength.short => l10n.kidsShort,
+      ExerciseLength.normal => l10n.kidsNormal,
+      ExerciseLength.long => l10n.kidsLong,
+    };
+
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedLength = length;
+        });
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? Colors.purple.shade100
+              : Colors.white.withValues(alpha: 0.7),
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(
+            color: isSelected ? Colors.purple.shade400 : Colors.grey.shade300,
+            width: 2,
+          ),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: isSelected ? Colors.purple.shade700 : Colors.grey.shade700,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,10 +346,7 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Colors.lightBlue.shade100,
-              Colors.purple.shade100,
-            ],
+            colors: [Colors.lightBlue.shade100, Colors.purple.shade100],
           ),
         ),
         child: SafeArea(
@@ -264,9 +405,9 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                
+
                 const SizedBox(height: 40),
-                
+
                 // Breathing buddy with speech
                 Expanded(
                   child: Column(
@@ -279,9 +420,9 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                         isAnimating: false,
                         showFace: true,
                       ),
-                      
+
                       const SizedBox(height: 40),
-                      
+
                       // Either emotion selector or start button
                       if (!_showStartButton)
                         Expanded(
@@ -295,7 +436,27 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const SizedBox(height: 40),
+                              const SizedBox(height: 20),
+                              Text(
+                                AppLocalizations.of(context).kidsChooseLength,
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.purple.shade700,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  _buildLengthOption(ExerciseLength.short),
+                                  const SizedBox(width: 15),
+                                  _buildLengthOption(ExerciseLength.normal),
+                                  const SizedBox(width: 15),
+                                  _buildLengthOption(ExerciseLength.long),
+                                ],
+                              ),
+                              const SizedBox(height: 30),
                               GestureDetector(
                                 onTap: _onStartPressed,
                                 child: Container(
@@ -304,7 +465,9 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                                     vertical: 15,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: _selectedEmotion!.color.withValues(alpha: 0.8),
+                                    color: _selectedEmotion!.color.withValues(
+                                      alpha: 0.8,
+                                    ),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Text(
@@ -336,7 +499,9 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Text(
-                                    AppLocalizations.of(context).kidsChooseDifferentFeeling,
+                                    AppLocalizations.of(
+                                      context,
+                                    ).kidsChooseDifferentFeeling,
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.purple.shade700,
@@ -351,7 +516,7 @@ class _KidsModeSelectionScreenState extends State<KidsModeSelectionScreen> {
                     ],
                   ),
                 ),
-                
+
                 const SizedBox(height: 20),
               ],
             ),

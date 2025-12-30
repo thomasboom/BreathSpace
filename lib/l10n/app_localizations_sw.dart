@@ -274,4 +274,16 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Amani';
+
+  @override
+  String get kidsChooseLength => 'Kwa muda gani?';
+
+  @override
+  String get kidsShort => 'Fupi';
+
+  @override
+  String get kidsNormal => 'Kawaida';
+
+  @override
+  String get kidsLong => 'ndefu';
 }

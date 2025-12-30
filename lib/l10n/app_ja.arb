@@ -86,5 +86,9 @@
   "emotionAngry": "怒った",
   "emotionSad": "悲しい",
   "emotionExcited": "楽しい",
-  "emotionCalm": "穏やか"
+  "emotionCalm": "穏やか",
+  "kidsChooseLength": "どのくらい？",
+  "kidsShort": "短い",
+  "kidsNormal": "普通",
+  "kidsLong": "長い"
 }

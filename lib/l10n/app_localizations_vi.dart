@@ -276,4 +276,16 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Bình tĩnh';
+
+  @override
+  String get kidsChooseLength => 'Bao lâu?';
+
+  @override
+  String get kidsShort => 'Ngắn';
+
+  @override
+  String get kidsNormal => 'Bình thường';
+
+  @override
+  String get kidsLong => 'Dài';
 }

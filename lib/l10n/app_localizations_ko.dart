@@ -271,4 +271,16 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get emotionCalm => '차분함';
+
+  @override
+  String get kidsChooseLength => '언제까지?';
+
+  @override
+  String get kidsShort => '짧음';
+
+  @override
+  String get kidsNormal => '보통';
+
+  @override
+  String get kidsLong => '김';
 }

@@ -275,4 +275,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Calmo';
+
+  @override
+  String get kidsChooseLength => 'Quanto tempo?';
+
+  @override
+  String get kidsShort => 'Curto';
+
+  @override
+  String get kidsNormal => 'Normal';
+
+  @override
+  String get kidsLong => 'Longo';
 }

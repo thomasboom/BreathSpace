@@ -274,4 +274,16 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get emotionCalm => 'สงบ';
+
+  @override
+  String get kidsChooseLength => 'นานเท่าไร?';
+
+  @override
+  String get kidsShort => 'สั้น';
+
+  @override
+  String get kidsNormal => 'ปกติ';
+
+  @override
+  String get kidsLong => 'ยาว';
 }

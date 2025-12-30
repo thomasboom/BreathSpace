@@ -274,4 +274,16 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Sakin';
+
+  @override
+  String get kidsChooseLength => 'Ne kadar?';
+
+  @override
+  String get kidsShort => 'Kısa';
+
+  @override
+  String get kidsNormal => 'Normal';
+
+  @override
+  String get kidsLong => 'Uzun';
 }

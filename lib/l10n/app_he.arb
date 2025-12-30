@@ -86,7 +86,10 @@
   "emotionAngry": "כועס",
   "emotionSad": "עצוב",
   "emotionExcited": "נרגש",
-  "emotionCalm": "רגוע"
-
-
+  "emotionCalm": "רגוע",
+  "kidsChooseLength": "כמה זמן?",
+  "kidsShort": "קצר",
+  "kidsNormal": "רגיל",
+  "kidsLong": "ארוך"
+  
 }

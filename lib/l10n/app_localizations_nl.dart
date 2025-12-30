@@ -276,4 +276,16 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Kalm';
+
+  @override
+  String get kidsChooseLength => 'Hoe lang?';
+
+  @override
+  String get kidsShort => 'Kort';
+
+  @override
+  String get kidsNormal => 'Normaal';
+
+  @override
+  String get kidsLong => 'Lang';
 }

@@ -86,5 +86,10 @@
   "emotionAngry": "Boos",
   "emotionSad": "Verdrietig",
   "emotionExcited": "Opgewonden",
-  "emotionCalm": "Kalm"
-}
+  "emotionCalm": "Kalm",
+  "kidsChooseLength": "Hoe lang?",
+  "kidsShort": "Kort",
+  "kidsNormal": "Normaal",
+  "kidsLong": "Lang"
+} 
+

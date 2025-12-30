@@ -272,4 +272,16 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get emotionCalm => 'רגוע';
+
+  @override
+  String get kidsChooseLength => 'כמה זמן?';
+
+  @override
+  String get kidsShort => 'קצר';
+
+  @override
+  String get kidsNormal => 'רגיל';
+
+  @override
+  String get kidsLong => 'ארוך';
 }

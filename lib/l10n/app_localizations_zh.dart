@@ -271,4 +271,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get emotionCalm => '平静';
+
+  @override
+  String get kidsChooseLength => '多长？';
+
+  @override
+  String get kidsShort => '短';
+
+  @override
+  String get kidsNormal => '普通';
+
+  @override
+  String get kidsLong => '长';
 }

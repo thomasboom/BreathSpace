@@ -275,4 +275,16 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get emotionCalm => 'शांत';
+
+  @override
+  String get kidsChooseLength => 'कितना समय?';
+
+  @override
+  String get kidsShort => 'छोटा';
+
+  @override
+  String get kidsNormal => 'सामान्य';
+
+  @override
+  String get kidsLong => 'लंबा';
 }

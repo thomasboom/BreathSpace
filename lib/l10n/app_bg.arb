@@ -86,5 +86,9 @@
   "emotionAngry": "Ядосан",
   "emotionSad": "Тъжен",
   "emotionExcited": "Въодушевен",
-  "emotionCalm": "Спокоен"
+  "emotionCalm": "Спокоен",
+  "kidsChooseLength": "Колко дълго?",
+  "kidsShort": "Кратко",
+  "kidsNormal": "Нормално",
+  "kidsLong": "Дълго"
 }

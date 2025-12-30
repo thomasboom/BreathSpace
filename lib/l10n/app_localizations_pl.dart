@@ -277,4 +277,16 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Spokojny';
+
+  @override
+  String get kidsChooseLength => 'Jak długo?';
+
+  @override
+  String get kidsShort => 'Krótki';
+
+  @override
+  String get kidsNormal => 'Normalny';
+
+  @override
+  String get kidsLong => 'Długi';
 }

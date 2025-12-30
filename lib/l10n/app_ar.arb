@@ -86,5 +86,9 @@
   "emotionAngry": "غاضب",
   "emotionSad": "حزين",
   "emotionExcited": "متحمس",
-  "emotionCalm": "هادئ"
+  "emotionCalm": "هادئ",
+  "kidsChooseLength": "كم مدة؟",
+  "kidsShort": "قصير",
+  "kidsNormal": "عادي",
+  "kidsLong": "طويل"
 }

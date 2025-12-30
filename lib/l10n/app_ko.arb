@@ -86,5 +86,9 @@
   "emotionAngry": "화남",
   "emotionSad": "슬픔",
   "emotionExcited": "신남",
-  "emotionCalm": "차분함"
+  "emotionCalm": "차분함",
+  "kidsChooseLength": "언제까지?",
+  "kidsShort": "짧음",
+  "kidsNormal": "보통",
+  "kidsLong": "김"
 }

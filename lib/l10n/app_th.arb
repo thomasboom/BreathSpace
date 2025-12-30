@@ -86,5 +86,9 @@
   "emotionAngry": "โกรธ",
   "emotionSad": "เศร้า",
   "emotionExcited": "ตื่นเต้น",
-  "emotionCalm": "สงบ"
+  "emotionCalm": "สงบ",
+  "kidsChooseLength": "นานเท่าไร?",
+  "kidsShort": "สั้น",
+  "kidsNormal": "ปกติ",
+  "kidsLong": "ยาว"
 }

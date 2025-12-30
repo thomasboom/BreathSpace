@@ -276,4 +276,16 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Спокоен';
+
+  @override
+  String get kidsChooseLength => 'Колко дълго?';
+
+  @override
+  String get kidsShort => 'Кратко';
+
+  @override
+  String get kidsNormal => 'Нормално';
+
+  @override
+  String get kidsLong => 'Дълго';
 }

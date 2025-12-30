@@ -276,4 +276,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Спокойный';
+
+  @override
+  String get kidsChooseLength => 'Как долго?';
+
+  @override
+  String get kidsShort => 'Коротко';
+
+  @override
+  String get kidsNormal => 'Нормально';
+
+  @override
+  String get kidsLong => 'Долго';
 }

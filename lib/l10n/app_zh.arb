@@ -86,5 +86,9 @@
   "emotionAngry": "生气",
   "emotionSad": "难过",
   "emotionExcited": "兴奋",
-  "emotionCalm": "平静"
+  "emotionCalm": "平静",
+  "kidsChooseLength": "多长？",
+  "kidsShort": "短",
+  "kidsNormal": "普通",
+  "kidsLong": "长"
 }

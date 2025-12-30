@@ -171,7 +171,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get welcomeTitle => 'Ласкаво просимо до BreathSpace';
 
   @override
-  String get welcomeSubtitle => 'Ваш космос. Уповільніть, у будь-який час.';
+  String get welcomeSubtitle => 'Ваш простір. Уповільніть, у будь-який час.';
 
   @override
   String get getStarted => 'Почати';
@@ -220,7 +220,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get termsAgreementSuffix => '.';
 
   @override
-  String get kidsGetReady => 'Готуйся!';
+  String get kidsGetReady => 'Готовуйся!';
 
   @override
   String get kidsBreatheIn => 'Дихай ВГОРУ!';
@@ -274,4 +274,16 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get emotionCalm => 'Спокійний';
+
+  @override
+  String get kidsChooseLength => 'Як довго?';
+
+  @override
+  String get kidsShort => 'Коротко';
+
+  @override
+  String get kidsNormal => 'Нормально';
+
+  @override
+  String get kidsLong => 'Довго';
 }

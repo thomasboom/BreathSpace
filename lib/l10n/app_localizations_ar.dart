@@ -274,4 +274,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get emotionCalm => 'هادئ';
+
+  @override
+  String get kidsChooseLength => 'كم مدة؟';
+
+  @override
+  String get kidsShort => 'قصير';
+
+  @override
+  String get kidsNormal => 'عادي';
+
+  @override
+  String get kidsLong => 'طويل';
 }

@@ -86,5 +86,9 @@
   "emotionAngry": "Hasira",
   "emotionSad": "Masikini",
   "emotionExcited": "Furaha",
-  "emotionCalm": "Amani"
+  "emotionCalm": "Amani",
+  "kidsChooseLength": "Kwa muda gani?",
+  "kidsShort": "Fupi",
+  "kidsNormal": "Kawaida",
+  "kidsLong": "ndefu"
 }

@@ -52,7 +52,7 @@
   "musicPiano": "Фортепіано",
   "replayIntro": "Повторити вступ",
   "welcomeTitle": "Ласкаво просимо до BreathSpace",
-  "welcomeSubtitle": "Ваш космос. Уповільніть, у будь-який час.",
+  "welcomeSubtitle": "Ваш простір. Уповільніть, у будь-який час.",
   "getStarted": "Почати",
   "promptCacheTitle": "Кеш запитів ШІ",
   "promptCacheSubtitle": "Кешовані відповіді для швидших рекомендацій",
@@ -69,7 +69,7 @@
   "privacyPolicy": "Політикою конфіденційності",
   "termsAgreementSuffix": ".",
   "quizMode": "Режим вікторини",
-  "kidsGetReady": "Готуйся!",
+  "kidsGetReady": "Готовуйся!",
   "kidsBreatheIn": "Дихай ВГОРУ!",
   "kidsHoldBreath": "Затримай дихання!",
   "kidsBreatheOut": "Дихай ВНИЗ!",
@@ -86,7 +86,9 @@
   "emotionAngry": "Злий",
   "emotionSad": "Сумний",
   "emotionExcited": "Збуджений",
-  "emotionCalm": "Спокійний"
-
-
+  "emotionCalm": "Спокійний",
+  "kidsChooseLength": "Як довго?",
+  "kidsShort": "Коротко",
+  "kidsNormal": "Нормально",
+  "kidsLong": "Довго"
 }

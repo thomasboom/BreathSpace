@@ -86,5 +86,9 @@
   "emotionAngry": "Enojado",
   "emotionSad": "Triste",
   "emotionExcited": "Emocionado",
-  "emotionCalm": "Tranquilo"
+  "emotionCalm": "Tranquilo",
+  "kidsChooseLength": "¿Cuánto tiempo?",
+  "kidsShort": "Corto",
+  "kidsNormal": "Normal",
+  "kidsLong": "Largo"
 }

@@ -271,4 +271,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get emotionCalm => '穏やか';
+
+  @override
+  String get kidsChooseLength => 'どのくらい？';
+
+  @override
+  String get kidsShort => '短い';
+
+  @override
+  String get kidsNormal => '普通';
+
+  @override
+  String get kidsLong => '長い';
 }

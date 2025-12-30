@@ -14,8 +14,13 @@ enum BreathingPhase { inhale, hold1, exhale, hold2 }
 
 class KidsModeExerciseScreen extends StatefulWidget {
   final Emotion emotion;
+  final int totalCycles;
 
-  const KidsModeExerciseScreen({super.key, required this.emotion});
+  const KidsModeExerciseScreen({
+    super.key,
+    required this.emotion,
+    this.totalCycles = 5,
+  });
 
   @override
   State<KidsModeExerciseScreen> createState() => _KidsModeExerciseScreenState();
@@ -31,7 +36,6 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
   String _instruction = "";
   bool _isCompleted = false;
   int _breathingCycleCount = 0;
-  final int _totalCycles = 5; // 5 complete breathing cycles for kids
 
   final AudioPlayer _soundEffectPlayer = AudioPlayer();
   String _lastInstruction = '';
@@ -159,7 +163,7 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
         _breathingCycleCount++;
 
         // Check if exercise is completed
-        if (_breathingCycleCount >= _totalCycles) {
+        if (_breathingCycleCount >= widget.totalCycles) {
           _onExerciseComplete();
           return; // Don't update instruction if completing
         }
@@ -283,47 +287,6 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
                         ),
                       ),
                     ),
-
-                    // Progress indicator at bottom
-                    if (!_isCompleted)
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 40),
-                        child: Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.8),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                AppLocalizations.of(context).kidsBreaths,
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: widget.emotion.color,
-                                ),
-                              ),
-                              ...List.generate(_totalCycles, (index) {
-                                return Container(
-                                  margin: const EdgeInsets.symmetric(
-                                    horizontal: 4,
-                                  ),
-                                  width: 20,
-                                  height: 20,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: index < _breathingCycleCount
-                                        ? widget.emotion.color
-                                        : Colors.grey.shade300,
-                                  ),
-                                );
-                              }),
-                            ],
-                          ),
-                        ),
-                      ),
 
                     // Continue button after completion
                     if (_isCompleted) ...[

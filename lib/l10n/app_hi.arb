@@ -86,5 +86,9 @@
   "emotionAngry": "गुस्सा",
   "emotionSad": "उदास",
   "emotionExcited": "उत्साहित",
-  "emotionCalm": "शांत"
+  "emotionCalm": "शांत",
+  "kidsChooseLength": "कितना समय?",
+  "kidsShort": "छोटा",
+  "kidsNormal": "सामान्य",
+  "kidsLong": "लंबा"
 }

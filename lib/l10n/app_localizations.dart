@@ -663,6 +663,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Calm'**
   String get emotionCalm;
+
+  /// No description provided for @kidsChooseLength.
+  ///
+  /// In en, this message translates to:
+  /// **'How long?'**
+  String get kidsChooseLength;
+
+  /// No description provided for @kidsShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Short'**
+  String get kidsShort;
+
+  /// No description provided for @kidsNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get kidsNormal;
+
+  /// No description provided for @kidsLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Long'**
+  String get kidsLong;
 }
 
 class _AppLocalizationsDelegate
