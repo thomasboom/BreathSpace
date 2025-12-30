@@ -15,10 +15,7 @@ enum BreathingPhase { inhale, hold1, exhale, hold2 }
 class KidsModeExerciseScreen extends StatefulWidget {
   final Emotion emotion;
 
-  const KidsModeExerciseScreen({
-    super.key,
-    required this.emotion,
-  });
+  const KidsModeExerciseScreen({super.key, required this.emotion});
 
   @override
   State<KidsModeExerciseScreen> createState() => _KidsModeExerciseScreenState();
@@ -29,13 +26,13 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
   late AnimationController _breathingController;
   late AnimationController _completionController;
   late Animation<double> _completionAnimation;
-  
+
   BreathingPhase _currentPhase = BreathingPhase.inhale;
   String _instruction = "";
   bool _isCompleted = false;
   int _breathingCycleCount = 0;
   final int _totalCycles = 5; // 5 complete breathing cycles for kids
-  
+
   final AudioPlayer _soundEffectPlayer = AudioPlayer();
   String _lastInstruction = '';
 
@@ -44,14 +41,12 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
   static const int _hold1Time = 4;
   static const int _exhaleTime = 4;
   static const int _hold2Time = 4;
-  static const int _totalCycleTime = _inhaleTime + _hold1Time + _exhaleTime + _hold2Time;
+  static const int _totalCycleTime =
+      _inhaleTime + _hold1Time + _exhaleTime + _hold2Time;
 
   @override
   void initState() {
     super.initState();
-
-    // Set initial instruction
-    _instruction = AppLocalizations.of(context).kidsGetReady;
 
     // Keep the screen awake during the exercise
     WakelockPlus.enable();
@@ -70,13 +65,9 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
       duration: const Duration(milliseconds: 800),
     );
 
-    _completionAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _completionController,
-      curve: Curves.elasticOut,
-    ));
+    _completionAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _completionController, curve: Curves.elasticOut),
+    );
 
     // Start the breathing exercise after a short delay
     Future.delayed(const Duration(seconds: 2), () {
@@ -86,6 +77,14 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
     });
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_instruction.isEmpty) {
+      _instruction = AppLocalizations.of(context).kidsGetReady;
+    }
+  }
+
   void _startBreathingExercise() {
     _breathingController.repeat();
     _breathingController.addListener(_updateBreathingPhase);
@@ -93,16 +92,17 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
 
   double _getCurrentBreathingScale() {
     final currentTime = _breathingController.value * _totalCycleTime;
-    
+
     if (currentTime >= 0 && currentTime < _inhaleTime) {
       // Inhale - expand from 0.8 to 1.3
       final progress = currentTime / _inhaleTime;
       return 0.8 + (0.5 * progress);
-    } else if (currentTime >= _inhaleTime && currentTime < (_inhaleTime + _hold1Time)) {
+    } else if (currentTime >= _inhaleTime &&
+        currentTime < (_inhaleTime + _hold1Time)) {
       // Hold1 - stay at 1.3
       return 1.3;
-    } else if (currentTime >= (_inhaleTime + _hold1Time) && 
-               currentTime < (_inhaleTime + _hold1Time + _exhaleTime)) {
+    } else if (currentTime >= (_inhaleTime + _hold1Time) &&
+        currentTime < (_inhaleTime + _hold1Time + _exhaleTime)) {
       // Exhale - contract from 1.3 to 0.8
       final progress = (currentTime - _inhaleTime - _hold1Time) / _exhaleTime;
       return 1.3 - (0.5 * progress);
@@ -127,15 +127,16 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
       if (_lastInstruction != newInstruction) {
         _playInhaleSound();
       }
-    } else if (currentTime >= _inhaleTime && currentTime < (_inhaleTime + _hold1Time)) {
+    } else if (currentTime >= _inhaleTime &&
+        currentTime < (_inhaleTime + _hold1Time)) {
       newInstruction = l10n.kidsHoldBreath;
       newPhase = BreathingPhase.hold1;
       // Play sound effect only once when entering hold1 phase
       if (_lastInstruction != newInstruction) {
         _playHoldSound();
       }
-    } else if (currentTime >= (_inhaleTime + _hold1Time) && 
-               currentTime < (_inhaleTime + _hold1Time + _exhaleTime)) {
+    } else if (currentTime >= (_inhaleTime + _hold1Time) &&
+        currentTime < (_inhaleTime + _hold1Time + _exhaleTime)) {
       newInstruction = l10n.kidsBreatheOut;
       newPhase = BreathingPhase.exhale;
       // Play sound effect only once when entering exhale phase
@@ -153,9 +154,10 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
 
     // Check for phase transition to count cycles
     if (newPhase != _currentPhase) {
-      if (newPhase == BreathingPhase.inhale && _currentPhase != BreathingPhase.inhale) {
+      if (newPhase == BreathingPhase.inhale &&
+          _currentPhase != BreathingPhase.inhale) {
         _breathingCycleCount++;
-        
+
         // Check if exercise is completed
         if (_breathingCycleCount >= _totalCycles) {
           _onExerciseComplete();
@@ -197,11 +199,11 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
 
   void _onExerciseComplete() {
     if (_isCompleted) return;
-    
+
     _isCompleted = true;
     _breathingController.stop();
     _completionController.forward();
-    
+
     final l10n = AppLocalizations.of(context);
     setState(() {
       _instruction = l10n.kidsExerciseFinished;
@@ -226,12 +228,12 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
     _breathingController.dispose();
     _completionController.dispose();
     _soundEffectPlayer.dispose();
-    
+
     // Disable wakelock when exercise is finished
     WakelockPlus.disable();
     // Restore the status bar when exercise is finished
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-    
+
     super.dispose();
   }
 
@@ -270,9 +272,12 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
                               speechText: _instruction,
                               size: 200,
                               bubbleColor: widget.emotion.color,
-                              isAnimating: false, // We control animation externally
+                              isAnimating:
+                                  false, // We control animation externally
                               showFace: true,
-                              breathingScale: _isCompleted ? 1.0 : _getCurrentBreathingScale(),
+                              breathingScale: _isCompleted
+                                  ? 1.0
+                                  : _getCurrentBreathingScale(),
                             );
                           },
                         ),
@@ -302,13 +307,15 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
                               ),
                               ...List.generate(_totalCycles, (index) {
                                 return Container(
-                                  margin: const EdgeInsets.symmetric(horizontal: 4),
+                                  margin: const EdgeInsets.symmetric(
+                                    horizontal: 4,
+                                  ),
                                   width: 20,
                                   height: 20,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: index < _breathingCycleCount 
-                                        ? widget.emotion.color 
+                                    color: index < _breathingCycleCount
+                                        ? widget.emotion.color
                                         : Colors.grey.shade300,
                                   ),
                                 );
@@ -341,7 +348,9 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
                                 ),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: widget.emotion.color.withValues(alpha: 0.4),
+                                    color: widget.emotion.color.withValues(
+                                      alpha: 0.4,
+                                    ),
                                     blurRadius: 20,
                                     spreadRadius: 5,
                                   ),
@@ -366,7 +375,9 @@ class _KidsModeExerciseScreenState extends State<KidsModeExerciseScreen>
                                         letterSpacing: 2,
                                         shadows: [
                                           Shadow(
-                                            color: Colors.black.withValues(alpha: 0.3),
+                                            color: Colors.black.withValues(
+                                              alpha: 0.3,
+                                            ),
                                             blurRadius: 4,
                                             offset: const Offset(2, 2),
                                           ),
