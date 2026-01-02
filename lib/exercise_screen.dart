@@ -17,13 +17,18 @@ class ExerciseScreen extends StatefulWidget {
   final BreathingExercise exercise;
   final ExerciseVersion? selectedVersion;
 
-  const ExerciseScreen({super.key, required this.exercise, this.selectedVersion});
+  const ExerciseScreen({
+    super.key,
+    required this.exercise,
+    this.selectedVersion,
+  });
 
   @override
   State<ExerciseScreen> createState() => _ExerciseScreenState();
 }
 
-class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStateMixin {
+class _ExerciseScreenState extends State<ExerciseScreen>
+    with TickerProviderStateMixin {
   bool _patternInvalid = false;
   bool _exerciseCompleted = false; // Track if exercise completion has started
   late AnimationController _controller;
@@ -35,7 +40,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
   int _currentStageIndex = 0;
   late List<BreathingStage> _stages;
   late int _stageStartTime;
-  bool _waitingForCycleCompletion = false; // Track if we're waiting for current cycle to complete before stage transition
+  bool _waitingForCycleCompletion =
+      false; // Track if we're waiting for current cycle to complete before stage transition
 
   // Track when sound effects have been played to prevent repetition
   // bool _inhaleSoundPlayed = false; // Unused field
@@ -54,7 +60,28 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
   // Store reference to settings provider for disposing the listener
   SettingsProvider? _settingsProvider;
-  
+
+  // Navigation guard to prevent multiple settings navigations
+  bool _isNavigatingToSettings = false;
+
+  // Initialize player modes for Android to allow simultaneous playback
+  Future<void> _initPlayers() async {
+    await _soundEffectPlayer.setPlayerMode(PlayerMode.lowLatency);
+    await _musicPlayer.setPlayerMode(PlayerMode.mediaPlayer);
+  }
+
+  // Initialize all components in the correct order
+  Future<void> _initializeComponents() async {
+    try {
+      await _initPlayers();
+      _initializeStage(0);
+    } catch (e) {
+      setState(() {
+        _patternInvalid = true;
+      });
+    }
+  }
+
   // Keyboard navigation
   final FocusNode _focusNode = FocusNode();
 
@@ -98,7 +125,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     int totalCycleDuration = inhale + hold1 + exhale + hold2;
 
     // Check if we're at or past the end of the current cycle
-    return currentTime >= totalCycleDuration - 0.1; // Small buffer for floating point precision
+    return currentTime >=
+        totalCycleDuration - 0.1; // Small buffer for floating point precision
   }
 
   @override
@@ -114,27 +142,33 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     // Initialize stages based on selected version
     final selectedVersion = widget.selectedVersion ?? ExerciseVersion.normal;
 
-    if (widget.exercise.hasStages || widget.exercise.getStagesForVersion(selectedVersion) != null) {
-      _stages = widget.exercise.getStagesForVersion(selectedVersion) ?? widget.exercise.stages!;
+    if (widget.exercise.hasStages ||
+        widget.exercise.getStagesForVersion(selectedVersion) != null) {
+      _stages =
+          widget.exercise.getStagesForVersion(selectedVersion) ??
+          widget.exercise.stages!;
     } else {
       // Create a single stage from the original exercise for backward compatibility
       _stages = [
         BreathingStage(
           title: widget.exercise.title,
           pattern: widget.exercise.getPatternForVersion(selectedVersion),
-          duration: _parseDurationString(widget.exercise.getDurationForVersion(selectedVersion)),
+          duration: _parseDurationString(
+            widget.exercise.getDurationForVersion(selectedVersion),
+          ),
           inhaleMethod: widget.exercise.inhaleMethod,
           exhaleMethod: widget.exercise.exhaleMethod,
-        )
+        ),
       ];
     }
 
     try {
       // Initialize controllers
       _controller = AnimationController(vsync: this, duration: Duration.zero);
-      _bubbleAnimationController = AnimationController(vsync: this, duration: Duration.zero);
-
-      _initializeStage(0);
+      _bubbleAnimationController = AnimationController(
+        vsync: this,
+        duration: Duration.zero,
+      );
     } catch (e) {
       setState(() {
         _patternInvalid = true;
@@ -149,6 +183,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _focusNode.requestFocus();
     });
+
+    // Initialize player modes for simultaneous playback on Android, then start stage
+    _initializeComponents();
   }
 
   // Handle settings changes to immediately apply music changes
@@ -184,7 +221,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
     // Reset sound tracking variables for new stage
     _lastInstruction = '';
-    _waitingForCycleCompletion = false; // Reset cycle completion flag for new stage
+    _waitingForCycleCompletion =
+        false; // Reset cycle completion flag for new stage
 
     // Reset breathing cycle count for new stage
     _breathingCycleCount = 0;
@@ -225,16 +263,48 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
       List<TweenSequenceItem<double>> items = [];
 
       if (inhale > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 0.5, end: 1.0).chain(CurveTween(curve: Curves.easeInOut)), weight: inhale.toDouble()));
+        items.add(
+          TweenSequenceItem(
+            tween: Tween(
+              begin: 0.5,
+              end: 1.0,
+            ).chain(CurveTween(curve: Curves.easeInOut)),
+            weight: inhale.toDouble(),
+          ),
+        );
       }
       if (hold1 > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.0).chain(CurveTween(curve: Curves.easeInOut)), weight: hold1.toDouble()));
+        items.add(
+          TweenSequenceItem(
+            tween: Tween(
+              begin: 1.0,
+              end: 1.0,
+            ).chain(CurveTween(curve: Curves.easeInOut)),
+            weight: hold1.toDouble(),
+          ),
+        );
       }
       if (exhale > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.5).chain(CurveTween(curve: Curves.easeInOut)), weight: exhale.toDouble()));
+        items.add(
+          TweenSequenceItem(
+            tween: Tween(
+              begin: 1.0,
+              end: 0.5,
+            ).chain(CurveTween(curve: Curves.easeInOut)),
+            weight: exhale.toDouble(),
+          ),
+        );
       }
       if (hold2 > 0) {
-        items.add(TweenSequenceItem(tween: Tween(begin: 0.5, end: 0.5).chain(CurveTween(curve: Curves.easeInOut)), weight: hold2.toDouble()));
+        items.add(
+          TweenSequenceItem(
+            tween: Tween(
+              begin: 0.5,
+              end: 0.5,
+            ).chain(CurveTween(curve: Curves.easeInOut)),
+            weight: hold2.toDouble(),
+          ),
+        );
       }
 
       _breatheAnimation = TweenSequence<double>(items).animate(_controller);
@@ -260,8 +330,10 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
     // Reset sound tracking variables for new animation cycle
     _lastInstruction = '';
-    _waitingForCycleCompletion = false; // Reset cycle completion flag for new animation cycle
-    _breathingCycleCount = 0; // Reset breathing cycle count for new animation cycle
+    _waitingForCycleCompletion =
+        false; // Reset cycle completion flag for new animation cycle
+    _breathingCycleCount =
+        0; // Reset breathing cycle count for new animation cycle
 
     if (settings.musicMode != MusicMode.off) {
       String musicFile = '';
@@ -281,7 +353,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
       double currentTime = _controller.value * totalDurationSeconds;
 
       // Check if we need to move to the next stage (moved from addStatusListener)
-      final elapsedSeconds = (DateTime.now().millisecondsSinceEpoch ~/ 1000) - _stageStartTime;
+      final elapsedSeconds =
+          (DateTime.now().millisecondsSinceEpoch ~/ 1000) - _stageStartTime;
       final currentStage = _stages[_currentStageIndex];
 
       if (elapsedSeconds >= currentStage.duration) {
@@ -322,34 +395,44 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
       setState(() {
         final l10n = AppLocalizations.of(context);
-        BreathingPhase newPhase = _currentPhase; // Track what the new phase will be
+        BreathingPhase newPhase =
+            _currentPhase; // Track what the new phase will be
 
         if (currentTime >= 0 && currentTime < inhale) {
           _instruction = l10n.inhale;
           newPhase = BreathingPhase.inhale;
           // Play sound effect only once when entering inhale phase
-          if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
+          if (settings.voiceGuideMode == VoiceGuideMode.thomas &&
+              _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/in.wav'));
           }
-        } else if (hold1 > 0 && currentTime >= inhale && currentTime < (inhale + hold1)) {
+        } else if (hold1 > 0 &&
+            currentTime >= inhale &&
+            currentTime < (inhale + hold1)) {
           _instruction = 'Hold';
           newPhase = BreathingPhase.hold1;
           // Play sound effect only once when entering first hold phase
-          if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
+          if (settings.voiceGuideMode == VoiceGuideMode.thomas &&
+              _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
           }
-        } else if (currentTime >= (inhale + hold1) && currentTime < (inhale + hold1 + exhale)) {
+        } else if (currentTime >= (inhale + hold1) &&
+            currentTime < (inhale + hold1 + exhale)) {
           _instruction = l10n.exhale;
           newPhase = BreathingPhase.exhale;
           // Play sound effect only once when entering exhale phase
-          if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
+          if (settings.voiceGuideMode == VoiceGuideMode.thomas &&
+              _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/out.wav'));
           }
-        } else if (hold2 > 0 && currentTime >= (inhale + hold1 + exhale) && currentTime <= totalDurationSeconds) {
+        } else if (hold2 > 0 &&
+            currentTime >= (inhale + hold1 + exhale) &&
+            currentTime <= totalDurationSeconds) {
           _instruction = 'Hold';
           newPhase = BreathingPhase.hold2;
           // Play sound effect only once when entering second hold phase
-          if (settings.voiceGuideMode == VoiceGuideMode.thomas && _lastInstruction != _instruction) {
+          if (settings.voiceGuideMode == VoiceGuideMode.thomas &&
+              _lastInstruction != _instruction) {
             _soundEffectPlayer.play(AssetSource('sounds/hold.wav'));
           }
         }
@@ -357,7 +440,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
         // Check if this is a new phase and handle breathing cycle counting
         if (newPhase != _currentPhase) {
           // Increment breathing cycle count when we transition back to inhale (start of new cycle)
-          if (newPhase == BreathingPhase.inhale && _currentPhase != BreathingPhase.inhale) {
+          if (newPhase == BreathingPhase.inhale &&
+              _currentPhase != BreathingPhase.inhale) {
             _breathingCycleCount++;
           }
           _currentPhase = newPhase;
@@ -378,16 +462,18 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     // Prevent multiple calls to exercise completion
     if (_exerciseCompleted) return;
     _exerciseCompleted = true;
-    
+
     // Fade out music before navigating away
     final settings = Provider.of<SettingsProvider>(context, listen: false);
     if (settings.musicMode != MusicMode.off) {
       await _fadeOutMusic();
     }
-    
+
     // Navigate back after fade out is complete
     if (mounted) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const ExerciseFinishedScreen()));
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const ExerciseFinishedScreen()),
+      );
     }
   }
 
@@ -403,7 +489,9 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
     // Navigate back immediately without fade out
     if (mounted) {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const ExerciseFinishedScreen()));
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const ExerciseFinishedScreen()),
+      );
     }
   }
 
@@ -481,7 +569,10 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
 
   void _toggleMusic() {
     // Toggle music playback
-    final settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
+    final settingsProvider = Provider.of<SettingsProvider>(
+      context,
+      listen: false,
+    );
     // Cycle through music modes
     final currentMode = settingsProvider.musicMode;
     MusicMode nextMode;
@@ -511,14 +602,17 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     // Open settings screen
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SettingsScreen(fromExercise: true)),
+      MaterialPageRoute(
+        builder: (context) => const SettingsScreen(fromExercise: true),
+      ),
     );
   }
 
   // Method to fade out music smoothly
   Future<void> _fadeOutMusic() async {
     const steps = 50; // More steps for smoother fade over longer duration
-    final stepDuration = const Duration(milliseconds: 5000) ~/ steps; // 5 seconds fade out
+    final stepDuration =
+        const Duration(milliseconds: 5000) ~/ steps; // 5 seconds fade out
 
     double currentVolume = 1.0;
     final stepDecrement = 1.0 / steps;
@@ -526,7 +620,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
     for (int i = 0; i < steps; i++) {
       currentVolume -= stepDecrement;
       await _musicPlayer.setVolume(math.max(0.0, currentVolume));
-      if (i < steps - 1) { // Don't delay after the last step
+      if (i < steps - 1) {
+        // Don't delay after the last step
         await Future.delayed(stepDuration);
       }
     }
@@ -564,7 +659,8 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
             instructionText = '${l10n.exhale} ${l10n.throughMouth}';
           }
         }
-      } else if (_currentPhase == BreathingPhase.hold1 || _currentPhase == BreathingPhase.hold2) {
+      } else if (_currentPhase == BreathingPhase.hold1 ||
+          _currentPhase == BreathingPhase.hold2) {
         // Hold phase - show "Hold calmly" instruction
         instructionText = l10n.hold;
       }
@@ -592,160 +688,207 @@ class _ExerciseScreenState extends State<ExerciseScreen> with TickerProviderStat
       onKeyEvent: _handleKeyEvent,
       child: Scaffold(
         body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
-            ],
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Theme.of(context).scaffoldBackgroundColor,
+                Theme.of(
+                  context,
+                ).scaffoldBackgroundColor.withValues(alpha: 0.95),
+              ],
+            ),
           ),
-        ),
-        child: _patternInvalid
-            ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Theme.of(context).colorScheme.error.withValues(alpha: 0.1),
-                            Theme.of(context).colorScheme.error.withValues(alpha: 0.05),
-                          ],
+          child: _patternInvalid
+              ? Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Theme.of(
+                                context,
+                              ).colorScheme.error.withValues(alpha: 0.1),
+                              Theme.of(
+                                context,
+                              ).colorScheme.error.withValues(alpha: 0.05),
+                            ],
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.error_outline,
+                          size: 32,
+                          color: Theme.of(context).colorScheme.error,
                         ),
                       ),
-                      child: Icon(
-                        Icons.error_outline,
-                        size: 32,
-                        color: Theme.of(context).colorScheme.error,
+                      const SizedBox(height: 24),
+                      Text(
+                        AppLocalizations.of(context).exerciseInvalid,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.onSurface.withValues(alpha: 0.8),
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                    ),
-                    const SizedBox(height: 24),
-                    Text(
-                      AppLocalizations.of(context).exerciseInvalid,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.8),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              )
-            : SafeArea(
-                child: Stack(
-                  children: [
-                    Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // Enhanced breathing bubble
-                          Container(
-                            width: 320,
-                            height: 320,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [
-                                  Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.1),
-                                  Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.05),
-                                ],
+                    ],
+                  ),
+                )
+              : SafeArea(
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Enhanced breathing bubble
+                            Container(
+                              width: 320,
+                              height: 320,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    Theme.of(context).scaffoldBackgroundColor
+                                        .withValues(alpha: 0.1),
+                                    Theme.of(context).scaffoldBackgroundColor
+                                        .withValues(alpha: 0.05),
+                                  ],
+                                ),
                               ),
-                            ),
-                            child: AnimatedBuilder(
-                              animation: Listenable.merge([_breatheAnimation, _bubbleAnimation]),
-                              builder: (context, child) {
-                                final currentRadius = 140 * _breatheAnimation.value;
-                                return CustomPaint(
-                                  painter: BubblePainter(
-                                    _bubbleAnimation.value,
-                                    currentRadius,
-                                    Theme.of(context).colorScheme.primary,
-                                  ),
-                                  child: SizedBox(
-                                    width: currentRadius * 2,
-                                    height: currentRadius * 2,
-                                    child: Center(
-                                      child: FittedBox(
-                                        fit: BoxFit.scaleDown,
-                                        child: Text(
-                                          _instruction,
-                                          style: TextStyle(
-                                            fontSize: 28,
-                                            fontWeight: FontWeight.w300,
-                                            color: Theme.of(context).colorScheme.onPrimary,
-                                            letterSpacing: -0.5,
+                              child: AnimatedBuilder(
+                                animation: Listenable.merge([
+                                  _breatheAnimation,
+                                  _bubbleAnimation,
+                                ]),
+                                builder: (context, child) {
+                                  final currentRadius =
+                                      140 * _breatheAnimation.value;
+                                  return CustomPaint(
+                                    painter: BubblePainter(
+                                      _bubbleAnimation.value,
+                                      currentRadius,
+                                      Theme.of(context).colorScheme.primary,
+                                    ),
+                                    child: SizedBox(
+                                      width: currentRadius * 2,
+                                      height: currentRadius * 2,
+                                      child: Center(
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: Text(
+                                            _instruction,
+                                            style: TextStyle(
+                                              fontSize: 28,
+                                              fontWeight: FontWeight.w300,
+                                              color: Theme.of(
+                                                context,
+                                              ).colorScheme.onPrimary,
+                                              letterSpacing: -0.5,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                );
-                              },
+                                  );
+                                },
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 40),
-                          // Breathing method instructions
-                          _buildBreathingMethodInstruction(context),
-                        ],
-                      ),
-                    ),
-                    // Add swipe detection area for settings
-                    Positioned(
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      child: GestureDetector(
-                        onPanUpdate: (details) {
-                          // Detect right-to-left swipe
-                          if (details.delta.dx < 0) { // Swiping left
-                            // Only navigate if the swipe is significant enough
-                            if (details.delta.dx < -5) {
-                              Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  pageBuilder: (context, animation, secondaryAnimation) => SettingsScreen(
-                                    fromExercise: true,
-                                  ),
-                                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                    // Hard cut transition - instant appearance without animation
-                                    return child;
-                                  },
-                                  transitionDuration: Duration.zero,
-                                  reverseTransitionDuration: Duration.zero,
-                                ),
-                              ).then((value) {
-                                // If settings return with instruction to stop exercise, handle it
-                                if (value == 'stop_exercise') {
-                                  _onExerciseComplete();
-                                } else if (value == 'stop_exercise_hardcut') {
-                                  // Hard cut stop - immediately stop everything without fade
-                                  _onExerciseCompleteHardCut();
-                                }
-                              });
-                            }
-                          }
-                        },
-                        child: Container(
-                          // Transparent container to capture gestures
-                          color: Colors.transparent,
+                            const SizedBox(height: 40),
+                            // Breathing method instructions
+                            _buildBreathingMethodInstruction(context),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
+                      // Add swipe detection area for settings
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        child: GestureDetector(
+                          onPanUpdate: (details) {
+                            // Detect right-to-left swipe
+                            if (details.delta.dx < 0) {
+                              // Swiping left
+                              // Only navigate if the swipe is significant enough and not already navigating
+                              if (details.delta.dx < -5 &&
+                                  !_isNavigatingToSettings) {
+                                _isNavigatingToSettings = true;
+                                Navigator.push(
+                                      context,
+                                      PageRouteBuilder(
+                                        pageBuilder:
+                                            (
+                                              context,
+                                              animation,
+                                              secondaryAnimation,
+                                            ) => SettingsScreen(
+                                              fromExercise: true,
+                                            ),
+                                        transitionsBuilder:
+                                            (
+                                              context,
+                                              animation,
+                                              secondaryAnimation,
+                                              child,
+                                            ) {
+                                              // Hard cut transition - instant appearance without animation
+                                              return child;
+                                            },
+                                        transitionDuration: Duration.zero,
+                                        reverseTransitionDuration:
+                                            Duration.zero,
+                                      ),
+                                    )
+                                    .then((value) {
+                                      // If settings return with instruction to stop exercise, handle it
+                                      if (value == 'stop_exercise') {
+                                        _onExerciseComplete();
+                                      } else if (value ==
+                                          'stop_exercise_hardcut') {
+                                        // Hard cut stop - immediately stop everything without fade
+                                        _onExerciseCompleteHardCut();
+                                      }
+                                      // Reset navigation guard
+                                      if (mounted) {
+                                        setState(() {
+                                          _isNavigatingToSettings = false;
+                                        });
+                                      }
+                                    })
+                                    .catchError((error, stackTrace) {
+                                      // Reset navigation guard on error
+                                      if (mounted) {
+                                        setState(() {
+                                          _isNavigatingToSettings = false;
+                                        });
+                                      }
+                                    });
+                              }
+                            }
+                          },
+                          child: Container(
+                            // Transparent container to capture gestures
+                            color: Colors.transparent,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
         ),
       ),
     );
@@ -770,8 +913,11 @@ class BubblePainter extends CustomPainter {
     Path path = Path();
     for (double i = 0; i < 2 * math.pi; i += 0.1) {
       // Combine multiple sine waves for less predictable distortion
-      double distortion1 = math.sin(i * 3 + animationValue * 2 * math.pi) * (radius * 0.01);
-      double distortion2 = math.sin(i * 7 + animationValue * 3 * math.pi + math.pi / 2) * (radius * 0.0075);
+      double distortion1 =
+          math.sin(i * 3 + animationValue * 2 * math.pi) * (radius * 0.01);
+      double distortion2 =
+          math.sin(i * 7 + animationValue * 3 * math.pi + math.pi / 2) *
+          (radius * 0.0075);
 
       double totalDistortion = distortion1 + distortion2;
 
