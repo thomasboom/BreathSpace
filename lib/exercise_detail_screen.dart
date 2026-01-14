@@ -1,10 +1,10 @@
-import 'package:flutter/foundation.dart';  // For kDebugMode
+import 'package:flutter/foundation.dart'; // For kDebugMode
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:BreathSpace/data.dart';
 import 'package:BreathSpace/exercise_screen.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
-import 'package:BreathSpace/rate_limiter.dart';  // Import the rate limiter
+import 'package:BreathSpace/rate_limiter.dart'; // Import the rate limiter
 
 class ExerciseDetailScreen extends StatefulWidget {
   final BreathingExercise? exercise;
@@ -158,7 +158,9 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Daily limit reached. You have used ${stats['current']} of ${stats['max']} daily requests. Try again tomorrow.'),
+                content: Text(
+                  'Daily limit reached. You have used ${stats['current']} of ${stats['max']} daily requests. Try again tomorrow.',
+                ),
                 duration: const Duration(seconds: 5),
               ),
             );
@@ -167,7 +169,9 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                content: Text('Unable to connect to AI service. Please check your internet connection and try again.'),
+                content: Text(
+                  'Unable to connect to AI service. Please check your internet connection and try again.',
+                ),
                 duration: Duration(seconds: 4),
               ),
             );
@@ -201,461 +205,586 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
       focusNode: _focusNode,
       onKeyEvent: _handleKeyEvent,
       child: Scaffold(
-      appBar: AppBar(
-        title: _isLoading || _currentExercise == null
-            ? Container(
-                width: 150,
-                height: 20,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(4),
+        appBar: AppBar(
+          title: _isLoading || _currentExercise == null
+              ? Container(
+                  width: 150,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.onSurface.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                )
+              : Text(
+                  _currentExercise?.getLocalizedTitle(
+                        AppLocalizations.of(context),
+                      ) ??
+                      'Loading...',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: -0.2,
+                  ),
                 ),
-              )
-            : Text(
-                _currentExercise?.title ?? 'Loading...',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: -0.2,
-                ),
-              ),
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 0,
-        foregroundColor: Theme.of(context).colorScheme.onSurface,
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.98),
-            ],
-          ),
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          elevation: 0,
+          foregroundColor: Theme.of(context).colorScheme.onSurface,
         ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              // Scrollable content
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const SizedBox(height: 20),
-                      Container(
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: _isLoading
-                              ? null
-                              : LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    Theme.of(context).colorScheme.primary.withValues(alpha: 0.15),
-                                    Theme.of(context).colorScheme.primary.withValues(alpha: 0.08),
-                                  ],
-                                ),
-                          boxShadow: _isLoading
-                              ? []
-                              : [
-                                  BoxShadow(
-                                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
-                                    blurRadius: 20,
-                                    offset: const Offset(0, 8),
-                                  ),
-                                ],
-                          color: _isLoading ? Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1) : null,
-                        ),
-                        child: _isLoading
-                            ? null
-                            : Icon(
-                                Icons.spa_outlined,
-                                size: 36,
-                                color: Theme.of(context).colorScheme.primary,
-                              ),
-                      ),
-                      const SizedBox(height: 32),
-                      _isLoading || _currentExercise == null
-                          ? Container(
-                              width: 200,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            )
-                          : Text(
-                              _currentExercise?.title ?? 'Loading...',
-                              style: TextStyle(
-                                fontSize: 32,
-                                fontWeight: FontWeight.w300,
-                                color: Theme.of(context).colorScheme.onSurface,
-                                letterSpacing: -0.5,
-                                height: 1.1,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                      const SizedBox(height: 16),
-                      _isLoading || _currentExercise == null
-                          ? Container(
-                              width: 250,
-                              height: 20,
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            )
-                          : Text(
-                              _currentExercise?.intro ?? 'Loading introduction...',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.8),
-                                height: 1.5,
-                                letterSpacing: 0.1,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                      const SizedBox(height: 40),
-
-                      // Version selection buttons
-                      if (!_isLoading && _currentExercise?.hasVersions == true) ...[
-                        Text(
-                          'Choose Duration',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).colorScheme.onSurface,
-                            letterSpacing: -0.2,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Theme.of(context).scaffoldBackgroundColor,
+                Theme.of(
+                  context,
+                ).scaffoldBackgroundColor.withValues(alpha: 0.98),
+              ],
+            ),
+          ),
+          child: SafeArea(
+            child: Column(
+              children: [
+                // Scrollable content
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
                         const SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _buildVersionButton(ExerciseVersion.short, 'Short'),
-                            const SizedBox(width: 12),
-                            _buildVersionButton(ExerciseVersion.normal, 'Normal'),
-                            const SizedBox(width: 12),
-                            _buildVersionButton(ExerciseVersion.long, 'Long'),
-                          ],
-                        ),
-                        const SizedBox(height: 40),
-                      ] else if (_isLoading) ...[
-                        // Skeleton for version selection buttons
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Container(
-                                height: 44,
-                                margin: const EdgeInsets.symmetric(horizontal: 4),
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12),
+                        Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: _isLoading
+                                ? null
+                                : LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [
+                                      Theme.of(context).colorScheme.primary
+                                          .withValues(alpha: 0.15),
+                                      Theme.of(context).colorScheme.primary
+                                          .withValues(alpha: 0.08),
+                                    ],
+                                  ),
+                            boxShadow: _isLoading
+                                ? []
+                                : [
+                                    BoxShadow(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary
+                                          .withValues(alpha: 0.2),
+                                      blurRadius: 20,
+                                      offset: const Offset(0, 8),
+                                    ),
+                                  ],
+                            color: _isLoading
+                                ? Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface.withValues(alpha: 0.1)
+                                : null,
+                          ),
+                          child: _isLoading
+                              ? null
+                              : Icon(
+                                  Icons.spa_outlined,
+                                  size: 36,
+                                  color: Theme.of(context).colorScheme.primary,
                                 ),
-                              ),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Container(
-                                height: 44,
-                                margin: const EdgeInsets.symmetric(horizontal: 4),
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Container(
-                                height: 44,
-                                margin: const EdgeInsets.symmetric(horizontal: 4),
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
-                        const SizedBox(height: 40),
-                      ],
-
-                      // Exercise details
-                      Container(
-                        padding: const EdgeInsets.all(24),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).cardColor,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.06),
-                              blurRadius: 16,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          children: [
-                            if (_isLoading) ...[
-                              // Skeleton for progressive exercise content
-                              Container(
-                                width: 140,
-                                height: 20,
-                                margin: const EdgeInsets.only(bottom: 16),
+                        const SizedBox(height: 32),
+                        _isLoading || _currentExercise == null
+                            ? Container(
+                                width: 200,
+                                height: 30,
                                 decoration: BoxDecoration(
-                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
+                                  color: Theme.of(context).colorScheme.onSurface
+                                      .withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(4),
                                 ),
-                              ),
-                              Container(
-                                width: double.infinity,
-                                height: 50,
-                                margin: const EdgeInsets.only(bottom: 12),
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.5),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                              Container(
-                                width: double.infinity,
-                                height: 50,
-                                margin: const EdgeInsets.only(bottom: 12),
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.5),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                              Container(
-                                width: double.infinity,
-                                height: 50,
-                                margin: const EdgeInsets.only(bottom: 12),
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.5),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                              ),
-                            ] else if (_currentExercise?.hasStages == true ||
-                                _currentExercise?.getStagesForVersion(_selectedVersion) != null) ...[
-                              Text(
-                                'Progressive Exercise',
+                              )
+                            : Text(
+                                _currentExercise?.getLocalizedTitle(
+                                      AppLocalizations.of(context),
+                                    ) ??
+                                    'Loading...',
                                 style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Theme.of(context).colorScheme.primary,
-                                  letterSpacing: -0.1,
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.w300,
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface,
+                                  letterSpacing: -0.5,
+                                  height: 1.1,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              const SizedBox(height: 16),
-                              ...?(_currentExercise!
-                                      .getStagesForVersion(_selectedVersion)
-                                      ?.map(
-                                        (stage) => Container(
-                                          margin: const EdgeInsets.only(bottom: 12),
-                                          padding: const EdgeInsets.all(12),
-                                          decoration: BoxDecoration(
-                                            color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.5),
-                                            borderRadius: BorderRadius.circular(12),
-                                          ),
-                                          child: Row(
-                                            children: [
-                                              Expanded(
-                                                child: Text(
-                                                  stage.title,
-                                                  style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Theme.of(context).colorScheme.onSurface,
-                                                  ),
-                                                ),
-                                              ),
-                                              Text(
-                                                '${stage.pattern} • ${_formatDuration(stage.duration)}',
-                                                style: TextStyle(
-                                                  fontSize: 14,
-                                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ) ??
-                                  _currentExercise?.stages?.map(
-                                    (stage) => Container(
-                                      margin: const EdgeInsets.only(bottom: 12),
-                                      padding: const EdgeInsets.all(12),
-                                      decoration: BoxDecoration(
-                                        color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.5),
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              stage.title,
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w600,
-                                                color: Theme.of(context).colorScheme.onSurface,
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '${stage.pattern} • ${_formatDuration(stage.duration)}',
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  )),
-                            ] else ...[
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.pattern,
-                                    size: 20,
-                                    color: Theme.of(context).colorScheme.primary,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    _currentExercise?.getPatternForVersion(_selectedVersion) ?? 'Pattern not available',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: Theme.of(context).colorScheme.onSurface,
-                                    ),
-                                  ),
-                                ],
+                        const SizedBox(height: 16),
+                        _isLoading || _currentExercise == null
+                            ? Container(
+                                width: 250,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).colorScheme.onSurface
+                                      .withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                              )
+                            : Text(
+                                _currentExercise?.getLocalizedIntro(
+                                      AppLocalizations.of(context),
+                                    ) ??
+                                    'Loading introduction...',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Theme.of(context).colorScheme.onSurface
+                                      .withValues(alpha: 0.8),
+                                  height: 1.5,
+                                  letterSpacing: 0.1,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              const SizedBox(height: 12),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.timer_outlined,
-                                    size: 20,
-                                    color: Theme.of(context).colorScheme.primary,
+                        const SizedBox(height: 40),
+
+                        // Version selection buttons
+                        if (!_isLoading &&
+                            _currentExercise?.hasVersions == true) ...[
+                          Text(
+                            'Choose Duration',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context).colorScheme.onSurface,
+                              letterSpacing: -0.2,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              _buildVersionButton(
+                                ExerciseVersion.short,
+                                'Short',
+                              ),
+                              const SizedBox(width: 12),
+                              _buildVersionButton(
+                                ExerciseVersion.normal,
+                                'Normal',
+                              ),
+                              const SizedBox(width: 12),
+                              _buildVersionButton(ExerciseVersion.long, 'Long'),
+                            ],
+                          ),
+                          const SizedBox(height: 40),
+                        ] else if (_isLoading) ...[
+                          // Skeleton for version selection buttons
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  height: 44,
+                                  margin: const EdgeInsets.symmetric(
+                                    horizontal: 4,
                                   ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    _currentExercise?.getDurationForVersion(_selectedVersion) ?? 'Duration not available',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: Theme.of(context).colorScheme.onSurface,
-                                    ),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface
+                                        .withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(12),
                                   ),
-                                ],
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Container(
+                                  height: 44,
+                                  margin: const EdgeInsets.symmetric(
+                                    horizontal: 4,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface
+                                        .withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Container(
+                                  height: 44,
+                                  margin: const EdgeInsets.symmetric(
+                                    horizontal: 4,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface
+                                        .withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
                               ),
                             ],
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 32), // Extra space before the fixed button
-                    ],
-                  ),
-                ),
-              ),
-
-              // Fixed start button at bottom
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.05),
-                      blurRadius: 8,
-                      offset: const Offset(0, -2),
-                    ),
-                  ],
-                ),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 56,
-                  child: _isLoading
-                      ? Container(
-                          width: double.infinity,
-                          height: 56,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(16),
                           ),
-                        )
-                      : ElevatedButton(
-                          onPressed: _currentExercise != null
-                              ? () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => ExerciseScreen(
-                                        exercise: _currentExercise!,
-                                        selectedVersion: _selectedVersion,
+                          const SizedBox(height: 40),
+                        ],
+
+                        // Exercise details
+                        Container(
+                          padding: const EdgeInsets.all(24),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.06),
+                                blurRadius: 16,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              if (_isLoading) ...[
+                                // Skeleton for progressive exercise content
+                                Container(
+                                  width: 140,
+                                  height: 20,
+                                  margin: const EdgeInsets.only(bottom: 16),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface
+                                        .withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  height: 50,
+                                  margin: const EdgeInsets.only(bottom: 12),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .scaffoldBackgroundColor
+                                        .withValues(alpha: 0.5),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  height: 50,
+                                  margin: const EdgeInsets.only(bottom: 12),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .scaffoldBackgroundColor
+                                        .withValues(alpha: 0.5),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  height: 50,
+                                  margin: const EdgeInsets.only(bottom: 12),
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .scaffoldBackgroundColor
+                                        .withValues(alpha: 0.5),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                ),
+                              ] else if (_currentExercise?.hasStages == true ||
+                                  _currentExercise?.getStagesForVersion(
+                                        _selectedVersion,
+                                      ) !=
+                                      null) ...[
+                                Text(
+                                  'Progressive Exercise',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Theme.of(
+                                      context,
+                                    ).colorScheme.primary,
+                                    letterSpacing: -0.1,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                const SizedBox(height: 16),
+                                ...?(_currentExercise!
+                                        .getStagesForVersion(_selectedVersion)
+                                        ?.map(
+                                          (stage) => Container(
+                                            margin: const EdgeInsets.only(
+                                              bottom: 12,
+                                            ),
+                                            padding: const EdgeInsets.all(12),
+                                            decoration: BoxDecoration(
+                                              color: Theme.of(context)
+                                                  .scaffoldBackgroundColor
+                                                  .withValues(alpha: 0.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    stage.getLocalizedTitle(
+                                                      AppLocalizations.of(
+                                                        context,
+                                                      ),
+                                                    ),
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      color: Theme.of(
+                                                        context,
+                                                      ).colorScheme.onSurface,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '${stage.pattern} • ${_formatDuration(stage.duration)}',
+                                                  style: TextStyle(
+                                                    fontSize: 14,
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .onSurface
+                                                        .withValues(alpha: 0.7),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ) ??
+                                    _currentExercise?.stages?.map(
+                                      (stage) => Container(
+                                        margin: const EdgeInsets.only(
+                                          bottom: 12,
+                                        ),
+                                        padding: const EdgeInsets.all(12),
+                                        decoration: BoxDecoration(
+                                          color: Theme.of(context)
+                                              .scaffoldBackgroundColor
+                                              .withValues(alpha: 0.5),
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Expanded(
+                                              child: Text(
+                                                stage.getLocalizedTitle(
+                                                  AppLocalizations.of(context),
+                                                ),
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Theme.of(
+                                                    context,
+                                                  ).colorScheme.onSurface,
+                                                ),
+                                              ),
+                                            ),
+                                            Text(
+                                              '${stage.pattern} • ${_formatDuration(stage.duration)}',
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .onSurface
+                                                    .withValues(alpha: 0.7),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )),
+                              ] else ...[
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.pattern,
+                                      size: 20,
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.primary,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      _currentExercise?.getPatternForVersion(
+                                            _selectedVersion,
+                                          ) ??
+                                          'Pattern not available',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Theme.of(
+                                          context,
+                                        ).colorScheme.onSurface,
                                       ),
                                     ),
-                                  );
-                                }
-                              : null,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: _selectedIndex == 0 && _focusNode.hasFocus
-                                ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.8)
-                                : Theme.of(context).colorScheme.primary,
-                            foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                            elevation: 0,
-                            shadowColor: Colors.transparent,
-                            side: _selectedIndex == 0 && _focusNode.hasFocus
-                                ? BorderSide(
-                                    color: Theme.of(context).colorScheme.onPrimary.withValues(alpha: 0.5),
-                                    width: 2,
-                                  )
-                                : null,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                          ),
-                          child: Text(
-                            AppLocalizations.of(context).start,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 0.5,
-                            ),
+                                  ],
+                                ),
+                                const SizedBox(height: 12),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.timer_outlined,
+                                      size: 20,
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.primary,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      _currentExercise?.getDurationForVersion(
+                                            _selectedVersion,
+                                          ) ??
+                                          'Duration not available',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Theme.of(
+                                          context,
+                                        ).colorScheme.onSurface,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ],
                           ),
                         ),
+                        const SizedBox(
+                          height: 32,
+                        ), // Extra space before the fixed button
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ],
+
+                // Fixed start button at bottom
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24.0,
+                    vertical: 16.0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.05),
+                        blurRadius: 8,
+                        offset: const Offset(0, -2),
+                      ),
+                    ],
+                  ),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: _isLoading
+                        ? Container(
+                            width: double.infinity,
+                            height: 56,
+                            decoration: BoxDecoration(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.primary.withValues(alpha: 0.3),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          )
+                        : ElevatedButton(
+                            onPressed: _currentExercise != null
+                                ? () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ExerciseScreen(
+                                          exercise: _currentExercise!,
+                                          selectedVersion: _selectedVersion,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                : null,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  _selectedIndex == 0 && _focusNode.hasFocus
+                                  ? Theme.of(
+                                      context,
+                                    ).colorScheme.primary.withValues(alpha: 0.8)
+                                  : Theme.of(context).colorScheme.primary,
+                              foregroundColor: Theme.of(
+                                context,
+                              ).colorScheme.onPrimary,
+                              elevation: 0,
+                              shadowColor: Colors.transparent,
+                              side: _selectedIndex == 0 && _focusNode.hasFocus
+                                  ? BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimary
+                                          .withValues(alpha: 0.5),
+                                      width: 2,
+                                    )
+                                  : null,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                            ),
+                            child: Text(
+                              AppLocalizations.of(context).start,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 0.5,
+                              ),
+                            ),
+                          ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-      ),
       ),
     );
   }
 
   Widget _buildVersionButton(ExerciseVersion version, String label) {
     final versionIndex = _getVersionIndex(version);
-    final isFocused = _selectedIndex == (versionIndex + 1) && _focusNode.hasFocus;
-    
-    if (_isLoading || _currentExercise == null || _currentExercise?.hasVersions != true) {
+    final isFocused =
+        _selectedIndex == (versionIndex + 1) && _focusNode.hasFocus;
+
+    if (_isLoading ||
+        _currentExercise == null ||
+        _currentExercise?.hasVersions != true) {
       // Return a disabled skeleton button when loading or if versions are not available
       return Expanded(
         child: Container(
           height: 44,
           margin: const EdgeInsets.symmetric(horizontal: 4),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
+            color: Theme.of(
+              context,
+            ).colorScheme.onSurface.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
           ),
         ),
@@ -676,21 +805,25 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
             color: isSelected
                 ? Theme.of(context).colorScheme.primary
                 : isFocused
-                    ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
-                    : Theme.of(context).cardColor,
+                ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
+                : Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isSelected
                   ? Theme.of(context).colorScheme.primary
                   : isFocused
-                      ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.5)
-                      : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
+                  ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.5)
+                  : Theme.of(
+                      context,
+                    ).colorScheme.onSurface.withValues(alpha: 0.1),
               width: isSelected || isFocused ? 2 : 1,
             ),
             boxShadow: isSelected || isFocused
                 ? [
                     BoxShadow(
-                      color: Theme.of(context).colorScheme.primary.withValues(alpha: isSelected ? 0.3 : 0.1),
+                      color: Theme.of(context).colorScheme.primary.withValues(
+                        alpha: isSelected ? 0.3 : 0.1,
+                      ),
                       blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),

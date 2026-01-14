@@ -152,6 +152,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
       _stages = [
         BreathingStage(
           title: widget.exercise.title,
+          titleKey: widget.exercise.titleKey,
           pattern: widget.exercise.getPatternForVersion(selectedVersion),
           duration: _parseDurationString(
             widget.exercise.getDurationForVersion(selectedVersion),

@@ -555,6 +555,612 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'.'**
   String get termsAgreementSuffix;
+
+  /// No description provided for @exerciseTitle_relaxingBreath.
+  ///
+  /// In en, this message translates to:
+  /// **'Relaxing Breath'**
+  String get exerciseTitle_relaxingBreath;
+
+  /// No description provided for @exerciseIntro_relaxingBreath.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotes sleep and reduces anxiety.'**
+  String get exerciseIntro_relaxingBreath;
+
+  /// No description provided for @exerciseTitle_boxBreathingNavySeals.
+  ///
+  /// In en, this message translates to:
+  /// **'Box Breathing'**
+  String get exerciseTitle_boxBreathingNavySeals;
+
+  /// No description provided for @exerciseIntro_boxBreathingNavySeals.
+  ///
+  /// In en, this message translates to:
+  /// **'Used by Navy SEALs for stress management.'**
+  String get exerciseIntro_boxBreathingNavySeals;
+
+  /// No description provided for @exerciseTitle_twoOneRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'2:1 Ratio Breathing'**
+  String get exerciseTitle_twoOneRatio;
+
+  /// No description provided for @exerciseIntro_twoOneRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple calming technique for beginners.'**
+  String get exerciseIntro_twoOneRatio;
+
+  /// No description provided for @exerciseTitle_equalBreathing.
+  ///
+  /// In en, this message translates to:
+  /// **'Equal Breathing'**
+  String get exerciseTitle_equalBreathing;
+
+  /// No description provided for @exerciseIntro_equalBreathing.
+  ///
+  /// In en, this message translates to:
+  /// **'Balances nervous system activation.'**
+  String get exerciseIntro_equalBreathing;
+
+  /// No description provided for @exerciseTitle_modified478.
+  ///
+  /// In en, this message translates to:
+  /// **'Modified 4-7-8'**
+  String get exerciseTitle_modified478;
+
+  /// No description provided for @exerciseIntro_modified478.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentler version for anxiety relief.'**
+  String get exerciseIntro_modified478;
+
+  /// No description provided for @exerciseTitle_coherentBreathing.
+  ///
+  /// In en, this message translates to:
+  /// **'Coherent Breathing'**
+  String get exerciseTitle_coherentBreathing;
+
+  /// No description provided for @exerciseIntro_coherentBreathing.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimizes heart rate variability.'**
+  String get exerciseIntro_coherentBreathing;
+
+  /// No description provided for @exerciseTitle_extendedExhale.
+  ///
+  /// In en, this message translates to:
+  /// **'Extended Exhale'**
+  String get exerciseTitle_extendedExhale;
+
+  /// No description provided for @exerciseIntro_extendedExhale.
+  ///
+  /// In en, this message translates to:
+  /// **'Activates parasympathetic response.'**
+  String get exerciseIntro_extendedExhale;
+
+  /// No description provided for @exerciseTitle_miniBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Mini Box Breathing'**
+  String get exerciseTitle_miniBox;
+
+  /// No description provided for @exerciseIntro_miniBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick stress relief for busy moments.'**
+  String get exerciseIntro_miniBox;
+
+  /// No description provided for @exerciseTitle_samaVritti.
+  ///
+  /// In en, this message translates to:
+  /// **'Sama Vritti'**
+  String get exerciseTitle_samaVritti;
+
+  /// No description provided for @exerciseIntro_samaVritti.
+  ///
+  /// In en, this message translates to:
+  /// **'Improves concentration and mental clarity.'**
+  String get exerciseIntro_samaVritti;
+
+  /// No description provided for @exerciseTitle_deepEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'Deep Equal Breathing'**
+  String get exerciseTitle_deepEqual;
+
+  /// No description provided for @exerciseIntro_deepEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'Enhances focus and cognitive performance.'**
+  String get exerciseIntro_deepEqual;
+
+  /// No description provided for @exerciseTitle_squareBreathing.
+  ///
+  /// In en, this message translates to:
+  /// **'Square Breathing'**
+  String get exerciseTitle_squareBreathing;
+
+  /// No description provided for @exerciseIntro_squareBreathing.
+  ///
+  /// In en, this message translates to:
+  /// **'Builds mental resilience.'**
+  String get exerciseIntro_squareBreathing;
+
+  /// No description provided for @exerciseTitle_quickFocus.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Focus'**
+  String get exerciseTitle_quickFocus;
+
+  /// No description provided for @exerciseIntro_quickFocus.
+  ///
+  /// In en, this message translates to:
+  /// **'Rapid attention enhancement.'**
+  String get exerciseIntro_quickFocus;
+
+  /// No description provided for @exerciseTitle_ujjayiModified.
+  ///
+  /// In en, this message translates to:
+  /// **'Modified Ujjayi'**
+  String get exerciseTitle_ujjayiModified;
+
+  /// No description provided for @exerciseIntro_ujjayiModified.
+  ///
+  /// In en, this message translates to:
+  /// **'Builds internal heat and focus.'**
+  String get exerciseIntro_ujjayiModified;
+
+  /// No description provided for @exerciseTitle_extendedBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Extended Box Breathing'**
+  String get exerciseTitle_extendedBox;
+
+  /// No description provided for @exerciseIntro_extendedBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced stress management.'**
+  String get exerciseIntro_extendedBox;
+
+  /// No description provided for @exerciseTitle_trianglePlus.
+  ///
+  /// In en, this message translates to:
+  /// **'Triangle Plus'**
+  String get exerciseTitle_trianglePlus;
+
+  /// No description provided for @exerciseIntro_trianglePlus.
+  ///
+  /// In en, this message translates to:
+  /// **'Complex pattern for experienced practitioners.'**
+  String get exerciseIntro_trianglePlus;
+
+  /// No description provided for @exerciseTitle_oneTwoExtended.
+  ///
+  /// In en, this message translates to:
+  /// **'1:2 Extended Breathing'**
+  String get exerciseTitle_oneTwoExtended;
+
+  /// No description provided for @exerciseIntro_oneTwoExtended.
+  ///
+  /// In en, this message translates to:
+  /// **'Deep relaxation and blood pressure reduction.'**
+  String get exerciseIntro_oneTwoExtended;
+
+  /// No description provided for @exerciseTitle_gentleHold.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle Hold'**
+  String get exerciseTitle_gentleHold;
+
+  /// No description provided for @exerciseIntro_gentleHold.
+  ///
+  /// In en, this message translates to:
+  /// **'For those with lung capacity limitations.'**
+  String get exerciseIntro_gentleHold;
+
+  /// No description provided for @exerciseTitle_longBreath.
+  ///
+  /// In en, this message translates to:
+  /// **'Long Breath'**
+  String get exerciseTitle_longBreath;
+
+  /// No description provided for @exerciseIntro_longBreath.
+  ///
+  /// In en, this message translates to:
+  /// **'Increases lung capacity and endurance.'**
+  String get exerciseIntro_longBreath;
+
+  /// No description provided for @exerciseTitle_classic478Extended.
+  ///
+  /// In en, this message translates to:
+  /// **'Classic 4-7-8 Extended'**
+  String get exerciseTitle_classic478Extended;
+
+  /// No description provided for @exerciseIntro_classic478Extended.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum relaxation response.'**
+  String get exerciseIntro_classic478Extended;
+
+  /// No description provided for @exerciseTitle_goldenRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'Golden Ratio'**
+  String get exerciseTitle_goldenRatio;
+
+  /// No description provided for @exerciseIntro_goldenRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on mathematical harmony principles.'**
+  String get exerciseIntro_goldenRatio;
+
+  /// No description provided for @exerciseTitle_sleepPreparationProtocol.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep Preparation Protocol'**
+  String get exerciseTitle_sleepPreparationProtocol;
+
+  /// No description provided for @exerciseIntro_sleepPreparationProtocol.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to prepare your body and mind for restful sleep.'**
+  String get exerciseIntro_sleepPreparationProtocol;
+
+  /// No description provided for @exerciseTitle_anxietyRecoverySequence.
+  ///
+  /// In en, this message translates to:
+  /// **'Anxiety Recovery Sequence'**
+  String get exerciseTitle_anxietyRecoverySequence;
+
+  /// No description provided for @exerciseIntro_anxietyRecoverySequence.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive approach to calm anxiety and restore emotional balance.'**
+  String get exerciseIntro_anxietyRecoverySequence;
+
+  /// No description provided for @exerciseTitle_morningEnergyBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning Energy Builder'**
+  String get exerciseTitle_morningEnergyBuilder;
+
+  /// No description provided for @exerciseIntro_morningEnergyBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to awaken your body and mind for the day ahead.'**
+  String get exerciseIntro_morningEnergyBuilder;
+
+  /// No description provided for @exerciseTitle_panicAttackManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Panic Attack Management'**
+  String get exerciseTitle_panicAttackManagement;
+
+  /// No description provided for @exerciseIntro_panicAttackManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to quickly calm panic attacks and restore control.'**
+  String get exerciseIntro_panicAttackManagement;
+
+  /// No description provided for @exerciseTitle_concentrationTraining.
+  ///
+  /// In en, this message translates to:
+  /// **'Concentration Training'**
+  String get exerciseTitle_concentrationTraining;
+
+  /// No description provided for @exerciseIntro_concentrationTraining.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to develop and sustain mental focus over time.'**
+  String get exerciseIntro_concentrationTraining;
+
+  /// No description provided for @exerciseTitle_bloodPressureReduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Blood Pressure Reduction'**
+  String get exerciseTitle_bloodPressureReduction;
+
+  /// No description provided for @exerciseIntro_bloodPressureReduction.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence designed to lower blood pressure through therapeutic breathing.'**
+  String get exerciseIntro_bloodPressureReduction;
+
+  /// No description provided for @exerciseTitle_preCompetitionProtocol.
+  ///
+  /// In en, this message translates to:
+  /// **'Pre-Competition Protocol'**
+  String get exerciseTitle_preCompetitionProtocol;
+
+  /// No description provided for @exerciseIntro_preCompetitionProtocol.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to prepare mentally and physically for peak performance.'**
+  String get exerciseIntro_preCompetitionProtocol;
+
+  /// No description provided for @exerciseTitle_postWorkoutRecovery.
+  ///
+  /// In en, this message translates to:
+  /// **'Post-Workout Recovery'**
+  String get exerciseTitle_postWorkoutRecovery;
+
+  /// No description provided for @exerciseIntro_postWorkoutRecovery.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to normalize heart rate and accelerate recovery after exercise.'**
+  String get exerciseIntro_postWorkoutRecovery;
+
+  /// No description provided for @exerciseTitle_meditationPreparation.
+  ///
+  /// In en, this message translates to:
+  /// **'Meditation Preparation'**
+  String get exerciseTitle_meditationPreparation;
+
+  /// No description provided for @exerciseIntro_meditationPreparation.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to settle the mind and transition into deeper meditation.'**
+  String get exerciseIntro_meditationPreparation;
+
+  /// No description provided for @exerciseTitle_chronicPainManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Chronic Pain Management'**
+  String get exerciseTitle_chronicPainManagement;
+
+  /// No description provided for @exerciseIntro_chronicPainManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'A progressive sequence to help manage chronic pain through controlled breathing techniques.'**
+  String get exerciseIntro_chronicPainManagement;
+
+  /// No description provided for @exerciseTitle_stressReliefWave.
+  ///
+  /// In en, this message translates to:
+  /// **'Stress Relief Wave'**
+  String get exerciseTitle_stressReliefWave;
+
+  /// No description provided for @exerciseIntro_stressReliefWave.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle rhythm to wash away stress and tension.'**
+  String get exerciseIntro_stressReliefWave;
+
+  /// No description provided for @exerciseTitle_energizingWakeUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Energizing Wake-Up'**
+  String get exerciseTitle_energizingWakeUp;
+
+  /// No description provided for @exerciseIntro_energizingWakeUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick boost to awaken your body and energize your mind.'**
+  String get exerciseIntro_energizingWakeUp;
+
+  /// No description provided for @exerciseTitle_balanceEquilibrium.
+  ///
+  /// In en, this message translates to:
+  /// **'Balance Equilibrium'**
+  String get exerciseTitle_balanceEquilibrium;
+
+  /// No description provided for @exerciseIntro_balanceEquilibrium.
+  ///
+  /// In en, this message translates to:
+  /// **'Restores equilibrium between mind and body.'**
+  String get exerciseIntro_balanceEquilibrium;
+
+  /// No description provided for @exerciseTitle_deepRelaxationDive.
+  ///
+  /// In en, this message translates to:
+  /// **'Deep Relaxation Dive'**
+  String get exerciseTitle_deepRelaxationDive;
+
+  /// No description provided for @exerciseIntro_deepRelaxationDive.
+  ///
+  /// In en, this message translates to:
+  /// **'Dive deep into a state of complete relaxation and peace.'**
+  String get exerciseIntro_deepRelaxationDive;
+
+  /// No description provided for @exerciseTitle_cardioCoherence.
+  ///
+  /// In en, this message translates to:
+  /// **'Cardio Coherence'**
+  String get exerciseTitle_cardioCoherence;
+
+  /// No description provided for @exerciseIntro_cardioCoherence.
+  ///
+  /// In en, this message translates to:
+  /// **'A sequence to optimize heart rate variability and emotional balance.'**
+  String get exerciseIntro_cardioCoherence;
+
+  /// No description provided for @stageTitle_nervousSystemBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Nervous System Balance'**
+  String get stageTitle_nervousSystemBalance;
+
+  /// No description provided for @stageTitle_deepRelaxation.
+  ///
+  /// In en, this message translates to:
+  /// **'Deep Relaxation'**
+  String get stageTitle_deepRelaxation;
+
+  /// No description provided for @stageTitle_sleepInduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep Induction'**
+  String get stageTitle_sleepInduction;
+
+  /// No description provided for @stageTitle_stabilization.
+  ///
+  /// In en, this message translates to:
+  /// **'Stabilization'**
+  String get stageTitle_stabilization;
+
+  /// No description provided for @stageTitle_grounding.
+  ///
+  /// In en, this message translates to:
+  /// **'Grounding'**
+  String get stageTitle_grounding;
+
+  /// No description provided for @stageTitle_parasympatheticActivation.
+  ///
+  /// In en, this message translates to:
+  /// **'Parasympathetic Activation'**
+  String get stageTitle_parasympatheticActivation;
+
+  /// No description provided for @stageTitle_awakening.
+  ///
+  /// In en, this message translates to:
+  /// **'Awakening'**
+  String get stageTitle_awakening;
+
+  /// No description provided for @stageTitle_energizing.
+  ///
+  /// In en, this message translates to:
+  /// **'Energizing'**
+  String get stageTitle_energizing;
+
+  /// No description provided for @stageTitle_focusEnhancement.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus Enhancement'**
+  String get stageTitle_focusEnhancement;
+
+  /// No description provided for @stageTitle_immediateCalming.
+  ///
+  /// In en, this message translates to:
+  /// **'Immediate Calming'**
+  String get stageTitle_immediateCalming;
+
+  /// No description provided for @stageTitle_fullRecovery.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Recovery'**
+  String get stageTitle_fullRecovery;
+
+  /// No description provided for @stageTitle_foundationBuilding.
+  ///
+  /// In en, this message translates to:
+  /// **'Foundation Building'**
+  String get stageTitle_foundationBuilding;
+
+  /// No description provided for @stageTitle_complexityIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Complexity Increase'**
+  String get stageTitle_complexityIncrease;
+
+  /// No description provided for @stageTitle_sustainedFocus.
+  ///
+  /// In en, this message translates to:
+  /// **'Sustained Focus'**
+  String get stageTitle_sustainedFocus;
+
+  /// No description provided for @stageTitle_baselineEstablishment.
+  ///
+  /// In en, this message translates to:
+  /// **'Baseline Establishment'**
+  String get stageTitle_baselineEstablishment;
+
+  /// No description provided for @stageTitle_therapeuticRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'Therapeutic Ratio'**
+  String get stageTitle_therapeuticRatio;
+
+  /// No description provided for @stageTitle_maximumBenefit.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum Benefit'**
+  String get stageTitle_maximumBenefit;
+
+  /// No description provided for @stageTitle_coherenceBuilding.
+  ///
+  /// In en, this message translates to:
+  /// **'Coherence Building'**
+  String get stageTitle_coherenceBuilding;
+
+  /// No description provided for @stageTitle_mentalPreparation.
+  ///
+  /// In en, this message translates to:
+  /// **'Mental Preparation'**
+  String get stageTitle_mentalPreparation;
+
+  /// No description provided for @stageTitle_controlledActivation.
+  ///
+  /// In en, this message translates to:
+  /// **'Controlled Activation'**
+  String get stageTitle_controlledActivation;
+
+  /// No description provided for @stageTitle_heartRateNormalization.
+  ///
+  /// In en, this message translates to:
+  /// **'Heart Rate Normalization'**
+  String get stageTitle_heartRateNormalization;
+
+  /// No description provided for @stageTitle_recoveryAcceleration.
+  ///
+  /// In en, this message translates to:
+  /// **'Recovery Acceleration'**
+  String get stageTitle_recoveryAcceleration;
+
+  /// No description provided for @stageTitle_homeostasisRestoration.
+  ///
+  /// In en, this message translates to:
+  /// **'Homeostasis Restoration'**
+  String get stageTitle_homeostasisRestoration;
+
+  /// No description provided for @stageTitle_mindSettling.
+  ///
+  /// In en, this message translates to:
+  /// **'Mind Settling'**
+  String get stageTitle_mindSettling;
+
+  /// No description provided for @stageTitle_deeperAwareness.
+  ///
+  /// In en, this message translates to:
+  /// **'Deeper Awareness'**
+  String get stageTitle_deeperAwareness;
+
+  /// No description provided for @stageTitle_transitionToMeditation.
+  ///
+  /// In en, this message translates to:
+  /// **'Transition to Meditation'**
+  String get stageTitle_transitionToMeditation;
+
+  /// No description provided for @stageTitle_gentleIntroduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle Introduction'**
+  String get stageTitle_gentleIntroduction;
+
+  /// No description provided for @stageTitle_painGateControl.
+  ///
+  /// In en, this message translates to:
+  /// **'Pain Gate Control'**
+  String get stageTitle_painGateControl;
+
+  /// No description provided for @stageTitle_endorphinRelease.
+  ///
+  /// In en, this message translates to:
+  /// **'Endorphin Release'**
+  String get stageTitle_endorphinRelease;
+
+  /// No description provided for @stageTitle_heartRatePreparation.
+  ///
+  /// In en, this message translates to:
+  /// **'Heart Rate Preparation'**
+  String get stageTitle_heartRatePreparation;
+
+  /// No description provided for @stageTitle_peakCoherence.
+  ///
+  /// In en, this message translates to:
+  /// **'Peak Coherence'**
+  String get stageTitle_peakCoherence;
 }
 
 class _AppLocalizationsDelegate

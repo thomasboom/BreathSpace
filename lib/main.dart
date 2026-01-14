@@ -183,14 +183,12 @@ class BreathSpaceApp extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       home: seen
           ? settingsProvider.viewMode == ViewMode.list
-              ? const BreathingExerciseScreen()
-              : settingsProvider.viewMode == ViewMode.ai
-                  ? const GeminiExerciseScreen()
-                  : const QuizExerciseScreen()
+                ? const BreathingExerciseScreen()
+                : settingsProvider.viewMode == ViewMode.ai
+                ? const GeminiExerciseScreen()
+                : const QuizExerciseScreen()
           : const IntroScreen(),
-      routes: {
-        '/settings': (context) => const SettingsScreen(),
-      },
+      routes: {'/settings': (context) => const SettingsScreen()},
       onGenerateRoute: (settings) {
         if (settings.name?.startsWith('/exercise/') == true) {
           final exerciseId = settings.name?.substring('/exercise/'.length);
@@ -202,19 +200,23 @@ class BreathSpaceApp extends StatelessWidget {
             return PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) =>
                   ExerciseDetailScreen(exercise: exercise),
-              transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                const begin = Offset(1.0, 0.0);
-                const end = Offset.zero;
-                const curve = Curves.easeInOutCubic;
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                    const begin = Offset(1.0, 0.0);
+                    const end = Offset.zero;
+                    const curve = Curves.easeInOutCubic;
 
-                var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-                var offsetAnimation = animation.drive(tween);
+                    var tween = Tween(
+                      begin: begin,
+                      end: end,
+                    ).chain(CurveTween(curve: curve));
+                    var offsetAnimation = animation.drive(tween);
 
-                return SlideTransition(
-                  position: offsetAnimation,
-                  child: child,
-                );
-              },
+                    return SlideTransition(
+                      position: offsetAnimation,
+                      child: child,
+                    );
+                  },
               transitionDuration: const Duration(milliseconds: 400),
             );
           }
@@ -229,10 +231,12 @@ class BreathingExerciseScreen extends StatefulWidget {
   const BreathingExerciseScreen({super.key});
 
   @override
-  State<BreathingExerciseScreen> createState() => _BreathingExerciseScreenState();
+  State<BreathingExerciseScreen> createState() =>
+      _BreathingExerciseScreenState();
 }
 
-class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with TickerProviderStateMixin, WidgetsBindingObserver {
+class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
+    with TickerProviderStateMixin, WidgetsBindingObserver {
   final TextEditingController _searchController = TextEditingController();
   final FocusNode _searchFocusNode = FocusNode();
   List<BreathingExercise> _filteredExercises = [];
@@ -251,9 +255,12 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
     super.initState();
     WidgetsBinding.instance.addObserver(this); // Add lifecycle observer
 
-    _searchController.addListener(_performSearch);
+    _searchController.addListener(_onSearchChanged);
 
-    _pinnedExercisesProvider = Provider.of<PinnedExercisesProvider>(context, listen: false);
+    _pinnedExercisesProvider = Provider.of<PinnedExercisesProvider>(
+      context,
+      listen: false,
+    );
     _settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
 
     _pinnedExercisesProvider.addListener(_updatePinnedExercises);
@@ -276,10 +283,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
     _fadeAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _fadeController,
-      curve: Curves.easeOut,
-    ));
+    ).animate(CurvedAnimation(parent: _fadeController, curve: Curves.easeOut));
 
     // Start fade animation after a short delay
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -335,7 +339,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
     if (!mounted) return;
     setState(() {
       _pinnedExercises = breathingExercises
-          .where((exercise) => _pinnedExercisesProvider.isPinned(exercise.title))
+          .where((exercise) => _pinnedExercisesProvider.isPinned(exercise.id))
           .toList();
       _performSearch(); // Re-filter exercises after pinned list changes
     });
@@ -400,16 +404,28 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
     _updatePinnedExercises();
   }
 
+  void _onSearchChanged() {
+    if (!mounted) return;
+    _performSearch(AppLocalizations.of(context));
+  }
 
-  void _performSearch() {
+  void _performSearch([AppLocalizations? l10n]) {
     if (!mounted) return;
     final query = _searchController.text.toLowerCase();
 
     setState(() {
       _filteredExercises = breathingExercises.where((exercise) {
-        return exercise.title.toLowerCase().contains(query) ||
-            exercise.pattern.toLowerCase().contains(query) ||
-            exercise.intro.toLowerCase().contains(query);
+        if (l10n != null) {
+          final title = exercise.getLocalizedTitle(l10n).toLowerCase();
+          final intro = exercise.getLocalizedIntro(l10n).toLowerCase();
+          return title.contains(query) ||
+              exercise.pattern.toLowerCase().contains(query) ||
+              intro.contains(query);
+        } else {
+          return exercise.title.toLowerCase().contains(query) ||
+              exercise.pattern.toLowerCase().contains(query) ||
+              exercise.intro.toLowerCase().contains(query);
+        }
       }).toList();
       _selectedIndex = 0; // Reset selection when searching
     });
@@ -418,7 +434,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
   void _handleKeyEvent(KeyEvent event) {
     if (event is KeyDownEvent) {
       final isSearchFocused = _searchFocusNode.hasFocus;
-      
+
       // Handle navigation when not in search field
       if (!isSearchFocused) {
         switch (event.logicalKey) {
@@ -436,7 +452,8 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
             _focusSearch();
             break;
           case LogicalKeyboardKey.keyS:
-            if (HardwareKeyboard.instance.isMetaPressed || HardwareKeyboard.instance.isControlPressed) {
+            if (HardwareKeyboard.instance.isMetaPressed ||
+                HardwareKeyboard.instance.isControlPressed) {
               _openSettings();
             }
             break;
@@ -498,7 +515,8 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
   void _selectCurrentItem() {
     if (_searchController.text.isNotEmpty || _pinnedExercises.isEmpty) {
       // Only regular exercises
-      if (_filteredExercises.isNotEmpty && _selectedIndex < _filteredExercises.length) {
+      if (_filteredExercises.isNotEmpty &&
+          _selectedIndex < _filteredExercises.length) {
         final exercise = _filteredExercises[_selectedIndex];
         Navigator.push(
           context,
@@ -568,11 +586,20 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               SizedBox(height: 8),
-              _ShortcutItem(shortcutKey: '↑ / ↓', description: 'Navigate up/down'),
-              _ShortcutItem(shortcutKey: 'Enter / Space', description: 'Select exercise'),
+              _ShortcutItem(
+                shortcutKey: '↑ / ↓',
+                description: 'Navigate up/down',
+              ),
+              _ShortcutItem(
+                shortcutKey: 'Enter / Space',
+                description: 'Select exercise',
+              ),
               _ShortcutItem(shortcutKey: '/', description: 'Focus search'),
               _ShortcutItem(shortcutKey: 'Escape', description: 'Exit search'),
-              _ShortcutItem(shortcutKey: 'Ctrl/Cmd + S', description: 'Open settings'),
+              _ShortcutItem(
+                shortcutKey: 'Ctrl/Cmd + S',
+                description: 'Open settings',
+              ),
               _ShortcutItem(shortcutKey: '?', description: 'Show this help'),
             ],
           ),
@@ -605,426 +632,538 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
       onKeyEvent: _handleKeyEvent,
       child: Scaffold(
         appBar: AppBar(
-        titleSpacing: 0,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 0,
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
-          child: Container(
-            height: 48,
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 8,
-                  offset: const Offset(0, 2),
-                ),
-              ],
+          titleSpacing: 0,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          elevation: 0,
+          title: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+              vertical: 12.0,
             ),
-            child: TextField(
-              controller: _searchController,
-              focusNode: _searchFocusNode,
-              decoration: InputDecoration(
-                hintText: AppLocalizations.of(context).searchHint,
-                border: InputBorder.none,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                hintStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
+            child: Container(
+              height: 48,
+              decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: TextField(
+                controller: _searchController,
+                focusNode: _searchFocusNode,
+                decoration: InputDecoration(
+                  hintText: AppLocalizations.of(context).searchHint,
+                  border: InputBorder.none,
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 14,
+                  ),
+                  hintStyle: TextStyle(
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.onSurface.withValues(alpha: 0.5),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  suffixIcon: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.help_outline_outlined,
+                          size: 24,
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.onSurface.withValues(alpha: 0.7),
+                        ),
+                        onPressed: _showKeyboardShortcuts,
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.settings_outlined,
+                          size: 24,
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.onSurface.withValues(alpha: 0.7),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SettingsScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
                 ),
-                suffixIcon: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        Icons.help_outline_outlined,
-                        size: 24,
-                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
-                      ),
-                      onPressed: _showKeyboardShortcuts,
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.settings_outlined,
-                        size: 24,
-                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const SettingsScreen()),
-                        );
-                      },
-                    ),
-                  ],
-                ),
+                cursorColor: Theme.of(context).colorScheme.primary,
+                cursorWidth: 2,
               ),
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onSurface,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-              cursorColor: Theme.of(context).colorScheme.primary,
-              cursorWidth: 2,
             ),
           ),
         ),
-      ),
-      body: FadeTransition(
-        opacity: _fadeAnimation,
-        child: Column(
-          children: [
-            // Add spacing between search bar and content only when there are pinned exercises
-            if (_pinnedExercises.isNotEmpty && _searchController.text.isEmpty)
-              const SizedBox(height: 16), // Spacing when pinned exercises are shown
-            if (_pinnedExercises.isNotEmpty && _searchController.text.isEmpty)
-            SizedBox(
-              height: 160,
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final screenWidth = MediaQuery.of(context).size.width;
-                  final availableWidth = screenWidth - 32; // Subtract horizontal padding (16 + 16)
-                  final totalMargin = (_pinnedExercises.length - 1) * 8; // Margin between items (4 + 4 per gap)
-                  final itemWidth = (availableWidth - totalMargin) / _pinnedExercises.length;
+        body: FadeTransition(
+          opacity: _fadeAnimation,
+          child: Column(
+            children: [
+              // Add spacing between search bar and content only when there are pinned exercises
+              if (_pinnedExercises.isNotEmpty && _searchController.text.isEmpty)
+                const SizedBox(
+                  height: 16,
+                ), // Spacing when pinned exercises are shown
+              if (_pinnedExercises.isNotEmpty && _searchController.text.isEmpty)
+                SizedBox(
+                  height: 160,
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      final screenWidth = MediaQuery.of(context).size.width;
+                      final availableWidth =
+                          screenWidth -
+                          32; // Subtract horizontal padding (16 + 16)
+                      final totalMargin =
+                          (_pinnedExercises.length - 1) *
+                          8; // Margin between items (4 + 4 per gap)
+                      final itemWidth =
+                          (availableWidth - totalMargin) /
+                          _pinnedExercises.length;
 
-                  return ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    itemCount: _pinnedExercises.length,
-                    itemBuilder: (context, index) {
-                      final exercise = _pinnedExercises[index];
-                      return Dismissible(
-                        key: Key('pinned_${exercise.title}'),
-                        direction: DismissDirection.horizontal,
-                        background: Container(
-                          width: itemWidth,
-                          margin: EdgeInsets.only(
-                            left: index == 0 ? 0 : 4.0,
-                            right: index == _pinnedExercises.length - 1 ? 0 : 4.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          alignment: Alignment.centerLeft,
-                          padding: const EdgeInsets.only(left: 16.0),
-                          child: Icon(
-                            Icons.push_pin_outlined,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          ),
-                        ),
-                        secondaryBackground: Container(
-                          width: itemWidth,
-                          margin: EdgeInsets.only(
-                            left: index == 0 ? 0 : 4.0,
-                            right: index == _pinnedExercises.length - 1 ? 0 : 4.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          alignment: Alignment.centerRight,
-                          padding: const EdgeInsets.only(right: 16.0),
-                          child: Icon(
-                            Icons.push_pin_outlined,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          ),
-                        ),
-                        confirmDismiss: (direction) async {
-                          _pinnedExercisesProvider.togglePin(exercise.title);
-                          return false; // Don't actually dismiss the item
-                        },
-                        child: Container(
-                          width: itemWidth, // Divide space equally among all pinned exercises
-                          margin: EdgeInsets.only(
-                            left: index == 0 ? 0 : 4.0,
-                            right: index == _pinnedExercises.length - 1 ? 0 : 4.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: _selectedIndex == index && _listFocusNode.hasFocus
-                                ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
-                                : Theme.of(context).cardColor,
-                            borderRadius: BorderRadius.circular(20),
-                            border: _selectedIndex == index && _listFocusNode.hasFocus
-                                ? Border.all(
-                                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.5),
-                                    width: 2,
-                                  )
-                                : null,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.08),
-                                blurRadius: 12,
-                                offset: const Offset(0, 4),
+                      return ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        itemCount: _pinnedExercises.length,
+                        itemBuilder: (context, index) {
+                          final exercise = _pinnedExercises[index];
+                          return Dismissible(
+                            key: Key('pinned_${exercise.id}'),
+                            direction: DismissDirection.horizontal,
+                            background: Container(
+                              width: itemWidth,
+                              margin: EdgeInsets.only(
+                                left: index == 0 ? 0 : 4.0,
+                                right: index == _pinnedExercises.length - 1
+                                    ? 0
+                                    : 4.0,
                               ),
-                            ],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 36,
-                                  height: 36,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                      colors: [
-                                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
-                                      ],
-                                    ),
-                                  ),
-                                  child: Icon(
-                                    Icons.spa_outlined,
-                                    size: 18,
-                                    color: Theme.of(context).colorScheme.primary,
-                                  ),
-                                ),
-                                const SizedBox(height: 8),
-                                Flexible(
-                                  child: Text(
-                                    exercise.title,
-                                    style: TextStyle(
-                                      color: Theme.of(context).colorScheme.onSurface,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.1,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                                const SizedBox(height: 2),
-                                Text(
-                                  exercise.hasStages ? _getTotalDuration(exercise) : exercise.duration,
-                                  style: TextStyle(
-                                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                const SizedBox(height: 8),
-                                SizedBox(
-                                  width: double.infinity,
-                                  height: 28,
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => ExerciseDetailScreen(exercise: exercise),
-                                        ),
-                                      );
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Theme.of(context).colorScheme.primary,
-                                      foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                                      elevation: 0,
-                                      shadowColor: Colors.transparent,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      padding: EdgeInsets.zero,
-                                    ),
-                                    child: Text(
-                                      AppLocalizations.of(context).start,
-                                      style: const TextStyle(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w600,
-                                        letterSpacing: 0.5,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
-            ),
-          Expanded(
-            child: _filteredExercises.isEmpty && _searchController.text.isNotEmpty
-                ? Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                                Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
-                              ],
-                            ),
-                          ),
-                          child: Icon(
-                            Icons.search_off_outlined,
-                            size: 32,
-                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.6),
-                          ),
-                        ),
-                        const SizedBox(height: 24),
-                        Text(
-                          AppLocalizations.of(context).noExercisesFound,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.8),
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'Try adjusting your search terms',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  )
-                : ListView.builder(
-                    itemCount: _filteredExercises.length,
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 16.0),
-                    itemBuilder: (context, index) {
-                      final exercise = _filteredExercises[index];
-                      return Dismissible(
-                        key: Key(exercise.title),
-                        direction: DismissDirection.horizontal,
-                        background: Container(
-                          margin: const EdgeInsets.only(bottom: 12.0),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          alignment: Alignment.centerLeft,
-                          padding: const EdgeInsets.only(left: 20.0),
-                          child: Icon(
-                            _pinnedExercisesProvider.isPinned(exercise.title) ? Icons.push_pin : Icons.push_pin_outlined,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                        ),
-                        secondaryBackground: Container(
-                          margin: const EdgeInsets.only(bottom: 12.0),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          alignment: Alignment.centerRight,
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            _pinnedExercisesProvider.isPinned(exercise.title) ? Icons.push_pin : Icons.push_pin_outlined,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                        ),
-                        confirmDismiss: (direction) async {
-                          _pinnedExercisesProvider.togglePin(exercise.title);
-                          return false; // Don't actually dismiss the item
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(bottom: 12.0),
-                          decoration: BoxDecoration(
-                            color: _isItemSelected(index) && _listFocusNode.hasFocus
-                                ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
-                                : Theme.of(context).cardColor,
-                            borderRadius: BorderRadius.circular(16),
-                            border: _isItemSelected(index) && _listFocusNode.hasFocus
-                                ? Border.all(
-                                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.5),
-                                    width: 2,
-                                  )
-                                : null,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.04),
-                                blurRadius: 8,
-                                offset: const Offset(0, 2),
+                              decoration: BoxDecoration(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                            ],
-                          ),
-                          child: ListTile(
-                            contentPadding: const EdgeInsets.all(20.0),
-                            title: Text(
-                              exercise.title,
-                              style: TextStyle(
-                                color: Theme.of(context).colorScheme.onSurface,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: -0.2,
+                              alignment: Alignment.centerLeft,
+                              padding: const EdgeInsets.only(left: 16.0),
+                              child: Icon(
+                                Icons.push_pin_outlined,
+                                color: Theme.of(context).colorScheme.primary,
+                                size: 20,
                               ),
                             ),
-                            subtitle: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(height: 4),
-                                Text(
-                                  exercise.hasStages
-                                      ? '${AppLocalizations.of(context).progressive} • ${_getTotalDuration(exercise)}'
-                                      : '${exercise.pattern} • ${exercise.duration}',
-                                  style: TextStyle(
-                                    color: Theme.of(context).colorScheme.primary,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 6),
-                                Text(
-                                  exercise.intro,
-                                  style: TextStyle(
-                                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
-                                    fontSize: 14,
-                                    height: 1.4,
-                                  ),
-                                ),
-                              ],
+                            secondaryBackground: Container(
+                              width: itemWidth,
+                              margin: EdgeInsets.only(
+                                left: index == 0 ? 0 : 4.0,
+                                right: index == _pinnedExercises.length - 1
+                                    ? 0
+                                    : 4.0,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              alignment: Alignment.centerRight,
+                              padding: const EdgeInsets.only(right: 16.0),
+                              child: Icon(
+                                Icons.push_pin_outlined,
+                                color: Theme.of(context).colorScheme.primary,
+                                size: 20,
+                              ),
                             ),
-                            isThreeLine: true,
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              size: 16,
-                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.3),
-                            ),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ExerciseDetailScreen(exercise: exercise),
-                                ),
-                              );
+                            confirmDismiss: (direction) async {
+                              _pinnedExercisesProvider.togglePin(exercise.id);
+                              return false; // Don't actually dismiss the item
                             },
-                          ),
-                        ),
+                            child: Container(
+                              width:
+                                  itemWidth, // Divide space equally among all pinned exercises
+                              margin: EdgeInsets.only(
+                                left: index == 0 ? 0 : 4.0,
+                                right: index == _pinnedExercises.length - 1
+                                    ? 0
+                                    : 4.0,
+                              ),
+                              decoration: BoxDecoration(
+                                color:
+                                    _selectedIndex == index &&
+                                        _listFocusNode.hasFocus
+                                    ? Theme.of(context).colorScheme.primary
+                                          .withValues(alpha: 0.1)
+                                    : Theme.of(context).cardColor,
+                                borderRadius: BorderRadius.circular(20),
+                                border:
+                                    _selectedIndex == index &&
+                                        _listFocusNode.hasFocus
+                                    ? Border.all(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary
+                                            .withValues(alpha: 0.5),
+                                        width: 2,
+                                      )
+                                    : null,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.08),
+                                    blurRadius: 12,
+                                    offset: const Offset(0, 4),
+                                  ),
+                                ],
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: 36,
+                                      height: 36,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [
+                                            Theme.of(context)
+                                                .colorScheme
+                                                .primary
+                                                .withValues(alpha: 0.1),
+                                            Theme.of(context)
+                                                .colorScheme
+                                                .primary
+                                                .withValues(alpha: 0.05),
+                                          ],
+                                        ),
+                                      ),
+                                      child: Icon(
+                                        Icons.spa_outlined,
+                                        size: 18,
+                                        color: Theme.of(
+                                          context,
+                                        ).colorScheme.primary,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Flexible(
+                                      child: Text(
+                                        exercise.getLocalizedTitle(
+                                          AppLocalizations.of(context),
+                                        ),
+                                        style: TextStyle(
+                                          color: Theme.of(
+                                            context,
+                                          ).colorScheme.onSurface,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          height: 1.1,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 2),
+                                    Text(
+                                      exercise.hasStages
+                                          ? _getTotalDuration(exercise)
+                                          : exercise.duration,
+                                      style: TextStyle(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onSurface
+                                            .withValues(alpha: 0.6),
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    const SizedBox(height: 8),
+                                    SizedBox(
+                                      width: double.infinity,
+                                      height: 28,
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ExerciseDetailScreen(
+                                                    exercise: exercise,
+                                                  ),
+                                            ),
+                                          );
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Theme.of(
+                                            context,
+                                          ).colorScheme.primary,
+                                          foregroundColor: Theme.of(
+                                            context,
+                                          ).colorScheme.onPrimary,
+                                          elevation: 0,
+                                          shadowColor: Colors.transparent,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                          ),
+                                          padding: EdgeInsets.zero,
+                                        ),
+                                        child: Text(
+                                          AppLocalizations.of(context).start,
+                                          style: const TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w600,
+                                            letterSpacing: 0.5,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
                       );
                     },
                   ),
+                ),
+              Expanded(
+                child:
+                    _filteredExercises.isEmpty &&
+                        _searchController.text.isNotEmpty
+                    ? Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    Theme.of(context).colorScheme.primary
+                                        .withValues(alpha: 0.1),
+                                    Theme.of(context).colorScheme.primary
+                                        .withValues(alpha: 0.05),
+                                  ],
+                                ),
+                              ),
+                              child: Icon(
+                                Icons.search_off_outlined,
+                                size: 32,
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.6),
+                              ),
+                            ),
+                            const SizedBox(height: 24),
+                            Text(
+                              AppLocalizations.of(context).noExercisesFound,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.onSurface.withValues(alpha: 0.8),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Try adjusting your search terms',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.onSurface.withValues(alpha: 0.6),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      )
+                    : ListView.builder(
+                        itemCount: _filteredExercises.length,
+                        padding: const EdgeInsets.only(
+                          left: 20.0,
+                          right: 20.0,
+                          top: 16.0,
+                        ),
+                        itemBuilder: (context, index) {
+                          final exercise = _filteredExercises[index];
+                          return Dismissible(
+                            key: Key(exercise.id),
+                            direction: DismissDirection.horizontal,
+                            background: Container(
+                              margin: const EdgeInsets.only(bottom: 12.0),
+                              decoration: BoxDecoration(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              alignment: Alignment.centerLeft,
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: Icon(
+                                _pinnedExercisesProvider.isPinned(exercise.id)
+                                    ? Icons.push_pin
+                                    : Icons.push_pin_outlined,
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                            ),
+                            secondaryBackground: Container(
+                              margin: const EdgeInsets.only(bottom: 12.0),
+                              decoration: BoxDecoration(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              alignment: Alignment.centerRight,
+                              padding: const EdgeInsets.only(right: 20.0),
+                              child: Icon(
+                                _pinnedExercisesProvider.isPinned(exercise.id)
+                                    ? Icons.push_pin
+                                    : Icons.push_pin_outlined,
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                            ),
+                            confirmDismiss: (direction) async {
+                              _pinnedExercisesProvider.togglePin(exercise.id);
+                              return false; // Don't actually dismiss the item
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 12.0),
+                              decoration: BoxDecoration(
+                                color:
+                                    _isItemSelected(index) &&
+                                        _listFocusNode.hasFocus
+                                    ? Theme.of(context).colorScheme.primary
+                                          .withValues(alpha: 0.1)
+                                    : Theme.of(context).cardColor,
+                                borderRadius: BorderRadius.circular(16),
+                                border:
+                                    _isItemSelected(index) &&
+                                        _listFocusNode.hasFocus
+                                    ? Border.all(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary
+                                            .withValues(alpha: 0.5),
+                                        width: 2,
+                                      )
+                                    : null,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.04),
+                                    blurRadius: 8,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
+                              ),
+                              child: ListTile(
+                                contentPadding: const EdgeInsets.all(20.0),
+                                title: Text(
+                                  exercise.getLocalizedTitle(
+                                    AppLocalizations.of(context),
+                                  ),
+                                  style: TextStyle(
+                                    color: Theme.of(
+                                      context,
+                                    ).colorScheme.onSurface,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: -0.2,
+                                  ),
+                                ),
+                                subtitle: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      exercise.hasStages
+                                          ? '${AppLocalizations.of(context).progressive} • ${_getTotalDuration(exercise)}'
+                                          : '${exercise.pattern} • ${exercise.duration}',
+                                      style: TextStyle(
+                                        color: Theme.of(
+                                          context,
+                                        ).colorScheme.primary,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Text(
+                                      exercise.getLocalizedIntro(
+                                        AppLocalizations.of(context),
+                                      ),
+                                      style: TextStyle(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onSurface
+                                            .withValues(alpha: 0.7),
+                                        fontSize: 14,
+                                        height: 1.4,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                isThreeLine: true,
+                                trailing: Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 16,
+                                  color: Theme.of(context).colorScheme.onSurface
+                                      .withValues(alpha: 0.3),
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          ExerciseDetailScreen(
+                                            exercise: exercise,
+                                          ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+              ),
+            ],
           ),
-        ],
         ),
-      ),
       ),
     );
   }
@@ -1034,10 +1173,7 @@ class _ShortcutItem extends StatelessWidget {
   final String shortcutKey;
   final String description;
 
-  const _ShortcutItem({
-    required this.shortcutKey,
-    required this.description,
-  });
+  const _ShortcutItem({required this.shortcutKey, required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -1048,7 +1184,9 @@ class _ShortcutItem extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+              color: Theme.of(
+                context,
+              ).colorScheme.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(4),
             ),
             child: Text(
