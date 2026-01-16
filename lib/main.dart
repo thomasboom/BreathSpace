@@ -1071,17 +1071,6 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                                           .withValues(alpha: 0.1)
                                     : Theme.of(context).cardColor,
                                 borderRadius: BorderRadius.circular(16),
-                                border:
-                                    _isItemSelected(index) &&
-                                        _listFocusNode.hasFocus
-                                    ? Border.all(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary
-                                            .withValues(alpha: 0.5),
-                                        width: 2,
-                                      )
-                                    : null,
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withValues(alpha: 0.04),
