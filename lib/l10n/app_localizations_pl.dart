@@ -18,7 +18,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get progressive => 'Progresywny';
 
   @override
-  String get stretching => 'Stretching';
+  String get stretching => 'Rozciąganie';
 
   @override
   String get settings => 'Ustawienia';
@@ -465,11 +465,12 @@ class AppLocalizationsPl extends AppLocalizations {
       'A sequence to optimize heart rate variability and emotional balance.';
 
   @override
-  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+  String get exerciseTitle_officeBloodFlow =>
+      'Odzyskiwanie Przepływu Krwi w Biurze';
 
   @override
   String get exerciseIntro_officeBloodFlow =>
-      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+      'Przyjazne biurku rozciągania poprawiające krążenie po długich godzinach siedzenia.';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Nervous System Balance';
@@ -566,32 +567,32 @@ class AppLocalizationsPl extends AppLocalizations {
   String get stageTitle_peakCoherence => 'Peak Coherence';
 
   @override
-  String get stageTitle_shoulderRelease => 'Shoulder Release';
+  String get stageTitle_shoulderRelease => 'Zwolnienie Barków';
 
   @override
-  String get stageTitle_neckStretch => 'Neck Stretch';
+  String get stageTitle_neckStretch => 'Rozciąganie Szyi';
 
   @override
-  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+  String get phase_instruct_shouldersUp => 'Unieś barki w kierunku uszu';
 
   @override
-  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+  String get phase_instruct_shouldersDown => 'Opuść barki, zwolnij napięcie';
 
   @override
-  String get phase_instruct_relaxShoulders => 'Stay in position';
+  String get phase_instruct_relaxShoulders => 'Pozostań w pozycji';
 
   @override
-  String get phase_instruct_relaxCompletely => 'Relax completely';
+  String get phase_instruct_relaxCompletely => 'Zrelaksuj się całkowicie';
 
   @override
-  String get phase_instruct_tiltRight => 'Tilt head to the right';
+  String get phase_instruct_tiltRight => 'Przechyl głowę w prawo';
 
   @override
-  String get phase_instruct_holdStretch => 'Hold the stretch';
+  String get phase_instruct_holdStretch => 'Utrzymaj rozciąganie';
 
   @override
-  String get phase_instruct_returnCenter => 'Return to center';
+  String get phase_instruct_returnCenter => 'Wróć do środka';
 
   @override
-  String get phase_instruct_relaxNeck => 'Relax neck muscles';
+  String get phase_instruct_relaxNeck => 'Rozluźnij mięśnie szyi';
 }

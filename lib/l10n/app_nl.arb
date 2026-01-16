@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pijnpoort Controle",
   "stageTitle_endorphinRelease": "Endorfine Vrijzetting",
   "stageTitle_heartRatePreparation": "Hartslag Voorbereiding",
-  "stageTitle_peakCoherence": "Piek Cohesie"
+  "stageTitle_peakCoherence": "Piek Cohesie",
+  "stretching": "Rekking",
+  "exerciseTitle_officeBloodFlow": "Kantoor Bloedstroom Herstel",
+  "exerciseIntro_officeBloodFlow": "Bureauvriendelijke rekoefeningen om de circulatie te verbeteren na lange uren zitten.",
+  "stageTitle_shoulderRelease": "Schouder Loslaten",
+  "stageTitle_neckStretch": "Nek Rekkking",
+  "phase_instruct_shouldersUp": "Schouders naar de oren tillen",
+  "phase_instruct_shouldersDown": "Schouders laten zakken, spanning loslaten",
+  "phase_instruct_relaxShoulders": "Blijf in positie",
+  "phase_instruct_relaxCompletely": "Volledig ontspannen",
+  "phase_instruct_tiltRight": "Hoofd naar rechts kantelen",
+  "phase_instruct_holdStretch": "De rekking vasthouden",
+  "phase_instruct_returnCenter": "Terug naar het midden",
+  "phase_instruct_relaxNeck": "Nek spieren ontspannen"
 }

@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "खिंचाव",
+  "exerciseTitle_officeBloodFlow": "कार्यालय रक्त प्रवाह पुनर्प्राप्ति",
+  "exerciseIntro_officeBloodFlow": "लंबे समय तक बैठने के बाद परिसंचरण में सुधार के लिए डेस्क-अनुकूल खिंचाव।",
+  "stageTitle_shoulderRelease": "कंधे की रिहाई",
+  "stageTitle_neckStretch": "गर्दन का खिंचाव",
+  "phase_instruct_shouldersUp": "कानों की ओर कंधे उठाएं",
+  "phase_instruct_shouldersDown": "कंधे गिराएं, तनाव छोड़ें",
+  "phase_instruct_relaxShoulders": "स्थिति में रहें",
+  "phase_instruct_relaxCompletely": "पूरी तरह आराम करें",
+  "phase_instruct_tiltRight": "सिर दाहिनी ओर झुकाएं",
+  "phase_instruct_holdStretch": "खिंचाव पकड़े रखें",
+  "phase_instruct_returnCenter": "केंद्र में लौटें",
+  "phase_instruct_relaxNeck": "गर्दन की मांसपेशियों को आराम दें"
 }

@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "Giãn cơ",
+  "exerciseTitle_officeBloodFlow": "Phục hồi Lưu thông Máu Văn phòng",
+  "exerciseIntro_officeBloodFlow": "Các bài giãn cơ thân thiện với bàn để cải thiện tuần hoàn sau nhiều giờ ngồi.",
+  "stageTitle_shoulderRelease": "Giải phóng Vai",
+  "stageTitle_neckStretch": "Giãn cổ",
+  "phase_instruct_shouldersUp": "Nâng vai lên gần tai",
+  "phase_instruct_shouldersDown": "Hạ vai xuống, giải phóng căng thẳng",
+  "phase_instruct_relaxShoulders": "Giữ nguyên tư thế",
+  "phase_instruct_relaxCompletely": "Thư giãn hoàn toàn",
+  "phase_instruct_tiltRight": "Nghiêng đầu sang phải",
+  "phase_instruct_holdStretch": "Giữ động tác giãn",
+  "phase_instruct_returnCenter": "Trở về tâm",
+  "phase_instruct_relaxNeck": "Thư giãn cơ cổ"
 }

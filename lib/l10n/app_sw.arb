@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "Mazoezi ya kunyanyua",
+  "exerciseTitle_officeBloodFlow": "Urekebishaji wa Mtirisho wa Damu wa Ofisi",
+  "exerciseIntro_officeBloodFlow": "Mazoezi ya kunyanyua ya mezani kuboresha mzunguko baada ya muda mwingi wa kukaa.",
+  "stageTitle_shoulderRelease": "Ukombozi wa Koti",
+  "stageTitle_neckStretch": "Kunyanyua Shingo",
+  "phase_instruct_shouldersUp": "Inua mikono kuelekea masikio",
+  "phase_instruct_shouldersDown": "Weka mikono chini,achilia msukano",
+  "phase_instruct_relaxShoulders": "Baki katika nafasi",
+  "phase_instruct_relaxCompletely": "Tulia kabisa",
+  "phase_instruct_tiltRight": "Pisha kichwa kulia",
+  "phase_instruct_holdStretch": "Shikiza mkunato",
+  "phase_instruct_returnCenter": "Rudi katikati",
+  "phase_instruct_relaxNeck": "Tulia misuli ya shingo"
 }

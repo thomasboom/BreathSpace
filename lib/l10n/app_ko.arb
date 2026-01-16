@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "스트레칭",
+  "exerciseTitle_officeBloodFlow": "사무실 혈액 흐름 회복",
+  "exerciseIntro_officeBloodFlow": "오랜 시간 앉아 있었던 후 혈액 순환을 개선하기 위한 책상Friendly 스트레칭.",
+  "stageTitle_shoulderRelease": "어깨 릴리스",
+  "stageTitle_neckStretch": "목 스트레칭",
+  "phase_instruct_shouldersUp": "귀를 향해 어깨를 들어올리세요",
+  "phase_instruct_shouldersDown": "어깨를 내리고 긴장을 해소하세요",
+  "phase_instruct_relaxShoulders": "자세를 유지하세요",
+  "phase_instruct_relaxCompletely": "완전히relax하세요",
+  "phase_instruct_tiltRight": "머리를 오른쪽으로 기울이세요",
+  "phase_instruct_holdStretch": "스트레칭을 유지하세요",
+  "phase_instruct_returnCenter": "중심으로 돌아가세요",
+  "phase_instruct_relaxNeck": "목 근육을relax하세요"
 }

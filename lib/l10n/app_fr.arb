@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Contrôle de la Porte de la Douleur",
   "stageTitle_endorphinRelease": "Libération d'Endorphines",
   "stageTitle_heartRatePreparation": "Préparation du Rythme Cardiaque",
-  "stageTitle_peakCoherence": "Cohérence de Pointe"
+  "stageTitle_peakCoherence": "Cohérence de Pointe",
+  "stretching": "Étirements",
+  "exerciseTitle_officeBloodFlow": "Récupération du Flux Sanguin au Bureau",
+  "exerciseIntro_officeBloodFlow": "Étirements adaptés au bureau pour améliorer la circulation après de longues heures assises.",
+  "stageTitle_shoulderRelease": "Libération des Épaules",
+  "stageTitle_neckStretch": "Étirement du Cou",
+  "phase_instruct_shouldersUp": "Lever les épaules vers les oreilles",
+  "phase_instruct_shouldersDown": "Baisser les épaules, libérer la tension",
+  "phase_instruct_relaxShoulders": "Rester en position",
+  "phase_instruct_relaxCompletely": "Se détendre complètement",
+  "phase_instruct_tiltRight": "Incliner la tête vers la droite",
+  "phase_instruct_holdStretch": "Maintenir l'étirement",
+  "phase_instruct_returnCenter": "Revenir au centre",
+  "phase_instruct_relaxNeck": "Détendre les muscles du cou"
 }

@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "Stretching",
+  "exerciseTitle_officeBloodFlow": "Recupero del Flusso Sanguigno in Ufficio",
+  "exerciseIntro_officeBloodFlow": "Stretching da scrivania per migliorare la circolazione dopo lunghe ore seduti.",
+  "stageTitle_shoulderRelease": "Rilascio delle Spalle",
+  "stageTitle_neckStretch": "Stretching del Collo",
+  "phase_instruct_shouldersUp": "Alza le spalle verso le orecchie",
+  "phase_instruct_shouldersDown": "Abbassa le spalle, rilascia la tensione",
+  "phase_instruct_relaxShoulders": "Resta in posizione",
+  "phase_instruct_relaxCompletely": "Rilassati completamente",
+  "phase_instruct_tiltRight": "Inclina la testa a destra",
+  "phase_instruct_holdStretch": "Mantieni lo stretching",
+  "phase_instruct_returnCenter": "Torna al centro",
+  "phase_instruct_relaxNeck": "Rilassa i muscoli del collo"
 }

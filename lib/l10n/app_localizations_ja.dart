@@ -18,7 +18,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get progressive => 'プログレッシブ';
 
   @override
-  String get stretching => 'Stretching';
+  String get stretching => 'ストレッチ';
 
   @override
   String get settings => '設定';
@@ -442,11 +442,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get exerciseIntro_cardioCoherence => '心拍変動性と感情のバランスを最適化するためのシーケンス。';
 
   @override
-  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+  String get exerciseTitle_officeBloodFlow => 'オフィス血流回復';
 
   @override
   String get exerciseIntro_officeBloodFlow =>
-      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+      '長時間座った後の血流を改善するためのデスクriendlyなストレッチ。';
 
   @override
   String get stageTitle_nervousSystemBalance => '神経系のバランス';
@@ -542,32 +542,32 @@ class AppLocalizationsJa extends AppLocalizations {
   String get stageTitle_peakCoherence => 'ピークコヒーレンス';
 
   @override
-  String get stageTitle_shoulderRelease => 'Shoulder Release';
+  String get stageTitle_shoulderRelease => '肩のリリース';
 
   @override
-  String get stageTitle_neckStretch => 'Neck Stretch';
+  String get stageTitle_neckStretch => '首のストレッチ';
 
   @override
-  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+  String get phase_instruct_shouldersUp => '耳を肩に近づけるように肩を上げる';
 
   @override
-  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+  String get phase_instruct_shouldersDown => '肩を下げて緊張を解く';
 
   @override
-  String get phase_instruct_relaxShoulders => 'Stay in position';
+  String get phase_instruct_relaxShoulders => '今の姿勢でいる';
 
   @override
-  String get phase_instruct_relaxCompletely => 'Relax completely';
+  String get phase_instruct_relaxCompletely => '完全にリラックスする';
 
   @override
-  String get phase_instruct_tiltRight => 'Tilt head to the right';
+  String get phase_instruct_tiltRight => '頭を右に傾ける';
 
   @override
-  String get phase_instruct_holdStretch => 'Hold the stretch';
+  String get phase_instruct_holdStretch => 'ストレッチを続ける';
 
   @override
-  String get phase_instruct_returnCenter => 'Return to center';
+  String get phase_instruct_returnCenter => '中心に戻る';
 
   @override
-  String get phase_instruct_relaxNeck => 'Relax neck muscles';
+  String get phase_instruct_relaxNeck => '首の筋肉リラックス';
 }

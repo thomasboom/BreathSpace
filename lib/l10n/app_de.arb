@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Schmerztor-Kontrolle",
   "stageTitle_endorphinRelease": "Endorphin-Freisetzung",
   "stageTitle_heartRatePreparation": "Herzfrequenz-Vorbereitung",
-  "stageTitle_peakCoherence": "Spitzen-Kohärenz"
+  "stageTitle_peakCoherence": "Spitzen-Kohärenz",
+  "stretching": "Dehnen",
+  "exerciseTitle_officeBloodFlow": "Büro-Blutfluss-Erholung",
+  "exerciseIntro_officeBloodFlow": "Bürofreundliche Dehnübungen zur Verbesserung der Durchblutung nach langen Stunden des Sitzens.",
+  "stageTitle_shoulderRelease": "Schulterentlastung",
+  "stageTitle_neckStretch": "Nacken-Dehnung",
+  "phase_instruct_shouldersUp": "Schultern zu den Ohren anheben",
+  "phase_instruct_shouldersDown": "Schultern senken, Spannung lösen",
+  "phase_instruct_relaxShoulders": "In der Position bleiben",
+  "phase_instruct_relaxCompletely": "Vollständig entspannen",
+  "phase_instruct_tiltRight": "Kopf nach rechts neigen",
+  "phase_instruct_holdStretch": "Dehnung halten",
+  "phase_instruct_returnCenter": "Zurück zur Mitte",
+  "phase_instruct_relaxNeck": "Nackenmuskeln entspannen"
 }

@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "מתיחות",
+  "exerciseTitle_officeBloodFlow": "החזרת זרימת הדם במשרד",
+  "exerciseIntro_officeBloodFlow": "מתיחות ידידותיות לשולחן לשיפור הדם לאחר שעות ארוכות של ישיבה.",
+  "stageTitle_shoulderRelease": "שחרור כתפיים",
+  "stageTitle_neckStretch": "מתיחת צוואר",
+  "phase_instruct_shouldersUp": "הרם כתפיים לאוזניים",
+  "phase_instruct_shouldersDown": "הורד כתפיים, שחרר מתח",
+  "phase_instruct_relaxShoulders": "הישאר במצב",
+  "phase_instruct_relaxCompletely": "הירגע לחלוטין",
+  "phase_instruct_tiltRight": "הטה ראש ימינה",
+  "phase_instruct_holdStretch": "החזק את המתיחה",
+  "phase_instruct_returnCenter": "חזור למרכז",
+  "phase_instruct_relaxNeck": "הרגע שרירי צוואר"
 }

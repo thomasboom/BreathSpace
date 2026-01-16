@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Controle do Portão da Dor",
   "stageTitle_endorphinRelease": "Liberação de Endorfinas",
   "stageTitle_heartRatePreparation": "Preparação da Frequência Cardíaca",
-  "stageTitle_peakCoherence": "Coesão de Pico"
+  "stageTitle_peakCoherence": "Coesão de Pico",
+  "stretching": "Alongamento",
+  "exerciseTitle_officeBloodFlow": "Recuperação do Fluxo Sanguíneo no Escritório",
+  "exerciseIntro_officeBloodFlow": "Alongamentos amigos da mesa para melhorar a circulação após longas horas sentado.",
+  "stageTitle_shoulderRelease": "Liberação dos Ombros",
+  "stageTitle_neckStretch": "Alongamento do Pescoço",
+  "phase_instruct_shouldersUp": "Levante os ombros em direção às orelhas",
+  "phase_instruct_shouldersDown": "Abaixe os ombros, libere a tensão",
+  "phase_instruct_relaxShoulders": "Fique na posição",
+  "phase_instruct_relaxCompletely": "Relaxe completamente",
+  "phase_instruct_tiltRight": "Incline a cabeça para a direita",
+  "phase_instruct_holdStretch": "Mantenha o alongamento",
+  "phase_instruct_returnCenter": "Volte ao centro",
+  "phase_instruct_relaxNeck": "Relaxe os músculos do pescoço"
 }

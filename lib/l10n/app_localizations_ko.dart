@@ -18,7 +18,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get progressive => '점진적';
 
   @override
-  String get stretching => 'Stretching';
+  String get stretching => '스트레칭';
 
   @override
   String get settings => '설정';
@@ -462,11 +462,11 @@ class AppLocalizationsKo extends AppLocalizations {
       'A sequence to optimize heart rate variability and emotional balance.';
 
   @override
-  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+  String get exerciseTitle_officeBloodFlow => '사무실 혈액 흐름 회복';
 
   @override
   String get exerciseIntro_officeBloodFlow =>
-      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+      '오랜 시간 앉아 있었던 후 혈액 순환을 개선하기 위한 책상Friendly 스트레칭.';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Nervous System Balance';
@@ -563,32 +563,32 @@ class AppLocalizationsKo extends AppLocalizations {
   String get stageTitle_peakCoherence => 'Peak Coherence';
 
   @override
-  String get stageTitle_shoulderRelease => 'Shoulder Release';
+  String get stageTitle_shoulderRelease => '어깨 릴리스';
 
   @override
-  String get stageTitle_neckStretch => 'Neck Stretch';
+  String get stageTitle_neckStretch => '목 스트레칭';
 
   @override
-  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+  String get phase_instruct_shouldersUp => '귀를 향해 어깨를 들어올리세요';
 
   @override
-  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+  String get phase_instruct_shouldersDown => '어깨를 내리고 긴장을 해소하세요';
 
   @override
-  String get phase_instruct_relaxShoulders => 'Stay in position';
+  String get phase_instruct_relaxShoulders => '자세를 유지하세요';
 
   @override
-  String get phase_instruct_relaxCompletely => 'Relax completely';
+  String get phase_instruct_relaxCompletely => '완전히relax하세요';
 
   @override
-  String get phase_instruct_tiltRight => 'Tilt head to the right';
+  String get phase_instruct_tiltRight => '머리를 오른쪽으로 기울이세요';
 
   @override
-  String get phase_instruct_holdStretch => 'Hold the stretch';
+  String get phase_instruct_holdStretch => '스트레칭을 유지하세요';
 
   @override
-  String get phase_instruct_returnCenter => 'Return to center';
+  String get phase_instruct_returnCenter => '중심으로 돌아가세요';
 
   @override
-  String get phase_instruct_relaxNeck => 'Relax neck muscles';
+  String get phase_instruct_relaxNeck => '목 근육을relax하세요';
 }

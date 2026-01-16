@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "Разтягане",
+  "exerciseTitle_officeBloodFlow": "Възстановяване на кръвообращението в офиса",
+  "exerciseIntro_officeBloodFlow": "Удобни за бюро разтягания за подобряване на кръвообращението след дълги часове седене.",
+  "stageTitle_shoulderRelease": "Отпускане на раменете",
+  "stageTitle_neckStretch": "Разтягане на врата",
+  "phase_instruct_shouldersUp": "Повдигнете раменете към ушите",
+  "phase_instruct_shouldersDown": "Отпуснете раменете, освободете напрежението",
+  "phase_instruct_relaxShoulders": "Останете в позиция",
+  "phase_instruct_relaxCompletely": "Отпуснете се напълно",
+  "phase_instruct_tiltRight": "Наклонете главата надясно",
+  "phase_instruct_holdStretch": "Задръжте разтягането",
+  "phase_instruct_returnCenter": "Върнете се в центъра",
+  "phase_instruct_relaxNeck": "Отпуснете мускулите на врата"
 }

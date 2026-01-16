@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Пік когерентності",
+  "stretching": "Розтяжка",
+  "exerciseTitle_officeBloodFlow": "Відновлення кровотоку в офісі",
+  "exerciseIntro_officeBloodFlow": "Зручні для офісу розтяжки для покращення кровообігу після тривалого сидіння.",
+  "stageTitle_shoulderRelease": "Звільнення плечей",
+  "stageTitle_neckStretch": "Розтяжка шиї",
+  "phase_instruct_shouldersUp": "Підніміть плечі до вух",
+  "phase_instruct_shouldersDown": "Опустіть плечі, зніміть напруження",
+  "phase_instruct_relaxShoulders": "Залишайтесь у позиції",
+  "phase_instruct_relaxCompletely": "Розслабтесь повністю",
+  "phase_instruct_tiltRight": "Нахиліть голову вправо",
+  "phase_instruct_holdStretch": "Утримуйте розтяжку",
+  "phase_instruct_returnCenter": "Поверніться до центру",
+  "phase_instruct_relaxNeck": "Розслабте м'язи шиї"
 }

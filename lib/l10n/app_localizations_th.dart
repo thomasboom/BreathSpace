@@ -18,7 +18,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get progressive => 'แบบค่อยเป็นค่อยไป';
 
   @override
-  String get stretching => 'Stretching';
+  String get stretching => 'การยืดเหยียด';
 
   @override
   String get settings => 'การตั้งค่า';
@@ -463,11 +463,12 @@ class AppLocalizationsTh extends AppLocalizations {
       'A sequence to optimize heart rate variability and emotional balance.';
 
   @override
-  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+  String get exerciseTitle_officeBloodFlow =>
+      'การฟื้นฟูการไหลเวียนเลือดในสำนักงาน';
 
   @override
   String get exerciseIntro_officeBloodFlow =>
-      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+      'การยืดเหยียดที่เป็นมิตรกับโต๊ะเพื่อปรับปรุงการไหลเวียนหลังจากนั่งนานหลายชั่วโมง';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Nervous System Balance';
@@ -564,32 +565,32 @@ class AppLocalizationsTh extends AppLocalizations {
   String get stageTitle_peakCoherence => 'Peak Coherence';
 
   @override
-  String get stageTitle_shoulderRelease => 'Shoulder Release';
+  String get stageTitle_shoulderRelease => 'การปลดปล่อยไหล่';
 
   @override
-  String get stageTitle_neckStretch => 'Neck Stretch';
+  String get stageTitle_neckStretch => 'การยืดคอ';
 
   @override
-  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+  String get phase_instruct_shouldersUp => 'ยกไหล่ขึ้นหาหู';
 
   @override
-  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+  String get phase_instruct_shouldersDown => 'ลดไหล่ลง ปล่อยความตึงเครียด';
 
   @override
-  String get phase_instruct_relaxShoulders => 'Stay in position';
+  String get phase_instruct_relaxShoulders => 'อยู่ในท่า';
 
   @override
-  String get phase_instruct_relaxCompletely => 'Relax completely';
+  String get phase_instruct_relaxCompletely => 'ผ่อนคลายอย่างเต็มที่';
 
   @override
-  String get phase_instruct_tiltRight => 'Tilt head to the right';
+  String get phase_instruct_tiltRight => 'เอียงหัวไปทางขวา';
 
   @override
-  String get phase_instruct_holdStretch => 'Hold the stretch';
+  String get phase_instruct_holdStretch => 'ค้างการยืดเหยียด';
 
   @override
-  String get phase_instruct_returnCenter => 'Return to center';
+  String get phase_instruct_returnCenter => 'กลับไปที่ศูนย์กลาง';
 
   @override
-  String get phase_instruct_relaxNeck => 'Relax neck muscles';
+  String get phase_instruct_relaxNeck => 'ผ่อนคลายกล้ามเนื้อคอ';
 }

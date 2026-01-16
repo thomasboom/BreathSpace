@@ -18,7 +18,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get progressive => 'प्रगतिशील';
 
   @override
-  String get stretching => 'Stretching';
+  String get stretching => 'खिंचाव';
 
   @override
   String get settings => 'सेटिंग्स';
@@ -464,11 +464,12 @@ class AppLocalizationsHi extends AppLocalizations {
       'A sequence to optimize heart rate variability and emotional balance.';
 
   @override
-  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+  String get exerciseTitle_officeBloodFlow =>
+      'कार्यालय रक्त प्रवाह पुनर्प्राप्ति';
 
   @override
   String get exerciseIntro_officeBloodFlow =>
-      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+      'लंबे समय तक बैठने के बाद परिसंचरण में सुधार के लिए डेस्क-अनुकूल खिंचाव।';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Nervous System Balance';
@@ -565,32 +566,32 @@ class AppLocalizationsHi extends AppLocalizations {
   String get stageTitle_peakCoherence => 'Peak Coherence';
 
   @override
-  String get stageTitle_shoulderRelease => 'Shoulder Release';
+  String get stageTitle_shoulderRelease => 'कंधे की रिहाई';
 
   @override
-  String get stageTitle_neckStretch => 'Neck Stretch';
+  String get stageTitle_neckStretch => 'गर्दन का खिंचाव';
 
   @override
-  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+  String get phase_instruct_shouldersUp => 'कानों की ओर कंधे उठाएं';
 
   @override
-  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+  String get phase_instruct_shouldersDown => 'कंधे गिराएं, तनाव छोड़ें';
 
   @override
-  String get phase_instruct_relaxShoulders => 'Stay in position';
+  String get phase_instruct_relaxShoulders => 'स्थिति में रहें';
 
   @override
-  String get phase_instruct_relaxCompletely => 'Relax completely';
+  String get phase_instruct_relaxCompletely => 'पूरी तरह आराम करें';
 
   @override
-  String get phase_instruct_tiltRight => 'Tilt head to the right';
+  String get phase_instruct_tiltRight => 'सिर दाहिनी ओर झुकाएं';
 
   @override
-  String get phase_instruct_holdStretch => 'Hold the stretch';
+  String get phase_instruct_holdStretch => 'खिंचाव पकड़े रखें';
 
   @override
-  String get phase_instruct_returnCenter => 'Return to center';
+  String get phase_instruct_returnCenter => 'केंद्र में लौटें';
 
   @override
-  String get phase_instruct_relaxNeck => 'Relax neck muscles';
+  String get phase_instruct_relaxNeck => 'गर्दन की मांसपेशियों को आराम दें';
 }

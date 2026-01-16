@@ -18,7 +18,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get progressive => 'Aşamalı';
 
   @override
-  String get stretching => 'Stretching';
+  String get stretching => 'Germe';
 
   @override
   String get settings => 'Ayarlar';
@@ -463,11 +463,11 @@ class AppLocalizationsTr extends AppLocalizations {
       'A sequence to optimize heart rate variability and emotional balance.';
 
   @override
-  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+  String get exerciseTitle_officeBloodFlow => 'Ofis Kan Akışı Kurtarma';
 
   @override
   String get exerciseIntro_officeBloodFlow =>
-      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+      'Uzun süre oturduktan sonra dolaşımı iyileştirmek için masa dostu germeler.';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Nervous System Balance';
@@ -564,32 +564,33 @@ class AppLocalizationsTr extends AppLocalizations {
   String get stageTitle_peakCoherence => 'Peak Coherence';
 
   @override
-  String get stageTitle_shoulderRelease => 'Shoulder Release';
+  String get stageTitle_shoulderRelease => 'Omuz Serbest Bırakma';
 
   @override
-  String get stageTitle_neckStretch => 'Neck Stretch';
+  String get stageTitle_neckStretch => 'Boyun Germesi';
 
   @override
-  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+  String get phase_instruct_shouldersUp => 'Omuzları kulaklara doğru kaldır';
 
   @override
-  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+  String get phase_instruct_shouldersDown =>
+      'Omuzları indir, gerginliği serbest bırak';
 
   @override
-  String get phase_instruct_relaxShoulders => 'Stay in position';
+  String get phase_instruct_relaxShoulders => 'Pozisyonda kal';
 
   @override
-  String get phase_instruct_relaxCompletely => 'Relax completely';
+  String get phase_instruct_relaxCompletely => 'Tamamen gevşe';
 
   @override
-  String get phase_instruct_tiltRight => 'Tilt head to the right';
+  String get phase_instruct_tiltRight => 'Başını sağa eğ';
 
   @override
-  String get phase_instruct_holdStretch => 'Hold the stretch';
+  String get phase_instruct_holdStretch => 'Germeyi tut';
 
   @override
-  String get phase_instruct_returnCenter => 'Return to center';
+  String get phase_instruct_returnCenter => 'Merkeze dön';
 
   @override
-  String get phase_instruct_relaxNeck => 'Relax neck muscles';
+  String get phase_instruct_relaxNeck => 'Boyun kaslarını gevşet';
 }

@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "การยืดเหยียด",
+  "exerciseTitle_officeBloodFlow": "การฟื้นฟูการไหลเวียนเลือดในสำนักงาน",
+  "exerciseIntro_officeBloodFlow": "การยืดเหยียดที่เป็นมิตรกับโต๊ะเพื่อปรับปรุงการไหลเวียนหลังจากนั่งนานหลายชั่วโมง",
+  "stageTitle_shoulderRelease": "การปลดปล่อยไหล่",
+  "stageTitle_neckStretch": "การยืดคอ",
+  "phase_instruct_shouldersUp": "ยกไหล่ขึ้นหาหู",
+  "phase_instruct_shouldersDown": "ลดไหล่ลง ปล่อยความตึงเครียด",
+  "phase_instruct_relaxShoulders": "อยู่ในท่า",
+  "phase_instruct_relaxCompletely": "ผ่อนคลายอย่างเต็มที่",
+  "phase_instruct_tiltRight": "เอียงหัวไปทางขวา",
+  "phase_instruct_holdStretch": "ค้างการยืดเหยียด",
+  "phase_instruct_returnCenter": "กลับไปที่ศูนย์กลาง",
+  "phase_instruct_relaxNeck": "ผ่อนคลายกล้ามเนื้อคอ"
 }

@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "Germe",
+  "exerciseTitle_officeBloodFlow": "Ofis Kan Akışı Kurtarma",
+  "exerciseIntro_officeBloodFlow": "Uzun süre oturduktan sonra dolaşımı iyileştirmek için masa dostu germeler.",
+  "stageTitle_shoulderRelease": "Omuz Serbest Bırakma",
+  "stageTitle_neckStretch": "Boyun Germesi",
+  "phase_instruct_shouldersUp": "Omuzları kulaklara doğru kaldır",
+  "phase_instruct_shouldersDown": "Omuzları indir, gerginliği serbest bırak",
+  "phase_instruct_relaxShoulders": "Pozisyonda kal",
+  "phase_instruct_relaxCompletely": "Tamamen gevşe",
+  "phase_instruct_tiltRight": "Başını sağa eğ",
+  "phase_instruct_holdStretch": "Germeyi tut",
+  "phase_instruct_returnCenter": "Merkeze dön",
+  "phase_instruct_relaxNeck": "Boyun kaslarını gevşet"
 }

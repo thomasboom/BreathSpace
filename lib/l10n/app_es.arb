@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "Estiramientos",
+  "exerciseTitle_officeBloodFlow": "Recuperación del Flujo Sanguíneo en la Oficina",
+  "exerciseIntro_officeBloodFlow": "Estiramientos favorables para mejorar la circulación después de largas horas sentado.",
+  "stageTitle_shoulderRelease": "Liberación de Hombros",
+  "stageTitle_neckStretch": "Estiramiento del Cuello",
+  "phase_instruct_shouldersUp": "Levantar los hombros hacia las orejas",
+  "phase_instruct_shouldersDown": "Bajar los hombros, liberar la tensión",
+  "phase_instruct_relaxShoulders": "Mantente en la posición",
+  "phase_instruct_relaxCompletely": "Relájate completamente",
+  "phase_instruct_tiltRight": "Inclinar la cabeza hacia la derecha",
+  "phase_instruct_holdStretch": "Mantener el estiramiento",
+  "phase_instruct_returnCenter": "Volver al centro",
+  "phase_instruct_relaxNeck": "Relajar los músculos del cuello"
 }

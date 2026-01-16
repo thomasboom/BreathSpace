@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "疼痛ゲート制御",
   "stageTitle_endorphinRelease": "エンドルフィン放出",
   "stageTitle_heartRatePreparation": "心拍数の準備",
-  "stageTitle_peakCoherence": "ピークコヒーレンス"
+  "stageTitle_peakCoherence": "ピークコヒーレンス",
+  "stretching": "ストレッチ",
+  "exerciseTitle_officeBloodFlow": "オフィス血流回復",
+  "exerciseIntro_officeBloodFlow": "長時間座った後の血流を改善するためのデスクriendlyなストレッチ。",
+  "stageTitle_shoulderRelease": "肩のリリース",
+  "stageTitle_neckStretch": "首のストレッチ",
+  "phase_instruct_shouldersUp": "耳を肩に近づけるように肩を上げる",
+  "phase_instruct_shouldersDown": "肩を下げて緊張を解く",
+  "phase_instruct_relaxShoulders": "今の姿勢でいる",
+  "phase_instruct_relaxCompletely": "完全にリラックスする",
+  "phase_instruct_tiltRight": "頭を右に傾ける",
+  "phase_instruct_holdStretch": "ストレッチを続ける",
+  "phase_instruct_returnCenter": "中心に戻る",
+  "phase_instruct_relaxNeck": "首の筋肉リラックス"
 }

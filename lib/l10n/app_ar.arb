@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "تمارين التمدد",
+  "exerciseTitle_officeBloodFlow": "استعادة تدفق الدم في المكتب",
+  "exerciseIntro_officeBloodFlow": "تمارين تمدد صديقة لتحسين الدورة الدموية بعد ساعات طويلة من الجلوس.",
+  "stageTitle_shoulderRelease": "إطلاق الكتفين",
+  "stageTitle_neckStretch": "تمديد الرقبة",
+  "phase_instruct_shouldersUp": "ارفع الكتفين نحو الأذنين",
+  "phase_instruct_shouldersDown": "خفض الكتفين، releasing التوتر",
+  "phase_instruct_relaxShoulders": "ابقَ في الوضعية",
+  "phase_instruct_relaxCompletely": "استرخِ تمامًا",
+  "phase_instruct_tiltRight": "ميل الرأس إلى اليمين",
+  "phase_instruct_holdStretch": "تمدد التمدد",
+  "phase_instruct_returnCenter": "عد إلى المركز",
+  "phase_instruct_relaxNeck": "استرخي عضلات الرقبة"
 }

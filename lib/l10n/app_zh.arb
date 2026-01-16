@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stretching": "拉伸",
+  "exerciseTitle_officeBloodFlow": "办公室血流恢复",
+  "exerciseIntro_officeBloodFlow": "适合办公桌的拉伸运动，可改善长时间久坐后的血液循环。",
+  "stageTitle_shoulderRelease": "肩部放松",
+  "stageTitle_neckStretch": "颈部拉伸",
+  "phase_instruct_shouldersUp": "将肩膀抬向耳朵",
+  "phase_instruct_shouldersDown": "放下肩膀，释放紧张",
+  "phase_instruct_relaxShoulders": "保持姿势",
+  "phase_instruct_relaxCompletely": "完全放松",
+  "phase_instruct_tiltRight": "将头向右倾斜",
+  "phase_instruct_holdStretch": "保持拉伸",
+  "phase_instruct_returnCenter": "回到中心",
+  "phase_instruct_relaxNeck": "放松颈部肌肉"
 }

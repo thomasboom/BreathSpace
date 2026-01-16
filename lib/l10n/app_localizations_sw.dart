@@ -18,7 +18,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get progressive => 'Mtindo unaopangika';
 
   @override
-  String get stretching => 'Stretching';
+  String get stretching => 'Mazoezi ya kunyanyua';
 
   @override
   String get settings => 'Mipangilio';
@@ -463,11 +463,12 @@ class AppLocalizationsSw extends AppLocalizations {
       'A sequence to optimize heart rate variability and emotional balance.';
 
   @override
-  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+  String get exerciseTitle_officeBloodFlow =>
+      'Urekebishaji wa Mtirisho wa Damu wa Ofisi';
 
   @override
   String get exerciseIntro_officeBloodFlow =>
-      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+      'Mazoezi ya kunyanyua ya mezani kuboresha mzunguko baada ya muda mwingi wa kukaa.';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Nervous System Balance';
@@ -564,32 +565,33 @@ class AppLocalizationsSw extends AppLocalizations {
   String get stageTitle_peakCoherence => 'Peak Coherence';
 
   @override
-  String get stageTitle_shoulderRelease => 'Shoulder Release';
+  String get stageTitle_shoulderRelease => 'Ukombozi wa Koti';
 
   @override
-  String get stageTitle_neckStretch => 'Neck Stretch';
+  String get stageTitle_neckStretch => 'Kunyanyua Shingo';
 
   @override
-  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+  String get phase_instruct_shouldersUp => 'Inua mikono kuelekea masikio';
 
   @override
-  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+  String get phase_instruct_shouldersDown =>
+      'Weka mikono chini,achilia msukano';
 
   @override
-  String get phase_instruct_relaxShoulders => 'Stay in position';
+  String get phase_instruct_relaxShoulders => 'Baki katika nafasi';
 
   @override
-  String get phase_instruct_relaxCompletely => 'Relax completely';
+  String get phase_instruct_relaxCompletely => 'Tulia kabisa';
 
   @override
-  String get phase_instruct_tiltRight => 'Tilt head to the right';
+  String get phase_instruct_tiltRight => 'Pisha kichwa kulia';
 
   @override
-  String get phase_instruct_holdStretch => 'Hold the stretch';
+  String get phase_instruct_holdStretch => 'Shikiza mkunato';
 
   @override
-  String get phase_instruct_returnCenter => 'Return to center';
+  String get phase_instruct_returnCenter => 'Rudi katikati';
 
   @override
-  String get phase_instruct_relaxNeck => 'Relax neck muscles';
+  String get phase_instruct_relaxNeck => 'Tulia misuli ya shingo';
 }

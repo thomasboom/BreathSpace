@@ -169,5 +169,18 @@
   "stageTitle_painGateControl": "Контроль болевых ворот",
   "stageTitle_endorphinRelease": "Высвобождение эндорфинов",
   "stageTitle_heartRatePreparation": "Подготовка сердечного ритма",
-  "stageTitle_peakCoherence": "Пик когерентности"
+  "stageTitle_peakCoherence": "Пик когерентности",
+  "stretching": "Растяжка",
+  "exerciseTitle_officeBloodFlow": "Восстановление кровотока в офисе",
+  "exerciseIntro_officeBloodFlow": "Удобные для офиса растяжки для улучшения кровообращения после долгих часов сидения.",
+  "stageTitle_shoulderRelease": "Освобождение плеч",
+  "stageTitle_neckStretch": "Растяжка шеи",
+  "phase_instruct_shouldersUp": "Поднимите плечи к ушам",
+  "phase_instruct_shouldersDown": "Опустите плечи, снимите напряжение",
+  "phase_instruct_relaxShoulders": "Оставайтесь в позиции",
+  "phase_instruct_relaxCompletely": "Расслабьтесь полностью",
+  "phase_instruct_tiltRight": "Наклоните голову вправо",
+  "phase_instruct_holdStretch": "Удерживайте растяжку",
+  "phase_instruct_returnCenter": "Вернитесь в центр",
+  "phase_instruct_relaxNeck": "Расслабьте мышцы шеи"
 }
