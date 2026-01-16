@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:io';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:BreathSpace/exercise_detail_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -673,16 +674,17 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                   suffixIcon: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.help_outline_outlined,
-                          size: 24,
-                          color: Theme.of(
-                            context,
-                          ).colorScheme.onSurface.withValues(alpha: 0.7),
+                      if (!Platform.isAndroid && !Platform.isIOS)
+                        IconButton(
+                          icon: Icon(
+                            Icons.help_outline_outlined,
+                            size: 24,
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.onSurface.withValues(alpha: 0.7),
+                          ),
+                          onPressed: _showKeyboardShortcuts,
                         ),
-                        onPressed: _showKeyboardShortcuts,
-                      ),
                       IconButton(
                         icon: Icon(
                           Icons.settings_outlined,
