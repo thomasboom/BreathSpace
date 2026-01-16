@@ -18,6 +18,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get progressive => 'Mtindo unaopangika';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'Mipangilio';
 
   @override

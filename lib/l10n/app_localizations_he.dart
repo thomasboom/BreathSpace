@@ -18,6 +18,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get progressive => 'הדרجي';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'הגדרות';
 
   @override

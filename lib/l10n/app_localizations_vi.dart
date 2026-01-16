@@ -18,6 +18,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get progressive => 'Tăng tiến';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'Cài đặt';
 
   @override

@@ -18,6 +18,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get progressive => 'プログレッシブ';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => '設定';
 
   @override

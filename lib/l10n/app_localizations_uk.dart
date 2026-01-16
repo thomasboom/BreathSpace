@@ -18,6 +18,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get progressive => 'Прогресивний';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'Налаштування';
 
   @override

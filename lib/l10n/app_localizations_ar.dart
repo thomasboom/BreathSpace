@@ -18,6 +18,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get progressive => 'تدريجي';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'الإعدادات';
 
   @override

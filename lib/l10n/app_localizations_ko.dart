@@ -18,6 +18,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get progressive => '점진적';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => '설정';
 
   @override

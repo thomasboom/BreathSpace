@@ -18,6 +18,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get progressive => 'Progressief';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'Instellingen';
 
   @override

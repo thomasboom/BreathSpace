@@ -18,6 +18,9 @@ class AppLocalizationsBg extends AppLocalizations {
   String get progressive => 'Прогресивен';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'Настройки';
 
   @override

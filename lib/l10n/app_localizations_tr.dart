@@ -18,6 +18,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get progressive => 'Aşamalı';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'Ayarlar';
 
   @override

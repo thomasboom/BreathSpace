@@ -18,6 +18,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get progressive => 'प्रगतिशील';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'सेटिंग्स';
 
   @override

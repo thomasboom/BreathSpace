@@ -1,5 +1,6 @@
 {
   "ar": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -15,6 +16,7 @@
   ],
 
   "bg": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -30,6 +32,7 @@
   ],
 
   "de": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -45,6 +48,7 @@
   ],
 
   "es": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -60,6 +64,7 @@
   ],
 
   "fr": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -75,6 +80,7 @@
   ],
 
   "he": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -90,6 +96,7 @@
   ],
 
   "hi": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -105,6 +112,7 @@
   ],
 
   "it": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -120,6 +128,7 @@
   ],
 
   "ja": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -135,6 +144,7 @@
   ],
 
   "ko": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -150,6 +160,7 @@
   ],
 
   "nl": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -165,6 +176,7 @@
   ],
 
   "pl": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -180,6 +192,7 @@
   ],
 
   "pt": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -195,6 +208,7 @@
   ],
 
   "ru": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -210,6 +224,7 @@
   ],
 
   "sw": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -225,6 +240,7 @@
   ],
 
   "th": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -240,6 +256,7 @@
   ],
 
   "tr": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -255,6 +272,7 @@
   ],
 
   "uk": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -270,6 +288,7 @@
   ],
 
   "vi": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",
@@ -285,6 +304,7 @@
   ],
 
   "zh": [
+    "stretching",
     "exerciseTitle_officeBloodFlow",
     "exerciseIntro_officeBloodFlow",
     "stageTitle_shoulderRelease",

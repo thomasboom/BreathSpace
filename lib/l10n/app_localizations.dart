@@ -154,6 +154,12 @@ abstract class AppLocalizations {
   /// **'Progressive'**
   String get progressive;
 
+  /// No description provided for @stretching.
+  ///
+  /// In en, this message translates to:
+  /// **'Stretching'**
+  String get stretching;
+
   /// No description provided for @settings.
   ///
   /// In en, this message translates to:

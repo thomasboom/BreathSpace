@@ -18,6 +18,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get progressive => 'Progressivo';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'Configurações';
 
   @override

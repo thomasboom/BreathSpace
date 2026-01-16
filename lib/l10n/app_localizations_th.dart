@@ -18,6 +18,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get progressive => 'แบบค่อยเป็นค่อยไป';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => 'การตั้งค่า';
 
   @override

@@ -1101,9 +1101,14 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                                   children: [
                                     const SizedBox(height: 4),
                                     Text(
-                                      exercise.hasStages
-                                          ? '${AppLocalizations.of(context).progressive} • ${_getTotalDuration(exercise)}'
-                                          : '${exercise.pattern} • ${exercise.duration}',
+                                      switch (exercise.exerciseType) {
+                                        'stretching' =>
+                                          '${AppLocalizations.of(context).stretching} • ${_getTotalDuration(exercise)}',
+                                        'progressive' =>
+                                          '${AppLocalizations.of(context).progressive} • ${_getTotalDuration(exercise)}',
+                                        _ =>
+                                          '${exercise.pattern} • ${exercise.duration}',
+                                      },
                                       style: TextStyle(
                                         color: Theme.of(
                                           context,

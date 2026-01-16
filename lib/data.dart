@@ -244,6 +244,7 @@ class BreathingExercise {
   final String duration;
   final String intro;
   final String? introKey;
+  final String? type;
   final List<BreathingStage>? stages;
   final String? inhaleMethod;
   final String? exhaleMethod;
@@ -257,6 +258,7 @@ class BreathingExercise {
     required this.duration,
     required this.intro,
     this.introKey,
+    this.type,
     this.stages,
     this.inhaleMethod,
     this.exhaleMethod,
@@ -333,6 +335,7 @@ class BreathingExercise {
       duration: json['duration'] as String? ?? '',
       intro: introText,
       introKey: introKey,
+      type: json['type'] as String?,
       stages: stages,
       inhaleMethod: json['inhale_method'] as String?,
       exhaleMethod: json['exhale_method'] as String?,
@@ -343,6 +346,17 @@ class BreathingExercise {
   bool get hasStages => stages != null && stages!.isNotEmpty;
 
   bool get hasVersions => versions != null && versions!.isNotEmpty;
+
+  bool get isStretchingExercise => type == 'stretching';
+
+  bool get isProgressiveExercise =>
+      type == 'progressive' || (hasStages && type == null);
+
+  String get exerciseType {
+    if (isStretchingExercise) return 'stretching';
+    if (isProgressiveExercise) return 'progressive';
+    return 'normal';
+  }
 
   ExerciseVersionData? getVersionData(ExerciseVersion version) {
     return versions?[version];

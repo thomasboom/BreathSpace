@@ -18,6 +18,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get progressive => '渐进式';
 
   @override
+  String get stretching => 'Stretching';
+
+  @override
   String get settings => '设置';
 
   @override
