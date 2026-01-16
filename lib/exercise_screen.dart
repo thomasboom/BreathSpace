@@ -13,6 +13,29 @@ import 'settings_screen.dart'; // Import settings screen
 // Enum to track the current breathing phase
 enum BreathingPhase { inhale, hold1, exhale, hold2 }
 
+String? _resolvePhaseInstructionKey(AppLocalizations l10n, String key) {
+  switch (key) {
+    case 'phase_instruct_shouldersUp':
+      return l10n.phase_instruct_shouldersUp;
+    case 'phase_instruct_shouldersDown':
+      return l10n.phase_instruct_shouldersDown;
+    case 'phase_instruct_relaxShoulders':
+      return l10n.phase_instruct_relaxShoulders;
+    case 'phase_instruct_relaxCompletely':
+      return l10n.phase_instruct_relaxCompletely;
+    case 'phase_instruct_tiltRight':
+      return l10n.phase_instruct_tiltRight;
+    case 'phase_instruct_holdStretch':
+      return l10n.phase_instruct_holdStretch;
+    case 'phase_instruct_returnCenter':
+      return l10n.phase_instruct_returnCenter;
+    case 'phase_instruct_relaxNeck':
+      return l10n.phase_instruct_relaxNeck;
+    default:
+      return null;
+  }
+}
+
 class ExerciseScreen extends StatefulWidget {
   final BreathingExercise exercise;
   final ExerciseVersion? selectedVersion;
@@ -30,11 +53,11 @@ class ExerciseScreen extends StatefulWidget {
 class _ExerciseScreenState extends State<ExerciseScreen>
     with TickerProviderStateMixin {
   bool _patternInvalid = false;
-  bool _exerciseCompleted = false; // Track if exercise completion has started
+  bool _exerciseCompleted = false;
   late AnimationController _controller;
-  late Animation<double> _breatheAnimation;
+  Animation<double>? _breatheAnimation;
   late AnimationController _bubbleAnimationController;
-  late Animation<double> _bubbleAnimation;
+  Animation<double>? _bubbleAnimation;
   String _instruction = '';
   // int _currentCycle = 0; // Unused field
   int _currentStageIndex = 0;
@@ -54,6 +77,9 @@ class _ExerciseScreenState extends State<ExerciseScreen>
 
   // Track complete breathing cycles for instruction display
   int _breathingCycleCount = 0;
+
+  // Track elapsed time within current phase for phase instructions
+  int _elapsedSecondsInPhase = 0;
 
   final AudioPlayer _soundEffectPlayer = AudioPlayer();
   final AudioPlayer _musicPlayer = AudioPlayer();
@@ -169,6 +195,17 @@ class _ExerciseScreenState extends State<ExerciseScreen>
       _bubbleAnimationController = AnimationController(
         vsync: this,
         duration: Duration.zero,
+      );
+      // Initialize animations with default values (will be recreated in _initializeStage)
+      _breatheAnimation = Tween<double>(
+        begin: 0.5,
+        end: 0.5,
+      ).animate(CurvedAnimation(parent: _controller, curve: Curves.linear));
+      _bubbleAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(
+          parent: _bubbleAnimationController,
+          curve: Curves.easeInOut,
+        ),
       );
     } catch (e) {
       setState(() {
@@ -445,7 +482,12 @@ class _ExerciseScreenState extends State<ExerciseScreen>
               _currentPhase != BreathingPhase.inhale) {
             _breathingCycleCount++;
           }
+          // Reset elapsed time when entering a new phase
+          _elapsedSecondsInPhase = 0;
           _currentPhase = newPhase;
+        } else {
+          // Increment elapsed time within the current phase
+          _elapsedSecondsInPhase++;
         }
 
         // Update last instruction
@@ -682,6 +724,54 @@ class _ExerciseScreenState extends State<ExerciseScreen>
     return Container();
   }
 
+  // Method to build phase instruction text (stretching/movement instructions)
+  Widget _buildPhaseInstruction(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final currentStage = _stages[_currentStageIndex];
+
+    // Get the phase string for the current breathing phase
+    String phaseKey;
+    switch (_currentPhase) {
+      case BreathingPhase.inhale:
+        phaseKey = 'inhale';
+        break;
+      case BreathingPhase.hold1:
+        phaseKey = 'hold1';
+        break;
+      case BreathingPhase.exhale:
+        phaseKey = 'exhale';
+        break;
+      case BreathingPhase.hold2:
+        phaseKey = 'hold2';
+        break;
+    }
+
+    // Get the instruction key from the stage
+    final instructionKey = currentStage.getPhaseInstructionKey(
+      phaseKey,
+      _elapsedSecondsInPhase,
+    );
+
+    if (instructionKey != null) {
+      final instructionText = _resolvePhaseInstructionKey(l10n, instructionKey);
+      if (instructionText != null) {
+        return Text(
+          instructionText,
+          key: const ValueKey('phaseInstruction'),
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            fontStyle: FontStyle.italic,
+            color: Colors.white,
+          ),
+          textAlign: TextAlign.center,
+        );
+      }
+    }
+
+    return const SizedBox.shrink(key: ValueKey('noInstruction'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return KeyboardListener(
@@ -776,10 +866,10 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                                 ]),
                                 builder: (context, child) {
                                   final currentRadius =
-                                      140 * _breatheAnimation.value;
+                                      140 * (_breatheAnimation?.value ?? 0.5);
                                   return CustomPaint(
                                     painter: BubblePainter(
-                                      _bubbleAnimation.value,
+                                      _bubbleAnimation?.value ?? 0,
                                       currentRadius,
                                       Theme.of(context).colorScheme.primary,
                                     ),
@@ -810,6 +900,9 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                             const SizedBox(height: 40),
                             // Breathing method instructions
                             _buildBreathingMethodInstruction(context),
+                            const SizedBox(height: 16),
+                            // Phase instructions (stretching/movement)
+                            _buildPhaseInstruction(context),
                           ],
                         ),
                       ),

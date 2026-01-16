@@ -1,1 +1,301 @@
-{}
+{
+  "ar": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "bg": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "de": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "es": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "fr": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "he": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "hi": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "it": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "ja": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "ko": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "nl": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "pl": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "pt": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "ru": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "sw": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "th": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "tr": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "uk": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "vi": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ],
+
+  "zh": [
+    "exerciseTitle_officeBloodFlow",
+    "exerciseIntro_officeBloodFlow",
+    "stageTitle_shoulderRelease",
+    "stageTitle_neckStretch",
+    "phase_instruct_shouldersUp",
+    "phase_instruct_shouldersDown",
+    "phase_instruct_relaxShoulders",
+    "phase_instruct_relaxCompletely",
+    "phase_instruct_tiltRight",
+    "phase_instruct_holdStretch",
+    "phase_instruct_returnCenter",
+    "phase_instruct_relaxNeck"
+  ]
+}

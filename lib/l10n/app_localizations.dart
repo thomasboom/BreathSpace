@@ -976,6 +976,18 @@ abstract class AppLocalizations {
   /// **'A sequence to optimize heart rate variability and emotional balance.'**
   String get exerciseIntro_cardioCoherence;
 
+  /// No description provided for @exerciseTitle_officeBloodFlow.
+  ///
+  /// In en, this message translates to:
+  /// **'Office Blood Flow Recovery'**
+  String get exerciseTitle_officeBloodFlow;
+
+  /// No description provided for @exerciseIntro_officeBloodFlow.
+  ///
+  /// In en, this message translates to:
+  /// **'Desk-friendly stretches to improve circulation after long hours of sitting.'**
+  String get exerciseIntro_officeBloodFlow;
+
   /// No description provided for @stageTitle_nervousSystemBalance.
   ///
   /// In en, this message translates to:
@@ -1161,6 +1173,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Peak Coherence'**
   String get stageTitle_peakCoherence;
+
+  /// No description provided for @stageTitle_shoulderRelease.
+  ///
+  /// In en, this message translates to:
+  /// **'Shoulder Release'**
+  String get stageTitle_shoulderRelease;
+
+  /// No description provided for @stageTitle_neckStretch.
+  ///
+  /// In en, this message translates to:
+  /// **'Neck Stretch'**
+  String get stageTitle_neckStretch;
+
+  /// No description provided for @phase_instruct_shouldersUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Raise shoulders toward ears'**
+  String get phase_instruct_shouldersUp;
+
+  /// No description provided for @phase_instruct_shouldersDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Drop shoulders, release tension'**
+  String get phase_instruct_shouldersDown;
+
+  /// No description provided for @phase_instruct_relaxShoulders.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay in position'**
+  String get phase_instruct_relaxShoulders;
+
+  /// No description provided for @phase_instruct_relaxCompletely.
+  ///
+  /// In en, this message translates to:
+  /// **'Relax completely'**
+  String get phase_instruct_relaxCompletely;
+
+  /// No description provided for @phase_instruct_tiltRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Tilt head to the right'**
+  String get phase_instruct_tiltRight;
+
+  /// No description provided for @phase_instruct_holdStretch.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold the stretch'**
+  String get phase_instruct_holdStretch;
+
+  /// No description provided for @phase_instruct_returnCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Return to center'**
+  String get phase_instruct_returnCenter;
+
+  /// No description provided for @phase_instruct_relaxNeck.
+  ///
+  /// In en, this message translates to:
+  /// **'Relax neck muscles'**
+  String get phase_instruct_relaxNeck;
 }
 
 class _AppLocalizationsDelegate

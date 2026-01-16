@@ -498,5 +498,43 @@
       "normal": {"stage_durations": [120, 300]},
       "long": {"stage_durations": [150, 390]}
     }
+  },
+  {
+    "id": "office-blood-flow",
+    "title_key": "exerciseTitle_officeBloodFlow",
+    "intro_key": "exerciseIntro_officeBloodFlow",
+    "stages": [
+      {
+        "title_key": "stageTitle_shoulderRelease",
+        "pattern": "4-4-4-4",
+        "duration": 150,
+        "inhale_method": "nose",
+        "exhale_method": "nose",
+         "phase_instructions": {
+           "inhale": [{"instruction_key": "phase_instruct_shouldersUp"}],
+           "hold1": [{"instruction_key": "phase_instruct_relaxShoulders"}],
+           "exhale": [{"instruction_key": "phase_instruct_shouldersDown"}],
+           "hold2": [{"instruction_key": "phase_instruct_relaxCompletely"}]
+         }
+      },
+       {
+         "title_key": "stageTitle_neckStretch",
+         "pattern": "4-4-4-4",
+         "duration": 150,
+         "inhale_method": "nose",
+         "exhale_method": "nose",
+         "phase_instructions": {
+           "inhale": [{"instruction_key": "phase_instruct_tiltRight"}],
+           "hold1": [{"instruction_key": "phase_instruct_holdStretch"}],
+           "exhale": [{"instruction_key": "phase_instruct_returnCenter"}],
+           "hold2": [{"instruction_key": "phase_instruct_relaxNeck"}]
+         }
+       }
+    ],
+    "versions": {
+      "short": {"stage_durations": [105, 105]},
+      "normal": {"stage_durations": [150, 150]},
+      "long": {"stage_durations": [195, 195]}
+    }
   }
 ]

@@ -139,6 +139,8 @@
   "exerciseIntro_deepRelaxationDive": "Dive deep into a state of complete relaxation and peace.",
   "exerciseTitle_cardioCoherence": "Cardio Coherence",
   "exerciseIntro_cardioCoherence": "A sequence to optimize heart rate variability and emotional balance.",
+  "exerciseTitle_officeBloodFlow": "Office Blood Flow Recovery",
+  "exerciseIntro_officeBloodFlow": "Desk-friendly stretches to improve circulation after long hours of sitting.",
   "stageTitle_nervousSystemBalance": "Nervous System Balance",
   "stageTitle_deepRelaxation": "Deep Relaxation",
   "stageTitle_sleepInduction": "Sleep Induction",
@@ -169,5 +171,15 @@
   "stageTitle_painGateControl": "Pain Gate Control",
   "stageTitle_endorphinRelease": "Endorphin Release",
   "stageTitle_heartRatePreparation": "Heart Rate Preparation",
-  "stageTitle_peakCoherence": "Peak Coherence"
+  "stageTitle_peakCoherence": "Peak Coherence",
+  "stageTitle_shoulderRelease": "Shoulder Release",
+  "stageTitle_neckStretch": "Neck Stretch",
+  "phase_instruct_shouldersUp": "Raise shoulders toward ears",
+  "phase_instruct_shouldersDown": "Drop shoulders, release tension",
+  "phase_instruct_relaxShoulders": "Stay in position",
+  "phase_instruct_relaxCompletely": "Relax completely",
+  "phase_instruct_tiltRight": "Tilt head to the right",
+  "phase_instruct_holdStretch": "Hold the stretch",
+  "phase_instruct_returnCenter": "Return to center",
+  "phase_instruct_relaxNeck": "Relax neck muscles"
 }

@@ -459,6 +459,13 @@ class AppLocalizationsKo extends AppLocalizations {
       'A sequence to optimize heart rate variability and emotional balance.';
 
   @override
+  String get exerciseTitle_officeBloodFlow => 'Office Blood Flow Recovery';
+
+  @override
+  String get exerciseIntro_officeBloodFlow =>
+      'Desk-friendly stretches to improve circulation after long hours of sitting.';
+
+  @override
   String get stageTitle_nervousSystemBalance => 'Nervous System Balance';
 
   @override
@@ -551,4 +558,34 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get stageTitle_peakCoherence => 'Peak Coherence';
+
+  @override
+  String get stageTitle_shoulderRelease => 'Shoulder Release';
+
+  @override
+  String get stageTitle_neckStretch => 'Neck Stretch';
+
+  @override
+  String get phase_instruct_shouldersUp => 'Raise shoulders toward ears';
+
+  @override
+  String get phase_instruct_shouldersDown => 'Drop shoulders, release tension';
+
+  @override
+  String get phase_instruct_relaxShoulders => 'Stay in position';
+
+  @override
+  String get phase_instruct_relaxCompletely => 'Relax completely';
+
+  @override
+  String get phase_instruct_tiltRight => 'Tilt head to the right';
+
+  @override
+  String get phase_instruct_holdStretch => 'Hold the stretch';
+
+  @override
+  String get phase_instruct_returnCenter => 'Return to center';
+
+  @override
+  String get phase_instruct_relaxNeck => 'Relax neck muscles';
 }

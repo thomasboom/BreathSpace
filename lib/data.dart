@@ -6,6 +6,40 @@ import 'package:BreathSpace/l10n/app_localizations.dart';
 
 enum ExerciseVersion { short, normal, long }
 
+class PhaseInstruction {
+  final String instructionKey;
+  final int? startOffset;
+  final int? endOffset;
+
+  const PhaseInstruction({
+    required this.instructionKey,
+    this.startOffset,
+    this.endOffset,
+  });
+
+  factory PhaseInstruction.fromJson(Map<String, dynamic> json) {
+    return PhaseInstruction(
+      instructionKey: json['instruction_key'] as String,
+      startOffset: json['start_offset'] as int?,
+      endOffset: json['end_offset'] as int?,
+    );
+  }
+
+  bool isActive(int elapsedSecondsInPhase) {
+    final start = startOffset ?? 0;
+    final end = endOffset ?? 999999; // Large number instead of infinity
+    return elapsedSecondsInPhase >= start && elapsedSecondsInPhase < end;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'instruction_key': instructionKey,
+      'start_offset': startOffset,
+      'end_offset': endOffset,
+    };
+  }
+}
+
 class ExerciseVersionData {
   final String? duration;
   final String? pattern;
@@ -55,6 +89,7 @@ class BreathingStage {
   final int duration;
   final String? inhaleMethod;
   final String? exhaleMethod;
+  final Map<String, List<PhaseInstruction>>? phaseInstructions;
 
   const BreathingStage({
     required this.title,
@@ -63,7 +98,24 @@ class BreathingStage {
     required this.duration,
     this.inhaleMethod,
     this.exhaleMethod,
+    this.phaseInstructions,
   });
+
+  static Map<String, List<PhaseInstruction>>? _parsePhaseInstructions(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) return null;
+    final Map<String, List<PhaseInstruction>> result = {};
+    for (final entry in json.entries) {
+      final List<dynamic> instructionsJson = entry.value as List<dynamic>;
+      result[entry.key] = instructionsJson
+          .map(
+            (inst) => PhaseInstruction.fromJson(inst as Map<String, dynamic>),
+          )
+          .toList();
+    }
+    return result;
+  }
 
   factory BreathingStage.fromJson(
     Map<String, dynamic> json,
@@ -96,6 +148,9 @@ class BreathingStage {
       duration: json['duration'] as int,
       inhaleMethod: json['inhale_method'] as String?,
       exhaleMethod: json['exhale_method'] as String?,
+      phaseInstructions: _parsePhaseInstructions(
+        json['phase_instructions'] as Map<String, dynamic>?,
+      ),
     );
   }
 
@@ -123,6 +178,9 @@ class BreathingStage {
       duration: json['duration'] as int,
       inhaleMethod: json['inhale_method'] as String?,
       exhaleMethod: json['exhale_method'] as String?,
+      phaseInstructions: _parsePhaseInstructions(
+        json['phase_instructions'] as Map<String, dynamic>?,
+      ),
     );
   }
 
@@ -133,6 +191,7 @@ class BreathingStage {
     int? duration,
     String? inhaleMethod,
     String? exhaleMethod,
+    Map<String, List<PhaseInstruction>>? phaseInstructions,
   }) {
     return BreathingStage(
       title: title ?? this.title,
@@ -141,12 +200,24 @@ class BreathingStage {
       duration: duration ?? this.duration,
       inhaleMethod: inhaleMethod ?? this.inhaleMethod,
       exhaleMethod: exhaleMethod ?? this.exhaleMethod,
+      phaseInstructions: phaseInstructions ?? this.phaseInstructions,
     );
   }
 
   String getLocalizedTitle(AppLocalizations l10n) {
     if (titleKey == null) return title;
     return _resolveTranslationKey(l10n, titleKey!) ?? title;
+  }
+
+  String? getPhaseInstructionKey(String phase, int elapsedSecondsInPhase) {
+    final instructions = phaseInstructions?[phase];
+    if (instructions == null) return null;
+    for (final instruction in instructions) {
+      if (instruction.isActive(elapsedSecondsInPhase)) {
+        return instruction.instructionKey;
+      }
+    }
+    return null;
   }
 
   Map<String, dynamic> toJson() {
@@ -157,6 +228,10 @@ class BreathingStage {
       'duration': duration,
       'inhale_method': inhaleMethod,
       'exhale_method': exhaleMethod,
+      'phase_instructions': phaseInstructions?.map(
+        (key, value) =>
+            MapEntry(key, value.map((inst) => inst.toJson()).toList()),
+      ),
     };
   }
 }
@@ -441,6 +516,10 @@ String? _resolveTranslationKey(AppLocalizations l10n, String key) {
       return l10n.exerciseTitle_cardioCoherence;
     case 'exerciseIntro_cardioCoherence':
       return l10n.exerciseIntro_cardioCoherence;
+    case 'exerciseTitle_officeBloodFlow':
+      return l10n.exerciseTitle_officeBloodFlow;
+    case 'exerciseIntro_officeBloodFlow':
+      return l10n.exerciseIntro_officeBloodFlow;
     case 'stageTitle_nervousSystemBalance':
       return l10n.stageTitle_nervousSystemBalance;
     case 'stageTitle_deepRelaxation':
@@ -503,6 +582,24 @@ String? _resolveTranslationKey(AppLocalizations l10n, String key) {
       return l10n.stageTitle_heartRatePreparation;
     case 'stageTitle_peakCoherence':
       return l10n.stageTitle_peakCoherence;
+    case 'stageTitle_shoulderRelease':
+      return l10n.stageTitle_shoulderRelease;
+    case 'stageTitle_neckStretch':
+      return l10n.stageTitle_neckStretch;
+    case 'phase_instruct_shouldersUp':
+      return l10n.phase_instruct_shouldersUp;
+    case 'phase_instruct_shouldersDown':
+      return l10n.phase_instruct_shouldersDown;
+    case 'phase_instruct_relaxShoulders':
+      return l10n.phase_instruct_relaxShoulders;
+    case 'phase_instruct_tiltRight':
+      return l10n.phase_instruct_tiltRight;
+    case 'phase_instruct_holdStretch':
+      return l10n.phase_instruct_holdStretch;
+    case 'phase_instruct_returnCenter':
+      return l10n.phase_instruct_returnCenter;
+    case 'phase_instruct_relaxNeck':
+      return l10n.phase_instruct_relaxNeck;
     default:
       return null;
   }
