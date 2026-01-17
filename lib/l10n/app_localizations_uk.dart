@@ -90,6 +90,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get themeDark => 'Темна';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'Використовувати перегляд списком';
 
   @override

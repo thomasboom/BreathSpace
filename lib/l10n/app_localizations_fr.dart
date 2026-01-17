@@ -90,6 +90,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get themeDark => 'Sombre';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'Utiliser la vue en liste';
 
   @override

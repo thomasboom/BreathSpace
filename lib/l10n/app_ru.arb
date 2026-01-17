@@ -25,6 +25,7 @@
   "themeSystem": "По умолчанию системы",
   "themeLight": "Светлая",
   "themeDark": "Темная",
+  "themeOled": "OLED",
   "useListView": "Использовать список",
   "viewMode": "Режим просмотра",
   "listView": "Просмотр списком",

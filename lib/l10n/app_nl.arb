@@ -11,6 +11,7 @@
   "themeSystem": "Systeemstandaard",
   "themeLight": "Licht",
   "themeDark": "Donker",
+  "themeOled": "OLED",
   "useListView": "Gebruik lijstweergave",
   "viewMode": "Weergavemodus",
   "listView": "Lijstweergave",

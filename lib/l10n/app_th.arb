@@ -25,6 +25,7 @@
   "themeSystem": "ค่าเริ่มต้นของระบบ",
   "themeLight": "แสงสว่าง",
   "themeDark": "มืด",
+  "themeOled": "OLED",
   "useListView": "ใช้มุมมองรายการ",
   "viewMode": "โหมดการแสดงผล",
   "listView": "มุมมองรายการ",

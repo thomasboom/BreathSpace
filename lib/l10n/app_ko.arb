@@ -25,6 +25,7 @@
   "themeSystem": "시스템 기본값",
   "themeLight": "밝은",
   "themeDark": "어두운",
+  "themeOled": "OLED",
   "useListView": "목록 보기 사용",
   "viewMode": "보기 모드",
   "listView": "목록 보기",

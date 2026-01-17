@@ -12,6 +12,7 @@
   "themeSystem": "Predefinito di sistema",
   "themeLight": "Chiaro",
   "themeDark": "Scuro",
+  "themeOled": "OLED",
   "useListView": "Usa vista elenco",
   "viewMode": "Modalità vista",
   "listView": "Vista elenco",

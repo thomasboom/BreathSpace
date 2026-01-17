@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class ThemeProvider with ChangeNotifier {
-  ThemeMode _themeMode = ThemeMode.system;
+enum AppThemeMode { system, light, dark, oled }
 
-  ThemeMode get themeMode => _themeMode;
+class ThemeProvider with ChangeNotifier {
+  AppThemeMode _themeMode = AppThemeMode.system;
+
+  AppThemeMode get themeMode => _themeMode;
 
   ThemeProvider() {
     _loadThemeMode();
@@ -14,25 +16,34 @@ class ThemeProvider with ChangeNotifier {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? theme = prefs.getString('themeMode');
     if (theme == 'light') {
-      _themeMode = ThemeMode.light;
+      _themeMode = AppThemeMode.light;
     } else if (theme == 'dark') {
-      _themeMode = ThemeMode.dark;
+      _themeMode = AppThemeMode.dark;
+    } else if (theme == 'oled') {
+      _themeMode = AppThemeMode.oled;
     } else {
-      _themeMode = ThemeMode.system;
+      _themeMode = AppThemeMode.system;
     }
     notifyListeners();
   }
 
-  void setThemeMode(ThemeMode mode) async {
+  void setThemeMode(AppThemeMode mode) async {
     if (mode == _themeMode) return;
     _themeMode = mode;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (mode == ThemeMode.light) {
-      prefs.setString('themeMode', 'light');
-    } else if (mode == ThemeMode.dark) {
-      prefs.setString('themeMode', 'dark');
-    } else {
-      prefs.setString('themeMode', 'system');
+    switch (mode) {
+      case AppThemeMode.light:
+        prefs.setString('themeMode', 'light');
+        break;
+      case AppThemeMode.dark:
+        prefs.setString('themeMode', 'dark');
+        break;
+      case AppThemeMode.oled:
+        prefs.setString('themeMode', 'oled');
+        break;
+      case AppThemeMode.system:
+        prefs.setString('themeMode', 'system');
+        break;
     }
     notifyListeners();
   }

@@ -90,6 +90,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get themeDark => 'มืด';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'ใช้มุมมองรายการ';
 
   @override

@@ -298,6 +298,12 @@ abstract class AppLocalizations {
   /// **'Dark'**
   String get themeDark;
 
+  /// No description provided for @themeOled.
+  ///
+  /// In en, this message translates to:
+  /// **'OLED'**
+  String get themeOled;
+
   /// No description provided for @useListView.
   ///
   /// In en, this message translates to:

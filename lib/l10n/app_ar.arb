@@ -25,6 +25,7 @@
   "themeSystem": "الإعداد الافتراضي للنظام",
   "themeLight": "فاتح",
   "themeDark": "داكن",
+  "themeOled": "OLED",
   "useListView": "استخدام عرض القائمة",
   "viewMode": "وضع العرض",
   "listView": "عرض القائمة",

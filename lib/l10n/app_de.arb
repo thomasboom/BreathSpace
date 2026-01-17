@@ -16,6 +16,7 @@
   "themeSystem": "Systemstandard",
   "themeLight": "Hell",
   "themeDark": "Dunkel",
+  "themeOled": "OLED",
   "useListView": "Listenansicht verwenden",
   "viewMode": "Ansichtsmodus",
   "listView": "Listenansicht",

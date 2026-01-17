@@ -12,6 +12,7 @@
   "themeSystem": "Система по подразбиране",
   "themeLight": "Светла",
   "themeDark": "Тъмна",
+  "themeOled": "OLED",
   "useListView": "Използване на изгледа в списък",
   "viewMode": "Режим на изглед",
   "listView": "Изглед в списък",

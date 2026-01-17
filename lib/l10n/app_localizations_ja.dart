@@ -90,6 +90,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get themeDark => 'ダーク';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'リストビューを使用';
 
   @override

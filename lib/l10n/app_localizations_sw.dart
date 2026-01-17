@@ -90,6 +90,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get themeDark => 'Giza';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'Tumia Orodha';
 
   @override

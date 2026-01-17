@@ -168,12 +168,104 @@ class BreathSpaceApp extends StatelessWidget {
       ),
     );
 
+    final oledTheme = ThemeData(
+      brightness: Brightness.dark,
+      scaffoldBackgroundColor: Colors.black,
+      primaryColor: const Color(0xFFF5F5F5),
+      fontFamily: 'GFS Didot',
+      cardColor: Colors.black,
+      colorScheme: const ColorScheme.dark(
+        primary: Color(0xFFF5F5F5),
+        secondary: Color(0xFFE0E0E0),
+        surface: Colors.black,
+        onSurface: Color(0xFFF5F5F5),
+        onPrimary: Colors.black,
+        onSecondary: Colors.black,
+      ),
+      textTheme: const TextTheme(
+        headlineLarge: TextStyle(
+          fontSize: 32,
+          fontWeight: FontWeight.w300,
+          letterSpacing: -0.5,
+          height: 1.2,
+          color: Color(0xFFF5F5F5),
+        ),
+        headlineMedium: TextStyle(
+          fontSize: 28,
+          fontWeight: FontWeight.w400,
+          letterSpacing: -0.3,
+          height: 1.2,
+          color: Color(0xFFF5F5F5),
+        ),
+        titleLarge: TextStyle(
+          fontSize: 22,
+          fontWeight: FontWeight.w500,
+          letterSpacing: -0.2,
+          color: Color(0xFFF5F5F5),
+        ),
+        titleMedium: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+          letterSpacing: -0.1,
+          color: Color(0xFFF5F5F5),
+        ),
+        bodyLarge: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
+          height: 1.5,
+          letterSpacing: 0.1,
+          color: Color(0xFFF5F5F5),
+        ),
+        bodyMedium: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          height: 1.4,
+          letterSpacing: 0.1,
+          color: Color(0xFFF5F5F5),
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+      ),
+    );
+
+    ThemeMode getEffectiveThemeMode(AppThemeMode appMode) {
+      switch (appMode) {
+        case AppThemeMode.system:
+          return ThemeMode.system;
+        case AppThemeMode.light:
+          return ThemeMode.light;
+        case AppThemeMode.dark:
+        case AppThemeMode.oled:
+          return ThemeMode.dark;
+      }
+    }
+
+    ThemeData? getEffectiveTheme(AppThemeMode appMode) {
+      switch (appMode) {
+        case AppThemeMode.system:
+          return null;
+        case AppThemeMode.light:
+          return lightTheme;
+        case AppThemeMode.dark:
+          return darkTheme;
+        case AppThemeMode.oled:
+          return oledTheme;
+      }
+    }
+
     return MaterialApp(
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       debugShowCheckedModeBanner: false,
-      themeMode: themeProvider.themeMode,
+      themeMode: getEffectiveThemeMode(themeProvider.themeMode),
       theme: lightTheme,
-      darkTheme: darkTheme,
+      darkTheme: getEffectiveTheme(themeProvider.themeMode),
       locale: settingsProvider.locale,
       localizationsDelegates: [
         AppLocalizations.delegate,

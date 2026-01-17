@@ -90,6 +90,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get themeDark => 'داكن';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'استخدام عرض القائمة';
 
   @override

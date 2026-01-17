@@ -25,6 +25,7 @@
   "themeSystem": "システムデフォルト",
   "themeLight": "ライト",
   "themeDark": "ダーク",
+  "themeOled": "OLED",
   "useListView": "リストビューを使用",
   "viewMode": "表示モード",
   "listView": "リスト表示",

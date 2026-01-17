@@ -12,6 +12,7 @@
   "themeSystem": "系统默认",
   "themeLight": "浅色",
   "themeDark": "深色",
+  "themeOled": "OLED",
   "useListView": "使用列表视图",
   "viewMode": "视图模式",
   "listView": "列表视图",

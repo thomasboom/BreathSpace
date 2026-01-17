@@ -90,6 +90,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get themeDark => '어두운';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => '목록 보기 사용';
 
   @override

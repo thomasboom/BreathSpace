@@ -25,6 +25,7 @@
   "themeSystem": "Sistem Varsayılanı",
   "themeLight": "Açık",
   "themeDark": "Koyu",
+  "themeOled": "OLED",
   "useListView": "Liste Görünümü Kullan",
   "viewMode": "Görünüm Modu",
   "listView": "Liste Görünümü",

@@ -25,6 +25,7 @@
   "themeSystem": "Mặc định hệ thống",
   "themeLight": "Sáng",
   "themeDark": "Tối",
+  "themeOled": "OLED",
   "useListView": "Sử dụng Danh sách",
   "viewMode": "Chế độ xem",
   "listView": "Chế độ xem danh sách",

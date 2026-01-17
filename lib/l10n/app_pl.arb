@@ -25,6 +25,7 @@
   "themeSystem": "Domyślny systemu",
   "themeLight": "Jasny",
   "themeDark": "Ciemny",
+  "themeOled": "OLED",
   "useListView": "Użyj widoku listy",
   "viewMode": "Tryb widoku",
   "listView": "Widok listy",

@@ -90,6 +90,9 @@ class AppLocalizationsBg extends AppLocalizations {
   String get themeDark => 'Тъмна';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'Използване на изгледа в списък';
 
   @override

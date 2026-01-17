@@ -90,6 +90,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get themeDark => 'Donker';
 
   @override
+  String get themeOled => 'OLED';
+
+  @override
   String get useListView => 'Gebruik lijstweergave';
 
   @override
