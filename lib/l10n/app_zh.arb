@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "将头向右倾斜",
   "phase_instruct_holdStretch": "保持拉伸",
   "phase_instruct_returnCenter": "回到中心",
-  "phase_instruct_relaxNeck": "放松颈部肌肉"
+  "phase_instruct_relaxNeck": "放松颈部肌肉",
+  "disableAIFeatures": "禁用AI功能",
+  "disableAIFeaturesSubtitle": "关闭AI驱动的推荐"
 }

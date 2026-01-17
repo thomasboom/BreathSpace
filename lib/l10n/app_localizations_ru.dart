@@ -175,10 +175,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get replayIntro => 'Повторить вступление';
 
   @override
-  String get disableAIFeatures => 'Disable AI features';
+  String get disableAIFeatures => 'Отключить функции ИИ';
 
   @override
-  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+  String get disableAIFeaturesSubtitle => 'Выключить рекомендации на основе ИИ';
 
   @override
   String get welcomeTitle => 'Добро пожаловать в BreathSpace';

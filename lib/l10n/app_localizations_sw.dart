@@ -174,10 +174,10 @@ class AppLocalizationsSw extends AppLocalizations {
   String get replayIntro => 'Cheza tena Utangulizi';
 
   @override
-  String get disableAIFeatures => 'Disable AI features';
+  String get disableAIFeatures => 'Zima vipengele vya AI';
 
   @override
-  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+  String get disableAIFeaturesSubtitle => 'Zima mapendekezo yanayotumia AI';
 
   @override
   String get welcomeTitle => 'Karibu BreathSpace';

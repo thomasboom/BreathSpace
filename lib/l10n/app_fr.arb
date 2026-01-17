@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Incliner la tête vers la droite",
   "phase_instruct_holdStretch": "Maintenir l'étirement",
   "phase_instruct_returnCenter": "Revenir au centre",
-  "phase_instruct_relaxNeck": "Détendre les muscles du cou"
+  "phase_instruct_relaxNeck": "Détendre les muscles du cou",
+  "disableAIFeatures": "Désactiver les fonctionnalités IA",
+  "disableAIFeaturesSubtitle": "Désactiver les recommandations alimentées par l'IA"
 }

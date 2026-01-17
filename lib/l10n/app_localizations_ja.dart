@@ -174,10 +174,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get replayIntro => 'イントロを再再生';
 
   @override
-  String get disableAIFeatures => 'Disable AI features';
+  String get disableAIFeatures => 'AI機能を無効にする';
 
   @override
-  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+  String get disableAIFeaturesSubtitle => 'AIによる推奨をオフにする';
 
   @override
   String get welcomeTitle => 'BreathSpaceへようこそ';

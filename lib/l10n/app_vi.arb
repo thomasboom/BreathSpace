@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Nghiêng đầu sang phải",
   "phase_instruct_holdStretch": "Giữ động tác giãn",
   "phase_instruct_returnCenter": "Trở về tâm",
-  "phase_instruct_relaxNeck": "Thư giãn cơ cổ"
+  "phase_instruct_relaxNeck": "Thư giãn cơ cổ",
+  "disableAIFeatures": "Tắt tính năng AI",
+  "disableAIFeaturesSubtitle": "Tắt đề xuất dựa trên AI"
 }

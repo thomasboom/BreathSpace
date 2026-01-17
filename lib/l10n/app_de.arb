@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Kopf nach rechts neigen",
   "phase_instruct_holdStretch": "Dehnung halten",
   "phase_instruct_returnCenter": "Zurück zur Mitte",
-  "phase_instruct_relaxNeck": "Nackenmuskeln entspannen"
+  "phase_instruct_relaxNeck": "Nackenmuskeln entspannen",
+  "disableAIFeatures": "KI-Funktionen deaktivieren",
+  "disableAIFeaturesSubtitle": "KI-gestützte Empfehlungen ausschalten"
 }

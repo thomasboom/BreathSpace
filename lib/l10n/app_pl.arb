@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Przechyl głowę w prawo",
   "phase_instruct_holdStretch": "Utrzymaj rozciąganie",
   "phase_instruct_returnCenter": "Wróć do środka",
-  "phase_instruct_relaxNeck": "Rozluźnij mięśnie szyi"
+  "phase_instruct_relaxNeck": "Rozluźnij mięśnie szyi",
+  "disableAIFeatures": "Wyłącz funkcje AI",
+  "disableAIFeaturesSubtitle": "Wyłącz rekomendacje oparte na AI"
 }

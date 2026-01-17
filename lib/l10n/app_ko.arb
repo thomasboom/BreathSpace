@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "머리를 오른쪽으로 기울이세요",
   "phase_instruct_holdStretch": "스트레칭을 유지하세요",
   "phase_instruct_returnCenter": "중심으로 돌아가세요",
-  "phase_instruct_relaxNeck": "목 근육을relax하세요"
+  "phase_instruct_relaxNeck": "목 근육을relax하세요",
+  "disableAIFeatures": "AI 기능 비활성화",
+  "disableAIFeaturesSubtitle": "AI 기반 권장 사항 끄기"
 }

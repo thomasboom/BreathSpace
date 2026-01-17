@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Pisha kichwa kulia",
   "phase_instruct_holdStretch": "Shikiza mkunato",
   "phase_instruct_returnCenter": "Rudi katikati",
-  "phase_instruct_relaxNeck": "Tulia misuli ya shingo"
+  "phase_instruct_relaxNeck": "Tulia misuli ya shingo",
+  "disableAIFeatures": "Zima vipengele vya AI",
+  "disableAIFeaturesSubtitle": "Zima mapendekezo yanayotumia AI"
 }

@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Наклоните голову вправо",
   "phase_instruct_holdStretch": "Удерживайте растяжку",
   "phase_instruct_returnCenter": "Вернитесь в центр",
-  "phase_instruct_relaxNeck": "Расслабьте мышцы шеи"
+  "phase_instruct_relaxNeck": "Расслабьте мышцы шеи",
+  "disableAIFeatures": "Отключить функции ИИ",
+  "disableAIFeaturesSubtitle": "Выключить рекомендации на основе ИИ"
 }

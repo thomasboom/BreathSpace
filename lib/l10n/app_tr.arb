@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Başını sağa eğ",
   "phase_instruct_holdStretch": "Germeyi tut",
   "phase_instruct_returnCenter": "Merkeze dön",
-  "phase_instruct_relaxNeck": "Boyun kaslarını gevşet"
+  "phase_instruct_relaxNeck": "Boyun kaslarını gevşet",
+  "disableAIFeatures": "AI özelliklerini devre dışı bırak",
+  "disableAIFeaturesSubtitle": "AI destekli önerileri kapat"
 }

@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Нахиліть голову вправо",
   "phase_instruct_holdStretch": "Утримуйте розтяжку",
   "phase_instruct_returnCenter": "Поверніться до центру",
-  "phase_instruct_relaxNeck": "Розслабте м'язи шиї"
+  "phase_instruct_relaxNeck": "Розслабте м'язи шиї",
+  "disableAIFeatures": "Вимкнути функції ШІ",
+  "disableAIFeaturesSubtitle": "Вимкнути рекомендації на основі ШІ"
 }

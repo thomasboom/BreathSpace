@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "ميل الرأس إلى اليمين",
   "phase_instruct_holdStretch": "تمدد التمدد",
   "phase_instruct_returnCenter": "عد إلى المركز",
-  "phase_instruct_relaxNeck": "استرخي عضلات الرقبة"
+  "phase_instruct_relaxNeck": "استرخي عضلات الرقبة",
+  "disableAIFeatures": "تعطيل ميزات الذكاء الاصطناعي",
+  "disableAIFeaturesSubtitle": "إيقاف التوصيات المدعومة بالذكاء الاصطناعي"
 }

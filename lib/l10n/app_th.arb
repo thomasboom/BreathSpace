@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "เอียงหัวไปทางขวา",
   "phase_instruct_holdStretch": "ค้างการยืดเหยียด",
   "phase_instruct_returnCenter": "กลับไปที่ศูนย์กลาง",
-  "phase_instruct_relaxNeck": "ผ่อนคลายกล้ามเนื้อคอ"
+  "phase_instruct_relaxNeck": "ผ่อนคลายกล้ามเนื้อคอ",
+  "disableAIFeatures": "ปิดใช้งานฟีเจอร์ AI",
+  "disableAIFeaturesSubtitle": "ปิดคำแนะนำที่ขับเคลื่อนด้วย AI"
 }

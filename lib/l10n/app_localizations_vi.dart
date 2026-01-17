@@ -174,10 +174,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get replayIntro => 'Phát lại phần giới thiệu';
 
   @override
-  String get disableAIFeatures => 'Disable AI features';
+  String get disableAIFeatures => 'Tắt tính năng AI';
 
   @override
-  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+  String get disableAIFeaturesSubtitle => 'Tắt đề xuất dựa trên AI';
 
   @override
   String get welcomeTitle => 'Chào mừng đến với BreathSpace';

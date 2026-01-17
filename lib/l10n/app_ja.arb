@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "頭を右に傾ける",
   "phase_instruct_holdStretch": "ストレッチを続ける",
   "phase_instruct_returnCenter": "中心に戻る",
-  "phase_instruct_relaxNeck": "首の筋肉リラックス"
+  "phase_instruct_relaxNeck": "首の筋肉リラックス",
+  "disableAIFeatures": "AI機能を無効にする",
+  "disableAIFeaturesSubtitle": "AIによる推奨をオフにする"
 }

@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Наклонете главата надясно",
   "phase_instruct_holdStretch": "Задръжте разтягането",
   "phase_instruct_returnCenter": "Върнете се в центъра",
-  "phase_instruct_relaxNeck": "Отпуснете мускулите на врата"
+  "phase_instruct_relaxNeck": "Отпуснете мускулите на врата",
+  "disableAIFeatures": "Деактивирайте AI функциите",
+  "disableAIFeaturesSubtitle": "Изключете препоръките, задвижвани от AI"
 }

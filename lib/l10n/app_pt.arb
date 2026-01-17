@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Incline a cabeça para a direita",
   "phase_instruct_holdStretch": "Mantenha o alongamento",
   "phase_instruct_returnCenter": "Volte ao centro",
-  "phase_instruct_relaxNeck": "Relaxe os músculos do pescoço"
+  "phase_instruct_relaxNeck": "Relaxe os músculos do pescoço",
+  "disableAIFeatures": "Desativar recursos de IA",
+  "disableAIFeaturesSubtitle": "Desativar recomendações baseadas em IA"
 }

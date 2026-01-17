@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Inclina la testa a destra",
   "phase_instruct_holdStretch": "Mantieni lo stretching",
   "phase_instruct_returnCenter": "Torna al centro",
-  "phase_instruct_relaxNeck": "Rilassa i muscoli del collo"
+  "phase_instruct_relaxNeck": "Rilassa i muscoli del collo",
+  "disableAIFeatures": "Disabilita funzionalità IA",
+  "disableAIFeaturesSubtitle": "Disattiva raccomandazioni basate su IA"
 }

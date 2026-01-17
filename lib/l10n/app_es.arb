@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Inclinar la cabeza hacia la derecha",
   "phase_instruct_holdStretch": "Mantener el estiramiento",
   "phase_instruct_returnCenter": "Volver al centro",
-  "phase_instruct_relaxNeck": "Relajar los músculos del cuello"
+  "phase_instruct_relaxNeck": "Relajar los músculos del cuello",
+  "disableAIFeatures": "Desactivar funciones de IA",
+  "disableAIFeaturesSubtitle": "Desactivar recomendaciones impulsadas por IA"
 }

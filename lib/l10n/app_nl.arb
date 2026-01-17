@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "Hoofd naar rechts kantelen",
   "phase_instruct_holdStretch": "De rekking vasthouden",
   "phase_instruct_returnCenter": "Terug naar het midden",
-  "phase_instruct_relaxNeck": "Nek spieren ontspannen"
+  "phase_instruct_relaxNeck": "Nek spieren ontspannen",
+  "disableAIFeatures": "AI-functies uitschakelen",
+  "disableAIFeaturesSubtitle": "AI-gestuurde aanbevelingen uitzetten"
 }

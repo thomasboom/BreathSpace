@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "הטה ראש ימינה",
   "phase_instruct_holdStretch": "החזק את המתיחה",
   "phase_instruct_returnCenter": "חזור למרכז",
-  "phase_instruct_relaxNeck": "הרגע שרירי צוואר"
+  "phase_instruct_relaxNeck": "הרגע שרירי צוואר",
+  "disableAIFeatures": "השבת תכונות AI",
+  "disableAIFeaturesSubtitle": "כבה המלצות מונעות AI"
 }

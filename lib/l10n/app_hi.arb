@@ -183,5 +183,7 @@
   "phase_instruct_tiltRight": "सिर दाहिनी ओर झुकाएं",
   "phase_instruct_holdStretch": "खिंचाव पकड़े रखें",
   "phase_instruct_returnCenter": "केंद्र में लौटें",
-  "phase_instruct_relaxNeck": "गर्दन की मांसपेशियों को आराम दें"
+  "phase_instruct_relaxNeck": "गर्दन की मांसपेशियों को आराम दें",
+  "disableAIFeatures": "AI सुविधाएं अक्षम करें",
+  "disableAIFeaturesSubtitle": "AI-संचालित सिफारिशें बंद करें"
 }
