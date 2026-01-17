@@ -466,6 +466,18 @@ abstract class AppLocalizations {
   /// **'Replay Intro'**
   String get replayIntro;
 
+  /// No description provided for @disableAIFeatures.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable AI features'**
+  String get disableAIFeatures;
+
+  /// No description provided for @disableAIFeaturesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off AI-powered recommendations'**
+  String get disableAIFeaturesSubtitle;
+
   /// No description provided for @welcomeTitle.
   ///
   /// In en, this message translates to:

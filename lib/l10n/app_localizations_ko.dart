@@ -174,6 +174,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get replayIntro => '인트로 다시 보기';
 
   @override
+  String get disableAIFeatures => 'Disable AI features';
+
+  @override
+  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+
+  @override
   String get welcomeTitle => 'BreathSpace에 오신 것을 환영합니다';
 
   @override

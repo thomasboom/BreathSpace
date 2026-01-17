@@ -54,6 +54,8 @@
   "musicLofi": "LoFi",
   "musicPiano": "Piano",
   "replayIntro": "Replay Intro",
+  "disableAIFeatures": "Disable AI features",
+  "disableAIFeaturesSubtitle": "Turn off AI-powered recommendations",
   "welcomeTitle": "Welcome to BreathSpace",
   "welcomeSubtitle": "Your space. Slow down, anytime.",
   "getStarted": "Get Started",

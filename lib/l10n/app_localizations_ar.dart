@@ -174,6 +174,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get replayIntro => 'إعادة تشغيل المقدمة';
 
   @override
+  String get disableAIFeatures => 'Disable AI features';
+
+  @override
+  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+
+  @override
   String get welcomeTitle => 'مرحبًا بك في BreathSpace';
 
   @override

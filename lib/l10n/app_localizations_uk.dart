@@ -174,6 +174,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get replayIntro => 'Повторити вступ';
 
   @override
+  String get disableAIFeatures => 'Disable AI features';
+
+  @override
+  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+
+  @override
   String get welcomeTitle => 'Ласкаво просимо до BreathSpace';
 
   @override

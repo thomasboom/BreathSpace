@@ -34,12 +34,14 @@ class SettingsProvider extends ChangeNotifier {
   MusicMode _musicMode = MusicMode.off;
   VoiceGuideMode _voiceGuideMode = VoiceGuideMode.off;
   ViewMode _viewMode = ViewMode.list;
+  bool _aiKillSwitch = false;
 
   LanguagePreference get languagePreference => _languagePreference;
   bool get soundEffectsEnabled => _soundEffectsEnabled;
   MusicMode get musicMode => _musicMode;
   VoiceGuideMode get voiceGuideMode => _voiceGuideMode;
   ViewMode get viewMode => _viewMode;
+  bool get aiKillSwitch => _aiKillSwitch;
 
   Locale? get locale {
     switch (_languagePreference) {
@@ -169,7 +171,7 @@ class SettingsProvider extends ChangeNotifier {
             _musicMode = MusicMode.off;
         }
       }
-      notifyListeners();
+      _aiKillSwitch = prefs.getBool('aiKillSwitch') ?? false;
       AppLogger.info('Settings loaded successfully');
     } catch (e, stack) {
       AppLogger.error('Failed to load settings', e, stack);
@@ -289,5 +291,12 @@ class SettingsProvider extends ChangeNotifier {
         await prefs.setString('voiceGuideMode', 'thomas');
         break;
     }
+  }
+
+  Future<void> setAiKillSwitch(bool value) async {
+    _aiKillSwitch = value;
+    notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('aiKillSwitch', value);
   }
 }

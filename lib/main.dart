@@ -290,11 +290,15 @@ class BreathSpaceApp extends StatelessWidget {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       home: seen
-          ? settingsProvider.viewMode == ViewMode.list
+          ? (settingsProvider.aiKillSwitch &&
+                    (settingsProvider.viewMode == ViewMode.ai ||
+                        settingsProvider.viewMode == ViewMode.quiz)
+                ? const BreathingExerciseScreen()
+                : settingsProvider.viewMode == ViewMode.list
                 ? const BreathingExerciseScreen()
                 : settingsProvider.viewMode == ViewMode.ai
                 ? const GeminiExerciseScreen()
-                : const QuizExerciseScreen()
+                : const QuizExerciseScreen())
           : const IntroScreen(),
       routes: {'/settings': (context) => const SettingsScreen()},
       onGenerateRoute: (settings) {

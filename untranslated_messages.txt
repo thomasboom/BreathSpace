@@ -1,1 +1,101 @@
-{}
+{
+  "ar": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "bg": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "de": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "es": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "fr": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "he": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "hi": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "it": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "ja": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "ko": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "nl": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "pl": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "pt": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "ru": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "sw": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "th": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "tr": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "uk": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "vi": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ],
+
+  "zh": [
+    "disableAIFeatures",
+    "disableAIFeaturesSubtitle"
+  ]
+}

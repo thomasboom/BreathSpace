@@ -82,7 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     int count = 0;
     if (widget.fromExercise) count++; // Stop exercise button
     count +=
-        6; // Theme + Language + Voice Guide + View mode + Music + Replay intro
+        7; // Theme + Language + Voice Guide + View mode + Music + Replay intro + AI Kill Switch
     count += 5; // GitHub + Share + Privacy + Report + Rate
     count += 3; // Cache size + Version + App info
     return count;
@@ -276,220 +276,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   const SizedBox(height: 12),
                   _buildSettingsCard(
-                    title: AppLocalizations.of(context).language,
-                    trailing: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 4,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).scaffoldBackgroundColor,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: Theme.of(
-                            context,
-                          ).colorScheme.onSurface.withValues(alpha: 0.1),
-                          width: 1,
-                        ),
-                      ),
-                      child: DropdownButton<LanguagePreference>(
-                        value: settingsProvider.languagePreference,
-                        onChanged: (LanguagePreference? newValue) {
-                          if (newValue != null) {
-                            settingsProvider.setLanguagePreference(newValue);
-                          }
-                        },
-                        underline: const SizedBox(),
-                        items: <DropdownMenuItem<LanguagePreference>>[
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.system,
-                            child: Text(
-                              AppLocalizations.of(context).languageSystem,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.ar,
-                            child: Text(
-                              AppLocalizations.of(context).languageArabic,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.bg,
-                            child: Text(
-                              AppLocalizations.of(context).languageBulgarian,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.de,
-                            child: Text(
-                              AppLocalizations.of(context).languageGerman,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.en,
-                            child: Text(
-                              AppLocalizations.of(context).languageEnglish,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.es,
-                            child: Text(
-                              AppLocalizations.of(context).languageSpanish,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.fr,
-                            child: Text(
-                              AppLocalizations.of(context).languageFrench,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.it,
-                            child: Text(
-                              AppLocalizations.of(context).languageItalian,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.ja,
-                            child: Text(
-                              AppLocalizations.of(context).languageJapanese,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.nl,
-                            child: Text(
-                              AppLocalizations.of(context).languageDutch,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.pt,
-                            child: Text(
-                              AppLocalizations.of(context).languagePortuguese,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.ru,
-                            child: Text(
-                              AppLocalizations.of(context).languageRussian,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.zh,
-                            child: Text(
-                              AppLocalizations.of(context).languageChinese,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.hi,
-                            child: Text(
-                              AppLocalizations.of(context).languageHindi,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.ko,
-                            child: Text(
-                              AppLocalizations.of(context).languageKorean,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.pl,
-                            child: Text(
-                              AppLocalizations.of(context).languagePolish,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                          DropdownMenuItem<LanguagePreference>(
-                            value: LanguagePreference.tr,
-                            child: Text(
-                              AppLocalizations.of(context).languageTurkish,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    title: AppLocalizations.of(context).disableAIFeatures,
+                    trailing: Switch(
+                      value: settingsProvider.aiKillSwitch,
+                      onChanged: (value) {
+                        settingsProvider.setAiKillSwitch(value);
+                      },
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -568,7 +360,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                       child: DropdownButton<ViewMode>(
-                        value: settingsProvider.viewMode,
+                        value:
+                            (settingsProvider.aiKillSwitch &&
+                                (settingsProvider.viewMode == ViewMode.ai ||
+                                    settingsProvider.viewMode == ViewMode.quiz))
+                            ? ViewMode.list
+                            : settingsProvider.viewMode,
                         onChanged: (ViewMode? newValue) {
                           if (newValue != null) {
                             settingsProvider.setViewMode(newValue);
@@ -587,28 +384,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               ),
                             ),
                           ),
-                          DropdownMenuItem<ViewMode>(
-                            value: ViewMode.ai,
-                            child: Text(
-                              "AI Mode",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
+                          if (!settingsProvider.aiKillSwitch)
+                            DropdownMenuItem<ViewMode>(
+                              value: ViewMode.ai,
+                              child: Text(
+                                "AI Mode",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface,
+                                ),
                               ),
                             ),
-                          ),
-                          DropdownMenuItem<ViewMode>(
-                            value: ViewMode.quiz,
-                            child: Text(
-                              AppLocalizations.of(context).quizMode,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.onSurface,
+                          if (!settingsProvider.aiKillSwitch)
+                            DropdownMenuItem<ViewMode>(
+                              value: ViewMode.quiz,
+                              child: Text(
+                                AppLocalizations.of(context).quizMode,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface,
+                                ),
                               ),
                             ),
-                          ),
                         ],
                       ),
                     ),

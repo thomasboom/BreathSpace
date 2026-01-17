@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,12 +15,14 @@ class IntroScreen extends StatefulWidget {
   State<IntroScreen> createState() => _IntroScreenState();
 }
 
-class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStateMixin {
+class _IntroScreenState extends State<IntroScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
   ViewMode _selectedViewMode = ViewMode.list; // Default to list view
-  LanguagePreference _selectedLanguage = LanguagePreference.system; // Default to system
+  LanguagePreference _selectedLanguage =
+      LanguagePreference.system; // Default to system
 
   @override
   void initState() {
@@ -31,21 +32,20 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
       vsync: this,
     );
 
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: const Interval(0.0, 0.8, curve: Curves.easeOut),
-    ));
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.0, 0.8, curve: Curves.easeOut),
+      ),
+    );
 
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0.3),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: const Interval(0.2, 1.0, curve: Curves.easeOut),
-    ));
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: const Interval(0.2, 1.0, curve: Curves.easeOut),
+          ),
+        );
 
     _animationController.forward();
   }
@@ -130,13 +130,19 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [
-                                Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                                Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
+                                Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.1),
+                                Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.05),
                               ],
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.1),
                                 blurRadius: 20,
                                 offset: const Offset(0, 10),
                               ),
@@ -166,7 +172,9 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
-                            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.onSurface.withValues(alpha: 0.7),
                             height: 1.4,
                             letterSpacing: 0.2,
                           ),
@@ -179,13 +187,21 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSurface.withValues(alpha: 0.6),
                               height: 1.4,
                             ),
                             children: [
-                              TextSpan(text: AppLocalizations.of(context).termsAgreementPrefix),
                               TextSpan(
-                                text: AppLocalizations.of(context).privacyPolicy,
+                                text: AppLocalizations.of(
+                                  context,
+                                ).termsAgreementPrefix,
+                              ),
+                              TextSpan(
+                                text: AppLocalizations.of(
+                                  context,
+                                ).privacyPolicy,
                                 style: TextStyle(
                                   color: Theme.of(context).colorScheme.primary,
                                   fontWeight: FontWeight.w500,
@@ -193,7 +209,9 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () async {
-                                    final Uri url = Uri.parse('https://breathspace-app.vercel.app/privacy-policy.html');
+                                    final Uri url = Uri.parse(
+                                      'https://breathspace-app.vercel.app/privacy-policy.html',
+                                    );
                                     if (await canLaunchUrl(url)) {
                                       await launchUrl(url);
                                     } else {
@@ -201,7 +219,11 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                                     }
                                   },
                               ),
-                              TextSpan(text: AppLocalizations.of(context).termsAgreementSuffix),
+                              TextSpan(
+                                text: AppLocalizations.of(
+                                  context,
+                                ).termsAgreementSuffix,
+                              ),
                             ],
                           ),
                         ),
@@ -229,7 +251,9 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                             vertical: 12,
                           ),
                         ),
-                        items: LanguagePreference.values.map((LanguagePreference lang) {
+                        items: LanguagePreference.values.map((
+                          LanguagePreference lang,
+                        ) {
                           String langName = _getLanguageName(lang, context);
                           return DropdownMenuItem<LanguagePreference>(
                             value: lang,
@@ -242,7 +266,11 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                               _selectedLanguage = newValue;
                             });
                             // Immediately update the language preference to trigger UI update
-                            final settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
+                            final settingsProvider =
+                                Provider.of<SettingsProvider>(
+                                  context,
+                                  listen: false,
+                                );
                             settingsProvider.setLanguagePreference(newValue);
                           }
                         },
@@ -259,7 +287,15 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: DropdownButtonFormField<ViewMode>(
-                        initialValue: _selectedViewMode,
+                        initialValue:
+                            (Provider.of<SettingsProvider>(
+                                  context,
+                                  listen: false,
+                                ).aiKillSwitch &&
+                                (_selectedViewMode == ViewMode.ai ||
+                                    _selectedViewMode == ViewMode.quiz))
+                            ? ViewMode.list
+                            : _selectedViewMode,
                         decoration: InputDecoration(
                           labelText: AppLocalizations.of(context).viewMode,
                           border: OutlineInputBorder(
@@ -270,18 +306,30 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                             vertical: 12,
                           ),
                         ),
-                        items: ViewMode.values.map((ViewMode mode) {
-                          return DropdownMenuItem<ViewMode>(
-                            value: mode,
-                            child: Text(
-                              mode == ViewMode.list
-                                ? AppLocalizations.of(context).listView
-                                : mode == ViewMode.ai
-                                    ? AppLocalizations.of(context).aiMode
-                                    : AppLocalizations.of(context).quizMode,
-                            ),
-                          );
-                        }).toList(),
+                        items: ViewMode.values
+                            .where((mode) {
+                              final settingsProvider =
+                                  Provider.of<SettingsProvider>(
+                                    context,
+                                    listen: false,
+                                  );
+                              return !(settingsProvider.aiKillSwitch &&
+                                  (mode == ViewMode.ai ||
+                                      mode == ViewMode.quiz));
+                            })
+                            .map((ViewMode mode) {
+                              return DropdownMenuItem<ViewMode>(
+                                value: mode,
+                                child: Text(
+                                  mode == ViewMode.list
+                                      ? AppLocalizations.of(context).listView
+                                      : mode == ViewMode.ai
+                                      ? AppLocalizations.of(context).aiMode
+                                      : AppLocalizations.of(context).quizMode,
+                                ),
+                              );
+                            })
+                            .toList(),
                         onChanged: (ViewMode? newValue) {
                           if (newValue != null) {
                             setState(() {
@@ -301,32 +349,51 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
                     child: Container(
                       width: double.infinity,
                       height: 56,
-                      margin: const EdgeInsets.only(bottom: 48, left: 16, right: 16),
+                      margin: const EdgeInsets.only(
+                        bottom: 48,
+                        left: 16,
+                        right: 16,
+                      ),
                       child: ElevatedButton(
                         onPressed: () async {
-                          final settingsProvider = Provider.of<SettingsProvider>(context, listen: false);
+                          final settingsProvider =
+                              Provider.of<SettingsProvider>(
+                                context,
+                                listen: false,
+                              );
                           final prefs = await SharedPreferences.getInstance();
                           await prefs.setBool('seen', true);
 
                           // Save the selected view mode and language using the existing provider
                           await settingsProvider.setViewMode(_selectedViewMode);
-                          await settingsProvider.setLanguagePreference(_selectedLanguage);
+                          await settingsProvider.setLanguagePreference(
+                            _selectedLanguage,
+                          );
 
                           if (context.mounted) {
                             Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(builder: (_) => const BreathingExerciseScreen()),
+                              MaterialPageRoute(
+                                builder: (_) => const BreathingExerciseScreen(),
+                              ),
                             );
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Theme.of(context).colorScheme.primary,
-                          foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                          backgroundColor: Theme.of(
+                            context,
+                          ).colorScheme.primary,
+                          foregroundColor: Theme.of(
+                            context,
+                          ).colorScheme.onPrimary,
                           elevation: 0,
                           shadowColor: Colors.transparent,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
-                          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 32,
+                            vertical: 16,
+                          ),
                         ),
                         child: Text(
                           AppLocalizations.of(context).getStarted,

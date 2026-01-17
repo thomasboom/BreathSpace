@@ -174,6 +174,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get replayIntro => '重播介绍';
 
   @override
+  String get disableAIFeatures => 'Disable AI features';
+
+  @override
+  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+
+  @override
   String get welcomeTitle => '欢迎来到 BreathSpace';
 
   @override

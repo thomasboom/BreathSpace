@@ -174,6 +174,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get replayIntro => 'Girişi Tekrar Oynat';
 
   @override
+  String get disableAIFeatures => 'Disable AI features';
+
+  @override
+  String get disableAIFeaturesSubtitle => 'Turn off AI-powered recommendations';
+
+  @override
   String get welcomeTitle => 'BreathSpace\'e Hoş Geldiniz';
 
   @override
