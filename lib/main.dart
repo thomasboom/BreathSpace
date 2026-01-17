@@ -4,12 +4,12 @@ import 'dart:io';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:BreathSpace/exercise_detail_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'settings_screen.dart'; // Import the new settings screen
+import 'settings_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:BreathSpace/theme_provider.dart';
-import 'package:BreathSpace/data.dart'; // Import the data file
+import 'package:BreathSpace/data.dart';
 
-import 'package:BreathSpace/settings_provider.dart'; // Import the new settings provider
+import 'package:BreathSpace/settings_provider.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
 import 'package:BreathSpace/pinned_exercises_provider.dart';
 
@@ -17,24 +17,39 @@ import 'intro_screen.dart';
 import 'package:BreathSpace/gemini_exercise_screen.dart';
 import 'package:BreathSpace/quiz_exercise_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:BreathSpace/logger.dart';
 
 void main() async {
+  AppLogger.info('Starting BreathSpace app');
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env"); // Load .env file
-  await loadBreathingExercisesUsingSystemLocale(); // Load exercises before app starts
-  final prefs = await SharedPreferences.getInstance();
-  final bool seen = prefs.getBool('seen') ?? false;
 
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => ThemeProvider()),
-        ChangeNotifierProvider(create: (context) => SettingsProvider()),
-        ChangeNotifierProvider(create: (context) => PinnedExercisesProvider()),
-      ],
-      child: BreathSpaceApp(seen: seen),
-    ),
-  );
+  try {
+    await dotenv.load(fileName: ".env");
+    AppLogger.debug('Environment loaded');
+
+    await loadBreathingExercisesUsingSystemLocale();
+    AppLogger.info('Breathing exercises loaded');
+
+    final prefs = await SharedPreferences.getInstance();
+    final bool seen = prefs.getBool('seen') ?? false;
+    AppLogger.debug('Seen flag: $seen');
+
+    runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => ThemeProvider()),
+          ChangeNotifierProvider(create: (context) => SettingsProvider()),
+          ChangeNotifierProvider(
+            create: (context) => PinnedExercisesProvider(),
+          ),
+        ],
+        child: BreathSpaceApp(seen: seen),
+      ),
+    );
+  } catch (e, stack) {
+    AppLogger.error('Failed to initialize app', e, stack);
+    rethrow;
+  }
 }
 
 class BreathSpaceApp extends StatelessWidget {

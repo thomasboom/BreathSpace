@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:BreathSpace/logger.dart';
 
 class PinnedExercisesProvider with ChangeNotifier {
   static const String _pinnedExercisesKey = 'pinnedExercises';
@@ -12,9 +13,15 @@ class PinnedExercisesProvider with ChangeNotifier {
   }
 
   Future<void> _loadPinnedExercises() async {
-    final prefs = await SharedPreferences.getInstance();
-    _pinnedExerciseTitles = prefs.getStringList(_pinnedExercisesKey) ?? [];
-    notifyListeners();
+    AppLogger.debug('Loading pinned exercises');
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _pinnedExerciseTitles = prefs.getStringList(_pinnedExercisesKey) ?? [];
+      notifyListeners();
+      AppLogger.info('Loaded ${_pinnedExerciseTitles.length} pinned exercises');
+    } catch (e, stack) {
+      AppLogger.error('Failed to load pinned exercises', e, stack);
+    }
   }
 
   Future<void> _savePinnedExercises() async {
@@ -23,14 +30,17 @@ class PinnedExercisesProvider with ChangeNotifier {
   }
 
   void togglePin(String exerciseTitle) {
-    if (_pinnedExerciseTitles.contains(exerciseTitle)) {
+    final isPinned = _pinnedExerciseTitles.contains(exerciseTitle);
+    if (isPinned) {
       _pinnedExerciseTitles.remove(exerciseTitle);
+      AppLogger.debug('Unpinned exercise: $exerciseTitle');
     } else {
-      if (_pinnedExerciseTitles.length < 4) { // Limit to 4 pinned exercises
+      if (_pinnedExerciseTitles.length < 4) {
         _pinnedExerciseTitles.add(exerciseTitle);
+        AppLogger.debug('Pinned exercise: $exerciseTitle');
       } else {
-        // Optionally, you could notify the user that they can only pin up to 4 exercises.
-        // For now, we'll just prevent adding more than 4.
+        AppLogger.warning('Cannot pin more than 4 exercises');
+        return;
       }
     }
     _savePinnedExercises();

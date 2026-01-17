@@ -19,24 +19,20 @@ class PromptCacheService {
 
         if (entry != null) {
           final timestamp = entry['timestamp'] as int;
-          final ttl =
-              entry['ttl'] as int? ??
-              86400000; // Default 24 hours in milliseconds
+          final ttl = entry['ttl'] as int? ?? 86400000;
           final now = DateTime.now().millisecondsSinceEpoch;
 
-          // Check if cache entry is still valid
           if (now - timestamp < ttl) {
+            AppLogger.debug('Cache hit for prompt');
             return entry['response'] as String;
           } else {
-            // Remove expired entry and save updated cache
             cache.remove(prompt);
             await prefs.setString(_cacheKey, jsonEncode(cache));
+            AppLogger.debug('Cache entry expired and removed');
           }
         }
       }
     } catch (e) {
-      // If there's any error reading the cache, return null
-      // This prevents cache errors from breaking the app
       AppLogger.error('Error reading from prompt cache', e);
     }
 
@@ -57,14 +53,12 @@ class PromptCacheService {
           ? Map<String, dynamic>.from(jsonDecode(cacheString))
           : <String, dynamic>{};
 
-      // Add new entry
       cache[prompt] = {
         'response': response,
         'timestamp': DateTime.now().millisecondsSinceEpoch,
         'ttl': ttl,
       };
 
-      // Trim cache if it's too large
       if (cache.length > _maxCacheSize) {
         final entries = cache.entries.toList()
           ..sort(
@@ -73,18 +67,20 @@ class PromptCacheService {
             ),
           );
 
-        // Keep only the most recent entries
         final trimmedEntries = entries.take(_maxCacheSize);
         cache
           ..clear()
           ..addEntries(trimmedEntries);
       }
 
-      // Save updated cache
-      return await prefs.setString(_cacheKey, jsonEncode(cache));
+      final success = await prefs.setString(_cacheKey, jsonEncode(cache));
+      if (success) {
+        AppLogger.debug(
+          'Cached response for prompt (cache size: ${cache.length})',
+        );
+      }
+      return success;
     } catch (e) {
-      // If there's any error writing to the cache, return false
-      // This prevents cache errors from breaking the app
       AppLogger.error('Error writing to prompt cache', e);
       return false;
     }

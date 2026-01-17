@@ -1,9 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:BreathSpace/logger.dart';
 
-enum LanguagePreference { system, ar, bg, de, en, es, fr, hi, it, ja, ko, nl, pl, pt, ru, tr, zh }
+enum LanguagePreference {
+  system,
+  ar,
+  bg,
+  de,
+  en,
+  es,
+  fr,
+  hi,
+  it,
+  ja,
+  ko,
+  nl,
+  pl,
+  pt,
+  ru,
+  tr,
+  zh,
+}
+
 enum MusicMode { off, nature, lofi, piano }
+
 enum VoiceGuideMode { off, thomas }
+
 enum ViewMode { list, ai, quiz }
 
 class SettingsProvider extends ChangeNotifier {
@@ -63,93 +85,99 @@ class SettingsProvider extends ChangeNotifier {
   }
 
   Future<void> _loadSettings() async {
-    final prefs = await SharedPreferences.getInstance();
-    _soundEffectsEnabled = prefs.getBool('soundEffectsEnabled') ?? true;
-    final viewModeString = prefs.getString('viewMode') ?? 'list';
-    _viewMode = viewModeString == 'ai'
-        ? ViewMode.ai
-        : viewModeString == 'quiz'
-            ? ViewMode.quiz
-            : ViewMode.list;
-    _voiceGuideMode = prefs.getString('voiceGuideMode') == 'thomas' 
-        ? VoiceGuideMode.thomas 
-        : VoiceGuideMode.off;
-    final langString = prefs.getString('languagePreference');
-    if (langString != null) {
-      switch (langString) {
-        case 'ar':
-          _languagePreference = LanguagePreference.ar;
-          break;
-        case 'bg':
-          _languagePreference = LanguagePreference.bg;
-          break;
-        case 'de':
-          _languagePreference = LanguagePreference.de;
-          break;
-        case 'en':
-          _languagePreference = LanguagePreference.en;
-          break;
-        case 'es':
-          _languagePreference = LanguagePreference.es;
-          break;
-        case 'fr':
-          _languagePreference = LanguagePreference.fr;
-          break;
-        case 'hi':
-          _languagePreference = LanguagePreference.hi;
-          break;
-        case 'it':
-          _languagePreference = LanguagePreference.it;
-          break;
-        case 'ja':
-          _languagePreference = LanguagePreference.ja;
-          break;
-        case 'ko':
-          _languagePreference = LanguagePreference.ko;
-          break;
-        case 'nl':
-          _languagePreference = LanguagePreference.nl;
-          break;
-        case 'pl':
-          _languagePreference = LanguagePreference.pl;
-          break;
-        case 'pt':
-          _languagePreference = LanguagePreference.pt;
-          break;
-        case 'ru':
-          _languagePreference = LanguagePreference.ru;
-          break;
-        case 'tr':
-          _languagePreference = LanguagePreference.tr;
-          break;
-        case 'zh':
-          _languagePreference = LanguagePreference.zh;
-          break;
-        default:
-          _languagePreference = LanguagePreference.system;
+    AppLogger.debug('Loading user settings');
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _soundEffectsEnabled = prefs.getBool('soundEffectsEnabled') ?? true;
+      final viewModeString = prefs.getString('viewMode') ?? 'list';
+      _viewMode = viewModeString == 'ai'
+          ? ViewMode.ai
+          : viewModeString == 'quiz'
+          ? ViewMode.quiz
+          : ViewMode.list;
+      _voiceGuideMode = prefs.getString('voiceGuideMode') == 'thomas'
+          ? VoiceGuideMode.thomas
+          : VoiceGuideMode.off;
+      final langString = prefs.getString('languagePreference');
+      if (langString != null) {
+        switch (langString) {
+          case 'ar':
+            _languagePreference = LanguagePreference.ar;
+            break;
+          case 'bg':
+            _languagePreference = LanguagePreference.bg;
+            break;
+          case 'de':
+            _languagePreference = LanguagePreference.de;
+            break;
+          case 'en':
+            _languagePreference = LanguagePreference.en;
+            break;
+          case 'es':
+            _languagePreference = LanguagePreference.es;
+            break;
+          case 'fr':
+            _languagePreference = LanguagePreference.fr;
+            break;
+          case 'hi':
+            _languagePreference = LanguagePreference.hi;
+            break;
+          case 'it':
+            _languagePreference = LanguagePreference.it;
+            break;
+          case 'ja':
+            _languagePreference = LanguagePreference.ja;
+            break;
+          case 'ko':
+            _languagePreference = LanguagePreference.ko;
+            break;
+          case 'nl':
+            _languagePreference = LanguagePreference.nl;
+            break;
+          case 'pl':
+            _languagePreference = LanguagePreference.pl;
+            break;
+          case 'pt':
+            _languagePreference = LanguagePreference.pt;
+            break;
+          case 'ru':
+            _languagePreference = LanguagePreference.ru;
+            break;
+          case 'tr':
+            _languagePreference = LanguagePreference.tr;
+            break;
+          case 'zh':
+            _languagePreference = LanguagePreference.zh;
+            break;
+          default:
+            _languagePreference = LanguagePreference.system;
+        }
       }
-    }
-    final musicModeString = prefs.getString('musicMode');
-    if (musicModeString != null) {
-      switch (musicModeString) {
-        case 'nature':
-          _musicMode = MusicMode.nature;
-          break;
-        case 'lofi':
-          _musicMode = MusicMode.lofi;
-          break;
-        case 'piano':
-          _musicMode = MusicMode.piano;
-          break;
-        default:
-          _musicMode = MusicMode.off;
+      final musicModeString = prefs.getString('musicMode');
+      if (musicModeString != null) {
+        switch (musicModeString) {
+          case 'nature':
+            _musicMode = MusicMode.nature;
+            break;
+          case 'lofi':
+            _musicMode = MusicMode.lofi;
+            break;
+          case 'piano':
+            _musicMode = MusicMode.piano;
+            break;
+          default:
+            _musicMode = MusicMode.off;
+        }
       }
+      notifyListeners();
+      AppLogger.info('Settings loaded successfully');
+    } catch (e, stack) {
+      AppLogger.error('Failed to load settings', e, stack);
     }
-    notifyListeners();
   }
 
-
   Future<void> setLanguagePreference(LanguagePreference preference) async {
+    AppLogger.debug('Setting language preference: ${preference.name}');
     _languagePreference = preference;
     notifyListeners();
     final prefs = await SharedPreferences.getInstance();
@@ -239,9 +267,13 @@ class SettingsProvider extends ChangeNotifier {
     _viewMode = mode;
     notifyListeners();
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('viewMode',
-      mode == ViewMode.ai ? 'ai' :
-      mode == ViewMode.quiz ? 'quiz' : 'list'
+    await prefs.setString(
+      'viewMode',
+      mode == ViewMode.ai
+          ? 'ai'
+          : mode == ViewMode.quiz
+          ? 'quiz'
+          : 'list',
     );
   }
 
@@ -258,5 +290,4 @@ class SettingsProvider extends ChangeNotifier {
         break;
     }
   }
-
 }

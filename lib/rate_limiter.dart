@@ -18,7 +18,6 @@ class RateLimiter {
 
   /// Check if the user has exceeded the daily rate limit
   static Future<bool> isRateLimited() async {
-    // In debug mode, don't apply rate limiting
     if (_isDebugMode()) {
       return false;
     }
@@ -26,34 +25,29 @@ class RateLimiter {
     try {
       final today = DateTime.now().toIso8601String().split('T')[0];
 
-      // Queue the operation to prevent race conditions
       final isLimited = await _queueOperation(() async {
         final prefs = await SharedPreferences.getInstance();
         final lastResetDate = prefs.getString(_lastResetDateKey);
 
-        // Check if we need to reset the counter (new day)
         if (lastResetDate != today) {
           await prefs.setInt(_requestCountKey, 0);
           await prefs.setString(_lastResetDateKey, today);
         }
 
-        // Get current count
         final currentCount = prefs.getInt(_requestCountKey) ?? 0;
 
-        // Check if limit is exceeded
         return currentCount >= _maxDailyRequests;
       });
+      AppLogger.debug('Rate limit check: $isLimited');
       return isLimited;
     } catch (e) {
       AppLogger.error('Error checking rate limit', e);
-      // If there's an error, don't rate limit to avoid blocking users
       return false;
     }
   }
 
   /// Increment the request count
   static Future<bool> incrementRequestCount() async {
-    // In debug mode, don't increment the counter
     if (_isDebugMode()) {
       return true;
     }
@@ -61,24 +55,24 @@ class RateLimiter {
     try {
       final today = DateTime.now().toIso8601String().split('T')[0];
 
-      // Queue the operation to prevent race conditions
       await _queueOperation(() async {
         final prefs = await SharedPreferences.getInstance();
         final lastResetDate = prefs.getString(_lastResetDateKey);
 
-        // Check if we need to reset the counter (new day)
         if (lastResetDate != today) {
           await prefs.setInt(_requestCountKey, 0);
           await prefs.setString(_lastResetDateKey, today);
         }
 
-        // Get current count and increment
         final currentCount = prefs.getInt(_requestCountKey) ?? 0;
         final newCount = currentCount + 1;
 
         await prefs.setInt(_requestCountKey, newCount);
+        AppLogger.debug(
+          'Request count incremented: $newCount/$_maxDailyRequests',
+        );
       });
-      return true; // Indicate that the operation was successful
+      return true;
     } catch (e) {
       AppLogger.error('Error incrementing request count', e);
       return false;
@@ -135,7 +129,7 @@ class RateLimiter {
     });
     return completer.future;
   }
-  
+
   /// Reset the rate limiter (for testing purposes)
   static Future<bool> reset() async {
     try {
@@ -143,7 +137,10 @@ class RateLimiter {
       await _queueOperation(() async {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setInt(_requestCountKey, 0);
-        await prefs.setString(_lastResetDateKey, DateTime.now().toIso8601String().split('T')[0]);
+        await prefs.setString(
+          _lastResetDateKey,
+          DateTime.now().toIso8601String().split('T')[0],
+        );
       });
       return true;
     } catch (e) {
@@ -151,7 +148,7 @@ class RateLimiter {
       return false;
     }
   }
-  
+
   /// Check if we're in debug mode
   static bool _isDebugMode() {
     return !const bool.fromEnvironment("dart.vm.product");

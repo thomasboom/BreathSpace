@@ -3,6 +3,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart';
 import 'package:BreathSpace/l10n/app_localizations.dart';
+import 'package:BreathSpace/logger.dart';
 
 enum ExerciseVersion { short, normal, long }
 
@@ -622,15 +623,25 @@ String? _resolveTranslationKey(AppLocalizations l10n, String key) {
 List<BreathingExercise> breathingExercises = [];
 
 Future<void> loadBreathingExercisesForLanguageCode(String? languageCode) async {
-  const assetPath = 'assets/exercises.json';
-  final String response = await rootBundle.loadString(assetPath);
-  final List<dynamic> data = json.decode(response);
-  breathingExercises = data
-      .map((json) => BreathingExercise.fromJson(json, languageCode))
-      .toList();
+  AppLogger.debug('Loading exercises for language: $languageCode');
+  try {
+    const assetPath = 'assets/exercises.json';
+    final String response = await rootBundle.loadString(assetPath);
+    final List<dynamic> data = json.decode(response);
+    breathingExercises = data
+        .map((json) => BreathingExercise.fromJson(json, languageCode))
+        .toList();
 
-  if (kReleaseMode) {
-    breathingExercises.removeWhere((exercise) => exercise.id == 'test-5-0-5-0');
+    if (kReleaseMode) {
+      breathingExercises.removeWhere(
+        (exercise) => exercise.id == 'test-5-0-5-0',
+      );
+    }
+
+    AppLogger.info('Loaded ${breathingExercises.length} exercises');
+  } catch (e, stack) {
+    AppLogger.error('Failed to load exercises', e, stack);
+    rethrow;
   }
 }
 
