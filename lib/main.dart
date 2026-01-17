@@ -265,7 +265,7 @@ class BreathSpaceApp extends StatelessWidget {
     ThemeData? getEffectiveTheme(AppThemeMode appMode) {
       switch (appMode) {
         case AppThemeMode.system:
-          return null;
+          return darkTheme;
         case AppThemeMode.light:
           return lightTheme;
         case AppThemeMode.dark:
