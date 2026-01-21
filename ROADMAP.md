@@ -63,4 +63,3 @@
 - [ ] Build web-based version for browser accessibility
 - [ ] Achieve full WCAG 2.1 AA compliance
 - [ ] Add sign language interpretation for breathing exercises
-- [ ] Support for low-bandwidth regions with reduced data usage modes
