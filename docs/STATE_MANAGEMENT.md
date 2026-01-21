@@ -20,17 +20,21 @@ We use the Provider pattern for:
 - Global state management
 - Dependency injection
 - Rebuilding specific parts of the widget tree when state changes
+- Persisting user preferences
 
 ### Basic Provider Usage
 
 ```dart
 // Providing state
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await loadBreathingExercisesUsingSystemLocale();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SettingsProvider()),
-        ChangeNotifierProvider(create: (_) => ExerciseProvider()),
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => PinnedExercisesProvider()),
       ],
       child: MyApp(),
     ),
@@ -43,7 +47,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SettingsProvider>(
       builder: (context, settings, child) {
-        return Text('Language: ${settings.language}');
+        return Text('Language: ${settings.languagePreference}');
       },
     );
   }
@@ -54,120 +58,177 @@ class MyWidget extends StatelessWidget {
 
 ### SettingsProvider
 
-Manages user preferences and settings.
+Manages user preferences and settings including language, music, voice guide, and view mode.
+
+#### Properties
 
 ```dart
-class SettingsProvider with ChangeNotifier {
-  String _language = 'en';
-  bool _darkMode = false;
-  
-  String get language => _language;
-  bool get darkMode => _darkMode;
-  
-  void setLanguage(String language) {
-    _language = language;
-    notifyListeners();
-  }
-  
-  void toggleDarkMode() {
-    _darkMode = !_darkMode;
-    notifyListeners();
+class SettingsProvider extends ChangeNotifier {
+  LanguagePreference _languagePreference;
+  bool _soundEffectsEnabled;
+  MusicMode _musicMode;
+  VoiceGuideMode _voiceGuideMode;
+  ViewMode _viewMode;
+  bool _aiKillSwitch;
+}
+```
+
+#### Enums
+
+- `LanguagePreference`: system, ar, bg, de, en, es, fr, hi, it, ja, ko, nl, pl, pt, ru, tr, zh
+- `MusicMode`: off, nature, lofi, piano
+- `VoiceGuideMode`: off, thomas
+- `ViewMode`: list, ai, quiz
+
+#### Methods
+
+```dart
+// Get locale based on language preference
+Locale? get locale { ... }
+
+// Set language preference
+Future<void> setLanguagePreference(LanguagePreference pref) async { ... }
+
+// Toggle sound effects
+void toggleSoundEffects() { ... }
+
+// Set music mode
+Future<void> setMusicMode(MusicMode mode) async { ... }
+
+// Set voice guide mode
+Future<void> setVoiceGuideMode(VoiceGuideMode mode) async { ... }
+
+// Set view mode
+Future<void> setViewMode(ViewMode mode) async { ... }
+
+// Toggle AI kill switch
+void toggleAIKillSwitch() { ... }
+```
+
+#### Persistence
+
+Settings are persisted using `shared_preferences`:
+- `languagePreference`: String representation of enum
+- `soundEffectsEnabled`: Boolean
+- `musicMode`: String representation of enum
+- `voiceGuideMode`: String representation of enum
+- `viewMode`: String representation of enum
+- `aiKillSwitch`: Boolean
+
+### ThemeProvider
+
+Manages theme mode preferences (system, light, dark, OLED).
+
+#### Properties
+
+```dart
+class ThemeProvider with ChangeNotifier {
+  AppThemeMode _themeMode;
+}
+```
+
+#### Enums
+
+- `AppThemeMode`: system, light, dark, oled
+
+#### Methods
+
+```dart
+// Set theme mode
+Future<void> setThemeMode(AppThemeMode mode) async { ... }
+```
+
+#### Persistence
+
+Theme mode is persisted using `shared_preferences`:
+- `themeMode`: String representation ('light', 'dark', 'oled', or 'system')
+
+#### Usage in UI
+
+```dart
+// Get MaterialThemeData based on theme mode
+ThemeData getTheme(BuildContext context, bool isDarkMode) {
+  switch (themeMode) {
+    case AppThemeMode.light:
+      return lightTheme;
+    case AppThemeMode.dark:
+      return darkTheme;
+    case AppThemeMode.oled:
+      return oledTheme;
+    case AppThemeMode.system:
+    default:
+      return isDarkMode ? darkTheme : lightTheme;
   }
 }
 ```
 
-### ExerciseProvider
+### PinnedExercisesProvider
 
-Manages exercise data and selection.
+Manages list of pinned exercises (up to 4 exercises can be pinned).
+
+#### Properties
 
 ```dart
-class ExerciseProvider with ChangeNotifier {
-  List<Exercise> _exercises = [];
-  Exercise? _selectedExercise;
-  
-  List<Exercise> get exercises => _exercises;
-  Exercise? get selectedExercise => _selectedExercise;
-  
-  void selectExercise(Exercise exercise) {
-    _selectedExercise = exercise;
-    notifyListeners();
-  }
-  
-  void loadExercises() async {
-    // Load exercises from JSON
-    _exercises = await _loadExercisesFromAssets();
-    notifyListeners();
-  }
+class PinnedExercisesProvider with ChangeNotifier {
+  List<String> _pinnedExerciseTitles;
 }
 ```
 
-### TimerProvider
-
-Manages the exercise timer state.
+#### Methods
 
 ```dart
-class TimerProvider with ChangeNotifier {
-  bool _isRunning = false;
-  int _secondsRemaining = 0;
-  
-  bool get isRunning => _isRunning;
-  int get secondsRemaining => _secondsRemaining;
-  
-  void startTimer(int duration) {
-    _isRunning = true;
-    _secondsRemaining = duration;
-    notifyListeners();
-    
-    // Timer logic
-  }
-  
-  void pauseTimer() {
-    _isRunning = false;
-    notifyListeners();
-  }
-  
-  void resetTimer() {
-    _isRunning = false;
-    _secondsRemaining = 0;
-    notifyListeners();
-  }
-}
+// Toggle pin status of an exercise
+void togglePin(String exerciseTitle) { ... }
+
+// Check if exercise is pinned
+bool isPinned(String exerciseTitle) { ... }
 ```
+
+#### Persistence
+
+Pinned exercises are persisted using `shared_preferences`:
+- `pinnedExercises`: List of exercise titles
+
+#### Constraints
+
+- Maximum 4 pinned exercises
+- Duplicate pins are prevented
+- Stores exercise titles (not full exercise objects)
 
 ## State Flow
 
-1. **Initialization**: Providers are initialized at app startup
-2. **Loading**: Data is loaded from assets or persisted storage
+1. **Initialization**: Providers are initialized at app startup in `main.dart`
+2. **Loading**: Data is loaded from `shared_preferences` asynchronously
 3. **User Interaction**: User actions trigger state changes through provider methods
-4. **Notification**: Providers notify listeners of state changes
-5. **UI Update**: Widgets rebuild with new state
-6. **Persistence**: Important state changes are persisted to shared preferences
+4. **Notification**: Providers call `notifyListeners()` to notify state changes
+5. **UI Update**: Widgets rebuild with new state using `Consumer` or `Provider.of()`
+6. **Persistence**: State changes are saved to `shared_preferences`
 
 ### Example Flow
 
 ```dart
-// 1. User selects an exercise
-exerciseProvider.selectExercise(exercise);
+// 1. User selects a language
+settingsProvider.setLanguagePreference(LanguagePreference.es);
 
-// 2. UI updates to show selected exercise
-Consumer<ExerciseProvider>(
+// 2. UI updates to show selected language
+Consumer<SettingsProvider>(
   builder: (context, provider, child) {
-    if (provider.selectedExercise != null) {
-      return ExerciseDetailScreen(
-        exercise: provider.selectedExercise!,
-      );
-    }
-    return ExerciseListScreen();
+    return Text('Language: ${provider.languagePreference}');
   },
 );
 
-// 3. User starts timer
-timerProvider.startTimer(provider.selectedExercise!.duration);
+// 3. User pins an exercise
+pinnedProvider.togglePin('Box Breathing');
 
-// 4. Timer updates UI
-Consumer<TimerProvider>(
-  builder: (context, provider, child) {
-    return Text('${provider.secondsRemaining} seconds remaining');
+// 4. Exercise list updates to show pinned indicator
+Consumer<PinnedExercisesProvider>(
+  builder: (context, pinnedProvider, child) {
+    return ListTile(
+      title: Text('Box Breathing'),
+      trailing: pinnedProvider.isPinned('Box Breathing')
+          ? Icon(Icons.push_pin)
+          : null,
+    );
   },
 );
 ```
@@ -178,35 +239,93 @@ Consumer<TimerProvider>(
 2. **Use immutable data**: Avoid mutating state directly; use methods that call `notifyListeners()`
 3. **Minimize rebuilds**: Use `Consumer` widgets strategically to rebuild only necessary parts
 4. **Handle async operations**: Use async/await in provider methods and update state appropriately
-5. **Dispose resources**: Override `dispose()` method to clean up resources
-6. **Error handling**: Handle errors gracefully and provide feedback to the user
+5. **Dispose resources**: Override `dispose()` method to clean up resources if needed
+6. **Error handling**: Handle errors gracefully and log them using `AppLogger`
 7. **Testing**: Write tests for provider methods to ensure correct state transitions
+8. **Logging**: Use `AppLogger.debug()`, `AppLogger.info()`, `AppLogger.warning()`, `AppLogger.error()` for logging
 
 ### Example with Error Handling
 
 ```dart
-class ExerciseProvider with ChangeNotifier {
-  List<Exercise> _exercises = [];
-  bool _isLoading = false;
-  String? _error;
-  
-  bool get isLoading => _isLoading;
-  String? get error => _error;
-  List<Exercise> get exercises => _exercises;
-  
-  Future<void> loadExercises() async {
-    _isLoading = true;
-    _error = null;
-    notifyListeners();
-    
+class SettingsProvider extends ChangeNotifier {
+  Future<void> setMusicMode(MusicMode mode) async {
+    if (mode == _musicMode) return;
+    AppLogger.debug('Setting music mode: ${mode.name}');
+    _musicMode = mode;
     try {
-      _exercises = await _loadExercisesFromAssets();
-    } catch (e) {
-      _error = 'Failed to load exercises';
-    } finally {
-      _isLoading = false;
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setString('musicMode', mode.name);
       notifyListeners();
+      AppLogger.info('Music mode saved: ${mode.name}');
+    } catch (e, stack) {
+      AppLogger.error('Failed to save music mode', e, stack);
     }
   }
 }
 ```
+
+### Accessing Providers
+
+#### In build method (read-only)
+
+```dart
+final settings = context.watch<SettingsProvider>();
+```
+
+#### Outside build method
+
+```dart
+final settings = Provider.of<SettingsProvider>(context, listen: false);
+```
+
+#### Using Consumer
+
+```dart
+Consumer<SettingsProvider>(
+  builder: (context, settings, child) {
+    return Text(settings.languagePreference.toString());
+  },
+)
+```
+
+### Async Initialization
+
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await loadBreathingExercisesUsingSystemLocale();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => SettingsProvider()),
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => PinnedExercisesProvider()),
+      ],
+      child: MyApp(),
+    ),
+  );
+}
+```
+
+## Timer Management
+
+Note that timer state is managed locally in `exercise_screen.dart` using `Ticker` and `AnimationController`, not through a separate TimerProvider. This keeps timer logic close to the UI that displays it and reduces the number of global providers.
+
+### Local Timer State
+
+```dart
+class ExerciseScreenState extends State<ExerciseScreen>
+    with TickerProviderStateMixin {
+  late AnimationController _controller;
+  Timer? _timer;
+  int _elapsedSeconds = 0;
+  bool _isPaused = false;
+}
+```
+
+### Advantages of Local Timer State
+
+- Simplifies provider architecture
+- Reduces cross-screen dependencies
+- Timer is only needed when exercise is running
+- State is naturally cleaned up when screen is disposed
