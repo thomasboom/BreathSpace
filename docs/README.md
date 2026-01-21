@@ -55,6 +55,15 @@ The app uses Flutter's gen-l10n for localization. Currently supported languages:
 - Chinese (`zh`)
 - Bulgarian (`bg`)
 - Arabic (`ar`)
+- Hebrew (`he`)
+- Hindi (`hi`)
+- Korean (`ko`)
+- Polish (`pl`)
+- Swahili (`sw`)
+- Thai (`th`)
+- Turkish (`tr`)
+- Ukrainian (`uk`)
+- Vietnamese (`vi`)
 
 ### Adding a New Language
 
@@ -86,6 +95,15 @@ Users can change the app language through the Settings screen (`Settings > Langu
 - Chinese
 - Bulgarian
 - Arabic
+- Hebrew
+- Hindi
+- Korean
+- Polish
+- Swahili
+- Thai
+- Turkish
+- Ukrainian
+- Vietnamese
 
 The selected language is persisted with `shared_preferences` and applied on startup.
 
@@ -113,7 +131,16 @@ Exercise data is stored in a single JSON file: `assets/exercises.json`. This fil
       "ja": "ボックス呼吸",
       "zh": "方块呼吸",
       "bg": "Квадратно дишане",
-      "ar": "التنفس المربع"
+      "ar": "التنفس المربع",
+      "he": "נשימת קופסה",
+      "hi": "बॉक्स ब्रीदिंग",
+      "ko": "박스 호흡",
+      "pl": "Oddech w klatce",
+      "sw": "Pumzi ya Kisanduku",
+      "th": "การหายใจแบบกล่อง",
+      "tr": "Kutu Nefes",
+      "uk": "Квадратне дихання",
+      "vi": "Hộp thở"
     },
     "intro": {
       "en": "A simple technique to calm your mind and body.",
@@ -127,7 +154,16 @@ Exercise data is stored in a single JSON file: `assets/exercises.json`. This fil
       "ja": "心と体を落ち着かせるシンプルなテクニック。",
       "zh": "一种简单的技术来平静你的心灵和身体。",
       "bg": "Проста техника за успокояване на ума и тялото.",
-      "ar": "تقنية بسيطة لتهدئة عقلك وجسمك."
+      "ar": "تقنية بسيطة لتهدئة عقلك وجسمك.",
+      "he": "טכניקה פשוטה להרגעת הנפש והגוף.",
+      "hi": "अपने मन और शरीर को शांत करने की एक सरल तकनीक।",
+      "ko": "마음과 몸을 진정시키는 간단한 기법.",
+      "pl": "Prosta technika uspokajająca umysł i ciało.",
+      "sw": "Njia rahisi ya kukoa akili na mwili wako.",
+      "th": "เทคนิคง่ายๆ เพื่อให้จิตใจและร่างกายสงบลง",
+      "tr": "Zihninizi ve bedeninizi sakinleştirmek için basit bir teknik.",
+      "uk": "Проста техніка для заспокоєння розуму та тіла.",
+      "vi": "Một kỹ thuật đơn giản để làm dịu tâm trí và cơ thể."
     }
   }
 ]
