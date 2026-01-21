@@ -1,0 +1,23 @@
+name: Mirror to Codeberg
+
+on:
+  push:
+    branches:
+      - '**'
+  create:
+  delete:
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout all history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Mirror to Codeberg
+        run: |
+          git remote add codeberg https://ThomasNowProductions:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/ThomasNowProductions/BreathSpace.git
+          git push --mirror codeberg
