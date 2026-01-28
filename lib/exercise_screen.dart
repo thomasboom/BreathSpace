@@ -432,7 +432,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
       }
 
       setState(() {
-        final l10n = AppLocalizations.of(context);
+        final l10n = AppLocalizations.of(context)!;
         BreathingPhase newPhase =
             _currentPhase; // Track what the new phase will be
 
@@ -676,7 +676,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
 
   // Method to build breathing method instruction text
   Widget _buildBreathingMethodInstruction(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
+    final l10n = AppLocalizations.of(context)!;
     String? instructionText;
 
     // Get the current stage for breathing method information
@@ -726,7 +726,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
 
   // Method to build phase instruction text (stretching/movement instructions)
   Widget _buildPhaseInstruction(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
+    final l10n = AppLocalizations.of(context)!;
     final currentStage = _stages[_currentStageIndex];
 
     // Get the phase string for the current breathing phase
@@ -822,7 +822,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                       ),
                       const SizedBox(height: 24),
                       Text(
-                        AppLocalizations.of(context).exerciseInvalid,
+                        AppLocalizations.of(context)!.exerciseInvalid,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,

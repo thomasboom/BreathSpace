@@ -219,7 +219,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                 )
               : Text(
                   _currentExercise?.getLocalizedTitle(
-                        AppLocalizations.of(context),
+                        AppLocalizations.of(context)!,
                       ) ??
                       'Loading...',
                   style: const TextStyle(
@@ -311,7 +311,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                               )
                             : Text(
                                 _currentExercise?.getLocalizedTitle(
-                                      AppLocalizations.of(context),
+                                      AppLocalizations.of(context)!,
                                     ) ??
                                     'Loading...',
                                 style: TextStyle(
@@ -338,7 +338,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                               )
                             : Text(
                                 _currentExercise?.getLocalizedIntro(
-                                      AppLocalizations.of(context),
+                                      AppLocalizations.of(context)!,
                                     ) ??
                                     'Loading introduction...',
                                 style: TextStyle(
@@ -544,7 +544,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                                     stage.getLocalizedTitle(
                                                       AppLocalizations.of(
                                                         context,
-                                                      ),
+                                                      )!,
                                                     ),
                                                     style: TextStyle(
                                                       fontSize: 14,
@@ -589,7 +589,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                                             Expanded(
                                               child: Text(
                                                 stage.getLocalizedTitle(
-                                                  AppLocalizations.of(context),
+                                                  AppLocalizations.of(context)!,
                                                 ),
                                                 style: TextStyle(
                                                   fontSize: 14,
@@ -750,7 +750,7 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                               ),
                             ),
                             child: Text(
-                              AppLocalizations.of(context).start,
+                              AppLocalizations.of(context)!.start,
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,

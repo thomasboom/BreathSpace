@@ -276,7 +276,7 @@ class BreathSpaceApp extends StatelessWidget {
     }
 
     return MaterialApp(
-      onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       debugShowCheckedModeBanner: false,
       themeMode: getEffectiveThemeMode(themeProvider.themeMode),
       theme: lightTheme,
@@ -518,7 +518,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
 
   void _onSearchChanged() {
     if (!mounted) return;
-    _performSearch(AppLocalizations.of(context));
+    _performSearch(AppLocalizations.of(context)!);
   }
 
   void _performSearch([AppLocalizations? l10n]) {
@@ -769,7 +769,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                 controller: _searchController,
                 focusNode: _searchFocusNode,
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context).searchHint,
+                  hintText: AppLocalizations.of(context)!.searchHint,
                   border: InputBorder.none,
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 20,
@@ -982,7 +982,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                                     Flexible(
                                       child: Text(
                                         exercise.getLocalizedTitle(
-                                          AppLocalizations.of(context),
+                                          AppLocalizations.of(context)!,
                                         ),
                                         style: TextStyle(
                                           color: Theme.of(
@@ -1047,7 +1047,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                                           padding: EdgeInsets.zero,
                                         ),
                                         child: Text(
-                                          AppLocalizations.of(context).start,
+                                          AppLocalizations.of(context)!.start,
                                           style: const TextStyle(
                                             fontSize: 11,
                                             fontWeight: FontWeight.w600,
@@ -1100,7 +1100,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                             ),
                             const SizedBox(height: 24),
                             Text(
-                              AppLocalizations.of(context).noExercisesFound,
+                              AppLocalizations.of(context)!.noExercisesFound,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
@@ -1196,7 +1196,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                                 contentPadding: const EdgeInsets.all(20.0),
                                 title: Text(
                                   exercise.getLocalizedTitle(
-                                    AppLocalizations.of(context),
+                                    AppLocalizations.of(context)!,
                                   ),
                                   style: TextStyle(
                                     color: Theme.of(
@@ -1214,9 +1214,9 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                                     Text(
                                       switch (exercise.exerciseType) {
                                         'stretching' =>
-                                          '${AppLocalizations.of(context).stretching} • ${_getTotalDuration(exercise)}',
+                                          '${AppLocalizations.of(context)!.stretching} • ${_getTotalDuration(exercise)}',
                                         'progressive' =>
-                                          '${AppLocalizations.of(context).progressive} • ${_getTotalDuration(exercise)}',
+                                          '${AppLocalizations.of(context)!.progressive} • ${_getTotalDuration(exercise)}',
                                         _ =>
                                           '${exercise.pattern} • ${exercise.duration}',
                                       },
@@ -1231,7 +1231,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen>
                                     const SizedBox(height: 6),
                                     Text(
                                       exercise.getLocalizedIntro(
-                                        AppLocalizations.of(context),
+                                        AppLocalizations.of(context)!,
                                       ),
                                       style: TextStyle(
                                         color: Theme.of(context)

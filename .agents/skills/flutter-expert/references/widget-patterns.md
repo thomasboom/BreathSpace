@@ -24,7 +24,7 @@ class OptimizedCard extends StatelessWidget {
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: Text(title, style: Theme.of(context).textTheme.titleMedium),
+          child: Text(title, style: Theme.of(context)!.textTheme.titleMedium),
         ),
       ),
     );
@@ -116,11 +116,11 @@ CustomScrollView(
 
 ## Key Optimization Patterns
 
-| Pattern | Implementation |
-|---------|----------------|
-| **const widgets** | Add `const` to static widgets |
-| **keys** | Use `Key` for list items |
-| **select** | `ref.watch(provider.select(...))` |
-| **RepaintBoundary** | Isolate expensive repaints |
-| **ListView.builder** | Lazy loading for lists |
-| **const constructors** | Always use when possible |
+| Pattern                | Implementation                    |
+| ---------------------- | --------------------------------- |
+| **const widgets**      | Add `const` to static widgets     |
+| **keys**               | Use `Key` for list items          |
+| **select**             | `ref.watch(provider.select(...))` |
+| **RepaintBoundary**    | Isolate expensive repaints        |
+| **ListView.builder**   | Lazy loading for lists            |
+| **const constructors** | Always use when possible          |

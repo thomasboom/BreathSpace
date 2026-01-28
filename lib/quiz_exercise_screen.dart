@@ -13,7 +13,7 @@ class QuizExerciseScreen extends StatefulWidget {
 class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
   // Quiz step tracking
   int _currentStep = 0;
-  
+
   // Selected emoji choices - store the label instead of the icon string
   String? _selectedMood;
   String? _selectedFeeling;
@@ -67,7 +67,7 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
         'getSelectedValue': () => _selectedMood,
         'onChanged': (String? value) {
           setState(() {
-            _selectedMood = value;  // Now storing the label
+            _selectedMood = value; // Now storing the label
           });
         },
       },
@@ -78,7 +78,7 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
         'getSelectedValue': () => _selectedFeeling,
         'onChanged': (String? value) {
           setState(() {
-            _selectedFeeling = value;  // Now storing the label
+            _selectedFeeling = value; // Now storing the label
           });
         },
       },
@@ -89,7 +89,7 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
         'getSelectedValue': () => _selectedNeed,
         'onChanged': (String? value) {
           setState(() {
-            _selectedNeed = value;  // Now storing the label
+            _selectedNeed = value; // Now storing the label
           });
         },
       },
@@ -107,7 +107,9 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
           IconButton(
             icon: Icon(
               Icons.settings_outlined,
-              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
               size: 24,
             ),
             onPressed: () {
@@ -123,7 +125,9 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
             end: Alignment.bottomCenter,
             colors: [
               Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
+              Theme.of(
+                context,
+              ).scaffoldBackgroundColor.withValues(alpha: 0.95),
             ],
           ),
         ),
@@ -142,13 +146,19 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.15),
-                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.08),
+                        Theme.of(
+                          context,
+                        ).colorScheme.primary.withValues(alpha: 0.15),
+                        Theme.of(
+                          context,
+                        ).colorScheme.primary.withValues(alpha: 0.08),
                       ],
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.primary.withValues(alpha: 0.2),
                         blurRadius: 20,
                         offset: const Offset(0, 8),
                       ),
@@ -177,13 +187,15 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                   _quizSteps[_currentStep]['subtitle'],
                   style: TextStyle(
                     fontSize: 16,
-                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.onSurface.withValues(alpha: 0.7),
                     height: 1.4,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 40),
-                
+
                 // Progress indicator
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -195,9 +207,11 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                         margin: const EdgeInsets.symmetric(horizontal: 4),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: i == _currentStep 
+                          color: i == _currentStep
                               ? Theme.of(context).colorScheme.primary
-                              : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.3),
+                              : Theme.of(
+                                  context,
+                                ).colorScheme.onSurface.withValues(alpha: 0.3),
                         ),
                       ),
                   ],
@@ -210,7 +224,8 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                     alignment: Alignment.topCenter, // Center the content
                     child: _buildEmojiSelection(
                       options: _quizSteps[_currentStep]['options'],
-                      selectedValue: _quizSteps[_currentStep]['getSelectedValue'](),
+                      selectedValue:
+                          _quizSteps[_currentStep]['getSelectedValue'](),
                       onChanged: _quizSteps[_currentStep]['onChanged'],
                     ),
                   ),
@@ -234,17 +249,27 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                               });
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Theme.of(context).colorScheme.surface,
-                              foregroundColor: Theme.of(context).colorScheme.onSurface,
+                              backgroundColor: Theme.of(
+                                context,
+                              ).colorScheme.surface,
+                              foregroundColor: Theme.of(
+                                context,
+                              ).colorScheme.onSurface,
                               elevation: 0,
                               shadowColor: Colors.transparent,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16),
                                 side: BorderSide(
-                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onSurface
+                                      .withValues(alpha: 0.2),
                                 ),
                               ),
-                              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 24,
+                                vertical: 12,
+                              ),
                             ),
                             child: Text(
                               'Back',
@@ -259,18 +284,27 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                       SizedBox(
                         height: 48,
                         child: ElevatedButton(
-                          onPressed: _quizSteps[_currentStep]['getSelectedValue']() != null
+                          onPressed:
+                              _quizSteps[_currentStep]['getSelectedValue']() !=
+                                  null
                               ? _nextStep
                               : null,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Theme.of(context).colorScheme.primary,
-                            foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                            backgroundColor: Theme.of(
+                              context,
+                            ).colorScheme.primary,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.onPrimary,
                             elevation: 0,
                             shadowColor: Colors.transparent,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
-                            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 24,
+                              vertical: 12,
+                            ),
                           ),
                           child: Text(
                             _currentStep < _quizSteps.length - 1
@@ -312,7 +346,7 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
           return GestureDetector(
             onTap: () => onChanged(option['label']),
             child: Container(
-              width: 70,  // Fixed width
+              width: 70, // Fixed width
               height: 80, // Fixed height
               decoration: BoxDecoration(
                 color: isSelected
@@ -322,7 +356,9 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                 border: Border.all(
                   color: isSelected
                       ? Theme.of(context).colorScheme.primary
-                      : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
+                      : Theme.of(
+                          context,
+                        ).colorScheme.onSurface.withValues(alpha: 0.1),
                   width: 1,
                 ),
                 boxShadow: [
@@ -379,12 +415,19 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
 
   void _navigateToRecommendedExercise() {
     // Create a description from the quiz selections to send to Gemini API
-    String moodDescription = _selectedMood != null ? _getIconLabelFromValue(_selectedMood!) : '';
-    String feelingDescription = _selectedFeeling != null ? _getIconLabelFromValue(_selectedFeeling!) : '';
-    String needDescription = _selectedNeed != null ? _getIconLabelFromValue(_selectedNeed!) : '';
+    String moodDescription = _selectedMood != null
+        ? _getIconLabelFromValue(_selectedMood!)
+        : '';
+    String feelingDescription = _selectedFeeling != null
+        ? _getIconLabelFromValue(_selectedFeeling!)
+        : '';
+    String needDescription = _selectedNeed != null
+        ? _getIconLabelFromValue(_selectedNeed!)
+        : '';
 
     // Create a descriptive prompt for the Gemini API with more context and structure
-    String prompt = "I need a personalized breathing exercise recommendation based on my current state. "
+    String prompt =
+        "I need a personalized breathing exercise recommendation based on my current state. "
         "My mood is ${moodDescription.isEmpty ? 'not specified' : moodDescription.toLowerCase()}, "
         "I'm feeling ${feelingDescription.isEmpty ? 'not specified' : feelingDescription.toLowerCase()}, "
         "and what I need most right now is ${needDescription.isEmpty ? 'not specified' : needDescription.toLowerCase()}. "
@@ -414,7 +457,9 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                 if (detailContext.mounted) {
                   ScaffoldMessenger.of(detailContext).showSnackBar(
                     const SnackBar(
-                      content: Text('Unable to connect to AI service. Please check your internet connection and try again.'),
+                      content: Text(
+                        'Unable to connect to AI service. Please check your internet connection and try again.',
+                      ),
                       duration: Duration(seconds: 4),
                     ),
                   );
@@ -427,7 +472,9 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
                 if (detailContext.mounted) {
                   ScaffoldMessenger.of(detailContext).showSnackBar(
                     const SnackBar(
-                      content: Text('No suitable exercise found for your selections. Try different selections.'),
+                      content: Text(
+                        'No suitable exercise found for your selections. Try different selections.',
+                      ),
                       duration: Duration(seconds: 4),
                     ),
                   );
@@ -478,5 +525,4 @@ class _QuizExerciseScreenState extends State<QuizExerciseScreen> {
     // Since we're now storing the label directly, we can just return the value
     return iconValue;
   }
-
 }

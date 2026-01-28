@@ -136,7 +136,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Scaffold(
           appBar: AppBar(
             title: Text(
-              AppLocalizations.of(context).settings,
+              AppLocalizations.of(context)!.settings,
               style: const TextStyle(
                 fontWeight: FontWeight.w500,
                 letterSpacing: -0.2,
@@ -187,7 +187,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           ),
                         ),
                         child: Text(
-                          AppLocalizations.of(context).close,
+                          AppLocalizations.of(context)!.close,
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -201,7 +201,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   _buildSectionHeader('Appearance'),
                   const SizedBox(height: 8),
                   _buildSettingsCard(
-                    title: AppLocalizations.of(context).theme,
+                    title: AppLocalizations.of(context)!.theme,
                     trailing: Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 12,
@@ -229,7 +229,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<AppThemeMode>(
                             value: AppThemeMode.system,
                             child: Text(
-                              AppLocalizations.of(context).themeSystem,
+                              AppLocalizations.of(context)!.themeSystem,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -240,7 +240,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<AppThemeMode>(
                             value: AppThemeMode.light,
                             child: Text(
-                              AppLocalizations.of(context).themeLight,
+                              AppLocalizations.of(context)!.themeLight,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -251,7 +251,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<AppThemeMode>(
                             value: AppThemeMode.dark,
                             child: Text(
-                              AppLocalizations.of(context).themeDark,
+                              AppLocalizations.of(context)!.themeDark,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -262,7 +262,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<AppThemeMode>(
                             value: AppThemeMode.oled,
                             child: Text(
-                              AppLocalizations.of(context).themeOled,
+                              AppLocalizations.of(context)!.themeOled,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -276,7 +276,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   const SizedBox(height: 12),
                   _buildSettingsCard(
-                    title: AppLocalizations.of(context).disableAIFeatures,
+                    title: AppLocalizations.of(context)!.disableAIFeatures,
                     trailing: Switch(
                       value: settingsProvider.aiKillSwitch,
                       onChanged: (value) {
@@ -290,7 +290,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   _buildSectionHeader('Behavior'),
                   const SizedBox(height: 8),
                   _buildSettingsCard(
-                    title: AppLocalizations.of(context).voiceGuide,
+                    title: AppLocalizations.of(context)!.voiceGuide,
                     trailing: Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 12,
@@ -318,7 +318,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<VoiceGuideMode>(
                             value: VoiceGuideMode.off,
                             child: Text(
-                              AppLocalizations.of(context).voiceGuideOff,
+                              AppLocalizations.of(context)!.voiceGuideOff,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -329,7 +329,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<VoiceGuideMode>(
                             value: VoiceGuideMode.thomas,
                             child: Text(
-                              AppLocalizations.of(context).voiceGuideThomas,
+                              AppLocalizations.of(context)!.voiceGuideThomas,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -343,7 +343,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   const SizedBox(height: 12),
                   _buildSettingsCard(
-                    title: AppLocalizations.of(context).viewMode,
+                    title: AppLocalizations.of(context)!.viewMode,
                     trailing: Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 12,
@@ -402,7 +402,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             DropdownMenuItem<ViewMode>(
                               value: ViewMode.quiz,
                               child: Text(
-                                AppLocalizations.of(context).quizMode,
+                                AppLocalizations.of(context)!.quizMode,
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -418,7 +418,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   const SizedBox(height: 12),
                   _buildSettingsCard(
-                    title: AppLocalizations.of(context).music,
+                    title: AppLocalizations.of(context)!.music,
                     trailing: Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 12,
@@ -446,7 +446,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<MusicMode>(
                             value: MusicMode.off,
                             child: Text(
-                              AppLocalizations.of(context).musicOff,
+                              AppLocalizations.of(context)!.musicOff,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -457,7 +457,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<MusicMode>(
                             value: MusicMode.nature,
                             child: Text(
-                              AppLocalizations.of(context).musicNature,
+                              AppLocalizations.of(context)!.musicNature,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -468,7 +468,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<MusicMode>(
                             value: MusicMode.lofi,
                             child: Text(
-                              AppLocalizations.of(context).musicLofi,
+                              AppLocalizations.of(context)!.musicLofi,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -479,7 +479,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           DropdownMenuItem<MusicMode>(
                             value: MusicMode.piano,
                             child: Text(
-                              AppLocalizations.of(context).musicPiano,
+                              AppLocalizations.of(context)!.musicPiano,
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -511,7 +511,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       }
                     },
                     child: _buildSettingsCard(
-                      title: AppLocalizations.of(context).replayIntro,
+                      title: AppLocalizations.of(context)!.replayIntro,
                       trailing: Icon(
                         Icons.refresh,
                         color: Theme.of(context).colorScheme.primary,
@@ -545,7 +545,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              AppLocalizations.of(context).promptCacheTitle,
+                              AppLocalizations.of(context)!.promptCacheTitle,
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
@@ -554,7 +554,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              '${AppLocalizations.of(context).promptCacheSubtitle} ($cacheSize ${AppLocalizations.of(context).promptCacheEntries})',
+                              '${AppLocalizations.of(context)!.promptCacheSubtitle} ($cacheSize ${AppLocalizations.of(context)!.promptCacheEntries})',
                               style: TextStyle(
                                 fontSize: 14,
                                 color: Theme.of(
@@ -576,7 +576,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                         content: Text(
                                           AppLocalizations.of(
                                             context,
-                                          ).promptCacheCleared,
+                                          )!.promptCacheCleared,
                                         ),
                                         behavior: SnackBarBehavior.floating,
                                         shape: RoundedRectangleBorder(
@@ -603,7 +603,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   ),
                                 ),
                                 child: Text(
-                                  AppLocalizations.of(context).promptCacheClear,
+                                  AppLocalizations.of(
+                                    context,
+                                  )!.promptCacheClear,
                                   style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,

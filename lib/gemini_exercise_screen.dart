@@ -40,7 +40,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
         });
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Speech recognition error: ${error.errorMsg}')),
+            SnackBar(
+              content: Text('Speech recognition error: ${error.errorMsg}'),
+            ),
           );
         }
       },
@@ -50,12 +52,14 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
       setState(() {
         _isListening = true;
       });
-      await _speechToText.listen(onResult: (result) {
-        setState(() {
-          _lastWords = result.recognizedWords;
-          _userInputController.text = _lastWords;
-        });
-      });
+      await _speechToText.listen(
+        onResult: (result) {
+          setState(() {
+            _lastWords = result.recognizedWords;
+            _userInputController.text = _lastWords;
+          });
+        },
+      );
     } else {
       setState(() {
         _isListening = false;
@@ -100,7 +104,8 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
               aiRecommendationCallback: () async {
                 try {
                   // Enhance the user input with structured context for better recommendations
-                  String enhancedPrompt = "I need a personalized breathing exercise recommendation based on my input: '${_userInputController.text}'. "
+                  String enhancedPrompt =
+                      "I need a personalized breathing exercise recommendation based on my input: '${_userInputController.text}'. "
                       "Please recommend the most appropriate breathing exercise from the following list of exercises, considering: "
                       "1) My emotional state described in my input "
                       "2) My desired outcome based on my input "
@@ -119,7 +124,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                     if (detailContext.mounted) {
                       ScaffoldMessenger.of(detailContext).showSnackBar(
                         const SnackBar(
-                          content: Text('Unable to connect to AI service. Please check your internet connection and try again.'),
+                          content: Text(
+                            'Unable to connect to AI service. Please check your internet connection and try again.',
+                          ),
                           duration: Duration(seconds: 4),
                         ),
                       );
@@ -132,7 +139,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                     if (detailContext.mounted) {
                       ScaffoldMessenger.of(detailContext).showSnackBar(
                         const SnackBar(
-                          content: Text('No suitable exercise found for your request. Try describing your mood or goal differently.'),
+                          content: Text(
+                            'No suitable exercise found for your request. Try describing your mood or goal differently.',
+                          ),
                           duration: Duration(seconds: 4),
                         ),
                       );
@@ -153,7 +162,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                     } else {
                       if (detailContext.mounted) {
                         ScaffoldMessenger.of(detailContext).showSnackBar(
-                          const SnackBar(content: Text('No exercises available.')),
+                          const SnackBar(
+                            content: Text('No exercises available.'),
+                          ),
                         );
                       }
                       return null;
@@ -203,7 +214,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
           IconButton(
             icon: Icon(
               Icons.settings_outlined,
-              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
               size: 24,
             ),
             onPressed: () {
@@ -219,7 +232,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
             end: Alignment.bottomCenter,
             colors: [
               Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
+              Theme.of(
+                context,
+              ).scaffoldBackgroundColor.withValues(alpha: 0.95),
             ],
           ),
         ),
@@ -246,13 +261,17 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                                 colors: [
-                                  Theme.of(context).colorScheme.primary.withValues(alpha: 0.15),
-                                  Theme.of(context).colorScheme.primary.withValues(alpha: 0.08),
+                                  Theme.of(context).colorScheme.primary
+                                      .withValues(alpha: 0.15),
+                                  Theme.of(context).colorScheme.primary
+                                      .withValues(alpha: 0.08),
                                 ],
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.primary.withValues(alpha: 0.2),
                                   blurRadius: 20,
                                   offset: const Offset(0, 8),
                                 ),
@@ -281,7 +300,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                             'Tell me about your mood or what you need',
                             style: TextStyle(
                               fontSize: 16,
-                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSurface.withValues(alpha: 0.7),
                               height: 1.4,
                             ),
                             textAlign: TextAlign.center,
@@ -303,11 +324,15 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                             child: TextField(
                               controller: _userInputController,
                               decoration: InputDecoration(
-                                hintText: 'e.g., "stressed", "need to focus", "just worked out"',
+                                hintText:
+                                    'e.g., "stressed", "need to focus", "just worked out"',
                                 border: InputBorder.none,
                                 contentPadding: const EdgeInsets.all(24),
                                 hintStyle: TextStyle(
-                                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onSurface
+                                      .withValues(alpha: 0.5),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -323,24 +348,39 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                                           padding: const EdgeInsets.all(2),
                                           child: CircularProgressIndicator(
                                             strokeWidth: 2,
-                                            valueColor: AlwaysStoppedAnimation<Color>(
-                                              Theme.of(context).colorScheme.primary,
-                                            ),
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                                  Theme.of(
+                                                    context,
+                                                  ).colorScheme.primary,
+                                                ),
                                           ),
                                         )
-                                      else if (Platform.isAndroid || Platform.isIOS)
+                                      else if (Platform.isAndroid ||
+                                          Platform.isIOS)
                                         Row(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             IconButton(
                                               icon: Icon(
-                                                _isListening ? Icons.mic_off : Icons.mic,
+                                                _isListening
+                                                    ? Icons.mic_off
+                                                    : Icons.mic,
                                                 color: _isListening
-                                                    ? Theme.of(context).colorScheme.primary
-                                                    : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
+                                                    ? Theme.of(
+                                                        context,
+                                                      ).colorScheme.primary
+                                                    : Theme.of(context)
+                                                          .colorScheme
+                                                          .onSurface
+                                                          .withValues(
+                                                            alpha: 0.6,
+                                                          ),
                                                 size: 24,
                                               ),
-                                              onPressed: _isListening ? _stopListening : _startListening,
+                                              onPressed: _isListening
+                                                  ? _stopListening
+                                                  : _startListening,
                                             ),
                                             const SizedBox(width: 8),
                                           ],
@@ -351,13 +391,17 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                                         width: 48,
                                         height: 48,
                                         decoration: BoxDecoration(
-                                          color: Theme.of(context).colorScheme.primary,
+                                          color: Theme.of(
+                                            context,
+                                          ).colorScheme.primary,
                                           shape: BoxShape.circle,
                                         ),
                                         child: IconButton(
                                           icon: Icon(
                                             Icons.send,
-                                            color: Theme.of(context).colorScheme.onPrimary,
+                                            color: Theme.of(
+                                              context,
+                                            ).colorScheme.onPrimary,
                                             size: 20,
                                           ),
                                           onPressed: _getRecommendation,
@@ -374,7 +418,9 @@ class _GeminiExerciseScreenState extends State<GeminiExerciseScreen> {
                               ),
                               onSubmitted: (_) => _getRecommendation(),
                               maxLines: 3,
-                              cursorColor: Theme.of(context).colorScheme.primary,
+                              cursorColor: Theme.of(
+                                context,
+                              ).colorScheme.primary,
                               cursorWidth: 2,
                             ),
                           ),

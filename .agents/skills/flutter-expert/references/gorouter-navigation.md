@@ -72,7 +72,7 @@ context.pushReplacement('/home');
 context.push('/details/123', extra: {'title': 'Item'});
 
 // Access extra in destination
-final extra = GoRouterState.of(context).extra as Map<String, dynamic>?;
+final extra = GoRouterState.of(context)!.extra as Map<String, dynamic>?;
 ```
 
 ## Shell Routes (Persistent UI)
@@ -112,11 +112,11 @@ context.go('/search?q=flutter&page=2');
 
 ## Quick Reference
 
-| Method | Behavior |
-|--------|----------|
-| `context.go()` | Navigate, replace stack |
-| `context.push()` | Navigate, add to stack |
-| `context.pop()` | Go back |
-| `context.pushReplacement()` | Replace current |
-| `:param` | Path parameter |
-| `?key=value` | Query parameter |
+| Method                      | Behavior                |
+| --------------------------- | ----------------------- |
+| `context.go()`              | Navigate, replace stack |
+| `context.push()`            | Navigate, add to stack  |
+| `context.pop()`             | Go back                 |
+| `context.pushReplacement()` | Replace current         |
+| `:param`                    | Path parameter          |
+| `?key=value`                | Query parameter         |

@@ -59,39 +59,39 @@ class _IntroScreenState extends State<IntroScreen>
   String _getLanguageName(LanguagePreference lang, BuildContext context) {
     switch (lang) {
       case LanguagePreference.system:
-        return AppLocalizations.of(context).languageSystem;
+        return AppLocalizations.of(context)!.languageSystem;
       case LanguagePreference.ar:
-        return AppLocalizations.of(context).languageArabic;
+        return AppLocalizations.of(context)!.languageArabic;
       case LanguagePreference.bg:
-        return AppLocalizations.of(context).languageBulgarian;
+        return AppLocalizations.of(context)!.languageBulgarian;
       case LanguagePreference.de:
-        return AppLocalizations.of(context).languageGerman;
+        return AppLocalizations.of(context)!.languageGerman;
       case LanguagePreference.en:
-        return AppLocalizations.of(context).languageEnglish;
+        return AppLocalizations.of(context)!.languageEnglish;
       case LanguagePreference.es:
-        return AppLocalizations.of(context).languageSpanish;
+        return AppLocalizations.of(context)!.languageSpanish;
       case LanguagePreference.fr:
-        return AppLocalizations.of(context).languageFrench;
+        return AppLocalizations.of(context)!.languageFrench;
       case LanguagePreference.hi:
-        return AppLocalizations.of(context).languageHindi;
+        return AppLocalizations.of(context)!.languageHindi;
       case LanguagePreference.it:
-        return AppLocalizations.of(context).languageItalian;
+        return AppLocalizations.of(context)!.languageItalian;
       case LanguagePreference.ja:
-        return AppLocalizations.of(context).languageJapanese;
+        return AppLocalizations.of(context)!.languageJapanese;
       case LanguagePreference.ko:
-        return AppLocalizations.of(context).languageKorean;
+        return AppLocalizations.of(context)!.languageKorean;
       case LanguagePreference.nl:
-        return AppLocalizations.of(context).languageDutch;
+        return AppLocalizations.of(context)!.languageDutch;
       case LanguagePreference.pl:
-        return AppLocalizations.of(context).languagePolish;
+        return AppLocalizations.of(context)!.languagePolish;
       case LanguagePreference.pt:
-        return AppLocalizations.of(context).languagePortuguese;
+        return AppLocalizations.of(context)!.languagePortuguese;
       case LanguagePreference.ru:
-        return AppLocalizations.of(context).languageRussian;
+        return AppLocalizations.of(context)!.languageRussian;
       case LanguagePreference.tr:
-        return AppLocalizations.of(context).languageTurkish;
+        return AppLocalizations.of(context)!.languageTurkish;
       case LanguagePreference.zh:
-        return AppLocalizations.of(context).languageChinese;
+        return AppLocalizations.of(context)!.languageChinese;
     }
   }
 
@@ -105,7 +105,9 @@ class _IntroScreenState extends State<IntroScreen>
             end: Alignment.bottomCenter,
             colors: [
               Theme.of(context).scaffoldBackgroundColor,
-              Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
+              Theme.of(
+                context,
+              ).scaffoldBackgroundColor.withValues(alpha: 0.95),
             ],
           ),
         ),
@@ -156,7 +158,7 @@ class _IntroScreenState extends State<IntroScreen>
                         ),
                         const SizedBox(height: 48),
                         Text(
-                          AppLocalizations.of(context).welcomeTitle,
+                          AppLocalizations.of(context)!.welcomeTitle,
                           style: TextStyle(
                             fontSize: 42,
                             fontWeight: FontWeight.w300,
@@ -168,7 +170,7 @@ class _IntroScreenState extends State<IntroScreen>
                         ),
                         const SizedBox(height: 16),
                         Text(
-                          AppLocalizations.of(context).welcomeSubtitle,
+                          AppLocalizations.of(context)!.welcomeSubtitle,
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
@@ -196,12 +198,12 @@ class _IntroScreenState extends State<IntroScreen>
                               TextSpan(
                                 text: AppLocalizations.of(
                                   context,
-                                ).termsAgreementPrefix,
+                                )!.termsAgreementPrefix,
                               ),
                               TextSpan(
                                 text: AppLocalizations.of(
                                   context,
-                                ).privacyPolicy,
+                                )!.privacyPolicy,
                                 style: TextStyle(
                                   color: Theme.of(context).colorScheme.primary,
                                   fontWeight: FontWeight.w500,
@@ -222,7 +224,7 @@ class _IntroScreenState extends State<IntroScreen>
                               TextSpan(
                                 text: AppLocalizations.of(
                                   context,
-                                ).termsAgreementSuffix,
+                                )!.termsAgreementSuffix,
                               ),
                             ],
                           ),
@@ -242,7 +244,7 @@ class _IntroScreenState extends State<IntroScreen>
                       child: DropdownButtonFormField<LanguagePreference>(
                         initialValue: _selectedLanguage,
                         decoration: InputDecoration(
-                          labelText: AppLocalizations.of(context).language,
+                          labelText: AppLocalizations.of(context)!.language,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
@@ -297,7 +299,7 @@ class _IntroScreenState extends State<IntroScreen>
                             ? ViewMode.list
                             : _selectedViewMode,
                         decoration: InputDecoration(
-                          labelText: AppLocalizations.of(context).viewMode,
+                          labelText: AppLocalizations.of(context)!.viewMode,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
@@ -322,10 +324,10 @@ class _IntroScreenState extends State<IntroScreen>
                                 value: mode,
                                 child: Text(
                                   mode == ViewMode.list
-                                      ? AppLocalizations.of(context).listView
+                                      ? AppLocalizations.of(context)!.listView
                                       : mode == ViewMode.ai
-                                      ? AppLocalizations.of(context).aiMode
-                                      : AppLocalizations.of(context).quizMode,
+                                      ? AppLocalizations.of(context)!.aiMode
+                                      : AppLocalizations.of(context)!.quizMode,
                                 ),
                               );
                             })
@@ -396,7 +398,7 @@ class _IntroScreenState extends State<IntroScreen>
                           ),
                         ),
                         child: Text(
-                          AppLocalizations.of(context).getStarted,
+                          AppLocalizations.of(context)!.getStarted,
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,

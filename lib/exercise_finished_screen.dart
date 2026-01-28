@@ -6,7 +6,7 @@ class ExerciseFinishedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context);
+    final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
@@ -35,7 +35,9 @@ class ExerciseFinishedScreen extends StatelessWidget {
               const SizedBox(height: 32.0),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).popUntil((route) => route.isFirst); // Go back to home
+                  Navigator.of(
+                    context,
+                  ).popUntil((route) => route.isFirst); // Go back to home
                 },
                 child: Text(localizations.backToHome),
               ),

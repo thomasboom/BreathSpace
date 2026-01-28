@@ -31,6 +31,7 @@ We follow the official [Dart style guide](https://dart.dev/guides/language/effec
 - Match file names to the main class/widget they contain when possible
 
 Examples:
+
 ```
 exercise_detail_screen.dart
 settings_provider.dart
@@ -51,6 +52,7 @@ rate_limiter.dart
 - Sort imports alphabetically within each group
 
 Example:
+
 ```dart
 import 'dart:convert';
 import 'dart:math';
@@ -341,13 +343,13 @@ Future<void> loadExercises() async {
 
 ## Localization
 
-- Use `AppLocalizations.of(context).key` for UI strings
+- Use `AppLocalizations.of(context)!.key` for UI strings
 - After modifying ARB files, run `flutter gen-l10n`
 - ARB template: `lib/l10n/app_en.arb`
 - Generated: `lib/l10n/app_localizations.dart`
 
 ```dart
-final l10n = AppLocalizations.of(context);
+final l10n = AppLocalizations.of(context)!;
 Text(l10n.exerciseTitle_relaxingBreath)
 ```
 
