@@ -177,8 +177,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get disableAIFeatures => 'Désactiver les fonctionnalités IA';
 
   @override
-  String get disableAIFeaturesSubtitle =>
-      'Désactiver les recommandations alimentées par l\'IA';
+  String get disableAIFeaturesSubtitle => 'Désactiver les recommandations alimentées par l\'IA';
 
   @override
   String get welcomeTitle => 'Bienvenue dans BreathSpace';
@@ -193,8 +192,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get promptCacheTitle => 'Cache des invites IA';
 
   @override
-  String get promptCacheSubtitle =>
-      'Réponses mises en cache pour des recommandations plus rapides';
+  String get promptCacheSubtitle => 'Réponses mises en cache pour des recommandations plus rapides';
 
   @override
   String get promptCacheEntries => 'entrées';
@@ -209,8 +207,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get exerciseFinishedTitle => 'Exercice terminé';
 
   @override
-  String get exerciseFinishedSubtitle =>
-      'J\'espère que vous vous sentez mieux.';
+  String get exerciseFinishedSubtitle => 'J\'espère que vous vous sentez mieux.';
 
   @override
   String get backToHome => 'Retour à l\'accueil';
@@ -237,78 +234,67 @@ class AppLocalizationsFr extends AppLocalizations {
   String get exerciseTitle_relaxingBreath => 'Respiration Relaxante';
 
   @override
-  String get exerciseIntro_relaxingBreath =>
-      'Favorise le sommeil et réduit l\'anxiété.';
+  String get exerciseIntro_relaxingBreath => 'Favorise le sommeil et réduit l\'anxiété.';
 
   @override
   String get exerciseTitle_boxBreathingNavySeals => 'Respiration carrée';
 
   @override
-  String get exerciseIntro_boxBreathingNavySeals =>
-      'Utilisée par les Navy SEALs pour la gestion du stress.';
+  String get exerciseIntro_boxBreathingNavySeals => 'Utilisée par les Navy SEALs pour la gestion du stress.';
 
   @override
   String get exerciseTitle_twoOneRatio => 'Respiration 2:1';
 
   @override
-  String get exerciseIntro_twoOneRatio =>
-      'Technique de relaxation simple pour débutants.';
+  String get exerciseIntro_twoOneRatio => 'Technique de relaxation simple pour débutants.';
 
   @override
   String get exerciseTitle_equalBreathing => 'Respiration Égale';
 
   @override
-  String get exerciseIntro_equalBreathing =>
-      'Équilibre l\'activation du système nerveux.';
+  String get exerciseIntro_equalBreathing => 'Équilibre l\'activation du système nerveux.';
 
   @override
   String get exerciseTitle_modified478 => '4-7-8 Modifié';
 
   @override
-  String get exerciseIntro_modified478 =>
-      'Version plus douce pour soulager l\'anxiété.';
+  String get exerciseIntro_modified478 => 'Version plus douce pour soulager l\'anxiété.';
 
   @override
   String get exerciseTitle_coherentBreathing => 'Respiration Cohérente';
 
   @override
-  String get exerciseIntro_coherentBreathing =>
-      'Optimise la variabilité de la fréquence cardiaque.';
+  String get exerciseIntro_coherentBreathing => 'Optimise la variabilité de la fréquence cardiaque.';
 
   @override
   String get exerciseTitle_extendedExhale => 'Expiration Prolongée';
 
   @override
-  String get exerciseIntro_extendedExhale =>
-      'Active la réponse parasympathique.';
+  String get exerciseIntro_extendedExhale => 'Active la réponse parasympathique.';
 
   @override
   String get exerciseTitle_miniBox => 'Mini Respiration Carrée';
 
   @override
-  String get exerciseIntro_miniBox =>
-      'Soulagement rapide du stress pour les moments chargés.';
+  String get exerciseIntro_miniBox => 'Soulagement rapide du stress pour les moments chargés.';
 
   @override
   String get exerciseTitle_samaVritti => 'Sama Vritti';
 
   @override
-  String get exerciseIntro_samaVritti =>
-      'Améliore la concentration et la clarté mentale.';
+  String get exerciseIntro_samaVritti => 'Améliore la concentration et la clarté mentale.';
 
   @override
   String get exerciseTitle_deepEqual => 'Respiration Égale Profonde';
 
   @override
-  String get exerciseIntro_deepEqual =>
-      'Améliore la concentration et les performances cognitives.';
+  String get exerciseIntro_deepEqual => 'Améliore la concentration et les performances cognitives.';
 
   @override
   String get exerciseTitle_squareBreathing => 'Respiration Carrée';
 
   @override
-  String get exerciseIntro_squareBreathing =>
-      'Développe la résilience mentale.';
+  String get exerciseIntro_squareBreathing => 'Développe la résilience mentale.';
 
   @override
   String get exerciseTitle_quickFocus => 'Concentration Rapide';
@@ -320,8 +306,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get exerciseTitle_ujjayiModified => 'Ujjayi Modifié';
 
   @override
-  String get exerciseIntro_ujjayiModified =>
-      'Développe la chaleur interne et la concentration.';
+  String get exerciseIntro_ujjayiModified => 'Développe la chaleur interne et la concentration.';
 
   @override
   String get exerciseTitle_extendedBox => 'Respiration Carrée Étendue';
@@ -333,167 +318,133 @@ class AppLocalizationsFr extends AppLocalizations {
   String get exerciseTitle_trianglePlus => 'Triangle Plus';
 
   @override
-  String get exerciseIntro_trianglePlus =>
-      'Schéma complexe pour les praticiens expérimentés.';
+  String get exerciseIntro_trianglePlus => 'Schéma complexe pour les praticiens expérimentés.';
 
   @override
   String get exerciseTitle_oneTwoExtended => 'Respiration Étendue 1:2';
 
   @override
-  String get exerciseIntro_oneTwoExtended =>
-      'Relaxation profonde et réduction de la pression artérielle.';
+  String get exerciseIntro_oneTwoExtended => 'Relaxation profonde et réduction de la pression artérielle.';
 
   @override
   String get exerciseTitle_gentleHold => 'Retenue Douce';
 
   @override
-  String get exerciseIntro_gentleHold =>
-      'Pour ceux ayant des limitations de capacité pulmonaire.';
+  String get exerciseIntro_gentleHold => 'Pour ceux ayant des limitations de capacité pulmonaire.';
 
   @override
   String get exerciseTitle_longBreath => 'Respiration Longue';
 
   @override
-  String get exerciseIntro_longBreath =>
-      'Augmente la capacité pulmonaire et l\'endurance.';
+  String get exerciseIntro_longBreath => 'Augmente la capacité pulmonaire et l\'endurance.';
 
   @override
   String get exerciseTitle_classic478Extended => 'Classique 4-7-8 Étendu';
 
   @override
-  String get exerciseIntro_classic478Extended =>
-      'Réponse de relaxation maximale.';
+  String get exerciseIntro_classic478Extended => 'Réponse de relaxation maximale.';
 
   @override
   String get exerciseTitle_goldenRatio => 'Nombre d\'Or';
 
   @override
-  String get exerciseIntro_goldenRatio =>
-      'Basé sur les principes d\'harmonie mathématique.';
+  String get exerciseIntro_goldenRatio => 'Basé sur les principes d\'harmonie mathématique.';
 
   @override
-  String get exerciseTitle_sleepPreparationProtocol =>
-      'Protocole de Préparation au Sommeil';
+  String get exerciseTitle_sleepPreparationProtocol => 'Protocole de Préparation au Sommeil';
 
   @override
-  String get exerciseIntro_sleepPreparationProtocol =>
-      'Une séquence progressive pour préparer votre corps et votre esprit à un sommeil réparateur.';
+  String get exerciseIntro_sleepPreparationProtocol => 'Une séquence progressive pour préparer votre corps et votre esprit à un sommeil réparateur.';
 
   @override
-  String get exerciseTitle_anxietyRecoverySequence =>
-      'Séquence de Récupération d\'Anxiété';
+  String get exerciseTitle_anxietyRecoverySequence => 'Séquence de Récupération d\'Anxiété';
 
   @override
-  String get exerciseIntro_anxietyRecoverySequence =>
-      'Une approche progressive pour calmer l\'anxiété et restaurer l\'équilibre émotionnel.';
+  String get exerciseIntro_anxietyRecoverySequence => 'Une approche progressive pour calmer l\'anxiété et restaurer l\'équilibre émotionnel.';
 
   @override
-  String get exerciseTitle_morningEnergyBuilder =>
-      'Constructeur d\'Énergie du Matin';
+  String get exerciseTitle_morningEnergyBuilder => 'Constructeur d\'Énergie du Matin';
 
   @override
-  String get exerciseIntro_morningEnergyBuilder =>
-      'Une séquence progressive pour réveiller votre corps et votre esprit pour la journée à venir.';
+  String get exerciseIntro_morningEnergyBuilder => 'Une séquence progressive pour réveiller votre corps et votre esprit pour la journée à venir.';
 
   @override
-  String get exerciseTitle_panicAttackManagement =>
-      'Gestion des Crises de Panique';
+  String get exerciseTitle_panicAttackManagement => 'Gestion des Crises de Panique';
 
   @override
-  String get exerciseIntro_panicAttackManagement =>
-      'Une séquence progressive pour calmer rapidement les crises de panique et restaurer le contrôle.';
+  String get exerciseIntro_panicAttackManagement => 'Une séquence progressive pour calmer rapidement les crises de panique et restaurer le contrôle.';
 
   @override
-  String get exerciseTitle_concentrationTraining =>
-      'Entraînement de la Concentration';
+  String get exerciseTitle_concentrationTraining => 'Entraînement de la Concentration';
 
   @override
-  String get exerciseIntro_concentrationTraining =>
-      'Une séquence progressive pour développer et maintenir la concentration mentale dans le temps.';
+  String get exerciseIntro_concentrationTraining => 'Une séquence progressive pour développer et maintenir la concentration mentale dans le temps.';
 
   @override
-  String get exerciseTitle_bloodPressureReduction =>
-      'Réduction de la Pression Artérielle';
+  String get exerciseTitle_bloodPressureReduction => 'Réduction de la Pression Artérielle';
 
   @override
-  String get exerciseIntro_bloodPressureReduction =>
-      'Une séquence progressive conçue pour faire baisser la pression artérielle par la respiration thérapeutique.';
+  String get exerciseIntro_bloodPressureReduction => 'Une séquence progressive conçue pour faire baisser la pression artérielle par la respiration thérapeutique.';
 
   @override
-  String get exerciseTitle_preCompetitionProtocol =>
-      'Protocole Pré-Compétition';
+  String get exerciseTitle_preCompetitionProtocol => 'Protocole Pré-Compétition';
 
   @override
-  String get exerciseIntro_preCompetitionProtocol =>
-      'Une séquence progressive pour se préparer mentalement et physiquement aux performances de pointe.';
+  String get exerciseIntro_preCompetitionProtocol => 'Une séquence progressive pour se préparer mentalement et physiquement aux performances de pointe.';
 
   @override
-  String get exerciseTitle_postWorkoutRecovery =>
-      'Récupération Post-Entraînement';
+  String get exerciseTitle_postWorkoutRecovery => 'Récupération Post-Entraînement';
 
   @override
-  String get exerciseIntro_postWorkoutRecovery =>
-      'Une séquence progressive pour normaliser le rythme cardiaque et accélérer la récupération après l\'exercice.';
+  String get exerciseIntro_postWorkoutRecovery => 'Une séquence progressive pour normaliser le rythme cardiaque et accélérer la récupération après l\'exercice.';
 
   @override
-  String get exerciseTitle_meditationPreparation =>
-      'Préparation à la Méditation';
+  String get exerciseTitle_meditationPreparation => 'Préparation à la Méditation';
 
   @override
-  String get exerciseIntro_meditationPreparation =>
-      'Une séquence progressive pour apaiser l\'esprit et passer à une méditation plus profonde.';
+  String get exerciseIntro_meditationPreparation => 'Une séquence progressive pour apaiser l\'esprit et passer à une méditation plus profonde.';
 
   @override
-  String get exerciseTitle_chronicPainManagement =>
-      'Gestion de la Douleur Chronique';
+  String get exerciseTitle_chronicPainManagement => 'Gestion de la Douleur Chronique';
 
   @override
-  String get exerciseIntro_chronicPainManagement =>
-      'Une séquence progressive pour aider à gérer la douleur chronique par des techniques de respiration contrôlée.';
+  String get exerciseIntro_chronicPainManagement => 'Une séquence progressive pour aider à gérer la douleur chronique par des techniques de respiration contrôlée.';
 
   @override
   String get exerciseTitle_stressReliefWave => 'Vague de Soulagement du Stress';
 
   @override
-  String get exerciseIntro_stressReliefWave =>
-      'Rythme doux pour balayer le stress et la tension.';
+  String get exerciseIntro_stressReliefWave => 'Rythme doux pour balayer le stress et la tension.';
 
   @override
   String get exerciseTitle_energizingWakeUp => 'Réveil Énergisant';
 
   @override
-  String get exerciseIntro_energizingWakeUp =>
-      'Coup de boost rapide pour réveiller votre corps et dynamiser votre esprit.';
+  String get exerciseIntro_energizingWakeUp => 'Coup de boost rapide pour réveiller votre corps et dynamiser votre esprit.';
 
   @override
   String get exerciseTitle_balanceEquilibrium => 'Équilibre de la Balance';
 
   @override
-  String get exerciseIntro_balanceEquilibrium =>
-      'Restaure l\'équilibre entre l\'esprit et le corps.';
+  String get exerciseIntro_balanceEquilibrium => 'Restaure l\'équilibre entre l\'esprit et le corps.';
 
   @override
-  String get exerciseTitle_deepRelaxationDive =>
-      'Plongée en Relaxation Profonde';
+  String get exerciseTitle_deepRelaxationDive => 'Plongée en Relaxation Profonde';
 
   @override
-  String get exerciseIntro_deepRelaxationDive =>
-      'Plongez profondément dans un état de relaxation et de paix complète.';
+  String get exerciseIntro_deepRelaxationDive => 'Plongez profondément dans un état de relaxation et de paix complète.';
 
   @override
   String get exerciseTitle_cardioCoherence => 'Cohérence Cardiaque';
 
   @override
-  String get exerciseIntro_cardioCoherence =>
-      'Une séquence pour optimiser la variabilité de la fréquence cardiaque et l\'équilibre émotionnel.';
+  String get exerciseIntro_cardioCoherence => 'Une séquence pour optimiser la variabilité de la fréquence cardiaque et l\'équilibre émotionnel.';
 
   @override
-  String get exerciseTitle_officeBloodFlow =>
-      'Récupération du Flux Sanguin au Bureau';
+  String get exerciseTitle_officeBloodFlow => 'Récupération du Flux Sanguin au Bureau';
 
   @override
-  String get exerciseIntro_officeBloodFlow =>
-      'Étirements adaptés au bureau pour améliorer la circulation après de longues heures assises.';
+  String get exerciseIntro_officeBloodFlow => 'Étirements adaptés au bureau pour améliorer la circulation après de longues heures assises.';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Équilibre du Système Nerveux';
@@ -511,8 +462,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stageTitle_grounding => 'Ancrage';
 
   @override
-  String get stageTitle_parasympatheticActivation =>
-      'Activation du Système Parasympathique';
+  String get stageTitle_parasympatheticActivation => 'Activation du Système Parasympathique';
 
   @override
   String get stageTitle_awakening => 'Éveil';
@@ -539,8 +489,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stageTitle_sustainedFocus => 'Concentration Soutenue';
 
   @override
-  String get stageTitle_baselineEstablishment =>
-      'Établissement de la Ligne de Base';
+  String get stageTitle_baselineEstablishment => 'Établissement de la Ligne de Base';
 
   @override
   String get stageTitle_therapeuticRatio => 'Ratio Thérapeutique';
@@ -558,16 +507,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stageTitle_controlledActivation => 'Activation Contrôlée';
 
   @override
-  String get stageTitle_heartRateNormalization =>
-      'Normalisation du Rythme Cardiaque';
+  String get stageTitle_heartRateNormalization => 'Normalisation du Rythme Cardiaque';
 
   @override
-  String get stageTitle_recoveryAcceleration =>
-      'Accélération de la Récupération';
+  String get stageTitle_recoveryAcceleration => 'Accélération de la Récupération';
 
   @override
-  String get stageTitle_homeostasisRestoration =>
-      'Restauration de l\'Homéostasie';
+  String get stageTitle_homeostasisRestoration => 'Restauration de l\'Homéostasie';
 
   @override
   String get stageTitle_mindSettling => 'Apaisement de l\'Esprit';
@@ -576,8 +522,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stageTitle_deeperAwareness => 'Conscience Plus Profonde';
 
   @override
-  String get stageTitle_transitionToMeditation =>
-      'Transition vers la Méditation';
+  String get stageTitle_transitionToMeditation => 'Transition vers la Méditation';
 
   @override
   String get stageTitle_gentleIntroduction => 'Introduction Douce';
@@ -589,8 +534,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stageTitle_endorphinRelease => 'Libération d\'Endorphines';
 
   @override
-  String get stageTitle_heartRatePreparation =>
-      'Préparation du Rythme Cardiaque';
+  String get stageTitle_heartRatePreparation => 'Préparation du Rythme Cardiaque';
 
   @override
   String get stageTitle_peakCoherence => 'Cohérence de Pointe';
@@ -602,12 +546,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stageTitle_neckStretch => 'Étirement du Cou';
 
   @override
-  String get phase_instruct_shouldersUp =>
-      'Lever les épaules vers les oreilles';
+  String get phase_instruct_shouldersUp => 'Lever les épaules vers les oreilles';
 
   @override
-  String get phase_instruct_shouldersDown =>
-      'Baisser les épaules, libérer la tension';
+  String get phase_instruct_shouldersDown => 'Baisser les épaules, libérer la tension';
 
   @override
   String get phase_instruct_relaxShoulders => 'Rester en position';

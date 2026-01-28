@@ -177,8 +177,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get disableAIFeatures => 'AI-functies uitschakelen';
 
   @override
-  String get disableAIFeaturesSubtitle =>
-      'AI-gestuurde aanbevelingen uitzetten';
+  String get disableAIFeaturesSubtitle => 'AI-gestuurde aanbevelingen uitzetten';
 
   @override
   String get welcomeTitle => 'Welkom bij BreathSpace';
@@ -193,8 +192,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get promptCacheTitle => 'AI Prompt Cache';
 
   @override
-  String get promptCacheSubtitle =>
-      'Gecachte reacties voor snellere aanbevelingen';
+  String get promptCacheSubtitle => 'Gecachte reacties voor snellere aanbevelingen';
 
   @override
   String get promptCacheEntries => 'items';
@@ -224,8 +222,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get linkCopied => 'Link gekopieerd naar klembord';
 
   @override
-  String get termsAgreementPrefix =>
-      'Door verder te gaan, ga je akkoord met onze ';
+  String get termsAgreementPrefix => 'Door verder te gaan, ga je akkoord met onze ';
 
   @override
   String get privacyPolicy => 'Privacybeleid';
@@ -237,71 +234,61 @@ class AppLocalizationsNl extends AppLocalizations {
   String get exerciseTitle_relaxingBreath => 'Ontspannende Ademhaling';
 
   @override
-  String get exerciseIntro_relaxingBreath =>
-      'Bevordert slaap en vermindert angst.';
+  String get exerciseIntro_relaxingBreath => 'Bevordert slaap en vermindert angst.';
 
   @override
   String get exerciseTitle_boxBreathingNavySeals => 'Box Ademhaling';
 
   @override
-  String get exerciseIntro_boxBreathingNavySeals =>
-      'Gebruikt door Navy SEALs voor stressbeheersing.';
+  String get exerciseIntro_boxBreathingNavySeals => 'Gebruikt door Navy SEALs voor stressbeheersing.';
 
   @override
   String get exerciseTitle_twoOneRatio => '2:1 Verhouding Ademhaling';
 
   @override
-  String get exerciseIntro_twoOneRatio =>
-      'Eenvoudige kalmerende techniek voor beginners.';
+  String get exerciseIntro_twoOneRatio => 'Eenvoudige kalmerende techniek voor beginners.';
 
   @override
   String get exerciseTitle_equalBreathing => 'Gelijke Ademhaling';
 
   @override
-  String get exerciseIntro_equalBreathing =>
-      'Balanceren van de activatie van het zenuwstelsel.';
+  String get exerciseIntro_equalBreathing => 'Balanceren van de activatie van het zenuwstelsel.';
 
   @override
   String get exerciseTitle_modified478 => 'Aangepaste 4-7-8';
 
   @override
-  String get exerciseIntro_modified478 =>
-      'Mildere versie voor angstverlichting.';
+  String get exerciseIntro_modified478 => 'Mildere versie voor angstverlichting.';
 
   @override
   String get exerciseTitle_coherentBreathing => 'Coherente Ademhaling';
 
   @override
-  String get exerciseIntro_coherentBreathing =>
-      'Optimaliseert de variabiliteit van de hartslag.';
+  String get exerciseIntro_coherentBreathing => 'Optimaliseert de variabiliteit van de hartslag.';
 
   @override
   String get exerciseTitle_extendedExhale => 'Verlengde Uitademing';
 
   @override
-  String get exerciseIntro_extendedExhale =>
-      'Activeert de parasympathische reactie.';
+  String get exerciseIntro_extendedExhale => 'Activeert de parasympathische reactie.';
 
   @override
   String get exerciseTitle_miniBox => 'Mini Box Ademhaling';
 
   @override
-  String get exerciseIntro_miniBox =>
-      'Snelle stressverlichting voor drukke momenten.';
+  String get exerciseIntro_miniBox => 'Snelle stressverlichting voor drukke momenten.';
 
   @override
   String get exerciseTitle_samaVritti => 'Sama Vritti';
 
   @override
-  String get exerciseIntro_samaVritti =>
-      'Verbetert concentratie en mentale helderheid.';
+  String get exerciseIntro_samaVritti => 'Verbetert concentratie en mentale helderheid.';
 
   @override
   String get exerciseTitle_deepEqual => 'Diepe Gelijk Ademhaling';
 
   @override
-  String get exerciseIntro_deepEqual =>
-      'Verbetert de focus en cognitieve prestaties.';
+  String get exerciseIntro_deepEqual => 'Verbetert de focus en cognitieve prestaties.';
 
   @override
   String get exerciseTitle_squareBreathing => 'Vierkante Ademhaling';
@@ -319,8 +306,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get exerciseTitle_ujjayiModified => 'Aangepaste Ujjayi';
 
   @override
-  String get exerciseIntro_ujjayiModified =>
-      'Bouwt interne warmte en focus op.';
+  String get exerciseIntro_ujjayiModified => 'Bouwt interne warmte en focus op.';
 
   @override
   String get exerciseTitle_extendedBox => 'Uitgebreide Box Ademhaling';
@@ -332,157 +318,133 @@ class AppLocalizationsNl extends AppLocalizations {
   String get exerciseTitle_trianglePlus => 'Driehoek Plus';
 
   @override
-  String get exerciseIntro_trianglePlus =>
-      'Complex patroon voor ervaren beoefenaren.';
+  String get exerciseIntro_trianglePlus => 'Complex patroon voor ervaren beoefenaren.';
 
   @override
   String get exerciseTitle_oneTwoExtended => '1:2 Uitgebreide Ademhaling';
 
   @override
-  String get exerciseIntro_oneTwoExtended =>
-      'Diepe ontspanning en verlaging van de bloeddruk.';
+  String get exerciseIntro_oneTwoExtended => 'Diepe ontspanning en verlaging van de bloeddruk.';
 
   @override
   String get exerciseTitle_gentleHold => 'Zachte Vasthouding';
 
   @override
-  String get exerciseIntro_gentleHold =>
-      'Voor mensen met beperkingen in longcapaciteit.';
+  String get exerciseIntro_gentleHold => 'Voor mensen met beperkingen in longcapaciteit.';
 
   @override
   String get exerciseTitle_longBreath => 'Lange Ademhaling';
 
   @override
-  String get exerciseIntro_longBreath =>
-      'Verhoogt de longcapaciteit en uithoudingsvermogen.';
+  String get exerciseIntro_longBreath => 'Verhoogt de longcapaciteit en uithoudingsvermogen.';
 
   @override
   String get exerciseTitle_classic478Extended => 'Klassieke 4-7-8 Uitgebreid';
 
   @override
-  String get exerciseIntro_classic478Extended =>
-      'Maximale ontspanningsreactie.';
+  String get exerciseIntro_classic478Extended => 'Maximale ontspanningsreactie.';
 
   @override
   String get exerciseTitle_goldenRatio => 'Gouden Verhouding';
 
   @override
-  String get exerciseIntro_goldenRatio =>
-      'Gebaseerd op principes van wiskundige harmonie.';
+  String get exerciseIntro_goldenRatio => 'Gebaseerd op principes van wiskundige harmonie.';
 
   @override
-  String get exerciseTitle_sleepPreparationProtocol =>
-      'Slaap Voorbereiding Protocol';
+  String get exerciseTitle_sleepPreparationProtocol => 'Slaap Voorbereiding Protocol';
 
   @override
-  String get exerciseIntro_sleepPreparationProtocol =>
-      'Een progressieve sequentie om je lichaam en geest voor te bereiden op rustgevende slaap.';
+  String get exerciseIntro_sleepPreparationProtocol => 'Een progressieve sequentie om je lichaam en geest voor te bereiden op rustgevende slaap.';
 
   @override
   String get exerciseTitle_anxietyRecoverySequence => 'Angst Herstel Sequentie';
 
   @override
-  String get exerciseIntro_anxietyRecoverySequence =>
-      'Een progressieve aanpak om angst te kalmeren en emotionele balans te herstellen.';
+  String get exerciseIntro_anxietyRecoverySequence => 'Een progressieve aanpak om angst te kalmeren en emotionele balans te herstellen.';
 
   @override
   String get exerciseTitle_morningEnergyBuilder => 'Ochtend Energie Opbouwer';
 
   @override
-  String get exerciseIntro_morningEnergyBuilder =>
-      'Een progressieve sequentie om je lichaam en geest wakker te maken voor de dag die komt.';
+  String get exerciseIntro_morningEnergyBuilder => 'Een progressieve sequentie om je lichaam en geest wakker te maken voor de dag die komt.';
 
   @override
   String get exerciseTitle_panicAttackManagement => 'Paniek Aanval Beheersing';
 
   @override
-  String get exerciseIntro_panicAttackManagement =>
-      'Een progressieve sequentie om snel paniekaanvallen te kalmeren en controle te herstellen.';
+  String get exerciseIntro_panicAttackManagement => 'Een progressieve sequentie om snel paniekaanvallen te kalmeren en controle te herstellen.';
 
   @override
   String get exerciseTitle_concentrationTraining => 'Concentratietraining';
 
   @override
-  String get exerciseIntro_concentrationTraining =>
-      'Een progressieve sequentie om mentale focus te ontwikkelen en in stand te houden.';
+  String get exerciseIntro_concentrationTraining => 'Een progressieve sequentie om mentale focus te ontwikkelen en in stand te houden.';
 
   @override
   String get exerciseTitle_bloodPressureReduction => 'Bloeddrukverlaging';
 
   @override
-  String get exerciseIntro_bloodPressureReduction =>
-      'Een progressieve sequentie ontworpen om de bloeddruk te verlagen via therapeutische ademhaling.';
+  String get exerciseIntro_bloodPressureReduction => 'Een progressieve sequentie ontworpen om de bloeddruk te verlagen via therapeutische ademhaling.';
 
   @override
   String get exerciseTitle_preCompetitionProtocol => 'Voorwedstrijd Protocol';
 
   @override
-  String get exerciseIntro_preCompetitionProtocol =>
-      'Een progressieve sequentie om mentaal en fysiek voor te bereiden op piekprestaties.';
+  String get exerciseIntro_preCompetitionProtocol => 'Een progressieve sequentie om mentaal en fysiek voor te bereiden op piekprestaties.';
 
   @override
   String get exerciseTitle_postWorkoutRecovery => 'Herstel Na Training';
 
   @override
-  String get exerciseIntro_postWorkoutRecovery =>
-      'Een progressieve sequentie om de hartslag te normaliseren en herstel na training te versnellen.';
+  String get exerciseIntro_postWorkoutRecovery => 'Een progressieve sequentie om de hartslag te normaliseren en herstel na training te versnellen.';
 
   @override
   String get exerciseTitle_meditationPreparation => 'Meditatie Voorbereiding';
 
   @override
-  String get exerciseIntro_meditationPreparation =>
-      'Een progressieve sequentie om de geest te kalmeren en over te gaan tot diepere meditatie.';
+  String get exerciseIntro_meditationPreparation => 'Een progressieve sequentie om de geest te kalmeren en over te gaan tot diepere meditatie.';
 
   @override
-  String get exerciseTitle_chronicPainManagement =>
-      'Chronische Pijn Beheersing';
+  String get exerciseTitle_chronicPainManagement => 'Chronische Pijn Beheersing';
 
   @override
-  String get exerciseIntro_chronicPainManagement =>
-      'Een progressieve sequentie om chronische pijn te helpen beheren via gecontroleerde ademhalingstechnieken.';
+  String get exerciseIntro_chronicPainManagement => 'Een progressieve sequentie om chronische pijn te helpen beheren via gecontroleerde ademhalingstechnieken.';
 
   @override
   String get exerciseTitle_stressReliefWave => 'Stressverlichtingsgolf';
 
   @override
-  String get exerciseIntro_stressReliefWave =>
-      'Zachte ritme om stress en spanning weg te wassen.';
+  String get exerciseIntro_stressReliefWave => 'Zachte ritme om stress en spanning weg te wassen.';
 
   @override
   String get exerciseTitle_energizingWakeUp => 'Energiekende Opwekking';
 
   @override
-  String get exerciseIntro_energizingWakeUp =>
-      'Snelle boost om je lichaam wakker te maken en je geest te energiseren.';
+  String get exerciseIntro_energizingWakeUp => 'Snelle boost om je lichaam wakker te maken en je geest te energiseren.';
 
   @override
   String get exerciseTitle_balanceEquilibrium => 'Balans Evenwicht';
 
   @override
-  String get exerciseIntro_balanceEquilibrium =>
-      'Herstelt het evenwicht tussen geest en lichaam.';
+  String get exerciseIntro_balanceEquilibrium => 'Herstelt het evenwicht tussen geest en lichaam.';
 
   @override
   String get exerciseTitle_deepRelaxationDive => 'Diepe Ontspanning Duik';
 
   @override
-  String get exerciseIntro_deepRelaxationDive =>
-      'Duik diep in een staat van volledige ontspanning en vrede.';
+  String get exerciseIntro_deepRelaxationDive => 'Duik diep in een staat van volledige ontspanning en vrede.';
 
   @override
   String get exerciseTitle_cardioCoherence => 'Cardio Cohesie';
 
   @override
-  String get exerciseIntro_cardioCoherence =>
-      'Een sequentie om de hartslagvariabiliteit en emotionele balans te optimaliseren.';
+  String get exerciseIntro_cardioCoherence => 'Een sequentie om de hartslagvariabiliteit en emotionele balans te optimaliseren.';
 
   @override
   String get exerciseTitle_officeBloodFlow => 'Kantoor Bloedstroom Herstel';
 
   @override
-  String get exerciseIntro_officeBloodFlow =>
-      'Bureauvriendelijke rekoefeningen om de circulatie te verbeteren na lange uren zitten.';
+  String get exerciseIntro_officeBloodFlow => 'Bureauvriendelijke rekoefeningen om de circulatie te verbeteren na lange uren zitten.';
 
   @override
   String get stageTitle_nervousSystemBalance => 'Zenuwstelsel Balans';
@@ -500,8 +462,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get stageTitle_grounding => 'Verankeren';
 
   @override
-  String get stageTitle_parasympatheticActivation =>
-      'Parasympathische Activatie';
+  String get stageTitle_parasympatheticActivation => 'Parasympathische Activatie';
 
   @override
   String get stageTitle_awakening => 'Ontwaken';
@@ -588,8 +549,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get phase_instruct_shouldersUp => 'Schouders naar de oren tillen';
 
   @override
-  String get phase_instruct_shouldersDown =>
-      'Schouders laten zakken, spanning loslaten';
+  String get phase_instruct_shouldersDown => 'Schouders laten zakken, spanning loslaten';
 
   @override
   String get phase_instruct_relaxShoulders => 'Blijf in positie';

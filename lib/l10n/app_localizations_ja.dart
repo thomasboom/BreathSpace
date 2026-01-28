@@ -354,71 +354,61 @@ class AppLocalizationsJa extends AppLocalizations {
   String get exerciseTitle_sleepPreparationProtocol => '睡眠準備プロトコル';
 
   @override
-  String get exerciseIntro_sleepPreparationProtocol =>
-      '心身を快眠のために準備するための段階的な順序。';
+  String get exerciseIntro_sleepPreparationProtocol => '心身を快眠のために準備するための段階的な順序。';
 
   @override
   String get exerciseTitle_anxietyRecoverySequence => '不安回復シーケンス';
 
   @override
-  String get exerciseIntro_anxietyRecoverySequence =>
-      '不安を落ち着け、感情のバランスを回復するための段階的アプローチ。';
+  String get exerciseIntro_anxietyRecoverySequence => '不安を落ち着け、感情のバランスを回復するための段階的アプローチ。';
 
   @override
   String get exerciseTitle_morningEnergyBuilder => '朝のエネルギービルダー';
 
   @override
-  String get exerciseIntro_morningEnergyBuilder =>
-      '一日の始まりに向けて体と心を覚醒させるための段階的シーケンス。';
+  String get exerciseIntro_morningEnergyBuilder => '一日の始まりに向けて体と心を覚醒させるための段階的シーケンス。';
 
   @override
   String get exerciseTitle_panicAttackManagement => 'パニック発作管理';
 
   @override
-  String get exerciseIntro_panicAttackManagement =>
-      'パニック発作を素早く落ち着け、コントロールを回復するための段階的シーケンス。';
+  String get exerciseIntro_panicAttackManagement => 'パニック発作を素早く落ち着け、コントロールを回復するための段階的シーケンス。';
 
   @override
   String get exerciseTitle_concentrationTraining => '集中力トレーニング';
 
   @override
-  String get exerciseIntro_concentrationTraining =>
-      '時間をかけて精神的な集中力を育て、維持するための段階的シーケンス。';
+  String get exerciseIntro_concentrationTraining => '時間をかけて精神的な集中力を育て、維持するための段階的シーケンス。';
 
   @override
   String get exerciseTitle_bloodPressureReduction => '血圧低下';
 
   @override
-  String get exerciseIntro_bloodPressureReduction =>
-      '治療的呼吸法によって血圧を下げるために設計された段階的シーケンス。';
+  String get exerciseIntro_bloodPressureReduction => '治療的呼吸法によって血圧を下げるために設計された段階的シーケンス。';
 
   @override
   String get exerciseTitle_preCompetitionProtocol => '競技前プロトコル';
 
   @override
-  String get exerciseIntro_preCompetitionProtocol =>
-      'ピークパフォーマンスに向けて精神的・身体的に準備するための段階的シーケンス。';
+  String get exerciseIntro_preCompetitionProtocol => 'ピークパフォーマンスに向けて精神的・身体的に準備するための段階的シーケンス。';
 
   @override
   String get exerciseTitle_postWorkoutRecovery => 'トレーニング後回復';
 
   @override
-  String get exerciseIntro_postWorkoutRecovery =>
-      '運動後の心拍数を正常化し、回復を促進するための段階的シーケンス。';
+  String get exerciseIntro_postWorkoutRecovery => '運動後の心拍数を正常化し、回復を促進するための段階的シーケンス。';
 
   @override
   String get exerciseTitle_meditationPreparation => '瞑想準備';
 
   @override
-  String get exerciseIntro_meditationPreparation =>
-      '心を落ち着け、より深い瞑想に移行するための段階的シーケンス。';
+  String get exerciseIntro_meditationPreparation => '心を落ち着け、より深い瞑想に移行するための段階的シーケンス。';
 
   @override
   String get exerciseTitle_chronicPainManagement => '慢性疼痛管理';
 
   @override
-  String get exerciseIntro_chronicPainManagement =>
-      '制御された呼吸法によって慢性疼痛の管理を支援するための段階的シーケンス。';
+  String get exerciseIntro_chronicPainManagement => '制御された呼吸法によって慢性疼痛の管理を支援するための段階的シーケンス。';
 
   @override
   String get exerciseTitle_stressReliefWave => 'ストレス解消波';
@@ -454,8 +444,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get exerciseTitle_officeBloodFlow => 'オフィス血流回復';
 
   @override
-  String get exerciseIntro_officeBloodFlow =>
-      '長時間座った後の血流を改善するためのデスクriendlyなストレッチ。';
+  String get exerciseIntro_officeBloodFlow => '長時間座った後の血流を改善するためのデスクriendlyなストレッチ。';
 
   @override
   String get stageTitle_nervousSystemBalance => '神経系のバランス';
