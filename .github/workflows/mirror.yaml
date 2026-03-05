@@ -19,5 +19,5 @@ jobs:
 
       - name: Mirror to Codeberg
         run: |
-          git remote add codeberg https://ThomasNowProductions:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/ThomasNowProductions/BreathSpace.git
+          git remote add codeberg https://thomasboom:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/thomasboom/BreathSpace.git
           git push --mirror codeberg
